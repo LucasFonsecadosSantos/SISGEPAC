@@ -1,0 +1,102 @@
+// DEVELOPED BY: Lucas Fonsceca dos Santos.
+// GPL - General Public License v3.0
+////////////////////////////////////////////////////////////////
+// EASY ARCHITECTURE - A simple architecture script tool.
+// www.github.com/LucasFonsecaDosSantos/Easy-Architecture
+////////////////////////////////////////////////////////////////
+//                                                            //
+//                                                            //
+//  _____                                                     //
+// | ____|__ _ ___ _   _                                      //
+// |  _| / _` / __| | | |                                     //
+// | |__| (_| \__ \ |_| |                                     //
+// |_____\__,_|___/\__, |                                     //
+//     _           |___/   _ _            _                   //
+//    / \   _ __ ___| |__ (_) |_ ___  ___| |_ _   _ _ __ ___  //
+//   / _ \ | '__/ __| '_ \| | __/ _ \/ __| __| | | | '__/ _ \ //
+//  / ___ \| | | (__| | | | | ||  __/ (__| |_| |_| | | |  __/ //
+// /_/   \_\_|  \___|_| |_|_|\__\___|\___|\__|\__,_|_|  \___| //
+//                                              Version 2.0.0 //
+//                                                            //
+// SCRIPT WRITTEN BY Lucas Fonseca dos Santos.                //
+//                                                            //
+////////////////////////////////////////////////////////////////
+//                                                            //
+// [PROJECT]:                                                 //
+// Name:  <project_name>                                      //
+// URL:   <project_url>                                       //
+//                                                            //
+// +--------------------------------------------------------+ //
+//                                                            //
+// [DEVELOPMENT]:                                             //
+// Code Developer:  <project_name>                            //
+// Designer:        <project_name>                            //
+// Tester:          <project_name>                            //
+// Code Developer:  <project_name>                            //
+//                                                            //
+// +--------------------------------------------------------+ //
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+//                    FILE INFORMATIONS:                      //
+// +--------------------------------------------------------+ //
+//                                                            //
+// NAME: <file_name>                                          //
+// BRIEF: <file_brief>                                        //
+//                                                            //
+////////////////////////////////////////////////////////////////
+
+
+
+
+//---------------------[ DEFAULT MIXINS ]---------------------//
+@mixin transform_translateX($param)
+    transform:           translateX($param)
+    -o-transform:        translateX($param)
+    -ms-transform:       translateX($param)
+    -moz-transform:      translateX($param)
+    -webkit-transform:   translateX($param)
+
+@mixin transform_translateY($param)
+    transform:           translateY($param)
+    -o-transform:        translateY($param)
+    -ms-transform:       translateY($param)
+    -moz-transform:      translateY($param)
+    -webkit-transform:   translateY($param)
+
+@mixin border_radius($param)
+    border-radius:         $param
+    -o-border-radius:      $param
+    -ms-border-radius:     $param
+    -moz-border-radius:    $param
+    -webkit-border-radius: $param
+
+@mixin transform_rotate($param)
+    transform: rotate($param)
+    -o-transform: rotate($param)
+    -ms-transform: rotate($param)
+    -moz-transform: rotate($param)
+    -webkit--transform: rotate($param)
+
+@mixin gradient_background($param1, $param2, $param3)
+    background: $param2
+    background: linear-gradient($param1, $param2 , $param3)
+    background: -o-linear-gradient($param1, $param2 , $param3)
+    background: -ms-linear-gradient($param1, $param2 , $param3)
+    background: -moz-linear-gradient($param1, $param2 , $param3)
+    background: -webkit-linear-gradient($param1, $param2 , $param3) 
+
+@mixin filter($param)
+    filter:         $param
+    -o-filter:      $param
+    -ms-filter:     $param
+    -moz-filter:    $param
+    -webkit-filter: $param
+
+@mixin responsive_system($param1, $param2, $param3, $param4, $param5)
+    @extend .col-#{$param1}
+    @extend .col-sm-#{$param2}
+    @extend .col-md-#{$param3}
+    @extend .col-lg-#{$param4}
+    @extend .col-xl-#{$param5}
+//------------------------------------------------------------//
