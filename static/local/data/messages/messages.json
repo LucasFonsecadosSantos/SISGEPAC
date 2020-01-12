@@ -1,0 +1,90 @@
+{
+
+    "index": {
+        "pt-BR": {
+
+        },
+        "en-US": {
+
+        },
+        "fr-FR": {
+
+        }
+    },
+
+    "changelog": {
+        "pt-BR": {
+            "page-title": "Versões"
+        },
+        "en-US": {
+            "page-title": "Changelog"
+        },
+        "fr-FR": {
+            "page-title": ""
+        }
+    },
+
+    "panelist": {
+        "pt-BR": {
+            "page-title": "Palestrantes"
+        },
+        "en-US": {
+            "page-title": "Speakers"
+        },
+        "fr-FR": {
+            "page-title": ""
+        }
+    },
+
+    "sponsor": {
+        "pt-br": {
+            "page-title": "Patrocínios"
+        },
+        "en-US": {
+            "page-title": "Sponsorships"
+        },
+        "fr-FR": {
+            "page-title": ""
+        }
+    },
+
+    "faq": {
+        "pt-br": {
+            "page-title": "FAQ"
+        },
+        "en-US": {
+            "page-title": "FAQ"
+        },
+        "fr-FR": {
+            "page-title": "FAQ"
+        }
+    },
+
+    "proceedings": {
+        "pt-br": {
+            "page-title": "Anais"
+        },
+        "en-US": {
+            "page-title": "Proceedings"
+        },
+        "fr-FR": {
+            "page-title": ""
+        }
+    },
+
+    "contact": {
+        "pt-br": {
+            "page-title": "Contato"
+        },
+        "en-US": {
+            "page-title": "Contact"
+        },
+        "fr-FR": {
+            "page-title": ""
+        }
+    }
+
+    
+
+
+}
