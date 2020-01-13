@@ -1,0 +1,293 @@
+doctype html
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+  meta(name='description' content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+  meta(name='keywords' content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+  meta(name='author' content='PIXINVENT')
+  title
+    | Dashboard Support - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard
+  include settings/_link-imports.pug
+  link(rel='stylesheet' type='text/css' href='../../../app-assets/css/core/menu/menu-types/material-horizontal-menu.min.css')
+  link(rel='stylesheet' type='text/css' href='../../../app-assets/css/pages/dashboard-support.min.css')
+  
+include components/_header.pug
+include components/_navbar.pug
+
+.app-content.content
+  .content-header.row
+  .content-overlay
+  .content-wrapper
+    .content-body
+      // Statistics with grouped cards
+      .row
+        .col-12
+          .card
+            .card-content
+              .row
+                .col.border-right-blue-grey.border-right-lighten-4
+                  .card-body.text-center
+                    h1.display-4
+                      i.ft-chevron-down.fs-2.danger
+                      |  26
+                    span New Ticket
+                .col.border-right-blue-grey.border-right-lighten-4
+                  .card-body.text-center
+                    h1.display-4
+                      i.ft-chevron-up.fs-2.success
+                      |  8
+                    span Responses
+                .col.border-right-blue-grey.border-right-lighten-4
+                  .card-body.text-center
+                    h1.display-4
+                      i.ft-chevron-up.fs-2.success
+                      |  6h
+                    span Response Time
+                .col.border-right-blue-grey.border-right-lighten-4
+                  .card-body.text-center
+                    h1.display-4 10
+                    span Liked Comment
+                .col
+                  .card-body.text-center
+                    h1.display-4 22
+                    span Closed Ticket
+      // MONTHLY ANALYTICS
+      .row.match-height
+        #ecommerceChartView.col-12
+          .card.card-shadow
+            .card-header.card-header-transparent.py-20
+              .btn-group.dropdown
+                a.text-body.dropdown-toggle.blue-grey-700(href='#' data-toggle='dropdown')
+                  | MONTHLY
+                  | ANALYTICS
+                .dropdown-menu.animate(role='menu')
+                  a.dropdown-item(href='#' role='menuitem') Sales
+                  a.dropdown-item(href='#' role='menuitem') Total sales
+                  a.dropdown-item(href='#' role='menuitem') profit
+              ul.nav.nav-pills.nav-pills-rounded.chart-action.float-right.btn-group(role='group')
+                li.nav-item
+                  a.active.nav-link(data-toggle='tab' href='#scoreLineToDay')
+                    | New
+                    | Tickets
+                li.nav-item
+                  a.nav-link(data-toggle='tab' href='#scoreLineToWeek') Agent Responses
+                li.nav-item
+                  a.nav-link(data-toggle='tab' href='#scoreLineToMonth') Response Time
+                li.nav-item
+                  a.nav-link(data-toggle='tab' href='#scoreLineToDay') Closed Tickets
+            .widget-content.tab-content.bg-white.p-20
+              #scoreLineToDay.ct-chart.tab-pane.active.scoreLineShadow
+              #scoreLineToWeek.ct-chart.tab-pane.scoreLineShadow
+              #scoreLineToMonth.ct-chart.tab-pane.scoreLineShadow
+              #scoreLineToDay1.ct-chart.tab-pane.scoreLineShadow
+      // Payment Methods & Purchase History
+      .row.match-height
+        .col-md-6
+          .card.payment
+            .card-content
+              .card-body
+                h4.card-title Support Payment Methods
+                hr
+                .row
+                  .col-2
+                    img(src='../../../app-assets/images/icons/card-1.png' alt='avatar' width='50')
+                  .col-8
+                    h6 REDQTEAM-XXX-5994
+                    p EX 04/2022
+                  .col-2
+                    button.btn.btn-sm.btn-icon.btn-danger.mr-1(type='button')
+                      i.ft-x
+                .row.mt-2
+                  .col-2
+                    img(src='../../../app-assets/images/icons/card-2.png' alt='avatar' width='50')
+                  .col-8
+                    h6 REDQTEAM-XXX-5834
+                    p EX 12/2020
+                  .col-2
+                    button.btn.btn-sm.btn-icon.btn-danger.mr-1(type='button')
+                      i.ft-x
+        .col-md-6
+          .card
+            .card-content
+              .card-body
+                h4.card-title Purchase History
+                hr
+                .row
+                  .col-2
+                    img(src='../../../app-assets/images/icons/mail-chimp.png' alt='avatar' width='50')
+                  .col-7
+                    h6
+                      | MailChilp 
+                      span - Singles site
+                    p $35.00 - excludes 0% tax
+                  .col-3
+                    p.m-0 05-10-2018
+                    p.info invoice
+                .row.mt-2
+                  .col-2
+                    img(src='../../../app-assets/images/icons/google.png' alt='avatar' width='50')
+                  .col-7
+                    h6
+                      | MailChilp 
+                      span - Singles site
+                    p $35.00 - excludes 0% tax
+                  .col-3
+                    p.m-0 05-10-2018
+                    p.info invoice
+      // Your Open Tickets & Ticket Categories
+      .row
+        .col-sm-8
+          .card
+            .card-content
+              .card-body
+                // Task List table
+                .table-responsive
+                  h4.card-title Your Open Tickets
+                  table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+                    thead
+                      tr
+                        th Owner
+                        th Tickets
+                        th Dates
+                        th Priority
+                    tbody
+                      tr
+                        td.text-center
+                          span.avatar.avatar-busy
+                            img(src='../../../app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
+                            i
+                        td
+                          a.text-bold-600(href='#') Modern admin - Responsive Bootstrap 4 Admin Template
+                          p.text-muted navbar is missing when click to next page on navbar
+                          p.text-muted
+                            i.ft-paperclip
+                            |  abc.pdf
+                        td
+                          h6 18 Sept, 2018
+                        td
+                          span.badge.badge-success Urgent
+                      // 10 Days Ago
+                      tr
+                        td.text-center
+                          span.avatar.avatar-online
+                            img(src='../../../app-assets/images/portrait/small/avatar-s-6.png' alt='avatar' data-placement='right' title='Nicole Barrett')
+                            i
+                        td
+                          a.text-bold-600(href='#') Complete Support page design
+                          p.text-muted  Curabitur tempor, quam vel pulvinar finibus.
+                        td
+                          h6 5 Sept, 2018
+                        td
+                          span.badge.badge-success Urgent
+                      tr
+                        td.text-center
+                          span.avatar.avatar-off
+                            img(src='../../../app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-placement='right' title='Jason Robertson')
+                            i
+                        td
+                          a.text-bold-600(href='#') Create App Landing page
+                          p.text-muted  Donec pulvinar nisi ac convallis porta.
+                          p.text-muted
+                            i.ft-paperclip
+                            |  xyz.jpg
+                        td
+                          h6 25 Sept, 2018
+                        td
+                          span.badge.badge-danger Low
+                      // 11 Days Ago
+                      tr
+                        td.text-center
+                          span.avatar.avatar-busy
+                            img(src='../../../app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Willie Sanchez')
+                            i
+                        td
+                          a.text-bold-600(href='#') UI Design for the CCC
+                          p.text-muted
+                            | Phasellus vel elit volutpat, egestas urna a, pharetra
+                            | nibh.
+                        td
+                          h6 05 Sept, 2018
+                        td
+                          span.badge.badge-danger Low
+                    tfoot
+                      tr
+                        th Owner
+                        th Task
+                        th Dates
+                        th Priority
+                // / Task List table
+        .col-sm-4
+          .card
+            .card-header
+              h4.card-title Ticket Categories
+              a.heading-elements-toggle
+                i.la.la-ellipsis-v.font-medium-3
+            .card-content
+              .table-responsive
+                table#recent-orders.table.table-hover.table-xl.mb-0
+                  thead
+                    tr
+                      th.border-top-0 Logo
+                      th.border-top-0 Product Name
+                      th.border-top-0 Tickets
+                  tbody
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-1.png' alt='avatar')
+                      td.text-truncate Convex
+                      td
+                        span.badge.badge-warning 3
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-2.png' alt='avatar')
+                      td.text-truncate Materialize
+                      td
+                        span.badge.badge-success 3
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-3.png' alt='avatar')
+                      td.text-truncate Crypto ICO
+                      td
+                        span.badge.badge-danger 5
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-4.png' alt='avatar')
+                      td.text-truncate Modern Admin
+                      td
+                        span.badge.badge-info 2
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-5.png' alt='avatar')
+                      td.text-truncate Apex Angular
+                      td
+                        span.badge.badge-warning 4
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-6.png' alt='avatar')
+                      td.text-truncate Apex HTML
+                      td
+                        span.badge.badge-info 1
+                    tr
+                      td.text-truncate
+                        span.avatar.avatar-xs
+                          img.box-shadow-2(src='../../../app-assets/images/icons/app-1.png' alt='avatar')
+                      td.text-truncate Convex
+                      td
+                        span.badge.badge-warning 3
+
+.buy-now
+  a.btn.btn-info.btn-glow.round.px-2(href='https://1.envato.market/modern_admin' target='_blank') Buy Now
+.sidenav-overlay
+.drag-target
+
+include components/_footer.pug
+include settings/_js-imports.pug
+script(src='../../../app-assets/js/scripts/pages/material-app.min.js')
+script(src='../../../app-assets/js/scripts/pages/dashboard-support.min.js')

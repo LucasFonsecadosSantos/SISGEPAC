@@ -1,0 +1,1 @@
+cp -avr ../dynamic/frontend/ext/app-assets/* ../dynamic/backend/public/app-assets/
