@@ -7,7 +7,7 @@ head
   meta(name='keywords' content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
   meta(name='author' content='PIXINVENT')
   title
-    | Dashboard Support - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard
+    | SISGEPAC - Sistema de Geração de Páginas para Congressos e Eventos
   include settings/_link-imports.pug
   link(rel='stylesheet' type='text/css' href='ext/app-assets/css/core/menu/menu-types/material-horizontal-menu.min.css')
   link(rel='stylesheet' type='text/css' href='ext/app-assets/css/pages/dashboard-support.min.css')
@@ -52,35 +52,6 @@ include components/_navbar.pug
                   .card-body.text-center
                     h1.display-4 22
                     span Closed Ticket
-      // MONTHLY ANALYTICS
-      .row.match-height
-        #ecommerceChartView.col-12
-          .card.card-shadow
-            .card-header.card-header-transparent.py-20
-              .btn-group.dropdown
-                a.text-body.dropdown-toggle.blue-grey-700(href='#' data-toggle='dropdown')
-                  | MONTHLY
-                  | ANALYTICS
-                .dropdown-menu.animate(role='menu')
-                  a.dropdown-item(href='#' role='menuitem') Sales
-                  a.dropdown-item(href='#' role='menuitem') Total sales
-                  a.dropdown-item(href='#' role='menuitem') profit
-              ul.nav.nav-pills.nav-pills-rounded.chart-action.float-right.btn-group(role='group')
-                li.nav-item
-                  a.active.nav-link(data-toggle='tab' href='#scoreLineToDay')
-                    | New
-                    | Tickets
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToWeek') Agent Responses
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToMonth') Response Time
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToDay') Closed Tickets
-            .widget-content.tab-content.bg-white.p-20
-              #scoreLineToDay.ct-chart.tab-pane.active.scoreLineShadow
-              #scoreLineToWeek.ct-chart.tab-pane.scoreLineShadow
-              #scoreLineToMonth.ct-chart.tab-pane.scoreLineShadow
-              #scoreLineToDay1.ct-chart.tab-pane.scoreLineShadow
       // Payment Methods & Purchase History
       .row.match-height
         .col-md-6
