@@ -1,6 +1,6 @@
 import { Controller } from "./../../core/Controller.js";
 
-export class HeaderController extends Controller {
+export class SpeakerController extends Controller {
 
     private _titleElement: HTMLTitleElement;
     private _textElements: Array<HTMLElement>;
