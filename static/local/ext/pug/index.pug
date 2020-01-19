@@ -20,38 +20,49 @@ include components/_navbar.pug
   .content-overlay
   .content-wrapper
     .content-body
-      // Statistics with grouped cards
-      .row
-        .col-12
-          .card
-            .card-content
-              .row
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-down.fs-2.danger
-                      |  26
-                    span New Ticket
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-up.fs-2.success
-                      |  8
-                    span Responses
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-up.fs-2.success
-                      |  6h
-                    span Response Time
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4 10
-                    span Liked Comment
-                .col
-                  .card-body.text-center
-                    h1.display-4 22
-                    span Closed Ticket
+      .row.card-icons
+          .col-12
+            .card.bg-gradient-x-cyan
+              .card-content
+                .card-body
+                  .row
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-camera.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right Products
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 579
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 80%", aria-valuenow="80", aria-valuemin="0", aria-valuemax="100")
+                    
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-user.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right New Clients
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 423
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 45%", aria-valuenow="45", aria-valuemin="0", aria-valuemax="100")
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-bulb.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right Conversion Rate
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 61%
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 75%", aria-valuenow="75", aria-valuemin="0", aria-valuemax="100")
+                    .col-lg-3.col-md-6.col-sm-12
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-wallet.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right Sales
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white $687
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 60%", aria-valuenow="60", aria-valuemin="0", aria-valuemax="100")
       // Payment Methods & Purchase History
       .row.match-height
         .col-md-6
