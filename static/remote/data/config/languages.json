@@ -1,0 +1,257 @@
+[
+    {
+        "language": "Português Brasil",
+        "symbol": "pt-BR", 
+        "using": false
+    },
+    {
+        "language": "Português Europeu",
+        "symbol": "pt-PT", 
+        "using": false
+    },
+    {
+        "language": "Ingês EUA",
+        "symbol": "en-US", 
+        "using": false
+    },
+    {
+        "language": "Inglês Britnanico",
+        "symbol": "en-GB", 
+        "using": false
+    },
+    {
+        "language": "Inglês Australiano",
+        "symbol": "en-AU", 
+        "using": false
+    },
+    {
+        "language": "Inglês Canadense",
+        "symbol": "en-CA", 
+        "using": false
+    },
+    {
+        "language": "Inglês Irlandês",
+        "symbol": "en-IE", 
+        "using": false
+    },
+    {
+        "language": "Inglês Indiano",
+        "symbol": "en-IN", 
+        "using": false
+    },
+    {
+        "language": "Inglês Novo Holandês",
+        "symbol": "en-NZ", 
+        "using": false
+    },
+    {
+        "language": "Inglês Sul Africano",
+        "symbol": "en-ZA", 
+        "using": false
+    },
+    {
+        "language": "Espanhol Argentino",
+        "symbol": "es-AR", 
+        "using": false
+    },
+    {
+        "language": "Espanhol Chileno",
+        "symbol": "es-CL", 
+        "using": false
+    },
+    {
+        "language": "Espanhol Colombiano",
+        "symbol": "es-CO", 
+        "using": false
+    },
+    {
+        "language": "Casteliano",
+        "symbol": "es-ES", 
+        "using": false
+    },
+    {
+        "language": "Espanhol Mexicano",
+        "symbol": "es-MX", 
+        "using": false
+    },
+    {
+        "language": "Espanhol Americano",
+        "symbol": "es-US", 
+        "using": false
+    },
+    {
+        "language": "Fracês",
+        "symbol": "fr-FR", 
+        "using": false
+    },
+    {
+        "language": "Francês Suéco",
+        "symbol": "fr-CH", 
+        "using": false
+    },
+    {
+        "language": "Francês Belgo",
+        "symbol": "fr-BE", 
+        "using": false
+    },
+    {
+        "language": "Finlandês",
+        "symbol": "fi-FI", 
+        "using": false
+    },
+    {
+        "language": "Grego",
+        "symbol": "el-GR", 
+        "using": false
+    },
+    {
+        "language": "Alemão",
+        "symbol": "de-DE", 
+        "using": false
+    },
+    {
+        "language": "Alemão Austriaco",
+        "symbol": "de-AT", 
+        "using": false
+    },
+    {
+        "language": "Dinamarques",
+        "symbol": "da-DK", 
+        "using": false
+    },
+    {
+        "language": "Tcheco",
+        "symbol": "cs-CZ", 
+        "using": false
+    },
+    {
+        "language": "Bangla Indiano",
+        "symbol": "bn-IN", 
+        "using": false
+    },
+    {
+        "language": "Bangla Bangladesh",
+        "symbol": "bn-BD", 
+        "using": false
+    },
+    {
+        "language": "Árabe",
+        "symbol": "ar-SA", 
+        "using": false
+    },
+    {
+        "language": "Mandarim Taiwan",
+        "symbol": "zh-TW", 
+        "using": false
+    },
+    {
+        "language": "Mandarim Hong Kong",
+        "symbol": "zh-HK", 
+        "using": false
+    },
+    {
+        "language": "Mandarim Tradicional",
+        "symbol": "zh-CN", 
+        "using": false
+    },
+    {
+        "language": "Turco",
+        "symbol": "tr-TR", 
+        "using": false
+    },
+    {
+        "language": "Tailandês",
+        "symbol": "th-TH", 
+        "using": false
+    },
+    {
+        "language": "Siri Lanka",
+        "symbol": "ta-LK", 
+        "using": false
+    },
+    {
+        "language": "Indiano Tamil",
+        "symbol": "ta-IN", 
+        "using": false
+    },
+    {
+        "language": "Suéco",
+        "symbol": "sv-SE", 
+        "using": false
+    },
+    {
+        "language": "Slovakia",
+        "symbol": "sk-SK", 
+        "using": false
+    },
+    {
+        "language": "Russo",
+        "symbol": "ru-RU", 
+        "using": false
+    },
+    {
+        "language": "Romêno",
+        "symbol": "ro-RO", 
+        "using": false
+    },
+    {
+        "language": "Polaco",
+        "symbol": "pl-PL", 
+        "using": false
+    },
+    {
+        "language": "Norueguês",
+        "symbol": "no-NO", 
+        "using": false
+    },
+    {
+        "language": "Neerlandês",
+        "symbol": "nl-NL", 
+        "using": false
+    },
+    {
+        "language": "Neerlandês Belgo",
+        "symbol": "nl-BE", 
+        "using": false
+    },
+    {
+        "language": "Coreano",
+        "symbol": "ko-KR", 
+        "using": false
+    },
+    {
+        "language": "Japonês",
+        "symbol": "jp-JP", 
+        "using": false
+    },
+    {
+        "language": "Italiano",
+        "symbol": "it-IT", 
+        "using": false
+    },
+    {
+        "language": "Italiano Suiço",
+        "symbol": "it-CH", 
+        "using": false
+    },
+    {
+        "language": "Indonesio",
+        "symbol": "id-ID", 
+        "using": false
+    },
+    {
+        "language": "Hungaro",
+        "symbol": "h-HU", 
+        "using": false
+    },
+    {
+        "language": "Hindi",
+        "symbol": "hi-IN",
+        "using": false
+    },
+    {
+        "language": "Hebreu",
+        "symbol": "he-IL", 
+        "using": false
+    }
+]

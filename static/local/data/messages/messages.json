@@ -129,15 +129,16 @@
     },
 
     "index": {
-        "pt-BR": {
-
-        },
-        "en-US": {
-
-        },
-        "fr-FR": {
-
-        }
+        "pt-BR": [
+            {
+                "tag": "title",
+                "text": "SISGEPAC | Sistema de Geração de Páginas para Congressos."
+            },
+            {
+                "id": "event-occurrence-title",
+                "text": "Datas programadas"
+            }
+        ]
     },
 
     "changelog": {

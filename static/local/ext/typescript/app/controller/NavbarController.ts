@@ -50,6 +50,13 @@ export class NavbarController extends Controller {
                 
                 this._buildPageMessages(data);
 
+            })
+
+            .catch(error => {
+
+                console.log(error);
+                alert(error);
+
             });
 
     }

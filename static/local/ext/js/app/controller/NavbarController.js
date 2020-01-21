@@ -30,6 +30,10 @@ export class NavbarController extends Controller {
             .then(response => response.json())
             .then(data => {
             this._buildPageMessages(data);
+        })
+            .catch(error => {
+            console.log(error);
+            alert(error);
         });
     }
     _buildPageMessages(data) {

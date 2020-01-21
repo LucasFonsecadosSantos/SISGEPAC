@@ -1,0 +1,10 @@
+{
+    "title": "Teste de nome do evento",
+    "description": "teste de descricao do evento",
+    "schedule-date": [
+        "13/12/2020",
+        "14/12/2020",
+        "15/02/2020",
+        "16/02/2020"
+    ]
+}
