@@ -1,5 +1,6 @@
 import { Controller } from "./../../core/Controller.js";
 import { Logger } from "./../../util/Logger.js";
+import { Config, DataEntity } from "./../../conf/Config.js";
 
 export class DashboardController extends Controller {
 
@@ -35,7 +36,7 @@ export class DashboardController extends Controller {
 
     private _getPageMessages(): void {
         
-        fetch('/local/data/messages/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             
             .then(response => response.json())
             
@@ -74,11 +75,11 @@ export class DashboardController extends Controller {
 
     private async _getPageContent() {
 
-        this._sponsorshipData   = fetch('/remote/data/content/sponsorship.json');
-        this._speakerData       = fetch('/remote/data/content/speaker.json');
-        this._eventData         = fetch('/remote/data/content/event.json');
-        this._organizationData  = fetch('/remote/data/content/organization.json');
-        this._languagesData     = fetch('/remote/data/config/languages.json');
+        this._sponsorshipData   = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_));
+        this._speakerData       = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPEAKER_));
+        this._eventData         = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._EVENT_));
+        this._organizationData  = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._ORGANIZATION_));
+        this._languagesData     = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
 
     }
 
@@ -141,5 +142,7 @@ export class DashboardController extends Controller {
             .catch(error => {Logger.log(error)});
 
     }
+
+    private _populateLanguageData(): void {}
 
 }

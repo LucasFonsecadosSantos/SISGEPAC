@@ -1,4 +1,5 @@
 import { Controller } from "./../../core/Controller.js";
+import { Config } from "./../../conf/Config.js";
 export class NavbarController extends Controller {
     constructor() {
         super();
@@ -26,7 +27,7 @@ export class NavbarController extends Controller {
         this._elements['navbar-logo-text'] = document.querySelector('#navbar-logo-text');
     }
     _getPageMessages() {
-        fetch('/local/data/messages/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             .then(response => response.json())
             .then(data => {
             this._buildPageMessages(data);

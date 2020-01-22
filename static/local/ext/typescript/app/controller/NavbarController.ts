@@ -1,4 +1,5 @@
 import { Controller } from "./../../core/Controller.js";
+import { DataEntity, Config } from "./../../conf/Config.js";
 
 export class NavbarController extends Controller {
 
@@ -42,7 +43,7 @@ export class NavbarController extends Controller {
 
     private _getPageMessages(): void {
         
-        fetch('/local/data/messages/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             
             .then(response => response.json())
             

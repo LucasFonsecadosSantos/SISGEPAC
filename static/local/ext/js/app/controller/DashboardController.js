@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Controller } from "./../../core/Controller.js";
 import { Logger } from "./../../util/Logger.js";
+import { Config, DataEntity } from "./../../conf/Config.js";
 export class DashboardController extends Controller {
     constructor() {
         super();
@@ -26,7 +27,7 @@ export class DashboardController extends Controller {
         this._elements['title'] = document.querySelector('title');
     }
     _getPageMessages() {
-        fetch('/local/data/messages/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             .then(response => response.json())
             .then(data => {
             Logger.log("Getting dashboard messages...");
@@ -48,11 +49,11 @@ export class DashboardController extends Controller {
     }
     _getPageContent() {
         return __awaiter(this, void 0, void 0, function* () {
-            this._sponsorshipData = fetch('/remote/data/content/sponsorship.json');
-            this._speakerData = fetch('/remote/data/content/speaker.json');
-            this._eventData = fetch('/remote/data/content/event.json');
-            this._organizationData = fetch('/remote/data/content/organization.json');
-            this._languagesData = fetch('/remote/data/config/languages.json');
+            this._sponsorshipData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_));
+            this._speakerData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPEAKER_));
+            this._eventData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._EVENT_));
+            this._organizationData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._ORGANIZATION_));
+            this._languagesData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
         });
     }
     _populateEventData() {
@@ -83,5 +84,6 @@ export class DashboardController extends Controller {
         })
             .catch(error => { Logger.log(error); });
     }
+    _populateLanguageData() { }
 }
 //# sourceMappingURL=DashboardController.js.map
