@@ -29,7 +29,7 @@ export class Sisgepac {
             case 'faq':
                 new FaqController();
                 break;
-            case 'eventSettings':
+            case 'event':
                 new EventSettingsController();
                 break;
         }

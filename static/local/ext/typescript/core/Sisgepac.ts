@@ -44,7 +44,7 @@ export class Sisgepac {
                 new FaqController();
                 break;
             
-            case 'eventSettings':
+            case 'event':
                 new EventSettingsController();
                 break;
             

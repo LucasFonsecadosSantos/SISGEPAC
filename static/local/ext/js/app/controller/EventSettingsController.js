@@ -1,26 +1,24 @@
 import { Controller } from "./../../core/Controller.js";
+import { Config } from '../../conf/Config.js';
 export class EventSettingsController extends Controller {
     constructor() {
         super();
         this._initializeElements();
         this._getPageMessages();
-        this._getPageContent();
-        this._buildPageContent();
     }
     _initializeElements() {
+        this._elements = new Array();
+        this._elements['title'] = document.querySelector('title');
+        this._elements['page-title'] = document.querySelector('#page-title');
     }
     _getPageMessages() {
-        fetch('/local/data/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             .then(response => response.json())
             .then(data => {
             this._buildPageMessages(data);
         });
     }
     _buildPageMessages(data) {
-    }
-    _getPageContent() {
-    }
-    _buildPageContent() {
     }
 }
 //# sourceMappingURL=EventSettingsController.js.map

@@ -1,30 +1,31 @@
-import { Controller } from "./../../core/Controller.js";
+import { Controller }           from "./../../core/Controller.js";
+import { DataEntity, Config }   from '../../conf/Config.js';
 
 export class EventSettingsController extends Controller {
 
-    private _titleElement: HTMLTitleElement;
-    private _textElements: Array<HTMLElement>;
-    private _inputElements: Array<HTMLElement>;
-    private _buttonElements: Array<HTMLElement>;
-    private _changelogContent: HTMLElement;
+    private _elements: Array<HTMLElement>;
 
     constructor() {
 
         super();
         this._initializeElements();
         this._getPageMessages();
-        this._getPageContent();
-        this._buildPageContent();
 
     }
 
     private _initializeElements(): void {
 
+        this._elements = new Array<HTMLElement>();
+        
+
+        this._elements['title'] = document.querySelector('title');
+        this._elements['page-title'] = document.querySelector('#page-title')
+
     }
 
     private _getPageMessages(): void {
         
-        fetch('/local/data/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             
             .then(response => response.json())
             
@@ -40,12 +41,5 @@ export class EventSettingsController extends Controller {
 
     }
 
-    private _getPageContent(): void {
-
-    }
-
-    private _buildPageContent(): void {
-        
-    }
 
 }
