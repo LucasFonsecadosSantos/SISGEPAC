@@ -21,16 +21,17 @@ export class DashboardController extends Controller {
         
         if (!projectStatus) {
 
-            //chamar modal pedindo configuracoes do evento
+            //@ts-ignore
+            $('#eventSettingsModal').modal('show');
             
 
         } else {
          
-            // this._populateLanguageData();
-            // this._populateEventData();
-            // this._populateSpeakerData();
-            // this._populateSponsorshipData();
-            // this._populateOrganizationData();
+            this._populateLanguageData();
+            this._populateEventData();
+            this._populateSpeakerData();
+            this._populateSponsorshipData();
+            this._populateOrganizationData();
 
         }
 

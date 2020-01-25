@@ -118,6 +118,72 @@
                 "alt":  "Link de navegação para configuração do sistema.",
                 "title":"Clique para avançar para a página de configuração do sistema."
             }
+        ]
+    },
+    "event-settings-modal": {
+        "pt-BR": [
+            {
+                "id": "event-settings-input-name",
+                "placeholder": "Ex.: Congresso de Ciência",
+                "title": "Insira o nome ou título do evento.",
+                "alt": "Campo para inserir o nome ou título do evento."
+            },
+            {
+                "id": "event-settings-label-name",
+                "text": "Título"
+            },
+            {
+                "id": "event-settings-input-edition",
+                "placeholder": "Ex.: XVI",
+                "title": "Insira o a edição do evento.",
+                "alt": "Campo para inserir a edição do evento."
+            },
+            {
+                "id": "event-settings-label-edition",
+                "text": "Edição"
+            },
+            {
+                "id": "event-settings-input-description",
+                "placeholder": "Ex.: Evento anual voltado ao debate de estudos e pesquisas na áreas ...",
+                "title": "Insira uma breve descrição para o evento.",
+                "alt": "Campo para inserir a descrição do evento."
+            },
+            {
+                "id": "event-settings-label-description",
+                "text": "Descrição"
+            },
+            {
+                "id": "event-settings-input-institute",
+                "placeholder": "Ex.: Universidade XYZ ou Núcleo de Pesquisas XKK",
+                "title": "Insira a instituição realizadora do evento.",
+                "alt": "Campo para inserir a instituição realizadora do evento."
+            },
+            {
+                "id": "event-settings-label-institute",
+                "text": "Realizado por"
+            },
+            {
+                "id": "event-settings-input-startDate",
+                "title": "Selecione a data de início do evento.",
+                "alt": "Campo para inserir a data de início do evento."
+            },
+            {
+                "id": "event-settings-label-startDate",
+                "text": "Data de Início"
+            },
+            {
+                "id": "event-settings-input-endDate",
+                "title": "Selecione uma data de término do evento.",
+                "alt": "Campo para inserir a data de término do evento."
+            },
+            {
+                "id": "event-settings-label-endDate",
+                "text": "Data de Término"
+            },
+            {
+                "id": "event-settings-title",
+                "text": "Criar novo evento"
+            }
         ],
         "en-US": [
 
