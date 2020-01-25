@@ -11,16 +11,21 @@ import { Controller } from "./../../core/Controller.js";
 import { Logger } from "./../../util/Logger.js";
 import { Config, DataEntity } from "./../../conf/Config.js";
 export class DashboardController extends Controller {
-    constructor() {
+    constructor(projectStatus) {
         super();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();
-        this._populateLanguageData();
-        this._populateEventData();
-        this._populateSpeakerData();
-        this._populateSponsorshipData();
-        this._populateOrganizationData();
+        if (!projectStatus) {
+            //chamar modal pedindo configuracoes do evento
+        }
+        else {
+            // this._populateLanguageData();
+            // this._populateEventData();
+            // this._populateSpeakerData();
+            // this._populateSponsorshipData();
+            // this._populateOrganizationData();
+        }
     }
     _initializeElements() {
         this._elements = new Array();

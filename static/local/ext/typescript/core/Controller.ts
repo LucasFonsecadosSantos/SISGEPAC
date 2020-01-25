@@ -1,13 +1,18 @@
-import { Changelog } from "./../util/Changelog.js";
+import { Changelog }    from "./../util/Changelog.js";
+import { Config }       from "./../conf/Config.js";
 
 export class Controller {
     
     protected APPLICATION_HOST;
 
-    constructor() {
+    constructor(projectHasStarted?: boolean) {
 
-        //this.APPLICATION_HOST = ConfService.getApplicationConf().then(res => this.APPLICATION_HOST = res);
-        //console.log(this.APPLICATION_HOST['APPLICATION_HOST'])
+        if (!projectHasStarted && (window.location.href != Config.APPLICATION_HOST + ":" + Config.APPLICATION_PORT + "/local")) {
+
+            window.open('/local', '_self');
+
+        }
+
     }
 
     protected _changelog(data: string): void {

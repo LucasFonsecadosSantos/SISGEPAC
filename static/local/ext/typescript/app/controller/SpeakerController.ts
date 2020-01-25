@@ -8,9 +8,9 @@ export class SpeakerController extends Controller {
     private _buttonElements: Array<HTMLElement>;
     private _changelogContent: HTMLElement;
 
-    constructor() {
+    constructor(projectStatus: boolean) {
 
-        super();
+        super(projectStatus);
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();

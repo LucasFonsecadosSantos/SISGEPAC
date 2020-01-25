@@ -1,8 +1,8 @@
 import { Controller } from "./../../core/Controller.js";
 import { Config } from './../../conf/Config.js';
 export class ChangelogController extends Controller {
-    constructor() {
-        super();
+    constructor(projectStatus) {
+        super(projectStatus);
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();

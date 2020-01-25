@@ -1,7 +1,7 @@
 import { Controller } from "./../../core/Controller.js";
 export class TemplateController extends Controller {
-    constructor() {
-        super();
+    constructor(projectStatus) {
+        super(projectStatus);
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();

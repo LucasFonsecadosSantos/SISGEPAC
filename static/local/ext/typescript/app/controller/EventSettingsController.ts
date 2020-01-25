@@ -5,9 +5,9 @@ export class EventSettingsController extends Controller {
 
     private _elements: Array<HTMLElement>;
 
-    constructor() {
+    constructor(projectStatus: boolean) {
 
-        super();
+        super(projectStatus);
         this._initializeElements();
         this._getPageMessages();
 
@@ -34,7 +34,6 @@ export class EventSettingsController extends Controller {
                 this._buildPageMessages(data);
 
             });
-            this._changelog("da");
 
     }
 

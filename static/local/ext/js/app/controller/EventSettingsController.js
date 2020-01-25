@@ -1,8 +1,8 @@
 import { Controller } from "./../../core/Controller.js";
 import { Config } from '../../conf/Config.js';
 export class EventSettingsController extends Controller {
-    constructor() {
-        super();
+    constructor(projectStatus) {
+        super(projectStatus);
         this._initializeElements();
         this._getPageMessages();
     }
@@ -17,7 +17,6 @@ export class EventSettingsController extends Controller {
             .then(data => {
             this._buildPageMessages(data);
         });
-        this._changelog("da");
     }
     _buildPageMessages(data) {
     }

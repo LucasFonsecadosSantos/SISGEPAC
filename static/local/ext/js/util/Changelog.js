@@ -26,13 +26,11 @@ export class Changelog {
     }
     static _addNewChangeAtChangelog(oldData, changeDate, change) {
         oldData.forEach(data => {
-            alert(changeDate);
             if (data['date'] == changeDate) {
                 data['changes'].push(change);
             }
         });
         oldData = JSON.stringify(oldData);
-        alert(oldData);
         fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(oldData) + "&file=" + "../../data/conf/changelog.json", {
             method: 'POST',
             headers: {

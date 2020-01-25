@@ -22,6 +22,8 @@ Config.REMOTE_CONTENT_PATH = "/remote/data/content/";
 Config.LOCAL_MESSAGES_PATH = "/local/data/messages/messages.json";
 Config.LOCAL_CONFIG_PATH = "/local/data/conf/";
 Config.LOCAL_RECEPTOR_SERVER = "/local/ext/php/receptor.php";
+Config.APPLICATION_HOST = "http://localhost";
+Config.APPLICATION_PORT = "8080";
 Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._SPEAKER_, "/remote/data/content/speaker.json"],
     [DataEntity._SPONSORSHIP_, "/remote/data/content/sponsorship.json"],

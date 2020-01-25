@@ -7,11 +7,14 @@ import { ChangelogController }      from "./../app/controller/ChangelogControlle
 import { HeaderController }         from "./../app/controller/HeaderController.js";
 import { FooterController }         from "./../app/controller/FooterController.js";
 import { NavbarController }         from "./../app/controller/NavbarController.js";
+import { SystemController }         from './../app/controller/SystemController.js';
 
 
 export class Sisgepac {
 
-    private _bodyElement: HTMLDivElement;
+    private _bodyElement:       HTMLDivElement;
+    private _systemController:  SystemController;
+    private _projectHasStarted: boolean;
 
     constructor() {
         
@@ -19,35 +22,38 @@ export class Sisgepac {
         new HeaderController();
         new NavbarController();
         new FooterController();
-        this._initializeControllers();
+        this._systemController = new SystemController();
+        this._systemController.init().then(response => response.json()).then(data => this._initializeControllers(data["project-started"]));
     
     }
 
-    private _initializeControllers(): void {
+    private _initializeControllers(projectHasStarted: boolean): void {
         
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
 
             //TODO
             case 'index':
-                new DashboardController();
+                new DashboardController(projectHasStarted);
                 break;
             
             case 'speaker':
-                new SpeakerController();
+                new SpeakerController(projectHasStarted);
                 break;
             
             case 'sponsorship':
-                new SponsorshipController();
+                new SponsorshipController(projectHasStarted);
                 break;
 
             case 'faq':
-                new FaqController();
+                new FaqController(projectHasStarted);
                 break;
             
             case 'event':
-                new EventSettingsController();
+                new EventSettingsController(projectHasStarted);
                 break;
-            
+            case 'changelog':
+                new ChangelogController(projectHasStarted);
+                break;
 
         }
 

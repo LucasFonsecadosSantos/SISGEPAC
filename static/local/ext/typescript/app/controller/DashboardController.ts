@@ -12,17 +12,27 @@ export class DashboardController extends Controller {
     private _organizationData;
     private _languagesData;
 
-    constructor() {
+    constructor(projectStatus: boolean) {
 
         super();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();
-        this._populateLanguageData();
-        this._populateEventData();
-        this._populateSpeakerData();
-        this._populateSponsorshipData();
-        this._populateOrganizationData();
+        
+        if (!projectStatus) {
+
+            //chamar modal pedindo configuracoes do evento
+            
+
+        } else {
+         
+            // this._populateLanguageData();
+            // this._populateEventData();
+            // this._populateSpeakerData();
+            // this._populateSponsorshipData();
+            // this._populateOrganizationData();
+
+        }
 
     }
 
