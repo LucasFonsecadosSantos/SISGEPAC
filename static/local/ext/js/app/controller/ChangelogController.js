@@ -1,4 +1,5 @@
 import { Controller } from "./../../core/Controller.js";
+import { Config } from './../../conf/Config.js';
 export class ChangelogController extends Controller {
     constructor() {
         super();
@@ -7,7 +8,7 @@ export class ChangelogController extends Controller {
         this._getPageContent();
     }
     _getPageMessages() {
-        fetch('/local/data/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             .then(response => response.json())
             .then(data => {
             this._buildPageMessages(data);

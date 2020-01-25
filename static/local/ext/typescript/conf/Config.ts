@@ -10,17 +10,21 @@ export enum DataEntity {
     _VIDEO_GALLERY_     = "video_gallery",
     _SCHEDULE_          = "schedule",
     _ACTIVITY_          = "activity",
-    _ORGANIZATION_      = "organization"
+    _ORGANIZATION_      = "organization",
+    _SYSTEM_            = "system",
+    _CHANGELOG_         = "changelog",
+    _MESSAGES_          = "messages"
 
 }
 
 export class Config {
 
-    public static readonly DATA_ENTITY:         DataEntity;
-    public static readonly REMOTE_CONFIG_PATH:  string = "/remote/data/config/";
-    public static readonly REMOTE_CONTENT_PATH: string = "/remote/data/content/";
-    public static readonly LOCAL_MESSAGES_PATH: string = "/local/data/messages/messages.json";
-    public static readonly LOCAL_CONFIG_PATH:   string = "/local/data/config/";
+    public static readonly DATA_ENTITY:             DataEntity;
+    public static readonly REMOTE_CONFIG_PATH:      string = "/remote/data/config";
+    public static readonly REMOTE_CONTENT_PATH:     string = "/remote/data/content/";
+    public static readonly LOCAL_MESSAGES_PATH:     string = "/local/data/messages/messages.json";
+    public static readonly LOCAL_CONFIG_PATH:       string = "/local/data/conf/";
+    public static readonly LOCAL_RECEPTOR_SERVER:   string = "/local/ext/php/receptor.php";
 
     public static readonly REMOTE_CONTENT_FILES_PATH: Map<DataEntity,string> = new Map([
 
@@ -33,9 +37,21 @@ export class Config {
         [DataEntity._VIDEO_GALLERY_,    "/remote/data/content/video_gallery.json"],
         [DataEntity._PHOTO_GALLERY_,    "/remote/data/content/photo_gallery.json"],
         [DataEntity._SCHEDULE_,         "/remote/data/content/schedule.json"],
-        [DataEntity._ACTIVITY_,         "/remote/data/content/activity.json"],
-        [DataEntity._LANGUAGE_,         "/remote/data/config/language.json"]
+        [DataEntity._ACTIVITY_,         "/remote/data/content/activity.json"]
 
     ]);
+
+    public static readonly REMOTE_CONF_FILES_PATH: Map<DataEntity,string> = new Map([
+
+        [DataEntity._LANGUAGE_,         "/remote/data/config/language.json"],
+        [DataEntity._SYSTEM_,           "/remote/data/config/system.json"]
+
+    ]);
+
+    public static readonly LOCAL_CONF_FILES_PATH: Map<DataEntity,string> = new Map([
+
+        [DataEntity._CHANGELOG_,       "/local/data/conf/changelog.json"],
+
+    ])
 
 }

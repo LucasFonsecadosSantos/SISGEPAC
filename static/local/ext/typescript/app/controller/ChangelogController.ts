@@ -1,4 +1,5 @@
 import { Controller } from "./../../core/Controller.js";
+import { DataEntity, Config } from './../../conf/Config.js';
 
 export class ChangelogController extends Controller {
 
@@ -19,7 +20,7 @@ export class ChangelogController extends Controller {
 
     private _getPageMessages(): void {
         
-        fetch('/local/data/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             
             .then(response => response.json())
             

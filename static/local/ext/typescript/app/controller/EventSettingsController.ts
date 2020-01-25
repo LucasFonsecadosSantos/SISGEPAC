@@ -34,6 +34,7 @@ export class EventSettingsController extends Controller {
                 this._buildPageMessages(data);
 
             });
+            this._changelog("da");
 
     }
 

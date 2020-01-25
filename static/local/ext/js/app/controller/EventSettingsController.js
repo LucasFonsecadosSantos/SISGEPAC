@@ -17,6 +17,7 @@ export class EventSettingsController extends Controller {
             .then(data => {
             this._buildPageMessages(data);
         });
+        this._changelog("da");
     }
     _buildPageMessages(data) {
     }

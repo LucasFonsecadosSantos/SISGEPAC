@@ -1,4 +1,5 @@
 import { Controller } from "./../../core/Controller.js";
+import { Config } from './../../conf/Config.js';
 export class HeaderController extends Controller {
     constructor() {
         super();
@@ -10,7 +11,7 @@ export class HeaderController extends Controller {
     _initializeElements() {
     }
     _getPageMessages() {
-        fetch('/local/data/messages.json')
+        fetch(Config.LOCAL_MESSAGES_PATH)
             .then(response => response.json())
             .then(data => {
             this._buildPageMessages(data);

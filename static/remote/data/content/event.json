@@ -1,10 +1,24 @@
 {
     "title": "Teste de nome do evento",
     "description": "teste de descricao do evento",
+    "email": "email@email.com",
+    "event-type": "multracking",
+    "institute": "UFLA",
     "schedule-date": [
         "13/12/2020",
         "14/12/2020",
         "15/02/2020",
         "16/02/2020"
+    ],
+    "social-networks": {
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "youtube": "",
+        "instagram": ""
+    },
+    "telephone": [
+        "16 36159005"
     ]
+    
 }
