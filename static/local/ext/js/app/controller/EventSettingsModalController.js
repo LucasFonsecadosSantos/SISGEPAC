@@ -1,12 +1,15 @@
 import { Controller } from './../../core/Controller.js';
-import { Config } from './../../conf/Config.js';
 import { Logger } from './../../util/Logger.js';
+import { EventModel } from '../model/EventModel.js';
+import { SystemConfigModel } from '../model/SystemConfigModel.js';
 export class EventSettingsModalController extends Controller {
     constructor() {
         super();
+        this._eventModel = new EventModel();
+        this._systemConfigModel = new SystemConfigModel();
         this._initializeElements();
-        this._getData();
         this._getPageMessages();
+        this._initListeners();
     }
     _initializeElements() {
         this._elements = new Array();
@@ -23,9 +26,7 @@ export class EventSettingsModalController extends Controller {
         this._elements['event-settings-input-endDate'] = document.querySelector('#event-settings-input-endDate');
         this._elements['event-settings-label-endDate'] = document.querySelector('#event-settings-label-endDate');
         this._elements['event-settings-title'] = document.querySelector('#event-settings-title');
-    }
-    _getData() {
-        this._messages = fetch(Config.LOCAL_MESSAGES_PATH);
+        this._elements['event-settings-modal-add-button'] = document.querySelector('#event-settings-modal-add-button');
     }
     _getPageMessages() {
         this._messages
@@ -53,6 +54,22 @@ export class EventSettingsModalController extends Controller {
             });
         })
             .catch(error => Logger.log(error));
+    }
+    _initListeners() {
+        this._elements['event-settings-modal-add-button'].addEventListener('click', event => {
+            this._eventModel.update({
+                "title": this._elements['event-settings-input-name'].value,
+                "description": this._elements['event-settings-input-description'].value,
+                "institute": this._elements['event-settings-input-institute'].value,
+                "schedule-date": [
+                    this._elements['event-settings-input-startDate'].value,
+                    this._elements['event-settings-input-endDate'].value,
+                ]
+            });
+            this._systemConfigModel.update({
+                "project-started": true
+            });
+        });
     }
 }
 //# sourceMappingURL=EventSettingsModalController.js.map
