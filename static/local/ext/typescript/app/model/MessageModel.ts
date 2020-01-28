@@ -4,7 +4,7 @@ export class MessageModel {
 
     constructor() {}
 
-    public async all(): Object {
+    public async all() {
 
         console.log("heelo")
 
@@ -14,7 +14,6 @@ export class MessageModel {
 
                             .then(data => data);
 
-        console.log(Promise.resolve(messages));
         return messages;
 
     }

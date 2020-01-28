@@ -2,12 +2,15 @@ import { Controller } from './../../core/Controller.js';
 import { Logger } from './../../util/Logger.js';
 import { EventModel } from '../model/EventModel.js';
 import { SystemConfigModel } from '../model/SystemConfigModel.js';
+import { MessageModel } from '../model/MessageModel.js';
 export class EventSettingsModalController extends Controller {
     constructor() {
         super();
         this._eventModel = new EventModel();
         this._systemConfigModel = new SystemConfigModel();
-        this._initializeElements();
+        this._messageModel = new MessageModel();
+        this._messages =
+            this._initializeElements();
         this._getPageMessages();
         this._initListeners();
     }

@@ -1,23 +1,28 @@
 import { Controller } from "./../../core/Controller.js";
 import { Logger } from "./../../util/Logger.js";
 import { Config, DataEntity } from "./../../conf/Config.js";
+import { MessageModel } from '../model/MessageModel.js';
+import { EventModel } from './../model/EventModel.js';
 
 export class DashboardController extends Controller {
 
     private _elements: Array<HTMLElement>;
     private _sponsorshipData;
     protected _speakerData;
+    private _eventModel:    EventModel;
+    private _messagesModel: MessageModel;
     private _proceedingsData;
     private _eventData;
     private _organizationData;
     private _languagesData;
+    private _messagesData;
 
     constructor(projectStatus: boolean) {
 
         super();
+        this._messagesModel = new MessageModel();
         this._initializeElements();
-        this._getPageMessages();
-        this._getPageContent();
+        this._getData();
         
         if (!projectStatus) {
 
@@ -45,25 +50,14 @@ export class DashboardController extends Controller {
         
     }
 
-    private _getPageMessages(): void {
-        
-        fetch(Config.LOCAL_MESSAGES_PATH)
-            
-            .then(response => response.json())
-            
-            .then(data => {
+    private _getData(): void {
 
-                Logger.log("Getting dashboard messages...");
-                this._buildPageMessages(data);
-
-            })
-            
-            .catch(error => {
-
-                Logger.log(error);
-                alert(error);
-
-            });
+        this._messagesData      = this._messagesModel.all();
+        this._sponsorshipData   = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_));
+        this._speakerData       = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPEAKER_));
+        this._eventData         = this._eventModel.all();
+        this._organizationData  = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._ORGANIZATION_));
+        this._languagesData     = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
 
     }
 
@@ -83,17 +77,6 @@ export class DashboardController extends Controller {
         });
 
     }
-
-    private async _getPageContent() {
-
-        this._sponsorshipData   = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_));
-        this._speakerData       = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPEAKER_));
-        this._eventData         = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._EVENT_));
-        this._organizationData  = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._ORGANIZATION_));
-        this._languagesData     = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
-
-    }
-
 
 
     private _populateEventData(): void {
