@@ -1,20 +1,23 @@
-import { Controller } from "./../../core/Controller.js";
+import { Controller }   from "./../../core/Controller.js";
+import { SpeakerModel } from "./../model/SpeakerModel.js";
+import { MessageModel } from "./../model/MessageModel.js";
+import { Logger }       from "../../util/Logger.js";
 
 export class SpeakerController extends Controller {
 
-    private _titleElement: HTMLTitleElement;
-    private _textElements: Array<HTMLElement>;
-    private _inputElements: Array<HTMLElement>;
-    private _buttonElements: Array<HTMLElement>;
-    private _changelogContent: HTMLElement;
+    private _elements:      Array<HTMLElement>
+    private _speakerModel:  SpeakerModel;
+    private _messageModel:  MessageModel;
+    private _speakerData;
+    private _messages;
 
     constructor(projectStatus: boolean) {
 
         super(projectStatus);
         this._initializeElements();
+        this._getData();
         this._getPageMessages();
         this._getPageContent();
-        this._buildPageContent();
 
     }
 
@@ -22,30 +25,42 @@ export class SpeakerController extends Controller {
 
     }
 
-    private _getPageMessages(): void {
-        
-        fetch('/local/data/messages.json')
-            
-            .then(response => response.json())
-            
-            .then(data => {
+    private _getData(): void {
 
-                this._buildPageMessages(data);
-
-            });
+        this._messages = this._messageModel.all();
+        this._speakerData = this._speakerModel.all();
 
     }
 
-    private _buildPageMessages(data) {
+    private _getPageMessages(): void {
+
+        this._messages
+
+            .then(data => {
+
+            })
+
+            .catch(error => Logger.log(error));
 
     }
 
     private _getPageContent(): void {
 
+        this._speakerData
+
+            .then(data => {
+
+            })
+
+            .catch(error => Logger.log(error));
+
     }
 
-    private _buildPageContent(): void {
-        
+    public search(key: string, value: string): void {
+
+        let speaker = this._speakerModel.find(key, value);
+
     }
+
 
 }

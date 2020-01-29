@@ -17,9 +17,9 @@ export class Model {
 
         const fetched = await fetch(this._dataPath)
 
-                            .then(response => response.json())
+            .then(response => response.json())
 
-                            .then(data => data);
+            .then(data => data);
 
         return fetched;
 
@@ -136,6 +136,34 @@ export class Model {
             });
 
         }
+
+    }
+
+    public async find(key: string, value: string) {
+
+        const target = await fetch(this._dataPath)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                if (Helper.isArray(data)) {
+
+                    data.forEach(element => {
+
+                        if (element[key] == value) return element; 
+
+                    });
+
+                    return undefined;
+
+                }
+
+            })
+
+            .catch(error => Logger.log(error));
+        
+        return target;
 
     }
 

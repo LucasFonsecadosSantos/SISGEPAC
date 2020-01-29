@@ -88,6 +88,23 @@ export class Model {
             });
         }
     }
+    find(key, value) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const target = yield fetch(this._dataPath)
+                .then(response => response.json())
+                .then(data => {
+                if (Helper.isArray(data)) {
+                    data.forEach(element => {
+                        if (element[key] == value)
+                            return element;
+                    });
+                    return undefined;
+                }
+            })
+                .catch(error => Logger.log(error));
+            return target;
+        });
+    }
     count() {
         var counter = 0;
         fetch(this._dataPath)
