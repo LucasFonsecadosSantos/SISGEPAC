@@ -8,4 +8,10 @@ export class Logger {
 
     }
 
+    public static monitoring(title: string, message: string, event: Event) {
+
+        console.log("[MONITOR] => [" + message + "]" + event);
+
+    }
+
 }

@@ -1,3 +1,4 @@
+import { Monitor }                      from './../util/Monitor.js';
 import { EventSettingsController }      from './../app/controller/EventSettingsController.js';
 import { FaqController }                from './../app/controller/FaqController.js';
 import { SponsorshipController }        from './../app/controller/SponsorshipController.js';
@@ -22,6 +23,7 @@ export class Sisgepac {
         
         this._bodyElement       = <HTMLDivElement> document.querySelector('.app-content');
         this._modalElements     = document.querySelectorAll('[sisgepac-modal]');
+        new Monitor();
         new HeaderController();
         new NavbarController();
         new FooterController();
