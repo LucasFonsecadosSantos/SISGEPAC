@@ -1,5 +1,6 @@
 import { DataEntity, Config }   from './../conf/Config.js';
 import { Logger }               from "./../util/Logger.js";
+import { Helper }               from './../util/Helper.js';
 
 export class Model {
 
@@ -14,8 +15,6 @@ export class Model {
 
     public async all() {
 
-        console.log("heelo")
-
         const fetched = await fetch(this._dataPath)
 
                             .then(response => response.json())
@@ -26,29 +25,50 @@ export class Model {
 
     }
 
-    public update(data: Object): void {
+    public update(data: any): void {
         
         fetch(this._dataPath)
 
             .then(response => response.json())
 
             .then(fetchedData => {
+                
+                if (Helper.isArray(fetchedData)) {
 
-                Object.keys(data).forEach(key => {
+                    data.forEach((element, index) => {
 
-                    if (fetchedData[key]) {
+                        if (fetchedData[index]) {
 
-                        fetchedData[key] = data[key];
+                            fetchedData[index] = element;
 
-                    } else {
+                        } else {
 
-                        Logger.log("Data store error. (" + key + ")");
+                            Logger.log("Data store error. (" + element + ")");
 
-                    }
+                        }
 
-                });
+                    });
 
-                this.store(fetchedData);
+                    this.store(fetchedData);
+                } else {
+
+                    Object.keys(data).forEach(key => {
+
+                        if (fetchedData[key]) {
+
+                            fetchedData[key] = data[key];
+
+                        } else {
+
+                            Logger.log("Data store error. (" + key + ")");
+
+                        }
+
+                    });
+
+                    this.store(fetchedData);
+
+                }
 
             })
 
@@ -56,17 +76,25 @@ export class Model {
 
     }
 
-    public store(data: Object): void {
+    public store(data: any): void {
 
         let error: boolean = false;
 
-        Object.keys(data).forEach(key => {
+        if (Helper.isArray(data)) {
 
-            if (!this._dataKeys.includes(key)) {
-                error = true;
-            }
+            //TODO
 
-        });
+        } else {
+
+            Object.keys(data).forEach(key => {
+
+                if (!this._dataKeys.includes(key)) {
+                    error = true;
+                }
+
+            });
+
+        }
 
         if (!error) {
 
@@ -95,6 +123,17 @@ export class Model {
         if (key) {
 
         } else {
+
+            fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify("")) + "&file=" + this._relativeDataPath, {
+
+                method: 'POST',
+                headers: {
+    
+                    'Accept': 'application/json',
+                    'Content-type': 'Application/json'
+    
+                }
+            });
 
         }
 
