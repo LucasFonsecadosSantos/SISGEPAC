@@ -21,6 +21,7 @@ export class DashboardController extends Controller {
 
         super();
         this._messagesModel = new MessageModel();
+        this._eventModel    = new EventModel();
         this._initializeElements();
         this._getData();
         

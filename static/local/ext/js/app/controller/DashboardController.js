@@ -2,10 +2,12 @@ import { Controller } from "./../../core/Controller.js";
 import { Logger } from "./../../util/Logger.js";
 import { Config, DataEntity } from "./../../conf/Config.js";
 import { MessageModel } from '../model/MessageModel.js';
+import { EventModel } from './../model/EventModel.js';
 export class DashboardController extends Controller {
     constructor(projectStatus) {
         super();
         this._messagesModel = new MessageModel();
+        this._eventModel = new EventModel();
         this._initializeElements();
         this._getData();
         if (!projectStatus) {

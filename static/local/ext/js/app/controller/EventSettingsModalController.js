@@ -9,8 +9,7 @@ export class EventSettingsModalController extends Controller {
         this._eventModel = new EventModel();
         this._systemConfigModel = new SystemConfigModel();
         this._messageModel = new MessageModel();
-        this._messages =
-            this._initializeElements();
+        this._initializeElements();
         this._getPageMessages();
         this._initListeners();
     }
@@ -32,8 +31,8 @@ export class EventSettingsModalController extends Controller {
         this._elements['event-settings-modal-add-button'] = document.querySelector('#event-settings-modal-add-button');
     }
     _getPageMessages() {
+        this._messages = this._messageModel.all();
         this._messages
-            .then(response => response.json())
             .then(data => {
             data['event-settings-modal']['pt-BR'].forEach(message => {
                 if (message['text']) {

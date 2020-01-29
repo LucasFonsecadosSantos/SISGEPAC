@@ -1,21 +1,18 @@
 import { DataEntity, Config } from '../../conf/Config.js';
+import { Model } from "./../../core/Model.js";
 
-export class MessageModel {
 
-    constructor() {}
+export class MessageModel extends Model {
 
-    public async all() {
+    constructor() {
 
-        console.log("heelo")
-
-        const messages = await fetch(Config.LOCAL_MESSAGES_PATH)
-
-                            .then(response => response.json())
-
-                            .then(data => data);
-
-        return messages;
+        super();
+        super._dataPath = Config.LOCAL_MESSAGES_PATH;
+        super._relativeDataPath = "../../../local/data/messages/messages.json";
+        super._dataKeys = [];
 
     }
+
+    
 
 }
