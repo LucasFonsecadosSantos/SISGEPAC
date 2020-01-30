@@ -1,0 +1,16 @@
+{
+    "pt-BR": [
+        {
+            "tag": "title",
+            "text": "SISGEPAC | Sistema de Geração de Páginas para Congressos."
+        },
+        {
+            "id": "event-occurrence-title",
+            "text": "Datas programadas"
+        },
+        {
+            "id": "event-information-title",
+            "text": "Informações gerais do evento"
+        }
+    ]
+}

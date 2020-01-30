@@ -6,10 +6,11 @@ import { EventModel } from './../model/EventModel.js';
 export class DashboardController extends Controller {
     constructor(projectStatus) {
         super();
-        this._messagesModel = new MessageModel();
+        this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel = new EventModel();
         this._initializeElements();
         this._getData();
+        this._getPageMessages();
         if (!projectStatus) {
             //@ts-ignore
             $('#eventSettingsModal').modal('show');
@@ -26,6 +27,8 @@ export class DashboardController extends Controller {
         this._elements = new Array();
         this._elements['title'] = document.querySelector('title');
     }
+    _getPageMessages() {
+    }
     _getData() {
         this._messagesData = this._messagesModel.all();
         this._sponsorshipData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_));
@@ -33,15 +36,6 @@ export class DashboardController extends Controller {
         this._eventData = this._eventModel.all();
         this._organizationData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._ORGANIZATION_));
         this._languagesData = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
-    }
-    _buildPageMessages(data) {
-        data['index']['pt-BR'].forEach(message => {
-            if (message['id']) {
-            }
-            else if (message['tag']) {
-                this._elements[message['tag']].textContent = message['text'];
-            }
-        });
     }
     _populateEventData() {
         this._eventData

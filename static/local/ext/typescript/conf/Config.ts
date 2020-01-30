@@ -1,19 +1,19 @@
 export enum DataEntity {
 
-    _SPEAKER_           = "speaker",
-    _SPONSORSHIP_       = "sponsorship",
-    _EVENT_             = "event",
-    _TEMPLATE_          = "template",
-    _LANGUAGE_          = "language",
-    _PROCEEDINGS_       = "proceedings",
-    _PHOTO_GALLERY_     = "gallery_gallery",
-    _VIDEO_GALLERY_     = "video_gallery",
-    _SCHEDULE_          = "schedule",
-    _ACTIVITY_          = "activity",
-    _ORGANIZATION_      = "organization",
-    _SYSTEM_            = "system",
-    _CHANGELOG_         = "changelog",
-    _MESSAGES_          = "messages"
+    _SPEAKER_               = "speaker",
+    _SPONSORSHIP_           = "sponsorship",
+    _EVENT_                 = "event",
+    _TEMPLATE_              = "template",
+    _LANGUAGE_              = "language",
+    _PROCEEDINGS_           = "proceedings",
+    _PHOTO_GALLERY_         = "gallery_gallery",
+    _VIDEO_GALLERY_         = "video_gallery",
+    _SCHEDULE_              = "schedule",
+    _ACTIVITY_              = "activity",
+    _ORGANIZATION_          = "organization",
+    _SYSTEM_                = "system",
+    _CHANGELOG_             = "changelog",
+    _DASHBOARD_MESSAGES_    = "messages"
 
 }
 

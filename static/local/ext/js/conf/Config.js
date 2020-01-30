@@ -13,7 +13,7 @@ export var DataEntity;
     DataEntity["_ORGANIZATION_"] = "organization";
     DataEntity["_SYSTEM_"] = "system";
     DataEntity["_CHANGELOG_"] = "changelog";
-    DataEntity["_MESSAGES_"] = "messages";
+    DataEntity["_DASHBOARD_MESSAGES_"] = "messages";
 })(DataEntity || (DataEntity = {}));
 export class Config {
 }

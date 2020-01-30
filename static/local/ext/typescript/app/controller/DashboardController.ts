@@ -11,6 +11,7 @@ export class DashboardController extends Controller {
     protected _speakerData;
     private _eventModel:    EventModel;
     private _messagesModel: MessageModel;
+    private _messages;
     private _proceedingsData;
     private _eventData;
     private _organizationData;
@@ -20,10 +21,11 @@ export class DashboardController extends Controller {
     constructor(projectStatus: boolean) {
 
         super();
-        this._messagesModel = new MessageModel();
+        this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel    = new EventModel();
         this._initializeElements();
         this._getData();
+        this._getPageMessages();
         
         if (!projectStatus) {
 
@@ -51,6 +53,12 @@ export class DashboardController extends Controller {
         
     }
 
+    private _getPageMessages(): void {
+
+
+
+    }
+
     private _getData(): void {
 
         this._messagesData      = this._messagesModel.all();
@@ -61,24 +69,6 @@ export class DashboardController extends Controller {
         this._languagesData     = fetch(Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._LANGUAGE_));
 
     }
-
-    private _buildPageMessages(data) {
-        
-
-        data['index']['pt-BR'].forEach(message => {
-
-            if (message['id']) {
-
-            } else if (message['tag']){
-
-                this._elements[message['tag']].textContent = message['text'];
-
-            }
-
-        });
-
-    }
-
 
     private _populateEventData(): void {
 
