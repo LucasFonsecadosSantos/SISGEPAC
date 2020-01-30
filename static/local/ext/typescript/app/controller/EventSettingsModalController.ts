@@ -3,6 +3,7 @@ import { Logger }               from './../../util/Logger.js';
 import { EventModel }           from '../model/EventModel.js';
 import { SystemConfigModel }    from '../model/SystemConfigModel.js';
 import { MessageModel }         from '../model/MessageModel.js';
+import { InvalidDataKeyException } from '../../exception/InvalidDataKeyException.js';
 
 export class EventSettingsModalController extends Controller {
 
@@ -18,13 +19,13 @@ export class EventSettingsModalController extends Controller {
         this._eventModel        = new EventModel();
         this._systemConfigModel = new SystemConfigModel();
         this._messageModel      = new MessageModel();
-        this._initializeElements();
+        this._initElements();
         this._getPageMessages();
         this._initListeners();
 
     }
 
-    private _initializeElements(): void {
+    private _initElements(): void {
 
         this._elements = new Array<HTMLElement>();
 
@@ -43,7 +44,6 @@ export class EventSettingsModalController extends Controller {
         this._elements['event-settings-title']              = document.querySelector('#event-settings-title');
         this._elements['event-settings-modal-add-button']   = document.querySelector('#event-settings-modal-add-button');
 
-        
 
     }
 
@@ -106,25 +106,40 @@ export class EventSettingsModalController extends Controller {
 
         this._elements['event-settings-modal-add-button'].addEventListener('click', event => {
 
-            this._eventModel.update({
+            try {
+            
+                this._eventModel.update({
 
-                "title":        this._elements['event-settings-input-name'].value,
-                "description":  this._elements['event-settings-input-description'].value,
-                "institute":    this._elements['event-settings-input-institute'].value,
-                "schedule-date": [
+                    "title":        this._elements['event-settings-input-name'].value,
+                    "description":  this._elements['event-settings-input-description'].value,
+                    "institute":    this._elements['event-settings-input-institute'].value,
+                    "schedule-date": [
 
-                    this._elements['event-settings-input-startDate'].value,
-                    this._elements['event-settings-input-endDate'].value,
+                        this._elements['event-settings-input-startDate'].value,
+                        this._elements['event-settings-input-endDate'].value,
 
-                ]
+                    ]
 
-            });
+                });
 
-            this._systemConfigModel.update({
+                this._systemConfigModel.update({
 
-                "project-started": true
+                    "project-started": true
 
-            });
+                });
+            
+            } catch (exception) {
+
+                if (exception instanceof InvalidDataKeyException) {
+
+                    Logger.log("Update Exception: " + exception.message);
+
+                }
+
+            }
+
+            //@ts-ignore
+            $('#eventSettingsModal').modal('hide');
 
         });
 

@@ -1,6 +1,7 @@
-import { DataEntity, Config }   from './../conf/Config.js';
-import { Logger }               from "./../util/Logger.js";
-import { Helper }               from './../util/Helper.js';
+import { DataEntity, Config }       from './../conf/Config.js';
+import { Logger }                   from "./../util/Logger.js";
+import { Helper }                   from './../util/Helper.js';
+import { InvalidDataKeyException }  from "./../exception/InvalidDataKeyException.js";
 
 export class Model {
 
@@ -50,12 +51,13 @@ export class Model {
                     });
 
                     this.store(fetchedData);
+
                 } else {
 
                     Object.keys(data).forEach(key => {
-
-                        if (fetchedData[key]) {
-
+                        
+                        if (key in fetchedData) {
+                            
                             fetchedData[key] = data[key];
 
                         } else {
@@ -89,7 +91,9 @@ export class Model {
             Object.keys(data).forEach(key => {
 
                 if (!this._dataKeys.includes(key)) {
+
                     error = true;
+
                 }
 
             });
@@ -112,7 +116,7 @@ export class Model {
 
         } else {
 
-            //throw exception
+            throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: "+ this._dataKeys +"]");
 
         }
 

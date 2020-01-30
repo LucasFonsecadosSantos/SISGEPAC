@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Config } from './../conf/Config.js';
 import { Logger } from "./../util/Logger.js";
 import { Helper } from './../util/Helper.js';
+import { InvalidDataKeyException } from "./../exception/InvalidDataKeyException.js";
 export class Model {
     constructor() {
     }
@@ -38,7 +39,7 @@ export class Model {
             }
             else {
                 Object.keys(data).forEach(key => {
-                    if (fetchedData[key]) {
+                    if (key in fetchedData) {
                         fetchedData[key] = data[key];
                     }
                     else {
@@ -72,7 +73,7 @@ export class Model {
             });
         }
         else {
-            //throw exception
+            throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: " + this._dataKeys + "]");
         }
     }
     delete(key) {
