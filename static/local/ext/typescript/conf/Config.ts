@@ -22,7 +22,7 @@ export class Config {
     public static readonly DATA_ENTITY:             DataEntity;
     public static readonly REMOTE_CONFIG_PATH:      string = "/remote/data/config";
     public static readonly REMOTE_CONTENT_PATH:     string = "/remote/data/content/";
-    public static readonly LOCAL_MESSAGES_PATH:     string = "/local/data/messages/messages.json";
+    public static readonly LOCAL_MESSAGES_PATH:     string = "/local/data/messages/";
     public static readonly LOCAL_CONFIG_PATH:       string = "/local/data/conf/";
     public static readonly LOCAL_RECEPTOR_SERVER:   string = "/local/ext/php/receptor.php";
     public static readonly APPLICATION_HOST:        string = "http://localhost";
@@ -45,14 +45,15 @@ export class Config {
 
     public static readonly REMOTE_CONF_FILES_PATH: Map<DataEntity,string> = new Map([
 
-        [DataEntity._LANGUAGE_,         "/remote/data/config/language.json"],
-        [DataEntity._SYSTEM_,           "/remote/data/config/system.json"]
+        [DataEntity._LANGUAGE_,         "/remote/data/config/languages.json"],
+        [DataEntity._SYSTEM_,           "/remote/data/config/system.json"],
 
     ]);
 
     public static readonly LOCAL_CONF_FILES_PATH: Map<DataEntity,string> = new Map([
 
         [DataEntity._CHANGELOG_,       "/local/data/conf/changelog.json"],
+        [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"]
 
     ])
 

@@ -122,6 +122,58 @@ export class Model {
 
     }
 
+    public async filter(key: string, value: any) {
+
+        const fetched = await fetch(this._dataPath)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                var resultObjects: Array<Object> = new Array<Object>();
+
+                if (Helper.isArray(data)) {
+
+                    data.forEach(element => {
+
+                        Object.keys(element).forEach(keyElement => {
+
+                            if ((keyElement === key) && (element[keyElement] === value)) {
+
+                                resultObjects.push(element);
+
+                            }
+
+                        });
+
+                    });
+
+
+                } else {
+
+                    Object.keys(data).forEach(element => {
+
+                        if ((element === key) && (data[element] === value)) {
+
+                            resultObjects.push(data);
+
+                        }
+
+                    });
+
+
+                }
+
+                return resultObjects;
+
+            })
+
+            .catch(error => Logger.log(error));
+
+        return fetched;
+
+    }
+
     public delete(key?: string): void {
 
         if (key) {

@@ -19,7 +19,7 @@ export class Config {
 }
 Config.REMOTE_CONFIG_PATH = "/remote/data/config";
 Config.REMOTE_CONTENT_PATH = "/remote/data/content/";
-Config.LOCAL_MESSAGES_PATH = "/local/data/messages/messages.json";
+Config.LOCAL_MESSAGES_PATH = "/local/data/messages/";
 Config.LOCAL_CONFIG_PATH = "/local/data/conf/";
 Config.LOCAL_RECEPTOR_SERVER = "/local/ext/php/receptor.php";
 Config.APPLICATION_HOST = "http://localhost";
@@ -37,10 +37,11 @@ Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"]
 ]);
 Config.REMOTE_CONF_FILES_PATH = new Map([
-    [DataEntity._LANGUAGE_, "/remote/data/config/language.json"],
-    [DataEntity._SYSTEM_, "/remote/data/config/system.json"]
+    [DataEntity._LANGUAGE_, "/remote/data/config/languages.json"],
+    [DataEntity._SYSTEM_, "/remote/data/config/system.json"],
 ]);
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
+    [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"]
 ]);
 //# sourceMappingURL=Config.js.map

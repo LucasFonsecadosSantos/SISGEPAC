@@ -76,6 +76,34 @@ export class Model {
             throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: " + this._dataKeys + "]");
         }
     }
+    filter(key, value) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const fetched = yield fetch(this._dataPath)
+                .then(response => response.json())
+                .then(data => {
+                var resultObjects = new Array();
+                if (Helper.isArray(data)) {
+                    data.forEach(element => {
+                        Object.keys(element).forEach(keyElement => {
+                            if ((keyElement === key) && (element[keyElement] === value)) {
+                                resultObjects.push(element);
+                            }
+                        });
+                    });
+                }
+                else {
+                    Object.keys(data).forEach(element => {
+                        if ((element === key) && (data[element] === value)) {
+                            resultObjects.push(data);
+                        }
+                    });
+                }
+                return resultObjects;
+            })
+                .catch(error => Logger.log(error));
+            return fetched;
+        });
+    }
     delete(key) {
         if (key) {
         }

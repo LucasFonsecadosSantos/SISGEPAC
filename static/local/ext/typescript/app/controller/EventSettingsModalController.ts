@@ -4,6 +4,7 @@ import { EventModel }           from '../model/EventModel.js';
 import { SystemConfigModel }    from '../model/SystemConfigModel.js';
 import { MessageModel }         from '../model/MessageModel.js';
 import { InvalidDataKeyException } from '../../exception/InvalidDataKeyException.js';
+import { DataEntity } from '../../conf/Config.js';
 
 export class EventSettingsModalController extends Controller {
 
@@ -18,7 +19,7 @@ export class EventSettingsModalController extends Controller {
         super();
         this._eventModel        = new EventModel();
         this._systemConfigModel = new SystemConfigModel();
-        this._messageModel      = new MessageModel();
+        this._messageModel      = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._initElements();
         this._getPageMessages();
         this._initListeners();
