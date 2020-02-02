@@ -74,6 +74,7 @@ export class EventSettingsModalController extends Controller {
                 this._systemConfigModel.update({
                     "project-started": true
                 });
+                super._changelog("Informações básicas do evento configuradas.");
             }
             catch (exception) {
                 if (exception instanceof InvalidDataKeyException) {

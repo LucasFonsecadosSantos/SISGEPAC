@@ -30,10 +30,29 @@ export class DashboardController extends Controller {
     _initializeElements() {
         this._elements = new Array();
         this._elements['title'] = document.querySelector('title');
+        this._elements['event-occurrence-title'] = document.querySelector('#event-occurrence-title');
+        this._elements['event-information-title'] = document.querySelector('#event-information-title');
     }
     _getPageMessages() {
         this._messagesData = this._messagesModel.all();
         this._messagesData.then(data => {
+            data['pt-BR'].forEach(message => {
+                if (message['id']) {
+                    this._elements[message['id']].textContent = message['text'];
+                }
+                if (message['tag']) {
+                    this._elements[message['tag']].textContent = message['text'];
+                }
+                if (message['alt']) {
+                    this._elements[message['id']].setAttribute('alt', message['alt']);
+                }
+                if (message['title']) {
+                    this._elements[message['id']].setAttribute('title', message['title']);
+                }
+                if (message['src']) {
+                    this._elements[message['id']].setAttribute('src', message['src']);
+                }
+            });
         })
             .catch(error => Logger.log(error));
     }

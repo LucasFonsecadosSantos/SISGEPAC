@@ -128,6 +128,8 @@ export class EventSettingsModalController extends Controller {
                     "project-started": true
 
                 });
+
+                super._changelog("Informações básicas do evento configuradas.");
             
             } catch (exception) {
 
