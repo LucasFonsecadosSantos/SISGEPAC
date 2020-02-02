@@ -24,10 +24,10 @@ include components/_navbar.pug
 	.content-wrapper
 		.content-header.row
 			.content-header-left.col-md-6.col-12.mb-2
-				h3.content-header-title.w-100#page-title Helper Classes
+				h3.content-header-title.w-100#page-title
 				.row.breadcrumbs-top
 					.breadcrumb-wrapper.col-12
-						ol.breadcrumb
+						ol.breadcrumb#route-navigation
 							li.breadcrumb-item
 								a(href="index.html") Home
 							li.breadcrumb-item
@@ -134,13 +134,7 @@ include components/_navbar.pug
 											tr
 												td Contact:
 												td +(305) 254 24668
-                
-      
-.buy-now
-	a.btn.btn-info.btn-glow.round.px-2(href='https://1.envato.market/modern_admin' target='_blank') Buy Now
-.sidenav-overlay
-.drag-target
-
+include components/_publish-button.pug
 include components/_footer.pug
 include settings/_js-imports.pug
 script(src='/local/ext/app-assets/js/scripts/pages/material-app.min.js')

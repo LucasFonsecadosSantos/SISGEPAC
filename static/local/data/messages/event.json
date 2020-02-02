@@ -1,0 +1,25 @@
+{
+    "pt-BR": [
+        {
+            "id":   "page-title",
+            "text": "Configuração do Evento"
+        },
+        {
+            "id": "route-navigation",
+            "pages": [
+                {
+                    "href":     "/local",
+                    "text":     "Ínicio",
+                    "alt":      "Link de navegação para retornar ao ínicio.",
+                    "title":    "Clique para retornar ao ínicio."
+                },
+                {
+                    "href":     "/local/evento",
+                    "text":     "Configuração do Evento",
+                    "alt":      "Link de navegação para a página atual.",
+                    "title":    "Clique para recarregar."
+                }
+            ]
+        }
+    ]
+}

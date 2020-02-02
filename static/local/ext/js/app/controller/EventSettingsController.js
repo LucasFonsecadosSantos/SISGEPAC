@@ -1,8 +1,9 @@
-import { Controller } from "./../../core/Controller.js";
+import { Controller } from './../../core/Controller.js';
 import { DataEntity } from './../../conf/Config.js';
-import { MessageModel } from "./../model/MessageModel.js";
-import { EventModel } from "./../model/EventModel.js";
-import { Logger } from "./../../util/Logger.js";
+import { MessageModel } from './../model/MessageModel.js';
+import { EventModel } from './../model/EventModel.js';
+import { Logger } from './../../util/Logger.js';
+import { MessageBuilder } from '../../util/MessageBuilder.js';
 export class EventSettingsController extends Controller {
     constructor() {
         super();
@@ -14,12 +15,17 @@ export class EventSettingsController extends Controller {
     }
     _initializeElements() {
         this._elements = new Array();
-        this._elements['title'] = document.querySelector('title');
         this._elements['page-title'] = document.querySelector('#page-title');
+        this._elements['route-navigation'] = document.querySelector('#route-navigation');
     }
     _getPageMessages() {
         this._messages = this._messageModel.all();
         this._messages.then(data => {
+            data['pt-BR'].forEach(message => {
+                Object.keys(message).forEach(key => {
+                    MessageBuilder.buildMessage(this._elements[message['id']], key, message[key]);
+                });
+            });
         })
             .catch(error => Logger.log(error));
     }
