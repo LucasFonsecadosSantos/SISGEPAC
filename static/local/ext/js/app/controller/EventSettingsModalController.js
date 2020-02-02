@@ -36,7 +36,7 @@ export class EventSettingsModalController extends Controller {
         this._messages = this._messageModel.all();
         this._messages
             .then(data => {
-            data['event-settings-modal']['pt-BR'].forEach(message => {
+            data['pt-BR'].forEach(message => {
                 if (message['text']) {
                     this._elements[message['id']].textContent = message['text'];
                 }

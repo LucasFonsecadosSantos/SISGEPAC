@@ -132,14 +132,14 @@ export class Model {
 
                 var resultObjects: Array<Object> = new Array<Object>();
 
-                if (Helper.isArray(data)) {
+                if (Array.isArray(data)) {
 
                     data.forEach(element => {
 
                         Object.keys(element).forEach(keyElement => {
-
+                            
                             if ((keyElement === key) && (element[keyElement] === value)) {
-
+                    
                                 resultObjects.push(element);
 
                             }

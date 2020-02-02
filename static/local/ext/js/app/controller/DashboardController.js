@@ -3,11 +3,15 @@ import { Logger } from "./../../util/Logger.js";
 import { DataEntity } from "./../../conf/Config.js";
 import { MessageModel } from '../model/MessageModel.js';
 import { EventModel } from './../model/EventModel.js';
+import { SpeakerModel } from "./../model/SpeakerModel.js";
+import { LanguageModel } from "./../model/LanguageModel.js";
 export class DashboardController extends Controller {
     constructor(projectStatus) {
         super();
         this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel = new EventModel();
+        this._languageModel = new LanguageModel();
+        this._speakerModel = new SpeakerModel();
         this._initializeElements();
         this._getPageMessages();
         if (!projectStatus) {

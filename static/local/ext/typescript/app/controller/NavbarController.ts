@@ -1,17 +1,18 @@
 import { Controller } from "./../../core/Controller.js";
+import { Logger } from "./../../util/Logger.js";
 import { DataEntity, Config } from "./../../conf/Config.js";
+import { MessageModel } from "./../model/MessageModel.js";
 
 export class NavbarController extends Controller {
 
-    private _titleElement: HTMLTitleElement;
-    private _textElements: Array<HTMLElement>;
-    private _inputElements: Array<HTMLElement>;
     private _elements: Array<HTMLElement>;
-    private _changelogContent: HTMLElement;
+    private _messageModel: MessageModel;
+    private _messages;
 
     constructor() {
 
         super();
+        this._messageModel = new MessageModel(DataEntity._NAVBAR_MESSAGES_);
         this._initializeElements();
         this._getPageMessages();
 
@@ -43,69 +44,56 @@ export class NavbarController extends Controller {
 
     private _getPageMessages(): void {
         
-        fetch(Config.LOCAL_MESSAGES_PATH)
-            
-            .then(response => response.json())
-            
-            .then(data => {
+        this._messages = this._messageModel.all();
+
+        this._messages.then(data => {
+
+            data['pt-BR'].forEach(element => {
                 
-                this._buildPageMessages(data);
+                if (element['icon']) {
+                    
+                    if (element['id'] != 'navbar-link-navigator') {
+                        this._elements[element['id']].querySelector('.material-icons').textContent = element['icon'];
+                    }
+                }
 
-            })
+                if (element['img']) {
+                    this._elements[element['id']].setAttribute('src', element['img']);
+                }
 
-            .catch(error => {
+                if (element['text']) {
 
-                console.log(error);
-                alert(error);
+                    if (
+                        element['id'] == 'navbar-link-navigator' ||
+                        element['id'] == 'navbar-about-text'     ||
+                        element['id'] == 'navbar-control-panel'  ||
+                        element['id'] == 'navbar-about-title'    ||
+                        element['id'] == 'navbar-logo-text'      ||
+                        element['id'] == 'navbar-about-button'
+                        ) {
+                        this._elements[element['id']].textContent = element['text'];
+                    } else {
+                        this._elements[element['id']].querySelector('p').textContent = element['text'];
+                    }
+                }
 
+                if (element['route']) {
+                    this._elements[element['id']].setAttribute('href', element['route']);
+                }
+
+                if (element['alt']) {
+                    this._elements[element['id']].setAttribute('alt', element['alt']);
+                }
+
+                if (element['title']) {
+                    this._elements[element['id']].setAttribute('title', element['title']);
+                }
+            
             });
 
-    }
+        })
 
-    private _buildPageMessages(data) {
-        
-        data['navbar']['pt-BR'].forEach(element => {
-            
-            if (element['icon']) {
-                
-                if (element['id'] != 'navbar-link-navigator') {
-                    this._elements[element['id']].querySelector('.material-icons').textContent = element['icon'];
-                }
-            }
-
-            if (element['img']) {
-                this._elements[element['id']].setAttribute('src', element['img']);
-            }
-
-            if (element['text']) {
-
-                if (
-                    element['id'] == 'navbar-link-navigator' ||
-                    element['id'] == 'navbar-about-text'     ||
-                    element['id'] == 'navbar-control-panel'  ||
-                    element['id'] == 'navbar-about-title'    ||
-                    element['id'] == 'navbar-logo-text'      ||
-                    element['id'] == 'navbar-about-button'
-                    ) {
-                    this._elements[element['id']].textContent = element['text'];
-                } else {
-                    this._elements[element['id']].querySelector('p').textContent = element['text'];
-                }
-            }
-
-            if (element['route']) {
-                this._elements[element['id']].setAttribute('href', element['route']);
-            }
-
-            if (element['alt']) {
-                this._elements[element['id']].setAttribute('alt', element['alt']);
-            }
-
-            if (element['title']) {
-                this._elements[element['id']].setAttribute('title', element['title']);
-            }
-        
-        });
+        .catch(error => Logger.log(error));
 
     }
 

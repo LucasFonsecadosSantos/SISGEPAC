@@ -82,7 +82,7 @@ export class Model {
                 .then(response => response.json())
                 .then(data => {
                 var resultObjects = new Array();
-                if (Helper.isArray(data)) {
+                if (Array.isArray(data)) {
                     data.forEach(element => {
                         Object.keys(element).forEach(keyElement => {
                             if ((keyElement === key) && (element[keyElement] === value)) {

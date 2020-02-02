@@ -7,6 +7,8 @@ export class EventSettingsController extends Controller {
 
     constructor(projectStatus: boolean) {
 
+        alert(projectStatus);
+
         super(projectStatus);
         this._initializeElements();
         this._getPageMessages();

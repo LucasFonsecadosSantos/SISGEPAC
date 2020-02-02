@@ -2,6 +2,7 @@ import { Controller } from "./../../core/Controller.js";
 import { Config } from '../../conf/Config.js';
 export class EventSettingsController extends Controller {
     constructor(projectStatus) {
+        alert(projectStatus);
         super(projectStatus);
         this._initializeElements();
         this._getPageMessages();

@@ -28,6 +28,8 @@ export class DashboardController extends Controller {
         super();
         this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel    = new EventModel();
+        this._languageModel = new LanguageModel();
+        this._speakerModel  = new SpeakerModel();
         this._initializeElements();
         this._getPageMessages();
         

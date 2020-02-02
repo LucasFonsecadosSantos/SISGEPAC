@@ -57,7 +57,7 @@ export class EventSettingsModalController extends Controller {
 
             .then(data => {
 
-                data['event-settings-modal']['pt-BR'].forEach(message => {
+                data['pt-BR'].forEach(message => {
 
                     if (message['text']) {
 

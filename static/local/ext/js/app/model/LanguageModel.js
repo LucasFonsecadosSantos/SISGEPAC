@@ -4,7 +4,7 @@ export class LanguageModel extends Model {
     constructor() {
         super();
         super._dataPath = Config.REMOTE_CONF_FILES_PATH.get(DataEntity._LANGUAGE_);
-        super._relativeDataPath = "../../../local/data/messages/dashboard.json";
+        super._relativeDataPath = "../../../remote/data/config/languages.json";
         super._dataKeys = [];
     }
 }

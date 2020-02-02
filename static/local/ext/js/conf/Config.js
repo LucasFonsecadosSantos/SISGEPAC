@@ -14,6 +14,7 @@ export var DataEntity;
     DataEntity["_SYSTEM_"] = "system";
     DataEntity["_CHANGELOG_"] = "changelog";
     DataEntity["_DASHBOARD_MESSAGES_"] = "messages";
+    DataEntity["_NAVBAR_MESSAGES_"] = "navbar";
 })(DataEntity || (DataEntity = {}));
 export class Config {
 }
@@ -42,6 +43,7 @@ Config.REMOTE_CONF_FILES_PATH = new Map([
 ]);
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
-    [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"]
+    [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+    [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"]
 ]);
 //# sourceMappingURL=Config.js.map

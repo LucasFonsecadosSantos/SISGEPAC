@@ -2,7 +2,7 @@
     {
         "language": "Português Brasil",
         "symbol": "pt-BR", 
-        "using": false
+        "using": true
     },
     {
         "language": "Português Europeu",
@@ -12,7 +12,7 @@
     {
         "language": "Ingês EUA",
         "symbol": "en-US", 
-        "using": false
+        "using": true
     },
     {
         "language": "Inglês Britnanico",

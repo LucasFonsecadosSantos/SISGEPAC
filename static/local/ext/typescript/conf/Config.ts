@@ -13,7 +13,8 @@ export enum DataEntity {
     _ORGANIZATION_          = "organization",
     _SYSTEM_                = "system",
     _CHANGELOG_             = "changelog",
-    _DASHBOARD_MESSAGES_    = "messages"
+    _DASHBOARD_MESSAGES_    = "messages",
+    _NAVBAR_MESSAGES_       = "navbar"
 
 }
 
@@ -52,8 +53,9 @@ export class Config {
 
     public static readonly LOCAL_CONF_FILES_PATH: Map<DataEntity,string> = new Map([
 
-        [DataEntity._CHANGELOG_,       "/local/data/conf/changelog.json"],
-        [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"]
+        [DataEntity._CHANGELOG_,            "/local/data/conf/changelog.json"],
+        [DataEntity._DASHBOARD_MESSAGES_,   Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+        [DataEntity._NAVBAR_MESSAGES_,      Config.LOCAL_MESSAGES_PATH + "navbar.json"]
 
     ])
 
