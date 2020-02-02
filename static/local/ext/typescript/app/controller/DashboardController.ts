@@ -23,7 +23,7 @@ export class DashboardController extends Controller {
     private _languageModel:     LanguageModel;
     private _languageData;
 
-    constructor(projectStatus: boolean) {
+    constructor() {
 
         super();
         this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
@@ -33,7 +33,8 @@ export class DashboardController extends Controller {
         this._initializeElements();
         this._getPageMessages();
         
-        if (!projectStatus) {
+        //TODO HERE
+        if (true) {
 
             //@ts-ignore
             $('#eventSettingsModal').modal('show');
@@ -62,6 +63,12 @@ export class DashboardController extends Controller {
     private _getPageMessages(): void {
 
         this._messagesData  = this._messagesModel.all();
+
+        this._messagesData.then(data => {
+
+        })
+
+        .catch(error => Logger.log(error));
 
     }
 

@@ -1,7 +1,7 @@
 import { Controller } from "./../../core/Controller.js";
 export class FaqController extends Controller {
-    constructor(projectStatus) {
-        super(projectStatus);
+    constructor() {
+        super();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();

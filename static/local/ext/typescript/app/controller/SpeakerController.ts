@@ -1,7 +1,8 @@
-import { Controller }   from "./../../core/Controller.js";
-import { SpeakerModel } from "./../model/SpeakerModel.js";
-import { MessageModel } from "./../model/MessageModel.js";
-import { Logger }       from "../../util/Logger.js";
+import { Controller }           from "./../../core/Controller.js";
+import { SpeakerModel }         from "./../model/SpeakerModel.js";
+import { MessageModel }         from "./../model/MessageModel.js";
+import { Logger }               from "../../util/Logger.js";
+import { DataEntity, Config }   from '../../conf/Config.js';
 
 export class SpeakerController extends Controller {
 
@@ -11,28 +12,25 @@ export class SpeakerController extends Controller {
     private _speakerData;
     private _messages;
 
-    constructor(projectStatus: boolean) {
+    constructor() {
 
-        super(projectStatus);
+        super();
+        this._messageModel = new MessageModel(DataEntity._SPEAKER_MESSAGES_);
+        this._speakerModel = new SpeakerModel();
         this._initializeElements();
-        this._getData();
         this._getPageMessages();
-        this._getPageContent();
 
     }
 
     private _initializeElements(): void {
 
-    }
-
-    private _getData(): void {
-
-        this._messages = this._messageModel.all();
-        this._speakerData = this._speakerModel.all();
+        this._elements = new Array<HTMLElement>();
 
     }
 
     private _getPageMessages(): void {
+
+        this._messages = this._messageModel.all();
 
         this._messages
 
@@ -46,13 +44,13 @@ export class SpeakerController extends Controller {
 
     private _getPageContent(): void {
 
-        this._speakerData
+        this._speakerData = this._speakerModel.all();
 
-            .then(data => {
+        this._speakerData.then(data => {
 
-            })
+        })
 
-            .catch(error => Logger.log(error));
+        .catch(error => Logger.log(error));
 
     }
 

@@ -1,51 +1,57 @@
-import { Controller } from "./../../core/Controller.js";
+import { Controller }       from "./../../core/Controller.js";
+import { MessageModel }     from "./../model/MessageModel.js";
+import { TemplateModel }    from "./../model/TemplateModel.js"
+import { Logger }           from "./../../util/Logger.js";
+import { DataEntity, Config } from '../../conf/Config';
 
 export class TemplateController extends Controller {
 
-    private _titleElement: HTMLTitleElement;
-    private _textElements: Array<HTMLElement>;
-    private _inputElements: Array<HTMLElement>;
-    private _buttonElements: Array<HTMLElement>;
-    private _changelogContent: HTMLElement;
+    private _elements:      Array<HTMLElement>;
+    private _messageModel:  MessageModel;
+    private _templateModel: TemplateModel;
+    private _messageData;
+    private _templateData;
 
-    constructor(projectStatus: boolean) {
+    constructor() {
 
-        super(projectStatus);
+        super();
+        this._messageModel  = new MessageModel(DataEntity._TEMPLATE_MESSAGES_);
+        this._templateModel = new TemplateModel();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();
-        this._buildPageContent();
 
     }
 
     private _initializeElements(): void {
 
+        this._elements = new Array<HTMLElement>();
+
     }
 
     private _getPageMessages(): void {
         
-        fetch('/local/data/messages.json')
-            
-            .then(response => response.json())
-            
-            .then(data => {
+        this._messageData = this._messageModel.all();
 
-                this._buildPageMessages(data);
+        this._messageData.then(data => {
 
-            });
+        })
+
+        .catch(error => Logger.log(error));
 
     }
 
-    private _buildPageMessages(data) {
-
-    }
 
     private _getPageContent(): void {
 
-    }
+        this._templateData = this._templateModel.all();
 
-    private _buildPageContent(): void {
-        
+        this._templateData.then(data => {
+
+        })
+
+        .catch(error => Logger.log(error));
+
     }
 
 }

@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Config } from './../conf/Config.js';
 import { Logger } from "./../util/Logger.js";
-import { Helper } from './../util/Helper.js';
 import { InvalidDataKeyException } from "./../exception/InvalidDataKeyException.js";
 export class Model {
     constructor() {
@@ -26,7 +25,7 @@ export class Model {
         fetch(this._dataPath)
             .then(response => response.json())
             .then(fetchedData => {
-            if (Helper.isArray(fetchedData)) {
+            if (Array.isArray(fetchedData)) {
                 data.forEach((element, index) => {
                     if (fetchedData[index]) {
                         fetchedData[index] = element;
@@ -53,7 +52,7 @@ export class Model {
     }
     store(data) {
         let error = false;
-        if (Helper.isArray(data)) {
+        if (Array.isArray(data)) {
             //TODO
         }
         else {
@@ -122,7 +121,7 @@ export class Model {
             const target = yield fetch(this._dataPath)
                 .then(response => response.json())
                 .then(data => {
-                if (Helper.isArray(data)) {
+                if (Array.isArray(data)) {
                     data.forEach(element => {
                         if (element[key] == value)
                             return element;

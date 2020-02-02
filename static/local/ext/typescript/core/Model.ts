@@ -34,7 +34,7 @@ export class Model {
 
             .then(fetchedData => {
                 
-                if (Helper.isArray(fetchedData)) {
+                if (Array.isArray(fetchedData)) {
 
                     data.forEach((element, index) => {
 
@@ -82,7 +82,7 @@ export class Model {
 
         let error: boolean = false;
 
-        if (Helper.isArray(data)) {
+        if (Array.isArray(data)) {
 
             //TODO
 
@@ -203,7 +203,7 @@ export class Model {
 
             .then(data => {
 
-                if (Helper.isArray(data)) {
+                if (Array.isArray(data)) {
 
                     data.forEach(element => {
 

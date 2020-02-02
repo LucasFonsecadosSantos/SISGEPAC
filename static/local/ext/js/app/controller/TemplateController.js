@@ -1,26 +1,31 @@
 import { Controller } from "./../../core/Controller.js";
+import { MessageModel } from "./../model/MessageModel.js";
+import { TemplateModel } from "./../model/TemplateModel.js";
+import { Logger } from "./../../util/Logger.js";
+import { DataEntity } from '../../conf/Config';
 export class TemplateController extends Controller {
-    constructor(projectStatus) {
-        super(projectStatus);
+    constructor() {
+        super();
+        this._messageModel = new MessageModel(DataEntity._TEMPLATE_MESSAGES_);
+        this._templateModel = new TemplateModel();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();
-        this._buildPageContent();
     }
     _initializeElements() {
+        this._elements = new Array();
     }
     _getPageMessages() {
-        fetch('/local/data/messages.json')
-            .then(response => response.json())
-            .then(data => {
-            this._buildPageMessages(data);
-        });
-    }
-    _buildPageMessages(data) {
+        this._messageData = this._messageModel.all();
+        this._messageData.then(data => {
+        })
+            .catch(error => Logger.log(error));
     }
     _getPageContent() {
-    }
-    _buildPageContent() {
+        this._templateData = this._templateModel.all();
+        this._templateData.then(data => {
+        })
+            .catch(error => Logger.log(error));
     }
 }
 //# sourceMappingURL=TemplateController.js.map

@@ -8,9 +8,9 @@ export class FaqController extends Controller {
     private _buttonElements: Array<HTMLElement>;
     private _changelogContent: HTMLElement;
 
-    constructor(projectStatus: boolean) {
+    constructor() {
 
-        super(projectStatus);
+        super();
         this._initializeElements();
         this._getPageMessages();
         this._getPageContent();

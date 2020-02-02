@@ -6,7 +6,7 @@ import { EventModel } from './../model/EventModel.js';
 import { SpeakerModel } from "./../model/SpeakerModel.js";
 import { LanguageModel } from "./../model/LanguageModel.js";
 export class DashboardController extends Controller {
-    constructor(projectStatus) {
+    constructor() {
         super();
         this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel = new EventModel();
@@ -14,7 +14,8 @@ export class DashboardController extends Controller {
         this._speakerModel = new SpeakerModel();
         this._initializeElements();
         this._getPageMessages();
-        if (!projectStatus) {
+        //TODO HERE
+        if (true) {
             //@ts-ignore
             $('#eventSettingsModal').modal('show');
         }
@@ -32,6 +33,9 @@ export class DashboardController extends Controller {
     }
     _getPageMessages() {
         this._messagesData = this._messagesModel.all();
+        this._messagesData.then(data => {
+        })
+            .catch(error => Logger.log(error));
     }
     _populateLanguageData() {
         this._languageData = this._languageModel.filter('using', true);

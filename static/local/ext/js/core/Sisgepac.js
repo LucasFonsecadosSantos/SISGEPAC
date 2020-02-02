@@ -8,7 +8,6 @@ import { ChangelogController } from './../app/controller/ChangelogController.js'
 import { HeaderController } from './../app/controller/HeaderController.js';
 import { FooterController } from './../app/controller/FooterController.js';
 import { NavbarController } from './../app/controller/NavbarController.js';
-import { SystemController } from './../app/controller/SystemController.js';
 import { EventSettingsModalController } from './../app/controller/EventSettingsModalController.js';
 export class Sisgepac {
     constructor() {
@@ -18,29 +17,28 @@ export class Sisgepac {
         new HeaderController();
         new NavbarController();
         new FooterController();
-        this._systemController = new SystemController();
-        this._systemController.init().then(response => response.json()).then(data => this._initializeControllers(data["project-started"]));
+        this._initializeControllers();
     }
-    _initializeControllers(projectHasStarted) {
+    _initializeControllers() {
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
             //TODO
             case 'index':
-                new DashboardController(projectHasStarted);
+                new DashboardController();
                 break;
             case 'speaker':
-                new SpeakerController(projectHasStarted);
+                new SpeakerController();
                 break;
             case 'sponsorship':
-                new SponsorshipController(projectHasStarted);
+                new SponsorshipController();
                 break;
             case 'faq':
-                new FaqController(projectHasStarted);
+                new FaqController();
                 break;
             case 'event':
-                new EventSettingsController(projectHasStarted);
+                new EventSettingsController();
                 break;
             case 'changelog':
-                new ChangelogController(projectHasStarted);
+                new ChangelogController();
                 break;
         }
         this._modalElements.forEach(modal => {

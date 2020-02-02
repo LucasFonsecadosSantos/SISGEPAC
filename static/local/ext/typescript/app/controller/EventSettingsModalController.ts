@@ -19,7 +19,7 @@ export class EventSettingsModalController extends Controller {
         super();
         this._eventModel        = new EventModel();
         this._systemConfigModel = new SystemConfigModel();
-        this._messageModel      = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
+        this._messageModel      = new MessageModel(DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_);
         this._initElements();
         this._getPageMessages();
         this._initListeners();

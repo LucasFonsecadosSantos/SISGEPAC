@@ -27,37 +27,37 @@ export class Sisgepac {
         new HeaderController();
         new NavbarController();
         new FooterController();
-        this._systemController  = new SystemController();
-        this._systemController.init().then(response => response.json()).then(data => this._initializeControllers(data["project-started"]));
-    
+        this._initializeControllers();
+        
     }
 
-    private _initializeControllers(projectHasStarted: boolean): void {
+    private _initializeControllers(): void {
         
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
 
             //TODO
             case 'index':
-                new DashboardController(projectHasStarted);
+                new DashboardController();
                 break;
             
             case 'speaker':
-                new SpeakerController(projectHasStarted);
+                new SpeakerController();
                 break;
             
             case 'sponsorship':
-                new SponsorshipController(projectHasStarted);
+                new SponsorshipController();
                 break;
 
             case 'faq':
-                new FaqController(projectHasStarted);
+                new FaqController();
                 break;
             
             case 'event':
-                new EventSettingsController(projectHasStarted);
+                new EventSettingsController();
                 break;
+
             case 'changelog':
-                new ChangelogController(projectHasStarted);
+                new ChangelogController();
                 break;
 
         }
