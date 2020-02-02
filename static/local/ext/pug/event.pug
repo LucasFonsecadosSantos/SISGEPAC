@@ -28,11 +28,6 @@ include components/_navbar.pug
 				.row.breadcrumbs-top
 					.breadcrumb-wrapper.col-12
 						ol.breadcrumb#route-navigation
-							li.breadcrumb-item
-								a(href="index.html") Home
-							li.breadcrumb-item
-								a(href="#") Content
-							li.breadcrumb-item.active Helper Classes'
 			.content-header-right.col-md-6.col-12
 				.media.width-250.float-right
 					media-left.media-middle
@@ -45,6 +40,7 @@ include components/_navbar.pug
 			.row.match-height
 				.col-xl-6.col-lg-12.col-sm-12
 					.card.profile-card-with-cover
+
 						.card-content
 							img.card-img-top.img-fluid(src="/local/ext/app-assets/images/carousel/18.jpg", alt="Card cover image")
 							.card-img-top.img-fluid.bg-cover.height-200.profile-card-image-cover-1
@@ -53,7 +49,7 @@ include components/_navbar.pug
 							.profile-card-with-cover-content.text-center
 								.profile-details.mt-2.pt-5
 									//h4.card-title Linda Holland
-									h1.text-bold-200 Congresso da Pós Graduação
+									h1.text-bold-200#event-name
 									ul.list-inline.clearfix.mt-2
 										li.mr-3
 											h2.block 3.5K
@@ -89,17 +85,17 @@ include components/_navbar.pug
 									table.table.table-borderless
 										tbody
 											tr
-												td Nome do Evento:
-												td.users-view-username dean3004
+												td#event-label-title
+												td.users-view-username#event-title
 											tr
-												td Entidade Realizadora:
-												td.users-view-name Dean Stanley
+												td#event-label-institute
+												td.users-view-name#event-institute
 											tr
-												td E-mail:
-												td.users-view-email deanstanley@gmail.com
+												td#event-label-email
+												td.users-view-email#event-email
 											tr
-												td Site:
-												td XYZ Corp. Ltd.
+												td#event-label-website
+												td#event-site
 									h5.mb-1
 										i.ft-link
 										| Social Links

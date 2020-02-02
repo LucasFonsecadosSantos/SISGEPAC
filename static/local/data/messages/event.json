@@ -5,6 +5,22 @@
             "text": "Configuração do Evento"
         },
         {
+            "id": "event-label-website",
+            "text": "Website:"
+        },
+        {
+            "id": "event-label-email",
+            "text": "Endereço de E-mail:"
+        },
+        {
+            "id": "event-label-institute",
+            "text": "Entidade Realizadora"
+        },
+        {
+            "id": "event-label-title",
+            "text": "Nome do Evento:"
+        },
+        {
             "id": "route-navigation",
             "pages": [
                 {

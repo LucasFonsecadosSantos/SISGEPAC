@@ -11,11 +11,14 @@ export class MessageBuilder {
         } else if (type === 'pages') {
 
             if (Array.isArray(message)) {
+                
+                let liChild:    HTMLElement;
+                let aChild:     HTMLElement;
 
                 message.forEach(messageObject => {
 
-                    let liChild = document.createElement('LI');
-                    let aChild  = document.createElement('A');
+                    liChild = document.createElement('LI');
+                    aChild  = document.createElement('A');
                         
                     liChild.classList.add('breadcrumb-item');
                     
@@ -39,7 +42,7 @@ export class MessageBuilder {
 
                 });
 
-                (element.parentNode.lastChild as HTMLElement).classList.add('active');
+                liChild.classList.add('active');
                 
             } else {
 
