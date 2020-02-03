@@ -1,0 +1,1 @@
+{"version":3,"file":"HeaderController.js","sourceRoot":"","sources":["../../../typescript/app/controller/HeaderController.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAgB,4BAA4B,CAAC;AAGlE,MAAM,OAAO,gBAAiB,SAAQ,UAAU;IAG5C;QAEI,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,mBAAmB,EAAE,CAAC;QAC3B,IAAI,CAAC,gBAAgB,EAAE,CAAC;IAG5B,CAAC;IAEO,mBAAmB;IAE3B,CAAC;IAEO,gBAAgB;IAIxB,CAAC;CAGJ"}

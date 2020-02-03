@@ -7,81 +7,223 @@ head
   meta(name='keywords' content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
   meta(name='author' content='PIXINVENT')
   title
-    | Dashboard Support - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard
   include settings/_link-imports.pug
-  link(rel='stylesheet' type='text/css' href='../../../app-assets/css/core/menu/menu-types/material-horizontal-menu.min.css')
-  link(rel='stylesheet' type='text/css' href='../../../app-assets/css/pages/dashboard-support.min.css')
+  link(rel='stylesheet', type='text/css', href='/local/ext/app-assets/css/core/menu/menu-types/material-horizontal-menu.min.css')
+  link(rel='stylesheet', type='text/css', href='/local/ext/app-assets/css/pages/dashboard-support.min.css')
+  link(rel="stylesheet", type="text/css", href="/local/ext/app-assets/css/plugins/calendars/clndr.min.css")
   
 include components/_header.pug
 include components/_navbar.pug
+include components/modals/_event-settings.pug
 
-.app-content.content
+.app-content.content(sisgepac-page="index")
   .content-header.row
   .content-overlay
   .content-wrapper
     .content-body
-      // Statistics with grouped cards
-      .row
-        .col-12
-          .card
-            .card-content
-              .row
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-down.fs-2.danger
-                      |  26
-                    span New Ticket
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-up.fs-2.success
-                      |  8
-                    span Responses
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4
-                      i.ft-chevron-up.fs-2.success
-                      |  6h
-                    span Response Time
-                .col.border-right-blue-grey.border-right-lighten-4
-                  .card-body.text-center
-                    h1.display-4 10
-                    span Liked Comment
-                .col
-                  .card-body.text-center
-                    h1.display-4 22
-                    span Closed Ticket
-      // MONTHLY ANALYTICS
-      .row.match-height
-        #ecommerceChartView.col-12
-          .card.card-shadow
-            .card-header.card-header-transparent.py-20
-              .btn-group.dropdown
-                a.text-body.dropdown-toggle.blue-grey-700(href='#' data-toggle='dropdown')
-                  | MONTHLY
-                  | ANALYTICS
-                .dropdown-menu.animate(role='menu')
-                  a.dropdown-item(href='#' role='menuitem') Sales
-                  a.dropdown-item(href='#' role='menuitem') Total sales
-                  a.dropdown-item(href='#' role='menuitem') profit
-              ul.nav.nav-pills.nav-pills-rounded.chart-action.float-right.btn-group(role='group')
-                li.nav-item
-                  a.active.nav-link(data-toggle='tab' href='#scoreLineToDay')
-                    | New
-                    | Tickets
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToWeek') Agent Responses
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToMonth') Response Time
-                li.nav-item
-                  a.nav-link(data-toggle='tab' href='#scoreLineToDay') Closed Tickets
-            .widget-content.tab-content.bg-white.p-20
-              #scoreLineToDay.ct-chart.tab-pane.active.scoreLineShadow
-              #scoreLineToWeek.ct-chart.tab-pane.scoreLineShadow
-              #scoreLineToMonth.ct-chart.tab-pane.scoreLineShadow
-              #scoreLineToDay1.ct-chart.tab-pane.scoreLineShadow
+      .row.card-icons
+          .col-12
+            .card.bg-dark
+              .card-content
+                .card-body
+                  .row
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-camera.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right.white O quanto minha página está configurada
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 579
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 80%", aria-valuenow="80", aria-valuemin="0", aria-valuemax="100")
+                    
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-user.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right.white New Clients
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 423
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 45%", aria-valuenow="45", aria-valuemin="0", aria-valuemax="100")
+                    .col-lg-3.col-md-6.col-sm-12.border-right-blue-grey.border-right-lighten-5
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-bulb.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right.white Conversion Rate
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white 61%
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 75%", aria-valuenow="75", aria-valuemin="0", aria-valuemax="100")
+                    .col-lg-3.col-md-6.col-sm-12
+                      .media.d-flex.p-2
+                        .align-self-center
+                          i.icon-wallet.font-large-1.blue-grey.d-block.mb-1
+                          span.text-muted.text-right.white Sales
+                        .media-body.text-right
+                          span.font-large-2.text-bold-300.white $687
+                      .progress.mt-1.mb-0(style="height: 7px;")
+                        .progress-bar.bg-white(role="progressbar", style="width: 60%", aria-valuenow="60", aria-valuemin="0", aria-valuemax="100")
       // Payment Methods & Purchase History
+      .row.match-height
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+              .card-header
+                  h4.card-title.dark#event-occurrence-title
+              .card-body
+                  //p.card-text.white This is the most basic eample with html template and events to be shown on the calendar.</p>
+                  #clndr-default.overflow-hidden.bg-teal.bg-lighten-3
+                    .clndr
+                      .clndr-controls.bg-teal
+                          .clndr-previous-button &lt;
+                          .clndr-next-button &gt;
+                          .current-month January 2020
+                      .clndr-grid.bg-teal.bg-lighten-5
+                        .days-of-the-week.clearfix.bg-teal.bg-lighten-3
+                          .header-day S
+                          .header-day M
+                          .header-day T
+                          .header-day W
+                          .header-day T
+                          .header-day F
+                          .header-day S
+                        .days
+                          .day.past.adjacent-month.last-month.calendar-day-2019-12-29.calendar-dow-0
+                            span.day-number 29
+                      
+                          .day.past.adjacent-month.last-month.calendar-day-2019-12-30.calendar-dow-1
+                            span.day-number 30
+                      
+                          .day.past.adjacent-month.last-month.calendar-day-2019-12-31.calendar-dow-2
+                            span.day-number 31
+                      
+                          .day.past.calendar-day-2020-01-01.calendar-dow-3
+                            span.day-number 1
+                      
+                          .day.past.calendar-day-2020-01-02.calendar-dow-4 
+                            span.day-number 2
+                          .day.past.calendar-day-2020-01-03.calendar-dow-5 
+                            span.day-number 3
+                          .day.past.calendar-day-2020-01-04.calendar-dow-6
+                            span.day-number 4
+                          .day.past.calendar-day-2020-01-05.calendar-dow-0 
+                            span.day-number 5
+                          .day.past.calendar-day-2020-01-06.calendar-dow-1 
+                            span.day-number 6
+                          .day.past.calendar-day-2020-01-07.calendar-dow-2
+                            span.day-number 7
+                          .day.past.calendar-day-2020-01-08.calendar-dow-3 
+                            span.day-number 8
+                          .day.past.calendar-day-2020-01-09.calendar-dow-4 
+                            span.day-number 9
+                          .day.past.event.calendar-day-2020-01-10.calendar-dow-5
+                            span.day-number 10
+                          .day.past.calendar-day-2020-01-11.calendar-dow-6 
+                            span.day-number 11
+                          .day.past.calendar-day-2020-01-12.calendar-dow-0 
+                            span.day-number 12
+                          .day.past.calendar-day-2020-01-13.calendar-dow-1
+                            span.day-number 13
+                          .day.past.calendar-day-2020-01-14.calendar-dow-2
+                            span.day-number 14
+                          .day.past.calendar-day-2020-01-15.calendar-dow-3
+                            span.day-number 15
+                          .day.past.calendar-day-2020-01-16.calendar-dow-4
+                            span.day-number 16
+                          .day.past.calendar-day-2020-01-17.calendar-dow-5
+                            span.day-number 17
+                          .day.past.calendar-day-2020-01-18.calendar-dow-6
+                            span.day-number 18
+                          .day.past.event.calendar-day-2020-01-19.calendar-dow-0
+                            span.day-number 19
+                          .day.today.calendar-day-2020-01-20.calendar-dow-1
+                            span.day-number 20
+                          .day.calendar-day-2020-01-21.calendar-dow-2
+                            span.day-number 21
+                          .day.calendar-day-2020-01-22.calendar-dow-3
+                            span.day-number 22
+                          .day.event.calendar-day-2020-01-23.calendar-dow-4
+                            span.day-number 23
+                          .day.calendar-day-2020-01-24.calendar-dow-5 
+                            span.day-number 24
+                          .day.calendar-day-2020-01-25.calendar-dow-6
+                            span.day-number 25
+                          .day.calendar-day-2020-01-26.calendar-dow-0
+                            span.day-number 26
+                          .day.calendar-day-2020-01-27.calendar-dow-1 
+                            span.day-number 27
+                          .day.calendar-day-2020-01-28.calendar-dow-2 
+                            span.day-number 28
+                          .day.calendar-day-2020-01-29.calendar-dow-3
+                            span.day-number 29
+                          .day.calendar-day-2020-01-30.calendar-dow-4
+                            span.day-number 30
+                          .day.calendar-day-2020-01-31.calendar-dow-5
+                            span.day-number 31
+                          .day.adjacent-month.next-month.calendar-day-2020-02-01.calendar-dow-6
+                            span.day-number 1
+                      
+                      .event-listing
+                        .event-listing-title.bg-teal.bg-lighten-3 Event this month
+                          .event-item.font-small-3
+                            .event-item-day.font-small-2 2020-01-10
+                            .event-item-name.text-bold-600.Persian Kitten Auction
+                            .event-item-location Center for Beautiful Cats
+                      
+                          .event-item.font-small-3
+                            .event-item-day.font-small-2 2020-01-19
+                            .event-item-name.text-bold-600 Cat Frisbee
+                            .event-item-location Jefferson Park
+                              
+                          .event-item.font-small-3
+                            .event-item-day.font-small-2 2020-01-23
+                            .event-item-name.text-bold-600 Kitten Demonstration
+                            .event-item-location Center for Beautiful Cats
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+              .card-header
+                  h4.card-title.dark#event-information-title
+              .card-body
+                .col-12
+                  table.table.table-borderless
+                    tbody
+                      tr
+                        td Username:
+                        td.users-view-username dean3004
+                      tr
+                        td Name:
+                        td.users-view-name Dean Stanley
+                      tr
+                        td E-mail:
+                        td.users-view-email deanstanley@gmail.com
+                      tr
+                        td Comapny:
+                        td XYZ Corp. Ltd.
+                  h5.mb-1
+                    i.ft-link
+                    | Social Links
+                  table.table.table-borderless
+                    tbody
+                      tr
+                        td Twitter:
+                        td
+                          a(href="#") https://www.twitter.com/
+                      tr
+                        td Facebook:
+                        td
+                          a(href="#") https://www.facebook.com/
+                      tr
+                        td Instagram:
+                        td
+                          a(href="#") https://www.instagram.com/
+                  h5.mb-1
+                    i.ft-info
+                    | Personal Info
+                  table.table.table-borderless.mb-0
+                    tbody
+                      tr
+                        td Birthday:
+                        td 03/04/1990
       .row.match-height
         .col-md-6
           .card.payment
@@ -91,7 +233,7 @@ include components/_navbar.pug
                 hr
                 .row
                   .col-2
-                    img(src='../../../app-assets/images/icons/card-1.png' alt='avatar' width='50')
+                    img(src='/local/ext/app-assets/images/icons/card-1.png' alt='avatar' width='50')
                   .col-8
                     h6 REDQTEAM-XXX-5994
                     p EX 04/2022
@@ -100,7 +242,7 @@ include components/_navbar.pug
                       i.ft-x
                 .row.mt-2
                   .col-2
-                    img(src='../../../app-assets/images/icons/card-2.png' alt='avatar' width='50')
+                    img(src='/local/ext/app-assets/images/icons/card-2.png' alt='avatar' width='50')
                   .col-8
                     h6 REDQTEAM-XXX-5834
                     p EX 12/2020
@@ -115,7 +257,7 @@ include components/_navbar.pug
                 hr
                 .row
                   .col-2
-                    img(src='../../../app-assets/images/icons/mail-chimp.png' alt='avatar' width='50')
+                    img(src='/local/ext/app-assets/images/icons/mail-chimp.png' alt='avatar' width='50')
                   .col-7
                     h6
                       | MailChilp 
@@ -126,7 +268,7 @@ include components/_navbar.pug
                     p.info invoice
                 .row.mt-2
                   .col-2
-                    img(src='../../../app-assets/images/icons/google.png' alt='avatar' width='50')
+                    img(src='/local/ext/app-assets/images/icons/google.png' alt='avatar' width='50')
                   .col-7
                     h6
                       | MailChilp 
@@ -155,7 +297,7 @@ include components/_navbar.pug
                       tr
                         td.text-center
                           span.avatar.avatar-busy
-                            img(src='../../../app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
                             i
                         td
                           a.text-bold-600(href='#') Modern admin - Responsive Bootstrap 4 Admin Template
@@ -171,7 +313,7 @@ include components/_navbar.pug
                       tr
                         td.text-center
                           span.avatar.avatar-online
-                            img(src='../../../app-assets/images/portrait/small/avatar-s-6.png' alt='avatar' data-placement='right' title='Nicole Barrett')
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-6.png' alt='avatar' data-placement='right' title='Nicole Barrett')
                             i
                         td
                           a.text-bold-600(href='#') Complete Support page design
@@ -183,7 +325,7 @@ include components/_navbar.pug
                       tr
                         td.text-center
                           span.avatar.avatar-off
-                            img(src='../../../app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-placement='right' title='Jason Robertson')
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-placement='right' title='Jason Robertson')
                             i
                         td
                           a.text-bold-600(href='#') Create App Landing page
@@ -199,7 +341,7 @@ include components/_navbar.pug
                       tr
                         td.text-center
                           span.avatar.avatar-busy
-                            img(src='../../../app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Willie Sanchez')
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-7.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Willie Sanchez')
                             i
                         td
                           a.text-bold-600(href='#') UI Design for the CCC
@@ -235,59 +377,55 @@ include components/_navbar.pug
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-1.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-1.png' alt='avatar')
                       td.text-truncate Convex
                       td
                         span.badge.badge-warning 3
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-2.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-2.png' alt='avatar')
                       td.text-truncate Materialize
                       td
                         span.badge.badge-success 3
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-3.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-3.png' alt='avatar')
                       td.text-truncate Crypto ICO
                       td
                         span.badge.badge-danger 5
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-4.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-4.png' alt='avatar')
                       td.text-truncate Modern Admin
                       td
                         span.badge.badge-info 2
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-5.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-5.png' alt='avatar')
                       td.text-truncate Apex Angular
                       td
                         span.badge.badge-warning 4
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-6.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-6.png' alt='avatar')
                       td.text-truncate Apex HTML
                       td
                         span.badge.badge-info 1
                     tr
                       td.text-truncate
                         span.avatar.avatar-xs
-                          img.box-shadow-2(src='../../../app-assets/images/icons/app-1.png' alt='avatar')
+                          img.box-shadow-2(src='/local/ext/app-assets/images/icons/app-1.png' alt='avatar')
                       td.text-truncate Convex
                       td
                         span.badge.badge-warning 3
 
-.buy-now
-  a.btn.btn-info.btn-glow.round.px-2(href='https://1.envato.market/modern_admin' target='_blank') Buy Now
-.sidenav-overlay
-.drag-target
-
+include components/_publish-button.pug
 include components/_footer.pug
 include settings/_js-imports.pug
-script(src='../../../app-assets/js/scripts/pages/material-app.min.js')
-script(src='../../../app-assets/js/scripts/pages/dashboard-support.min.js')
+script(src='/local/ext/app-assets/js/scripts/pages/material-app.min.js')
+script(src='/local/ext/app-assets/js/scripts/pages/dashboard-support.min.js')

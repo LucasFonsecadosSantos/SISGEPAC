@@ -1,240 +1,89 @@
 nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.navbar-static-top.navbar-dark.navbar-brand-center
-  .navbar-wrapper
-    .navbar-header
-      ul.nav.navbar-nav.flex-row
-        li.nav-item.mobile-menu.d-md-none.mr-auto
-          a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
-            i.ft-menu.font-large-1
-        li.nav-item
-          a.navbar-brand(href='index.html')
-            img.brand-logo(alt='modern admin logo' src='../../../app-assets/images/logo/logo.png')
-            h3.brand-text Modern
-        li.nav-item.d-md-none
-          a.nav-link.open-navbar-container(data-toggle='collapse' data-target='#navbar-mobile')
-            i.la.la-ellipsis-v
-    .navbar-container.content
-      #navbar-mobile.collapse.navbar-collapse
-        ul.nav.navbar-nav.mr-auto.float-left
-          li.nav-item.d-none.d-md-block
-            a.nav-link.nav-menu-main.menu-toggle(href='#')
-              i.ft-menu
-          li.nav-item.nav-search
-            a.nav-link.nav-link-search(href='#')
-              i.material-icons search
-            .search-input
-              input.input.round.form-control.search-box(type='text' placeholder='Explore Modern Admin' tabindex='0' data-search='template-list')
-              .search-input-close
-                i.ft-x
-              ul.search-list
-              .dropdown-menu.arrow
-                .dropdown-item
-                  input.round.form-control(type='text' placeholder='Search Here')
-          li.nav-item
-            a.nav-link.nav-link-expand.mx-md-1.mx-0(href='#')
-              i.ficon.ft-maximize
-          li.dropdown.nav-item.mega-dropdown.d-none.d-lg-block
-            a.dropdown-toggle.nav-link(href='#' data-toggle='dropdown') Mega
-            ul.mega-dropdown-menu.dropdown-menu.row.p-1
-              li.col-md-4.bg-mega.p-2
-                h3.text-white.mb-1.font-weight-bold Mega Menu Sidebar
-                p.text-white.line-height-2
-                  | Candy canes bonbon toffee. Cheesecake drag&eacute;e gummi bears chupa chups powder bonbon. Apple pie cookie sweet.
-                button.btn.btn-outline-white Learn More
-              li.col-md-5.px-2
-                h6.font-weight-bold.font-medium-2.ml-1 Admin Panel
-                ul.row.mt-2
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mb-xl-3(href='../ecommerce-menu-template' target='_blank')
-                      i.la.la-shopping-cart.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-0 eCommerce
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mb-xl-3(href='../travel-menu-template' target='_blank')
-                      i.la.la-plane.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-0 Travel
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mb-xl-3.mt-75.mt-xl-0(href='../hospital-menu-template' target='_blank')
-                      i.la.la-stethoscope.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-0 Hospital
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mt-75.mt-xl-0(href='../crypto-menu-template' target='_blank')
-                      i.la.la-bitcoin.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-50 Crypto
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mt-75.mt-xl-0(href='../support-menu-template' target='_blank')
-                      i.la.la-tag.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-50 Support
-                  li.col-6.col-xl-4
-                    a.text-center.mb-2.mt-75.mt-xl-0(href='../bank-menu-template' target='_blank')
-                      i.la.la-bank.font-large-1.mr-0
-                      p.font-medium-2.mt-25.mb-50 Bank
-              li.col-md-3
-                h6.font-weight-bold.font-medium-2 Components
-                ul.row.mt-1.mt-xl-2
-                  li.col-12.col-xl-6.pl-0
-                    ul.mega-component-list
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-alerts.html' target='_blank') Alert
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-callout.html' target='_blank') Callout
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-buttons-basic.html' target='_blank') Buttons
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-carousel.html' target='_blank') Carousel
-                  li.col-12.col-xl-6.pl-0
-                    ul.mega-component-list
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-dropdowns.html' target='_blank') Drop Down
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-list-group.html' target='_blank') List Group
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-modals.html' target='_blank') Modals
-                      li.mega-component-item
-                        a.mb-1.mb-xl-2(href='component-pagination.html' target='_blank') Pagination
-        ul.nav.navbar-nav.float-right
-          li.dropdown.dropdown-language.nav-item
-            a#dropdown-flag.dropdown-toggle.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-              i.flag-icon.flag-icon-gb
-              span.selected-language
-            .dropdown-menu(aria-labelledby='dropdown-flag')
-              a.dropdown-item(href='#' data-language='en')
-                i.flag-icon.flag-icon-us
-                |  English
-              a.dropdown-item(href='#' data-language='fr')
-                i.flag-icon.flag-icon-fr
-                |  French
-              a.dropdown-item(href='#' data-language='pt')
-                i.flag-icon.flag-icon-pt
-                |  Portuguese
-              a.dropdown-item(href='#' data-language='de')
-                i.flag-icon.flag-icon-de
-                |  German
-          li.dropdown.dropdown-notification.nav-item
-            a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
-              i.material-icons notifications_none
-              span.badge.badge-pill.badge-danger.badge-up.badge-glow 5
-            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
-              li.dropdown-menu-header
-                h6.dropdown-header.m-0
-                  span.grey.darken-2 Notifications
-                span.notification-tag.badge.badge-danger.float-right.m-0 5 New
-              li.scrollable-container.media-list.w-100
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left.align-self-center
-                      i.material-icons.icon-bg-circle.bg-cyan.mr-0 add_box
-                    .media-body
-                      h6.media-heading You have new order!
-                      p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left.align-self-center
-                      i.material-icons.icon-bg-circle.bg-red.bg-darken-1 cloud_download
-                    .media-body
-                      h6.media-heading.red.darken-1.mr-0 99% Server load
-                      p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left.align-self-center
-                      i.material-icons.icon-bg-circle.bg-yellow.bg-darken-3.mr-0 warning
-                    .media-body
-                      h6.media-heading.yellow.darken-3 Warning notifixation
-                      p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left.align-self-center
-                      i.material-icons.icon-bg-circle.bg-cyan.mr-0 check_circle
-                    .media-body
-                      h6.media-heading Complete the task
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left.align-self-center
-                      i.material-icons.icon-bg-circle.bg-teal.mr-0 insert_drive_file
-                    .media-body
-                      h6.media-heading Generate monthly report
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
-              li.dropdown-menu-footer
-                a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
-          li.dropdown.dropdown-notification.nav-item
-            a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
-              i.material-icons mail_outline
-            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
-              li.dropdown-menu-header
-                h6.dropdown-header.m-0
-                  span.grey.darken-2 Messages
-                span.notification-tag.badge.badge-warning.float-right.m-0 4 New
-              li.scrollable-container.media-list.w-100
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left
-                      span.avatar.avatar-sm.avatar-online.rounded-circle
-                        img(src='../../../app-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
-                        i
-                    .media-body
-                      h6.media-heading Margaret Govan
-                      p.notification-text.font-small-3.text-muted I like your portfolio, let&apos;s start.
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left
-                      span.avatar.avatar-sm.avatar-busy.rounded-circle
-                        img(src='../../../app-assets/images/portrait/small/avatar-s-2.png' alt='avatar')
-                        i
-                    .media-body
-                      h6.media-heading Bret Lezama
-                      p.notification-text.font-small-3.text-muted I have seen your work, there is
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left
-                      span.avatar.avatar-sm.avatar-online.rounded-circle
-                        img(src='../../../app-assets/images/portrait/small/avatar-s-3.png' alt='avatar')
-                        i
-                    .media-body
-                      h6.media-heading Carie Berra
-                      p.notification-text.font-small-3.text-muted Can we have call in this week ?
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
-                a(href='javascript:void(0)')
-                  .media
-                    .media-left
-                      span.avatar.avatar-sm.avatar-away.rounded-circle
-                        img(src='../../../app-assets/images/portrait/small/avatar-s-6.png' alt='avatar')
-                        i
-                    .media-body
-                      h6.media-heading Eric Alsobrook
-                      p.notification-text.font-small-3.text-muted We have project party this saturday.
-                      small
-                        time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
-              li.dropdown-menu-footer
-                a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
-          li.dropdown.dropdown-user.nav-item
-            a.dropdown-toggle.nav-link.dropdown-user-link(href='#' data-toggle='dropdown')
-              span.mr-1.user-name.text-bold-700 John Doe
-              span.avatar.avatar-online
-                img(src='../../../app-assets/images/portrait/small/avatar-s-19.png' alt='avatar')
-                i
-            .dropdown-menu.dropdown-menu-right
-              a.dropdown-item(href='#')
-                i.material-icons person_outline
-                |  Edit Profile
-              a.dropdown-item(href='#')
-                i.material-icons playlist_add_check
-                |  Todo
-              a.dropdown-item(href='#')
-                i.material-icons content_paste
-                |  Task
-              .dropdown-divider
-              a.dropdown-item(href='login-with-bg-image.html')
-                i.material-icons power_settings_new
-                |  Logout
+	.navbar-wrapper
+		.navbar-header
+			ul.nav.navbar-nav.flex-row
+				li.nav-item.mobile-menu.d-md-none.mr-auto
+					a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+						i.ft-menu.font-large-1
+				li.nav-item
+					a.navbar-brand(href='index.html')
+						img.brand-logo#navbar-logo(alt='' src='')
+						h3.brand-text#navbar-logo-text
+				li.nav-item.d-md-none
+					a.nav-link.open-navbar-container(data-toggle='collapse' data-target='#navbar-mobile')
+						i.la.la-ellipsis-v
+		.navbar-container.content
+			#navbar-mobile.collapse.navbar-collapse
+				ul.nav.navbar-nav.mr-auto.float-left
+					li.nav-item
+						a.nav-link.nav-link-expand.mx-md-1.mx-0(href='#')
+							i.material-icons fullscreen
+					li.dropdown.nav-item.mega-dropdown.d-none.d-lg-block
+						a.dropdown-toggle.nav-link#navbar-link-navigator(href='#' data-toggle='dropdown')
+							i.material-icons menu
+						ul.mega-dropdown-menu.dropdown-menu.row.p-1
+							li.col-md-4.bg-dark.p-2
+								h3.pink.mb-1.font-weight-bold#navbar-about-title
+								p.text-white.line-height-2#navbar-about-text
+								button.btn.btn-outline-pink.text-pink#navbar-about-button
+							li.col-md-8.px-2
+								h6.font-weight-bold.font-medium-2.ml-1#navbar-control-panel
+								ul.row.mt-2
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-home(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-event(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-schedule(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-sponsorship(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-proceedings(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-templates(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-media-gallery(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-faq(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-prices(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+									li.col-6.col-xl-3
+										a.text-center.mb-2.mb-xl-3#navbar-link-settings(href='' target='_self')
+											i.material-icons.font-large-1.mr-0
+											p.font-medium-2.mt-25.mb-0
+				ul.nav.navbar-nav.float-right
+					li.dropdown.dropdown-language.nav-item
+						a#dropdown-flag.dropdown-toggle.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+							i.flag-icon.flag-icon-gb
+							span.selected-language
+						.dropdown-menu(aria-labelledby='dropdown-flag')
+							a.dropdown-item(href='#' data-language='en')
+								i.flag-icon.flag-icon-us
+								|  Portugues
+							a.dropdown-item(href='#' data-language='fr')
+								i.flag-icon.flag-icon-fr
+								|  Frances
+							a.dropdown-item(href='#' data-language='pt')
+								i.flag-icon.flag-icon-pt
+								|  Inglês
+							a.dropdown-item(href='#' data-language='de')
+								i.flag-icon.flag-icon-sp
+								|  Espanhol

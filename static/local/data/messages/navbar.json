@@ -1,0 +1,121 @@
+{
+    "pt-BR": [
+        {
+            "id": "navbar-logo-text",
+            "text": " SISGEPAC"
+        },
+        {
+            "id": "navbar-logo",
+            "alt": "Logotipo do sistema SISGEPAC",
+            "title": "SISGEPAC | Sistema de Geração de Páginas para Congressos.",
+            "img": "/local/img/logo.svg"
+        },
+        {
+            "id": "navbar-about-title",
+            "text": "Sistema de Gerenciamento de Páginas para Congresso e Eventos"
+        },
+        {
+            "id": "navbar-about-text",
+            "text": "Essa aplicação lhe permite criar e configurar de forma rápida e fácil a página web de apresentação do seu evento de congresso. Através deste sistema, você é capaz de registrar patrocinadores, planos, preços, palestras e palestrantes, oficinas, templates para downloads e todas as informações necessárias sobre o evento, além de uma série de outras informações."
+        },
+        {
+            "id": "navbar-control-panel",
+            "text": "Painel de Controle"
+        },
+        {
+            "id": "navbar-about-button",
+            "text": "APRENDA COMO USAR O SISGEPAC",
+            "alt":  "Botão para ensinar como usar o sistema",
+            "title": "Clique para aprender como utilizar o sistema",
+            "href": "#"
+        },
+        {
+            "id": "navbar-link-navigator",
+            "src": "",
+            "text": "Navegação",
+            "href":"#",
+            "alt":  "Link de navegação do sistema.",
+            "title":"Clique para e navegue pelo sistema."
+        },
+        {
+            "id": "navbar-link-home",
+            "src": "home",
+            "text": "Ínicio",
+            "href":"/local",
+            "alt":  "Link de navegação para tela inicial.",
+            "title":"Clique para retornar a página inicial."
+        },
+        {
+            "id": "navbar-link-event",
+            "src": "event",
+            "text": "Evento",
+            "href":"/local/evento.html",
+            "alt":  "Link de navegação para configuração do evento.",
+            "title":"Clique para avançar para a página de configuração do evento."
+        },
+        {
+            "id": "navbar-link-schedule",
+            "src": "emoji_people",
+            "text": "Programação",
+            "href":"/local/programacao.html",
+            "alt":  "Link de navegação para configuração da programação do evento.",
+            "title":"Clique para avançar para a página de configuração da programação do evento."
+        },
+        {
+            "id": "navbar-link-sponsorship",
+            "src": "attach_money",
+            "text": "Patrocínio",
+            "href":"/local/patrocinio.html",
+            "alt":  "Link de navegação para configuração dos patrocinadores do evento.",
+            "title":"Clique para avançar para a página de configuração dos patrocinadores do evento."
+        },
+        {
+            "id": "navbar-link-templates",
+            "src": "text_fields",
+            "text": "Templates",
+            "href":"/local/template.html",
+            "alt":  "Link de navegação para configuração dos templates do evento.",
+            "title":"Clique para avançar para a página de configuração dos templates do evento."
+        },
+        {
+            "id": "navbar-link-proceedings",
+            "src": "file_copy",
+            "text": "Anais",
+            "href":"/local/anais.html",
+            "alt":  "Link de navegação para configuração dos anais do evento.",
+            "title":"Clique para avançar para a página de configuração dos anais do evento."
+        },
+        {
+            "id": "navbar-link-media-gallery",
+            "src": "perm_media",
+            "text": "Glaeria de Mídia",
+            "href":"/local/galeria.html",
+            "alt":  "Link de navegação para configuração das galerias do evento.",
+            "title":"Clique para avançar para a página de configuração das galerias do evento."
+        },
+        {
+            "id": "navbar-link-faq",
+            "src": "question_answer",
+            "text": "FAQ",
+            "href":"/local/faq.html",
+            "alt":  "Link de navegação para configuração faq do evento.",
+            "title":"Clique para avançar para a página de configuração faq do evento."
+        },
+        {
+            "id": "navbar-link-prices",
+            "src": "monetization_on",
+            "text": "Preços e Planos",
+            "href":"/local/precos.html",
+            "alt":  "Link de navegação para configuração de preços e planos evento.",
+            "title":"Clique para avançar para a página de configuração de preços e planos do evento."
+        },
+        {
+            "id": "navbar-link-settings",
+            "src": "settings_applications",
+            "text": "Configurações de Site",
+            "href":"/local/configuracoes.html",
+            "alt":  "Link de navegação para configuração do sistema.",
+            "title":"Clique para avançar para a página de configuração do sistema."
+        }
+    ]
+}

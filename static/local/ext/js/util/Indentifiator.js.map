@@ -1,0 +1,1 @@
+{"version":3,"file":"Indentifiator.js","sourceRoot":"","sources":["../../typescript/util/Indentifiator.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,aAAa;IAEf,MAAM,CAAC,UAAU;QAEpB,OAAO,CAAC,IAAI,CAAC,GAAG,EAAE,CAAC,QAAQ,CAAC,EAAE,CAAC,GAAG,IAAI,CAAC,MAAM,EAAE,CAAC,QAAQ,CAAC,EAAE,CAAC,CAAC,MAAM,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE,CAAC;IAE7F,CAAC;CAGJ"}
