@@ -1,10 +1,11 @@
-import { Controller }           from "./../../core/Controller.js";
-import { Logger }               from "./../../util/Logger.js";
-import { Config, DataEntity }   from "./../../conf/Config.js";
-import { MessageModel }         from '../model/MessageModel.js';
+import { Controller }           from './../../core/Controller.js';
+import { Logger }               from './../../util/Logger.js';
+import { MessageBuilder }       from './../../util/MessageBuilder.js';
+import { Config, DataEntity }   from './../../conf/Config.js';
+import { MessageModel }         from './../model/MessageModel.js';
 import { EventModel }           from './../model/EventModel.js';
-import { SpeakerModel }         from "./../model/SpeakerModel.js";
-import { LanguageModel }        from "./../model/LanguageModel.js";
+import { SpeakerModel }         from './../model/SpeakerModel.js';
+import { LanguageModel }        from './../model/LanguageModel.js';
 
 export class DashboardController extends Controller {
 
@@ -57,7 +58,7 @@ export class DashboardController extends Controller {
         this._elements = new Array<HTMLElement>();
 
         this._elements['title']                     = document.querySelector('title');
-        this._elements['event-occurrence-title']     = document.querySelector('#event-occurrence-title');
+        this._elements['event-occurrence-title']    = document.querySelector('#event-occurrence-title');
         this._elements['event-information-title']   = document.querySelector('#event-information-title');
         
     }
@@ -68,38 +69,16 @@ export class DashboardController extends Controller {
 
         this._messagesData.then(data => {
 
+            let elementKey: string;
+
             data['pt-BR'].forEach(message => {
+
+                Object.keys(message).forEach(key => {
+
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+                    
+                });
                 
-                if (message['id']) {
-
-                    this._elements[message['id']].textContent = message['text'];
-
-                }
-
-                if (message['tag']) {
-
-                    this._elements[message['tag']].textContent = message['text'];
-
-                }
-
-                if (message['alt']) {
-
-                    this._elements[message['id']].setAttribute('alt', message['alt']);
-
-                }
-
-                if (message['title']) {
-
-                    this._elements[message['id']].setAttribute('title', message['title'])
-
-                }
-
-                if (message['src']) {
-
-                    this._elements[message['id']].setAttribute('src', message['src']);
-
-                }
-
             });
 
         })

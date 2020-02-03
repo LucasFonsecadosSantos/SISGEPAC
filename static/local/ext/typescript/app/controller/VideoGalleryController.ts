@@ -1,26 +1,25 @@
 import { Controller }           from './../../core/Controller.js';
-import { DataEntity, Config }   from './../../conf/Config.js';
-import { Logger }               from './../../util/Logger.js';
+import { Config, DataEntity }   from './../../conf/Config.js';
 import { MessageBuilder }       from './../../util/MessageBuilder.js';
-import { MessageModel }         from './../model/MessageModel.js';
-import { ProceedingsModel }     from './../model/ProceedingsModel.js';
+import { Logger }               from './../../util/Logger.js';
+import { VideoGalleryModel }    from './../../app/model/VideoGalleryModel.js';
+import { MessageModel }         from './../../app/model/MessageModel.js';
 
-export class ProceedingsController extends Controller {
+export class VideoGalleryController extends Controller {
 
     private _elements:          Array<HTMLElement>;
     private _messageModel:      MessageModel;
-    private _proceedingsModel:  ProceedingsModel;
+    private _videoGalleryModel: VideoGalleryModel;
+    private _videoGalleryData;
     private _messageData;
-    private _proceedingsData;
 
     constructor() {
 
         super();
-        this._messageModel      = new MessageModel(DataEntity._PROCEEDINGS_MESSAGES_);
-        this._proceedingsModel  = new ProceedingsModel();
+        this._messageModel      = new MessageModel(DataEntity._VIDEO_GALLERY_MESSAGES_);
+        this._videoGalleryModel = new VideoGalleryModel();
         this._initializeElements();
         this._getPageMessages();
-        this._getPageContent();
 
     }
 
@@ -31,14 +30,14 @@ export class ProceedingsController extends Controller {
         this._messageData.then(data => {
 
             data['pt-BR'].forEach(message => {
-                
+
                 Object.keys(message).forEach(key => {
 
                     MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
-
+                    
                 });
-            
-            });
+
+            })
 
         })
 
@@ -50,18 +49,9 @@ export class ProceedingsController extends Controller {
 
         this._elements = new Array<HTMLElement>();
 
-    }
 
-    private _getPageContent(): void {
         
-        this._proceedingsData = this._proceedingsModel.all();
-
-        this._proceedingsData.then(data => {
-
-        })
-
-        .catch(error => Logger.log(error));
-
     }
 
+    
 }

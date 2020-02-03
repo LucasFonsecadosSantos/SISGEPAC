@@ -1,10 +1,11 @@
 import { Controller } from './../../core/Controller.js';
 import { Logger } from './../../util/Logger.js';
-import { EventModel } from '../model/EventModel.js';
-import { SystemConfigModel } from '../model/SystemConfigModel.js';
-import { MessageModel } from '../model/MessageModel.js';
+import { EventModel } from './../model/EventModel.js';
+import { SystemConfigModel } from './../model/SystemConfigModel.js';
+import { MessageModel } from './../model/MessageModel.js';
 import { InvalidDataKeyException } from '../../exception/InvalidDataKeyException.js';
-import { DataEntity } from '../../conf/Config.js';
+import { DataEntity } from './../../conf/Config.js';
+import { MessageBuilder } from './../../util/MessageBuilder.js';
 export class EventSettingsModalController extends Controller {
     constructor() {
         super();
@@ -37,24 +38,9 @@ export class EventSettingsModalController extends Controller {
         this._messages
             .then(data => {
             data['pt-BR'].forEach(message => {
-                if (message['text']) {
-                    this._elements[message['id']].textContent = message['text'];
-                }
-                if (message['icon']) {
-                    this._elements[message['id']].textContent = message['icon'];
-                }
-                if (message['alt']) {
-                    this._elements[message['id']].setAttribute('alt', message['alt']);
-                }
-                if (message['title']) {
-                    this._elements[message['id']].setAttribute('title', message['title']);
-                }
-                if (message['placeholder']) {
-                    this._elements[message['id']].setAttribute('placeholder', message['placeholder']);
-                }
-                if (message['route']) {
-                    this._elements[message['id']].setAttribute('href', message['route']);
-                }
+                Object.keys(message).forEach(key => {
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+                });
             });
         })
             .catch(error => Logger.log(error));

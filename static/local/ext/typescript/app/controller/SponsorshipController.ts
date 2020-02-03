@@ -1,8 +1,9 @@
 import { Controller }       from './../../core/Controller.js';
+import { DataEntity }       from './../../conf/Config.js';
 import { Logger }           from './../../util/Logger.js';
+import { MessageBuilder }   from './../../util/MessageBuilder.js';
 import { MessageModel }     from './../model/MessageModel.js';
 import { SponsorshipModel } from './../model/SponsorshipModel.js';
-import { DataEntity }       from '../../conf/Config.js';
 
 export class SponsorshipController extends Controller {
 
@@ -34,6 +35,16 @@ export class SponsorshipController extends Controller {
         this._messageData = this._messageModel.all();
 
         this._messageData.then(data => {
+
+            data['pt-BR'].forEach(message => {
+                
+                Object.keys(message).forEach(key => {
+
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+
+                });
+            
+            });
 
         })
 

@@ -1,12 +1,13 @@
-import { Controller } from "./../../core/Controller.js";
-import { Logger } from "./../../util/Logger.js";
-import { DataEntity, Config } from "./../../conf/Config.js";
-import { MessageModel } from "./../model/MessageModel.js";
+import { Controller }           from './../../core/Controller.js';
+import { Logger }               from './../../util/Logger.js';
+import { MessageBuilder }       from './../../util/MessageBuilder.js';
+import { DataEntity, Config }   from './../../conf/Config.js';
+import { MessageModel }         from './../model/MessageModel.js';
 
 export class NavbarController extends Controller {
 
-    private _elements: Array<HTMLElement>;
-    private _messageModel: MessageModel;
+    private _elements:      Array<HTMLElement>;
+    private _messageModel:  MessageModel;
     private _messages;
 
     constructor() {
@@ -48,46 +49,13 @@ export class NavbarController extends Controller {
 
         this._messages.then(data => {
 
-            data['pt-BR'].forEach(element => {
+            data['pt-BR'].forEach(message => {
                 
-                if (element['icon']) {
-                    
-                    if (element['id'] != 'navbar-link-navigator') {
-                        this._elements[element['id']].querySelector('.material-icons').textContent = element['icon'];
-                    }
-                }
+                Object.keys(message).forEach(key => {
 
-                if (element['img']) {
-                    this._elements[element['id']].setAttribute('src', element['img']);
-                }
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
 
-                if (element['text']) {
-
-                    if (
-                        element['id'] == 'navbar-link-navigator' ||
-                        element['id'] == 'navbar-about-text'     ||
-                        element['id'] == 'navbar-control-panel'  ||
-                        element['id'] == 'navbar-about-title'    ||
-                        element['id'] == 'navbar-logo-text'      ||
-                        element['id'] == 'navbar-about-button'
-                        ) {
-                        this._elements[element['id']].textContent = element['text'];
-                    } else {
-                        this._elements[element['id']].querySelector('p').textContent = element['text'];
-                    }
-                }
-
-                if (element['route']) {
-                    this._elements[element['id']].setAttribute('href', element['route']);
-                }
-
-                if (element['alt']) {
-                    this._elements[element['id']].setAttribute('alt', element['alt']);
-                }
-
-                if (element['title']) {
-                    this._elements[element['id']].setAttribute('title', element['title']);
-                }
+                });
             
             });
 

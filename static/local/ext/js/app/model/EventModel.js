@@ -8,11 +8,19 @@ export class EventModel extends Model {
         super._dataKeys = [
             'title',
             'description',
+            'mission',
+            'area',
+            'edition',
             'email',
+            'logo',
             'event-type',
             'institute',
             'schedule-date',
+            'opening-time',
             'social-networks',
+            'address-location',
+            'geo-location',
+            'latest-events',
             'telephone'
         ];
     }

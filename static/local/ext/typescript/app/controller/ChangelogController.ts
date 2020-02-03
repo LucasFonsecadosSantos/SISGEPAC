@@ -1,8 +1,9 @@
-import { Controller }           from "./../../core/Controller.js";
+import { Controller }           from './../../core/Controller.js';
 import { DataEntity, Config }   from './../../conf/Config.js';
-import { MessageModel }         from "./../model/MessageModel.js"
-import { ChangelogModel }       from "./../model/ChangelogModel.js";
-import { Logger }               from "./../../util/Logger.js";
+import { Logger }               from './../../util/Logger.js';
+import { MessageBuilder }       from './../../util/MessageBuilder.js';
+import { MessageModel }         from './../model/MessageModel.js'
+import { ChangelogModel }       from './../model/ChangelogModel.js';
 
 export class ChangelogController extends Controller {
 
@@ -27,7 +28,17 @@ export class ChangelogController extends Controller {
         
         this._messageData = this._messageModel.all();
 
-        this._messageData.then(message => {
+        this._messageData.then(data => {
+
+            data['pt-BR'].forEach(message => {
+
+                Object.keys(message).forEach(key => {
+
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+
+                });
+
+            });
 
         })
 

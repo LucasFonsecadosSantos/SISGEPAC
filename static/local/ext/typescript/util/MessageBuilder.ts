@@ -2,7 +2,7 @@ export class MessageBuilder {
 
     public static buildMessage(element: HTMLElement, type: string, message: any): void {
 
-        if (type === 'id') return;
+        if ((type === 'id') || (type === 'tag')) return;
 
         if (type === 'text') {
 

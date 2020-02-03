@@ -9,6 +9,10 @@ import { HeaderController } from './../app/controller/HeaderController.js';
 import { FooterController } from './../app/controller/FooterController.js';
 import { NavbarController } from './../app/controller/NavbarController.js';
 import { EventSettingsModalController } from './../app/controller/EventSettingsModalController.js';
+import { TemplateController } from '../app/controller/TemplateController.js';
+import { ProceedingsController } from '../app/controller/ProceedingsController.js';
+import { PhotoGalleryController } from './../app/controller/PhotoGalleryController.js';
+import { VideoGalleryController } from './../app/controller/VideoGalleryController.js';
 export class Sisgepac {
     constructor() {
         this._bodyElement = document.querySelector('.app-content');
@@ -39,6 +43,18 @@ export class Sisgepac {
                 break;
             case 'changelog':
                 new ChangelogController();
+                break;
+            case 'template':
+                new TemplateController();
+                break;
+            case 'proceedings':
+                new ProceedingsController();
+                break;
+            case 'photo-gallery':
+                new PhotoGalleryController();
+                break;
+            case 'video-gallery':
+                new VideoGalleryController();
                 break;
         }
         this._modalElements.forEach(modal => {

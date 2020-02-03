@@ -1,20 +1,16 @@
 import { Controller } from './../../core/Controller.js';
-import { Logger } from './../../util/Logger.js';
 import { DataEntity } from './../../conf/Config.js';
 import { MessageBuilder } from './../../util/MessageBuilder.js';
-import { MessageModel } from './../model/MessageModel.js';
-import { TemplateModel } from './../model/TemplateModel.js';
-export class TemplateController extends Controller {
+import { Logger } from './../../util/Logger.js';
+import { PhotoGalleryModel } from './../../app/model/PhotoGalleryModel.js';
+import { MessageModel } from './../../app/model/MessageModel.js';
+export class PhotoGalleryController extends Controller {
     constructor() {
         super();
-        this._messageModel = new MessageModel(DataEntity._TEMPLATE_MESSAGES_);
-        this._templateModel = new TemplateModel();
+        this._messageModel = new MessageModel(DataEntity._PHOTO_GALLERY_MESSAGES_);
+        this._photoGalleryModel = new PhotoGalleryModel();
         this._initializeElements();
         this._getPageMessages();
-        this._getPageContent();
-    }
-    _initializeElements() {
-        this._elements = new Array();
     }
     _getPageMessages() {
         this._messageData = this._messageModel.all();
@@ -27,11 +23,8 @@ export class TemplateController extends Controller {
         })
             .catch(error => Logger.log(error));
     }
-    _getPageContent() {
-        this._templateData = this._templateModel.all();
-        this._templateData.then(data => {
-        })
-            .catch(error => Logger.log(error));
+    _initializeElements() {
+        this._elements = new Array();
     }
 }
-//# sourceMappingURL=TemplateController.js.map
+//# sourceMappingURL=PhotoGalleryController.js.map

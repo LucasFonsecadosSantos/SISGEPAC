@@ -1,8 +1,10 @@
-import { Controller }       from "./../../core/Controller.js";
-import { MessageModel }     from "./../model/MessageModel.js";
-import { TemplateModel }    from "./../model/TemplateModel.js"
-import { Logger }           from "./../../util/Logger.js";
-import { DataEntity, Config } from '../../conf/Config';
+import { Controller }           from './../../core/Controller.js';
+import { Logger }               from './../../util/Logger.js';
+import { DataEntity, Config }   from './../../conf/Config.js';
+import { MessageBuilder }       from './../../util/MessageBuilder.js';
+import { MessageModel }         from './../model/MessageModel.js';
+import { TemplateModel }        from './../model/TemplateModel.js'
+
 
 export class TemplateController extends Controller {
 
@@ -34,6 +36,16 @@ export class TemplateController extends Controller {
         this._messageData = this._messageModel.all();
 
         this._messageData.then(data => {
+
+            data['pt-BR'].forEach(message => {
+                
+                Object.keys(message).forEach(key => {
+
+                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+
+                });
+            
+            });
 
         })
 

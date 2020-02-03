@@ -1,8 +1,9 @@
-import { Controller }           from "./../../core/Controller.js";
-import { SpeakerModel }         from "./../model/SpeakerModel.js";
-import { MessageModel }         from "./../model/MessageModel.js";
-import { Logger }               from "../../util/Logger.js";
-import { DataEntity, Config }   from '../../conf/Config.js';
+import { Controller }           from './../../core/Controller.js';
+import { SpeakerModel }         from './../model/SpeakerModel.js';
+import { MessageModel }         from './../model/MessageModel.js';
+import { Logger }               from './../../util/Logger.js';
+import { MessageBuilder }       from './../../util/MessageBuilder.js';
+import { DataEntity, Config }   from './../../conf/Config.js';
 
 export class SpeakerController extends Controller {
 
@@ -35,6 +36,16 @@ export class SpeakerController extends Controller {
         this._messages
 
             .then(data => {
+
+                data['pt-BR'].forEach(message => {
+                
+                    Object.keys(message).forEach(key => {
+    
+                        MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+    
+                    });
+                
+                });
 
             })
 

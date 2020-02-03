@@ -27,93 +27,93 @@
             "text": "APRENDA COMO USAR O SISGEPAC",
             "alt":  "Botão para ensinar como usar o sistema",
             "title": "Clique para aprender como utilizar o sistema",
-            "route": "#"
+            "href": "#"
         },
         {
             "id": "navbar-link-navigator",
-            "icon": "",
+            "src": "",
             "text": "Navegação",
-            "route":"#",
+            "href":"#",
             "alt":  "Link de navegação do sistema.",
             "title":"Clique para e navegue pelo sistema."
         },
         {
             "id": "navbar-link-home",
-            "icon": "home",
+            "src": "home",
             "text": "Ínicio",
-            "route":"/local",
+            "href":"/local",
             "alt":  "Link de navegação para tela inicial.",
             "title":"Clique para retornar a página inicial."
         },
         {
             "id": "navbar-link-event",
-            "icon": "event",
+            "src": "event",
             "text": "Evento",
-            "route":"/local/evento.html",
+            "href":"/local/evento.html",
             "alt":  "Link de navegação para configuração do evento.",
             "title":"Clique para avançar para a página de configuração do evento."
         },
         {
             "id": "navbar-link-schedule",
-            "icon": "emoji_people",
+            "src": "emoji_people",
             "text": "Programação",
-            "route":"/local/programacao.html",
+            "href":"/local/programacao.html",
             "alt":  "Link de navegação para configuração da programação do evento.",
             "title":"Clique para avançar para a página de configuração da programação do evento."
         },
         {
             "id": "navbar-link-sponsorship",
-            "icon": "attach_money",
+            "src": "attach_money",
             "text": "Patrocínio",
-            "route":"/local/patrocinio.html",
+            "href":"/local/patrocinio.html",
             "alt":  "Link de navegação para configuração dos patrocinadores do evento.",
             "title":"Clique para avançar para a página de configuração dos patrocinadores do evento."
         },
         {
             "id": "navbar-link-templates",
-            "icon": "text_fields",
+            "src": "text_fields",
             "text": "Templates",
-            "route":"/local/template.html",
+            "href":"/local/template.html",
             "alt":  "Link de navegação para configuração dos templates do evento.",
             "title":"Clique para avançar para a página de configuração dos templates do evento."
         },
         {
             "id": "navbar-link-proceedings",
-            "icon": "file_copy",
+            "src": "file_copy",
             "text": "Anais",
-            "route":"/local/anais.html",
+            "href":"/local/anais.html",
             "alt":  "Link de navegação para configuração dos anais do evento.",
             "title":"Clique para avançar para a página de configuração dos anais do evento."
         },
         {
             "id": "navbar-link-media-gallery",
-            "icon": "perm_media",
+            "src": "perm_media",
             "text": "Glaeria de Mídia",
-            "route":"/local/galeria.html",
+            "href":"/local/galeria.html",
             "alt":  "Link de navegação para configuração das galerias do evento.",
             "title":"Clique para avançar para a página de configuração das galerias do evento."
         },
         {
             "id": "navbar-link-faq",
-            "icon": "question_answer",
+            "src": "question_answer",
             "text": "FAQ",
-            "route":"/local/faq.html",
+            "href":"/local/faq.html",
             "alt":  "Link de navegação para configuração faq do evento.",
             "title":"Clique para avançar para a página de configuração faq do evento."
         },
         {
             "id": "navbar-link-prices",
-            "icon": "monetization_on",
+            "src": "monetization_on",
             "text": "Preços e Planos",
-            "route":"/local/precos.html",
+            "href":"/local/precos.html",
             "alt":  "Link de navegação para configuração de preços e planos evento.",
             "title":"Clique para avançar para a página de configuração de preços e planos do evento."
         },
         {
             "id": "navbar-link-settings",
-            "icon": "settings_applications",
+            "src": "settings_applications",
             "text": "Configurações de Site",
-            "route":"/local/configuracoes.html",
+            "href":"/local/configuracoes.html",
             "alt":  "Link de navegação para configuração do sistema.",
             "title":"Clique para avançar para a página de configuração do sistema."
         }

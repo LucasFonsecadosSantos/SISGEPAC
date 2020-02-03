@@ -21,6 +21,7 @@ export var DataEntity;
     DataEntity["_SCHEDULE_"] = "schedule";
     DataEntity["_ACTIVITY_"] = "activity";
     DataEntity["_ORGANIZATION_"] = "organization";
+    DataEntity["_FAQ_"] = "faq";
     DataEntity["_SYSTEM_"] = "system";
     DataEntity["_CHANGELOG_"] = "changelog";
     DataEntity["_DASHBOARD_MESSAGES_"] = "dashboard";
@@ -32,6 +33,10 @@ export var DataEntity;
     DataEntity["_TEMPLATE_MESSAGES_"] = "template";
     DataEntity["_CHANGELOG_MESSAGES_"] = "changelog";
     DataEntity["_PROCEEDINGS_MESSAGES_"] = "proceedings";
+    DataEntity["_FAQ_MESSAGES_"] = "faq";
+    DataEntity["_FOOTER_MESSAGES_"] = "footer";
+    DataEntity["_VIDEO_GALLERY_MESSAGES_"] = "video_gallery";
+    DataEntity["_PHOTO_GALLERY_MESSAGES_"] = "photo_gallery";
 })(DataEntity || (DataEntity = {}));
 export class Config {
     static projectStartedStatus() {
@@ -61,6 +66,7 @@ Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._VIDEO_GALLERY_, "/remote/data/content/video_gallery.json"],
     [DataEntity._PHOTO_GALLERY_, "/remote/data/content/photo_gallery.json"],
     [DataEntity._SCHEDULE_, "/remote/data/content/schedule.json"],
+    [DataEntity._FAQ_, "/remote/data/content/faq.json"],
     [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"]
 ]);
 Config.REMOTE_CONF_FILES_PATH = new Map([
@@ -77,6 +83,10 @@ Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._EVENT_SETTINGS_MESSAGE_, Config.LOCAL_MESSAGES_PATH + "event.json"],
     [DataEntity._TEMPLATE_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "template.json"],
     [DataEntity._PROCEEDINGS_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "proceedings.json"],
+    [DataEntity._FAQ_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "faq.json"],
+    [DataEntity._FOOTER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "footer.json"],
+    [DataEntity._PHOTO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "photo_gallery.json"],
+    [DataEntity._VIDEO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "video_gallery.json"],
     [DataEntity._CHANGELOG_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "changelog.json"]
 ]);
 //# sourceMappingURL=Config.js.map

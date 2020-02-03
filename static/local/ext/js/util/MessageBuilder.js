@@ -1,6 +1,6 @@
 export class MessageBuilder {
     static buildMessage(element, type, message) {
-        if (type === 'id')
+        if ((type === 'id') || (type === 'tag'))
             return;
         if (type === 'text') {
             element.textContent = message;

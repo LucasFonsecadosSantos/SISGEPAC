@@ -13,6 +13,7 @@ export enum DataEntity {
     _SCHEDULE_                                  = "schedule",
     _ACTIVITY_                                  = "activity",
     _ORGANIZATION_                              = "organization",
+    _FAQ_                                       = "faq",
     _SYSTEM_                                    = "system",
     _CHANGELOG_                                 = "changelog",
     _DASHBOARD_MESSAGES_                        = "dashboard",
@@ -23,7 +24,11 @@ export enum DataEntity {
     _EVENT_SETTINGS_MESSAGE_                    = "event",
     _TEMPLATE_MESSAGES_                         = "template",
     _CHANGELOG_MESSAGES_                        = "changelog",
-    _PROCEEDINGS_MESSAGES_                      = "proceedings"
+    _PROCEEDINGS_MESSAGES_                      = "proceedings",
+    _FAQ_MESSAGES_                              = "faq",
+    _FOOTER_MESSAGES_                           = "footer",
+    _VIDEO_GALLERY_MESSAGES_                    = "video_gallery",
+    _PHOTO_GALLERY_MESSAGES_                    = "photo_gallery"
 
 }
 
@@ -49,6 +54,7 @@ export class Config {
         [DataEntity._VIDEO_GALLERY_,    "/remote/data/content/video_gallery.json"],
         [DataEntity._PHOTO_GALLERY_,    "/remote/data/content/photo_gallery.json"],
         [DataEntity._SCHEDULE_,         "/remote/data/content/schedule.json"],
+        [DataEntity._FAQ_,              "/remote/data/content/faq.json"],
         [DataEntity._ACTIVITY_,         "/remote/data/content/activity.json"]
 
     ]);
@@ -71,6 +77,10 @@ export class Config {
         [DataEntity._EVENT_SETTINGS_MESSAGE_,                       Config.LOCAL_MESSAGES_PATH + "event.json"],
         [DataEntity._TEMPLATE_MESSAGES_,                            Config.LOCAL_MESSAGES_PATH + "template.json"],
         [DataEntity._PROCEEDINGS_MESSAGES_,                         Config.LOCAL_MESSAGES_PATH + "proceedings.json"],
+        [DataEntity._FAQ_MESSAGES_,                                 Config.LOCAL_MESSAGES_PATH + "faq.json"],
+        [DataEntity._FOOTER_MESSAGES_,                              Config.LOCAL_MESSAGES_PATH + "footer.json"],
+        [DataEntity._PHOTO_GALLERY_MESSAGES_,                       Config.LOCAL_MESSAGES_PATH + "photo_gallery.json"],
+        [DataEntity._VIDEO_GALLERY_MESSAGES_,                       Config.LOCAL_MESSAGES_PATH + "video_gallery.json"],
         [DataEntity._CHANGELOG_MESSAGES_,                           Config.LOCAL_MESSAGES_PATH + "changelog.json"]
 
     ]);
