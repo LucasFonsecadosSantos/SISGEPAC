@@ -11,6 +11,77 @@
         {
             "id": "event-information-title",
             "text": "Informações gerais do evento"
+        },
+        {
+            "id":   "card02_label_event-name",
+            "text": "Título do evento: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id":   "card02_label_event-description",
+            "text": "Descrição breve: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id":   "card02_label_event-edition",
+            "text": "Edição: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id":   "card02_label_event-area",
+            "text": "Área: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id":   "card02_label_event-type",
+            "text": "Tipo: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id":   "card02_label_event-institute",
+            "text": "Instituição realizadora: ",
+            "title": "Clique para editar."  
+        },
+        {
+            "id": "card02_label_contact-info",
+            "text": "Formas de Contato e Redes Sociais"
+        },
+        {
+            "id": "card03_label_event-twitter",
+            "text": "Twitter: "
+        },
+        {
+            "id": "card03_label_event-facebook",
+            "text": "Facebook: "
+        },
+        {
+            "id": "card03_label_event-instagram",
+            "text": "Instagram: "
+        },
+        {
+            "id": "card03_label_event-youtube",
+            "text": "Youtube: "
+        },
+        {
+            "id": "card03_label_event-linkedin",
+            "text": "Linkedin: "
+        },
+        {
+            "id": "card03_label_event-website",
+            "text": "Website: "
+        },
+        {
+            "id": "card03_label_event-telephone",
+            "text": "Telefones: "
+        },
+        {
+            "id": "card03_label_event-email",
+            "text": "E-Mail: "
+        },
+        {
+            "id": "card03_label_event-contact-info",
+            "text": "Formas de contato e redes sociais"
         }
+        
     ]
 }

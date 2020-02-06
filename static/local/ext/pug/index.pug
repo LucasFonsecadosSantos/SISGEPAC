@@ -188,44 +188,66 @@ include components/modals/_event-settings.pug
                   table.table.table-borderless
                     tbody
                       tr
-                        td Username:
-                        td.users-view-username dean3004
+                        td#card02_label_event-name
+                        td.users-view-username#card02_data_event-name
                       tr
-                        td Name:
-                        td.users-view-name Dean Stanley
+                        td#card02_label_event-edition
+                        td.users-view-name#card02_data_event-edition
                       tr
-                        td E-mail:
-                        td.users-view-email deanstanley@gmail.com
+                        td#card02_label_event-area
+                        td.users-view-name#card02_data_event-area
                       tr
-                        td Comapny:
-                        td XYZ Corp. Ltd.
-                  h5.mb-1
-                    i.ft-link
-                    | Social Links
-                  table.table.table-borderless
-                    tbody
+                        td#card02_label_event-description
+                        td.users-view-name#card02_data_event-description
                       tr
-                        td Twitter:
-                        td
-                          a(href="#") https://www.twitter.com/
+                        td#card02_label_event-institute
+                        td.users-view-name#card02_data_event-institute
                       tr
-                        td Facebook:
-                        td
-                          a(href="#") https://www.facebook.com/
-                      tr
-                        td Instagram:
-                        td
-                          a(href="#") https://www.instagram.com/
-                  h5.mb-1
-                    i.ft-info
-                    | Personal Info
-                  table.table.table-borderless.mb-0
-                    tbody
-                      tr
-                        td Birthday:
-                        td 03/04/1990
+                        td#card02_label_event-type
+                        td.users-view-name#card02_data_event-type
+                  
       .row.match-height
-        .col-md-6
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+            .card-header
+              h4.card-title.dark#card03_label_event-contact-info
+            .card-body
+              .col-12
+                table.table.table-borderless
+                  tbody
+                    tr
+                      td#card03_label_event-twitter
+                      td
+                        a#card03_data_event-twitter
+                    tr
+                      td#card03_label_event-facebook
+                      td
+                        a#card03_data_event-facebook
+                    tr
+                      td#card03_label_event-instagram
+                      td
+                        a#card03_data_event-instagram
+                    tr
+                      td#card03_label_event-youtube
+                      td
+                        a#card03_data_event-youtube
+                    tr
+                      td#card03_label_event-linkedin
+                      td
+                        a#card03_data_event-linkedin
+                    tr
+                      td#card03_label_event-website
+                      td
+                        a#card03_data_event-website
+                    tr
+                      td#card03_label_event-telephone
+                      td
+                        a#card03_data_event-telephone
+                    tr
+                      td#card03_label_event-email
+                      td
+                        a#card03_data_event-email
+        //.col-md-6
           .card.payment
             .card-content
               .card-body
@@ -249,7 +271,7 @@ include components/modals/_event-settings.pug
                   .col-2
                     button.btn.btn-sm.btn-icon.btn-danger.mr-1(type='button')
                       i.ft-x
-        .col-md-6
+        //.col-md-6
           .card
             .card-content
               .card-body
