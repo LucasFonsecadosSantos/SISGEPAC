@@ -43,10 +43,6 @@
             "title": "Clique para editar."  
         },
         {
-            "id": "card02_label_contact-info",
-            "text": "Formas de Contato e Redes Sociais"
-        },
-        {
             "id": "card03_label_event-twitter",
             "text": "Twitter: "
         },
@@ -81,6 +77,114 @@
         {
             "id": "card03_label_event-contact-info",
             "text": "Formas de contato e redes sociais"
+        },
+        {
+            "id": "card04_label_title",
+            "text": "Localização"
+        },
+        {
+            "id": "card05_label_title",
+            "text": "Palestrantes e mentores registrados"
+        },
+        {
+            "id": "card06_label_title",
+            "text": "Atividades programadas"
+        },
+        {
+            "id": "card05_table_label_column01",
+            "text": "Avatar"
+        },
+        {
+            "id": "card05_table_label_column02",
+            "text": "Nome"
+        },
+        {
+            "id": "card05_table_label_column03",
+            "text": "Atividades"
+        },
+        {
+            "id": "card05_table_label_column04",
+            "text": "Ações"
+        },
+        {
+            "id": "card06_table_label_column01",
+            "text": "Mentor"
+        },
+        {
+            "id": "card06_table_label_column02",
+            "text": "Atividade"
+        },
+        {
+            "id": "card06_table_label_column03",
+            "text": "Data/Hora"
+        },
+        {
+            "id": "card06_table_label_column04",
+            "text": "Tipo"
+        },
+        {
+            "id": "card07_label_title",
+            "text": "Planos de patrocínio"
+        },
+        {
+            "id": "card07_table_label_column01",
+            "text": "Nome"
+        },
+        {
+            "id": "card07_table_label_column02",
+            "text": "Descrição"
+        },
+        {
+            "id": "card07_table_label_column03",
+            "text": "Valor"
+        },
+        {
+            "id": "card07_table_label_column04",
+            "text": "Ações"
+        },
+        {
+            "id": "card08_label_title",
+            "text": "Patrocinadores"
+        },
+        {
+            "id": "card08_table_label_column01",
+            "text": "Patrocinador"
+        },
+        {
+            "id": "card08_table_label_column02",
+            "text": "Descrição"
+        },
+        {
+            "id": "card08_table_label_column03",
+            "text": "Valor Investido"
+        },
+        {
+            "id": "card08_table_label_column04",
+            "text": "Plano"
+        },
+        {
+            "id": "card08_table_label_column05",
+            "text": "Ações"
+        },
+        {
+            "id": "card09_label_title",
+            "text": "Templates de documentos"
+        },
+        {
+            "id": "card010_label_title",
+            "text": "Idiomas"
+        },
+        {
+            "id": "card010_table_label_column01",
+            "text": "Ícone"
+        },
+        {
+            "id": "card010_table_label_column02",
+            "text": "Idioma"
+        },
+        {
+            "id": "card010_table_label_column03",
+            "text": "Ações"
         }
         
     ]

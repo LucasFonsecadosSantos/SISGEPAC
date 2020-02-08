@@ -75,7 +75,6 @@ export class DashboardController extends Controller {
         this._elements['card02_data_event-type']            =   document.querySelector('#card02_data_event-type');
         this._elements['card02_label_event-area']           =   document.querySelector('#card02_label_event-area');
         this._elements['card02_data_event-area']            =   document.querySelector('#card02_data_event-area');
-        this._elements['card02_label_contact-info']         =   document.querySelector('#card02_label_contact-info');
 
 
         //Card 03
@@ -96,8 +95,47 @@ export class DashboardController extends Controller {
         this._elements['card03_label_event-instagram']      =   document.querySelector('#card03_label_event-instagram');
         this._elements['card03_data_event-instagram']       =   document.querySelector('#card03_data_event-instagram');
         this._elements['card03_label_event-contact-info']   =   document.querySelector('#card03_label_event-contact-info');
-        
-        
+
+        //card04
+        this._elements['card04_label_title']                =   document.querySelector('#card04_label_title');
+
+        //Card 05
+        this._elements['card05_label_title']                =   document.querySelector('#card05_label_title');
+        this._elements['card05_table_label_column01']       =   document.querySelector('#card05_table_label_column01');
+        this._elements['card05_table_label_column02']       =   document.querySelector('#card05_table_label_column02');
+        this._elements['card05_table_label_column03']       =   document.querySelector('#card05_table_label_column03');
+        this._elements['card05_table_label_column04']       =   document.querySelector('#card05_table_label_column04');
+
+        //Card 06
+        this._elements['card06_label_title']                =   document.querySelector('#card06_label_title');
+        this._elements['card06_table_label_column01']       =   document.querySelector('#card06_table_label_column01');
+        this._elements['card06_table_label_column02']       =   document.querySelector('#card06_table_label_column02');
+        this._elements['card06_table_label_column03']       =   document.querySelector('#card06_table_label_column03');
+        this._elements['card06_table_label_column04']       =   document.querySelector('#card06_table_label_column04');
+
+        //Card 07
+        this._elements['card07_label_title']                =   document.querySelector('#card07_label_title');
+        this._elements['card07_table_label_column01']       =   document.querySelector('#card07_table_label_column01');
+        this._elements['card07_table_label_column02']       =   document.querySelector('#card07_table_label_column02');
+        this._elements['card07_table_label_column03']       =   document.querySelector('#card07_table_label_column03');
+        this._elements['card07_table_label_column04']       =   document.querySelector('#card07_table_label_column04');
+
+        //Card08
+        this._elements['card08_label_title']                =   document.querySelector('#card08_label_title');
+        this._elements['card08_table_label_column01']       =   document.querySelector('#card08_table_label_column01');
+        this._elements['card08_table_label_column02']       =   document.querySelector('#card08_table_label_column02');
+        this._elements['card08_table_label_column03']       =   document.querySelector('#card08_table_label_column03');
+        this._elements['card08_table_label_column04']       =   document.querySelector('#card08_table_label_column04');
+        this._elements['card08_table_label_column05']       =   document.querySelector('#card08_table_label_column05');
+
+        //Card 09
+        this._elements['card09_label_title']                =   document.querySelector('#card09_label_title');
+
+        //Card 010
+        this._elements['card010_label_title']               =   document.querySelector('#card010_label_title');
+        this._elements['card010_table_label_column01']       =   document.querySelector('#card010_table_label_column01');
+        this._elements['card010_table_label_column02']       =   document.querySelector('#card010_table_label_column02');
+        this._elements['card010_table_label_column03']       =   document.querySelector('#card010_table_label_column03');
         
         
     }

@@ -182,6 +182,15 @@ include components/modals/_event-settings.pug
         .col-xl-6.col-lg-12.col-sm-12
           .card
               .card-header
+                  h4.card-title.dark teste
+              .card-body
+                .col-12
+
+                  
+      .row.match-height
+        .col-xl-4.col-lg-12.col-sm-12
+          .card
+              .card-header
                   h4.card-title.dark#event-information-title
               .card-body
                 .col-12
@@ -205,9 +214,7 @@ include components/modals/_event-settings.pug
                       tr
                         td#card02_label_event-type
                         td.users-view-name#card02_data_event-type
-                  
-      .row.match-height
-        .col-xl-6.col-lg-12.col-sm-12
+        .col-xl-4.col-lg-12.col-sm-12
           .card
             .card-header
               h4.card-title.dark#card03_label_event-contact-info
@@ -247,6 +254,13 @@ include components/modals/_event-settings.pug
                       td#card03_label_event-email
                       td
                         a#card03_data_event-email
+        .col-xl-4.col-lg-12.col-sm-12
+          .card
+              .card-header
+                  h4.card-title.dark#card04_label_title
+              .card-body
+                .col-12
+                  iframe#card03_map(width="100%", height="350" ,frameborder="0", scrolling="no", marginheight="0" ,marginwidth="0", src="https://www.openstreetmap.org/export/embed.html?bbox=-45.011050701141365%2C-21.248062254385673%2C-44.98272657394409%2C-21.230062071277242&amp;layer=mapnik&amp;marker=-21.239062437563888%2C-44.996888637542725", style="border: 3px solid #009688")
         //.col-md-6
           .card.payment
             .card-content
@@ -299,15 +313,244 @@ include components/modals/_event-settings.pug
                   .col-3
                     p.m-0 05-10-2018
                     p.info invoice
-      // Your Open Tickets & Ticket Categories
-      .row
+      
+      .row.match-height
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+            .card-content
+              .card-header
+                h4.card-title.dark#card05_label_title
+              .card-body
+                .table-responsive
+                  table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+                    thead
+                      tr
+                        th.text-right(colspan="4")
+                          .btn-group.btn-group-sm(role="group", aria-label="Basic example")
+                            button.btn.btn-success(type="button")
+                              i.material-icons add
+                              |Cadastrar
+                            button.btn.btn-primary(type="button")
+                              i.material-icons search
+                              |Pesquisar
+                            button.btn.btn-danger(type="button")
+                              i.material-icons delete_forever
+                              |remover
+                      tr
+                        th#card05_table_label_column01
+                        th#card05_table_label_column02
+                        th#card05_table_label_column03
+                        th#card05_table_label_column04
+                    tbody
+                      tr
+                        td.text-center
+                          span.avatar.avatar-busy
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
+                        td
+                          a.text-bold-600(href='#') Lucas Fonseca dos Santos
+                          p.text-muted Pesquisador na Universidade Federal de Lavras
+                          p.text-muted redes sociais
+                        td.text-truncate.p-1
+                          ul.list-unstyled.users-list.m-0
+                            li.avatar.avatar-sm.pull-up(data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Kimberly Simmons")
+                              img.media-object.rounded-circle.no-border-top-radius.no-border-bottom-radius(src="/local/ext/app-assets/images/portfolio/portfolio-1.jpg",alt="Avatar")
+                            li.avatar.avatar-sm.pull-up(data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Willie Torres")
+                              img.media-object.rounded-circle.no-border-top-radius.no-border-bottom-radius(src="/local/ext/app-assets/images/portfolio/portfolio-2.jpg", alt="Avatar")
+                            li.avatar.avatar-sm.pull-up(data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Rebecca Jones")
+                              img.media-object.rounded-circle.no-border-top-radius.no-border-bottom-radius(src="/local/ext/app-assets/images/portfolio/portfolio-4.jpg", alt="Avatar")
+                            li.avatar.avatar-sm
+                              span.badge.badge-info +1 more
+                        td
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
+                            i.material-icons edit
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
+                            i.material-icons remove_red_eye
+                          button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
+                            i.material-icons delete_forever
+                 
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+            .card-content
+              .card-header
+                h4.card-title.dark#card06_label_title
+              .card-body
+                .table-responsive
+                  table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+                    thead
+                      tr
+                        th.text-right(colspan="4")
+                          .btn-group.btn-group-sm(role="group", aria-label="Basic example")
+                            button.btn.btn-success(type="button")
+                              i.material-icons add
+                              |Cadastrar
+                            button.btn.btn-primary(type="button")
+                              i.material-icons search
+                              |Pesquisar
+                            button.btn.btn-danger(type="button")
+                              i.material-icons delete_forever
+                              |remover
+                      tr
+                        th#card06_table_label_column01
+                        th#card06_table_label_column02
+                        th#card06_table_label_column03
+                        th#card06_table_label_column04
+                    tbody
+                      tr
+                        td.text-center
+                          span.avatar.avatar-busy
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
+                          br
+                          a.text-bold-600(href='#') Lucas
+                        td
+                          a.text-bold-600(href='#') Modern admin - Responsive Bootstrap 4 Admin Template
+                          p.text-muted navbar is missing when click to next page on navbar
+                          p.text-muted
+                            i.ft-paperclip
+                            |  abc.pdf
+                        td
+                          h6 18 Sept, 2018
+                        td
+                          span.badge.badge-success Urgent
+      .row.match-height
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+            .card-content
+              .card-header
+                h4.card-title.dark#card07_label_title
+              .card-body
+                .table-responsive
+                  table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+                    thead
+                      tr
+                        th.text-right(colspan="4")
+                          .btn-group.btn-group-sm(role="group", aria-label="Basic example")
+                            button.btn.btn-success(type="button")
+                              i.material-icons add
+                              |Cadastrar
+                            button.btn.btn-primary(type="button")
+                              i.material-icons search
+                              |Pesquisar
+                            button.btn.btn-danger(type="button")
+                              i.material-icons delete_forever
+                              |remover
+                      tr
+                        th#card07_table_label_column01
+                        th#card07_table_label_column02
+                        th#card07_table_label_column03
+                        th#card07_table_label_column04
+                    tbody
+                      tr
+                        td.text-center
+                          a.text-bold-600(href='#') Diamante
+                        td
+                          p.text-muted Uma breve descrição gigante
+                        td.text-truncate.p-1
+                          p.text-muted R$ 300,00
+                        td
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
+                            i.material-icons edit
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
+                            i.material-icons remove_red_eye
+                          button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
+                            i.material-icons delete_forever
+                 
+        .col-xl-6.col-lg-12.col-sm-12
+          .card
+            .card-content
+              .card-header
+                h4.card-title.dark#card08_label_title
+              .card-body
+                .table-responsive
+                  table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+                    thead
+                      tr
+                        th.text-right(colspan="5")
+                          .btn-group.btn-group-sm(role="group", aria-label="Basic example")
+                            button.btn.btn-success(type="button")
+                              i.material-icons add
+                              |Cadastrar
+                            button.btn.btn-primary(type="button")
+                              i.material-icons search
+                              |Pesquisar
+                            button.btn.btn-danger(type="button")
+                              i.material-icons delete_forever
+                              |remover
+                      tr
+                        th#card08_table_label_column01
+                        th#card08_table_label_column02
+                        th#card08_table_label_column03
+                        th#card08_table_label_column04
+                        th#card08_table_label_column05
+                    tbody
+                      tr
+                        td.text-center
+                          span.avatar.avatar-busy
+                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
+                          br
+                          a.text-bold-600(href='#') Lucas
+                        td
+                          p.text-muted navbar is missing when click to next page on navbar
+                          p.text-muted
+                            i.ft-paperclip
+                            |  abc.pdf
+                        td
+                          p.text-muted R$ 300,00
+                        td
+                          span.badge.badge-success Urgent
+                        td
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
+                            i.material-icons edit
+                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
+                            i.material-icons remove_red_eye
+                          button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
+                            i.material-icons delete_forever
+      .row.match-height
+        .col-xl-8.col-lg-12.col-sm-12
+          .card
+            .card-header
+              h4.card-title.dark#card09_label_title
+            .card-body
+             
+        .col-xl-4.col-lg-12.col-sm-12
+          .card
+              .card-header
+                  h4.card-title.dark#card010_label_title
+              .card-body
+                .col-12
+                  table.table.table-bordered.table-lg
+                    thead
+                      th.text-right(colspan="5")
+                        .btn-group.btn-group-sm(role="group", aria-label="Basic example")
+                          button.btn.btn-success(type="button")
+                            i.material-icons add
+                            |Adicionar
+                          button.btn.btn-danger(type="button")
+                            i.material-icons delete_forever
+                            |remover
+                      tr
+                        th#card010_table_label_column01
+                        th#card010_table_label_column02
+                        th#card010_table_label_column03
+                    tbody.list
+                      tr
+                        th(scope="row")
+                          p.text-muted 1
+                        td.name
+                          p.text-muted Português Brasil
+                        td
+                          button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
+                            i.material-icons delete_forever
+                  
+      
+      //.row
         .col-sm-8
           .card
             .card-content
+              .card-header
+                h4.card-title.dark#card05_label_title
               .card-body
                 // Task List table
                 .table-responsive
-                  h4.card-title Your Open Tickets
                   table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
                     thead
                       tr
