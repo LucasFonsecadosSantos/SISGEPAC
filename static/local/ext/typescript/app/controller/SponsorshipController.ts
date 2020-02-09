@@ -13,14 +13,17 @@ export class SponsorshipController extends Controller {
     private _messageData;
     private _sponsorshipData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel      = new MessageModel(DataEntity._SPONSORSHIP_MESSAGES_);
         this._sponsorshipModel  = new SponsorshipModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._getPageContent();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._getPageContent();
+        }
 
     }
 

@@ -14,14 +14,17 @@ export class TemplateController extends Controller {
     private _messageData;
     private _templateData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel  = new MessageModel(DataEntity._TEMPLATE_MESSAGES_);
         this._templateModel = new TemplateModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._getPageContent();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._getPageContent();
+        }
 
     }
 

@@ -13,13 +13,16 @@ export class VideoGalleryController extends Controller {
     private _videoGalleryData;
     private _messageData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel      = new MessageModel(DataEntity._VIDEO_GALLERY_MESSAGES_);
         this._videoGalleryModel = new VideoGalleryModel();
-        this._initializeElements();
-        this._getPageMessages();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
 
     }
 

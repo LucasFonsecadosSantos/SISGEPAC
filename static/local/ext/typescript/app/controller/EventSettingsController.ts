@@ -14,14 +14,17 @@ export class EventSettingsController extends Controller {
     private _messages;
     private _eventData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel  = new MessageModel(DataEntity._EVENT_SETTINGS_MESSAGE_);
         this._eventModel    = new EventModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._populateContent();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._populateContent();
+        }
 
     }
 

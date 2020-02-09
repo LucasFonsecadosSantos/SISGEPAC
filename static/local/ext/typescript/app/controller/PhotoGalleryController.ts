@@ -13,13 +13,16 @@ export class PhotoGalleryController extends Controller {
     private _photoGalleryData;
     private _messageData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel      = new MessageModel(DataEntity._PHOTO_GALLERY_MESSAGES_);
         this._photoGalleryModel = new PhotoGalleryModel();
-        this._initializeElements();
-        this._getPageMessages();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
 
     }
 

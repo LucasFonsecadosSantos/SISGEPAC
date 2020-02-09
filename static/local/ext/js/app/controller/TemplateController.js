@@ -5,13 +5,15 @@ import { MessageBuilder } from './../../util/MessageBuilder.js';
 import { MessageModel } from './../model/MessageModel.js';
 import { TemplateModel } from './../model/TemplateModel.js';
 export class TemplateController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._TEMPLATE_MESSAGES_);
         this._templateModel = new TemplateModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._getPageContent();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._getPageContent();
+        }
     }
     _initializeElements() {
         this._elements = new Array();

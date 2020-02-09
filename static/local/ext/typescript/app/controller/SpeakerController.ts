@@ -13,13 +13,21 @@ export class SpeakerController extends Controller {
     private _speakerData;
     private _messages;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
+        
         this._messageModel = new MessageModel(DataEntity._SPEAKER_MESSAGES_);
         this._speakerModel = new SpeakerModel();
-        this._initializeElements();
-        this._getPageMessages();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
+
+    }
+
+    public store(param): void { 
 
     }
 

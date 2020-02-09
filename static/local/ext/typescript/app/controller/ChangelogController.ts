@@ -13,14 +13,20 @@ export class ChangelogController extends Controller {
     private _changelogData;
     private _messageData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel      = new MessageModel(DataEntity._CHANGELOG_MESSAGES_);
         this._changelogModel    = new ChangelogModel();
-        this._initializeElements();
-        this._getPageMessages();
-        //this._getPageContent();
+        
+        if (interfacePage) {
+
+            this._initializeElements();
+            this._getPageMessages();
+            //this._getPageContent();
+
+        }
+        
 
     }
 

@@ -327,7 +327,7 @@ include components/modals/_event-settings.pug
                       tr
                         th.text-right(colspan="4")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
-                            button.btn.btn-success(type="button")
+                            a.btn.btn-success(href="/local/palestrante/salvar")
                               i.material-icons add
                               |Cadastrar
                             button.btn.btn-primary(type="button")
@@ -360,7 +360,7 @@ include components/modals/_event-settings.pug
                               img.media-object.rounded-circle.no-border-top-radius.no-border-bottom-radius(src="/local/ext/app-assets/images/portfolio/portfolio-4.jpg", alt="Avatar")
                             li.avatar.avatar-sm
                               span.badge.badge-info +1 more
-                        td
+                        td.text-center
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
                             i.material-icons edit
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
@@ -446,7 +446,7 @@ include components/modals/_event-settings.pug
                           p.text-muted Uma breve descrição gigante
                         td.text-truncate.p-1
                           p.text-muted R$ 300,00
-                        td
+                        td.text-center
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
                             i.material-icons edit
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
@@ -497,7 +497,7 @@ include components/modals/_event-settings.pug
                           p.text-muted R$ 300,00
                         td
                           span.badge.badge-success Urgent
-                        td
+                        td.text-center
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
                             i.material-icons edit
                           button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
@@ -537,7 +537,7 @@ include components/modals/_event-settings.pug
                           p.text-muted 1
                         td.name
                           p.text-muted Português Brasil
-                        td
+                        td.text-center
                           button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
                             i.material-icons delete_forever
                   

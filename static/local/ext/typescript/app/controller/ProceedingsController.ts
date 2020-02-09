@@ -13,14 +13,17 @@ export class ProceedingsController extends Controller {
     private _messageData;
     private _proceedingsData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel      = new MessageModel(DataEntity._PROCEEDINGS_MESSAGES_);
         this._proceedingsModel  = new ProceedingsModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._getPageContent();
+
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._getPageContent();
+        }
 
     }
 

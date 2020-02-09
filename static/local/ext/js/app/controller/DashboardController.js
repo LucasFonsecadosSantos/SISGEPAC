@@ -7,26 +7,28 @@ import { EventModel } from './../model/EventModel.js';
 import { SpeakerModel } from './../model/SpeakerModel.js';
 import { LanguageModel } from './../model/LanguageModel.js';
 export class DashboardController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
         this._eventModel = new EventModel();
         this._languageModel = new LanguageModel();
         this._speakerModel = new SpeakerModel();
-        this._initializeElements();
-        this._getPageMessages();
-        //TODO HERE
-        // if (true) {
-        //     //@ts-ignore
-        //     $('#eventSettingsModal').modal('show');
-        // } else {
-        //this._populateLanguageData();
-        this._populateCard02();
-        this._populateCard03();
-        //this._populateSpeakerData();
-        // this._populateSponsorshipData();
-        // this._populateOrganizationData();
-        //}
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            //TODO HERE
+            // if (true) {
+            //     //@ts-ignore
+            //     $('#eventSettingsModal').modal('show');
+            // } else {
+            //this._populateLanguageData();
+            this._populateCard02();
+            this._populateCard03();
+            //this._populateSpeakerData();
+            // this._populateSponsorshipData();
+            // this._populateOrganizationData();
+            //}
+        }
     }
     _initializeElements() {
         this._elements = new Array();

@@ -5,12 +5,16 @@ import { Logger } from './../../util/Logger.js';
 import { MessageBuilder } from './../../util/MessageBuilder.js';
 import { DataEntity } from './../../conf/Config.js';
 export class SpeakerController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._SPEAKER_MESSAGES_);
         this._speakerModel = new SpeakerModel();
-        this._initializeElements();
-        this._getPageMessages();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
+    }
+    store(param) {
     }
     _initializeElements() {
         this._elements = new Array();

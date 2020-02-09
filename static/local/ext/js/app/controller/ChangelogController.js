@@ -5,13 +5,15 @@ import { MessageBuilder } from './../../util/MessageBuilder.js';
 import { MessageModel } from './../model/MessageModel.js';
 import { ChangelogModel } from './../model/ChangelogModel.js';
 export class ChangelogController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._CHANGELOG_MESSAGES_);
         this._changelogModel = new ChangelogModel();
-        this._initializeElements();
-        this._getPageMessages();
-        //this._getPageContent();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            //this._getPageContent();
+        }
     }
     _getPageMessages() {
         this._messageData = this._messageModel.all();

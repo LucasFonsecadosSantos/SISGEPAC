@@ -5,12 +5,14 @@ import { Logger } from './../../util/Logger.js';
 import { FaqModel } from './../../app/model/FaqModel.js';
 import { MessageModel } from './../../app/model/MessageModel.js';
 export class FaqController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._FAQ_MESSAGES_);
         this._faqModel = new FaqModel();
-        this._initializeElements();
-        this._getPageMessages();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
     }
     _getPageMessages() {
         this._messageData = this._messageModel.all();

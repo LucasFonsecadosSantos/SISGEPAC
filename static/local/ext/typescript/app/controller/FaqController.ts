@@ -13,13 +13,16 @@ export class FaqController extends Controller {
     private _faqData;
     private _messageData;
 
-    constructor() {
+    constructor(interfacePage?: boolean) {
 
         super();
         this._messageModel  = new MessageModel(DataEntity._FAQ_MESSAGES_);
         this._faqModel      = new FaqModel();
-        this._initializeElements();
-        this._getPageMessages();
+        
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
 
     }
 

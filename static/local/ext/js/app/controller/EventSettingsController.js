@@ -5,13 +5,15 @@ import { EventModel } from './../model/EventModel.js';
 import { Logger } from './../../util/Logger.js';
 import { MessageBuilder } from './../../util/MessageBuilder.js';
 export class EventSettingsController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._EVENT_SETTINGS_MESSAGE_);
         this._eventModel = new EventModel();
-        this._initializeElements();
-        this._getPageMessages();
-        this._populateContent();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+            this._populateContent();
+        }
     }
     _initializeElements() {
         this._elements = new Array();

@@ -13,48 +13,83 @@ import { TemplateController } from '../app/controller/TemplateController.js';
 import { ProceedingsController } from '../app/controller/ProceedingsController.js';
 import { PhotoGalleryController } from './../app/controller/PhotoGalleryController.js';
 import { VideoGalleryController } from './../app/controller/VideoGalleryController.js';
+import { Routes } from './../conf/Routes.js';
 export class Sisgepac {
     constructor() {
         this._bodyElement = document.querySelector('.app-content');
         this._modalElements = document.querySelectorAll('[sisgepac-modal]');
+        this._controllers = new Map([
+            ['ProceedingsController', ProceedingsController],
+            ['SpeakerController', SpeakerController],
+            ['DashboardController', DashboardController],
+            ['VideoGalleryController', VideoGalleryController],
+            ['PhotoGalleryController', PhotoGalleryController],
+            ['TemplateController', TemplateController],
+            ['ChangelogController', ChangelogController],
+            ['FaqController', FaqController]
+        ]);
         new Monitor();
         new HeaderController();
         new NavbarController();
         new FooterController();
-        this._initializeControllers();
+        this._pageProcessor();
+        this._routeProcessor();
     }
-    _initializeControllers() {
+    _routeProcessor() {
+        let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/', '');
+        let routeList = Routes.ROUTES;
+        let tokens = routeList.get(route).split('@');
+        let controller = this._controllers.get(tokens[0]);
+        let action = tokens[(tokens.length - 1)];
+        let params;
+        if (routeList.get(route).split('@').length == 1) {
+            //@ts-ignore
+            new controller();
+        }
+        else if (routeList.get(route).split('@').length == 2) {
+            //@ts-ignore
+            let controllerInstance = new controller();
+            controllerInstance[action]();
+        }
+        else if (routeList.get(route).split('@').length > 2) {
+            //@ts-ignore
+            let controllerInstance = new controller();
+            params = route.split('/')[1];
+            controllerInstance[action](params);
+        }
+    }
+    _pageProcessor() {
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
             //TODO
             case 'index':
-                new DashboardController();
+                new DashboardController(true);
                 break;
             case 'speaker':
-                new SpeakerController();
+                new SpeakerController(true);
                 break;
             case 'sponsorship':
-                new SponsorshipController();
+                new SponsorshipController(true);
                 break;
             case 'faq':
-                new FaqController();
+                new FaqController(true);
                 break;
             case 'event':
-                new EventSettingsController();
+                new EventSettingsController(true);
                 break;
             case 'changelog':
-                new ChangelogController();
+                new ChangelogController(true);
                 break;
             case 'template':
-                new TemplateController();
+                new TemplateController(true);
                 break;
             case 'proceedings':
-                new ProceedingsController();
+                new ProceedingsController(true);
                 break;
             case 'photo-gallery':
-                new PhotoGalleryController();
+                new PhotoGalleryController(true);
                 break;
             case 'video-gallery':
-                new VideoGalleryController();
+                new VideoGalleryController(true);
                 break;
         }
         this._modalElements.forEach(modal => {

@@ -5,12 +5,14 @@ import { Logger } from './../../util/Logger.js';
 import { VideoGalleryModel } from './../../app/model/VideoGalleryModel.js';
 import { MessageModel } from './../../app/model/MessageModel.js';
 export class VideoGalleryController extends Controller {
-    constructor() {
+    constructor(interfacePage) {
         super();
         this._messageModel = new MessageModel(DataEntity._VIDEO_GALLERY_MESSAGES_);
         this._videoGalleryModel = new VideoGalleryModel();
-        this._initializeElements();
-        this._getPageMessages();
+        if (interfacePage) {
+            this._initializeElements();
+            this._getPageMessages();
+        }
     }
     _getPageMessages() {
         this._messageData = this._messageModel.all();
