@@ -48,7 +48,7 @@ export class Sisgepac {
         new NavbarController();
         new FooterController();
         this._pageProcessor();
-        this._routeProcessor();
+        //this._routeProcessor();
         
     }
 

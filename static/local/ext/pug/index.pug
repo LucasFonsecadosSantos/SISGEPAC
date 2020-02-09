@@ -15,6 +15,7 @@ head
 include components/_header.pug
 include components/_navbar.pug
 include components/modals/_event-settings.pug
+include components/modals/_speaker-register.pug
 
 .app-content.content(sisgepac-page="index")
   .content-header.row
@@ -327,9 +328,9 @@ include components/modals/_event-settings.pug
                       tr
                         th.text-right(colspan="4")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
-                            a.btn.btn-success(href="/local/palestrante/salvar")
-                              i.material-icons add
-                              |Cadastrar
+                            a.btn.btn-success.text-white#card05_button_create-speaker
+                              i.material-icons#card05_button_create-speaker-icon
+                              span#card05_button_create-speaker-text
                             button.btn.btn-primary(type="button")
                               i.material-icons search
                               |Pesquisar
@@ -402,8 +403,8 @@ include components/modals/_event-settings.pug
                           br
                           a.text-bold-600(href='#') Lucas
                         td
-                          a.text-bold-600(href='#') Modern admin - Responsive Bootstrap 4 Admin Template
-                          p.text-muted navbar is missing when click to next page on navbar
+                          a.text-bold-600(href='#') Titulo da atividade aqui
+                          p.text-muted uma expĺicacao e tals
                           p.text-muted
                             i.ft-paperclip
                             |  abc.pdf

@@ -88,6 +88,8 @@ export class Model {
 
         } else {
 
+            console.log(data);
+            
             Object.keys(data).forEach(key => {
 
                 if (!this._dataKeys.includes(key)) {

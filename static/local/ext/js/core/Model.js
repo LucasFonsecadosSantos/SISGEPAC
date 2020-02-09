@@ -56,6 +56,7 @@ export class Model {
             //TODO
         }
         else {
+            console.log(data);
             Object.keys(data).forEach(key => {
                 if (!this._dataKeys.includes(key)) {
                     error = true;

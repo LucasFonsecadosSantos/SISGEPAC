@@ -6,14 +6,13 @@ export class SpeakerModel extends Model {
         super._dataPath = Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPEAKER_);
         super._relativeDataPath = "../../../remote/data/content/speaker.json";
         super._dataKeys = [
-            'title',
+            'name',
+            'jobInstitute',
             'description',
             'email',
-            'event-type',
-            'institute',
-            'schedule-date',
             'social-networks',
-            'telephone'
+            'avatar',
+            'show'
         ];
     }
 }

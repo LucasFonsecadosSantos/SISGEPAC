@@ -18,6 +18,7 @@ export enum DataEntity {
     _CHANGELOG_                                 = "changelog",
     _DASHBOARD_MESSAGES_                        = "dashboard",
     _DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_   = "dashboard-event-settings-modal",
+    _SPEAKER_REGISTER_MODAL_MESSAGES_           = "speaker-register-modal",
     _NAVBAR_MESSAGES_                           = "navbar",
     _SPEAKER_MESSAGES_                          = "spekaers",
     _SPONSORSHIP_MESSAGES_                      = "sponsorship",
@@ -70,6 +71,7 @@ export class Config {
 
         [DataEntity._CHANGELOG_,                                    "/local/data/conf/changelog.json"],
         [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_,      Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+        [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_,              Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
         [DataEntity._DASHBOARD_MESSAGES_,                           Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
         [DataEntity._NAVBAR_MESSAGES_,                              Config.LOCAL_MESSAGES_PATH + "navbar.json"],
         [DataEntity._SPEAKER_MESSAGES_,                             Config.LOCAL_MESSAGES_PATH + "speakers.json"],

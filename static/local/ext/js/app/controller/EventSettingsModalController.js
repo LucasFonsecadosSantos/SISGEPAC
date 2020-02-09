@@ -68,7 +68,7 @@ export class EventSettingsModalController extends Controller {
                 }
             }
             //@ts-ignore
-            $('#eventSettingsModal').modal('hide');
+            $('#speakerRegisterModal').modal('hide');
         });
     }
 }
