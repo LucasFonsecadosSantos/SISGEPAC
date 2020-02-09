@@ -1,19 +1,20 @@
-import { Monitor }                      from './../util/Monitor.js';
-import { EventSettingsController }      from './../app/controller/EventSettingsController.js';
-import { FaqController }                from './../app/controller/FaqController.js';
-import { SponsorshipController }        from './../app/controller/SponsorshipController.js';
-import { SpeakerController }            from './../app/controller/SpeakerController.js';
-import { DashboardController }          from './../app/controller/DashboardController.js';
-import { ChangelogController }          from './../app/controller/ChangelogController.js';
-import { HeaderController }             from './../app/controller/HeaderController.js';
-import { FooterController }             from './../app/controller/FooterController.js';
-import { NavbarController }             from './../app/controller/NavbarController.js';
-import { SystemController }             from './../app/controller/SystemController.js';
-import { EventSettingsModalController } from './../app/controller/EventSettingsModalController.js';
-import { TemplateController }           from '../app/controller/TemplateController.js';
-import { ProceedingsController }        from '../app/controller/ProceedingsController.js';
-import { PhotoGalleryController }       from './../app/controller/PhotoGalleryController.js';
-import { VideoGalleryController }       from './../app/controller/VideoGalleryController.js';
+import { Monitor }                          from './../util/Monitor.js';
+import { EventSettingsController }          from './../app/controller/EventSettingsController.js';
+import { FaqController }                    from './../app/controller/FaqController.js';
+import { SponsorshipController }            from './../app/controller/SponsorshipController.js';
+import { SpeakerController }                from './../app/controller/SpeakerController.js';
+import { DashboardController }              from './../app/controller/DashboardController.js';
+import { ChangelogController }              from './../app/controller/ChangelogController.js';
+import { HeaderController }                 from './../app/controller/HeaderController.js';
+import { FooterController }                 from './../app/controller/FooterController.js';
+import { NavbarController }                 from './../app/controller/NavbarController.js';
+import { SystemController }                 from './../app/controller/SystemController.js';
+import { EventSettingsModalController }     from './../app/controller/EventSettingsModalController.js';
+import { TemplateController }               from '../app/controller/TemplateController.js';
+import { ProceedingsController }            from '../app/controller/ProceedingsController.js';
+import { PhotoGalleryController }           from './../app/controller/PhotoGalleryController.js';
+import { VideoGalleryController }           from './../app/controller/VideoGalleryController.js';
+import { SpeakerRegisterModalController}    from './../app/controller/SpeakerRegisterModalController.js';
 
 import { Routes } from './../conf/Routes.js';
 
@@ -140,6 +141,10 @@ export class Sisgepac {
 
                 case 'event-settings-modal':
                     new EventSettingsModalController();
+                    break;
+                
+                case 'speaker-register-modal':
+                    new SpeakerRegisterModalController();
                     break;
     
             }

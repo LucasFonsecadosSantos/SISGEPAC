@@ -13,6 +13,7 @@ import { TemplateController } from '../app/controller/TemplateController.js';
 import { ProceedingsController } from '../app/controller/ProceedingsController.js';
 import { PhotoGalleryController } from './../app/controller/PhotoGalleryController.js';
 import { VideoGalleryController } from './../app/controller/VideoGalleryController.js';
+import { SpeakerRegisterModalController } from './../app/controller/SpeakerRegisterModalController.js';
 import { Routes } from './../conf/Routes.js';
 export class Sisgepac {
     constructor() {
@@ -96,6 +97,9 @@ export class Sisgepac {
             switch (modal.getAttribute('sisgepac-modal')) {
                 case 'event-settings-modal':
                     new EventSettingsModalController();
+                    break;
+                case 'speaker-register-modal':
+                    new SpeakerRegisterModalController();
                     break;
             }
         });
