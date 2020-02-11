@@ -287,4 +287,23 @@ export class Model {
         return counter;
     }
 
+    public async imageUpload(data: FormData) {
+
+        const fileName = await fetch(Config.LOCAL_IMAGE_RECEPTOR_SERVER, {
+
+            method: 'POST',
+            body: data
+
+        })
+        
+        .then(response => response.json())
+
+        .then(data => data)
+
+        .catch(error => Logger.log(error));
+
+        return fileName;
+
+    }
+
 }

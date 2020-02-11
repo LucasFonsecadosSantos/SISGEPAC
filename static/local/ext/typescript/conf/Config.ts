@@ -35,14 +35,15 @@ export enum DataEntity {
 
 export class Config {
 
-    public static readonly DATA_ENTITY:             DataEntity;
-    public static readonly REMOTE_CONFIG_PATH:      string = "/remote/data/config";
-    public static readonly REMOTE_CONTENT_PATH:     string = "/remote/data/content/";
-    public static readonly LOCAL_MESSAGES_PATH:     string = "/local/data/messages/";
-    public static readonly LOCAL_CONFIG_PATH:       string = "/local/data/conf/";
-    public static readonly LOCAL_RECEPTOR_SERVER:   string = "/local/ext/php/receptor.php";
-    public static readonly APPLICATION_HOST:        string = "http://localhost";
-    public static readonly APPLICATION_PORT:        string = "8080"
+    public static readonly DATA_ENTITY:                     DataEntity;
+    public static readonly REMOTE_CONFIG_PATH:              string = "/remote/data/config";
+    public static readonly REMOTE_CONTENT_PATH:             string = "/remote/data/content/";
+    public static readonly LOCAL_MESSAGES_PATH:             string = "/local/data/messages/";
+    public static readonly LOCAL_CONFIG_PATH:               string = "/local/data/conf/";
+    public static readonly LOCAL_RECEPTOR_SERVER:           string = "/local/ext/php/receptor.php";
+    public static readonly LOCAL_IMAGE_RECEPTOR_SERVER:     string = "/local/ext/php/image_receptor.php";
+    public static readonly APPLICATION_HOST:                string = "http://localhost";
+    public static readonly APPLICATION_PORT:                string = "8080"
 
     public static readonly REMOTE_CONTENT_FILES_PATH: Map<DataEntity,string> = new Map([
 

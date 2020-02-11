@@ -72,6 +72,8 @@ export class SpeakerRegisterModalController extends Controller {
         this._elements['speaker_register_label_helper-name']               =   document.querySelector('#speaker_register_label_helper-name');
         this._elements['speaker_register_label_helper-jobInstitute']       =   document.querySelector('#speaker_register_label_helper-jobInstitute');
         this._elements['speaker_register_label_helper-description']        =   document.querySelector('#speaker_register_label_helper-description');
+
+        this._elements['dataForm']                                         =   document.querySelector('#dataForm');
         
 
     }
@@ -105,29 +107,39 @@ export class SpeakerRegisterModalController extends Controller {
         this._elements['speaker_register_button_add'].addEventListener('click', event => {
             
             try {
+
+                this._speakerModel.imageUpload(new FormData(this._elements['dataForm']))
+
+                    .then(response => {
+
+                        
+                        this._speakerModel.insert({
+
+                            "id":           Identificator.generateID(),
+                            "name":         this._elements['speaker_register_data_name'].value,
+                            "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
+                            "description":  this._elements['speaker_register_data_description'].value,
+                            "email":        this._elements['speaker_register_data_email'].value,
+                            "social-networks": {
+                                "facebook":     this._elements['speaker_register_data_socialNetworks-facebook'].value,
+                                "twitter":      this._elements['speaker_register_data_socialNetworks-twitter'].value,
+                                "linkedin":     this._elements['speaker_register_data_socialNetworks-linkedin'].value,
+                                "spotify":      this._elements['speaker_register_data_socialNetworks-spotify'].value,
+                                "youtube":      this._elements['speaker_register_data_socialNetworks-youtube'].value,
+                                "behance":      this._elements['speaker_register_data_socialNetworks-behance'].value,
+                                "lattes":       this._elements['speaker_register_data_socialNetworks-lattes'].value,
+                                "pinterest":    this._elements['speaker_register_data_socialNetworks-pinterest'].value,
+                                "blog":         this._elements['speaker_register_data_socialNetworks-blog'].value,
+                            },
+                            "avatar":   ((!response['data_name']) || (response['data_name'] === "")) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                            "show": true
         
-                this._speakerModel.insert({
+                        });
 
-                    "id":           Identificator.generateID(),
-                    "name":         this._elements['speaker_register_data_name'].value,
-                    "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
-                    "description":  this._elements['speaker_register_data_description'].value,
-                    "email":        this._elements['speaker_register_data_email'].value,
-                    "social-networks": {
-                        "facebook":     this._elements['speaker_register_data_socialNetworks-facebook'].value,
-                        "twitter":      this._elements['speaker_register_data_socialNetworks-twitter'].value,
-                        "linkedin":     this._elements['speaker_register_data_socialNetworks-linkedin'].value,
-                        "spotify":      this._elements['speaker_register_data_socialNetworks-spotify'].value,
-                        "youtube":      this._elements['speaker_register_data_socialNetworks-youtube'].value,
-                        "behance":      this._elements['speaker_register_data_socialNetworks-behance'].value,
-                        "lattes":       this._elements['speaker_register_data_socialNetworks-lattes'].value,
-                        "pinterest":    this._elements['speaker_register_data_socialNetworks-pinterest'].value,
-                        "blog":         this._elements['speaker_register_data_socialNetworks-blog'].value,
-                    },
-                    "avatar":   ((!this._elements['speaker_register_data_avatar'].value) || (this._elements['speaker_register_data_avatar'].value === "")) ? "/local/img/structure/default-avatar.png" : this._elements['speaker_register_data_avatar'].value,
-                    "show": true
+                    })
 
-                });
+                    .catch(error => Logger.log(error));
+        
 
 
             } catch (exception) {
@@ -141,7 +153,7 @@ export class SpeakerRegisterModalController extends Controller {
             }
 
             //@ts-ignore
-            $('#eventSettingsModal').modal('hide');
+            $('#speakerRegisterModal').modal('hide');
 
         });
 

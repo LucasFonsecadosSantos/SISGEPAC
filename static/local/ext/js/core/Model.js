@@ -171,5 +171,17 @@ export class Model {
             .catch(error => Logger.log(error));
         return counter;
     }
+    imageUpload(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const fileName = yield fetch(Config.LOCAL_IMAGE_RECEPTOR_SERVER, {
+                method: 'POST',
+                body: data
+            })
+                .then(response => response.json())
+                .then(data => data)
+                .catch(error => Logger.log(error));
+            return fileName;
+        });
+    }
 }
 //# sourceMappingURL=Model.js.map
