@@ -2,7 +2,7 @@ import { DataEntity, Config }   from './../conf/Config.js';
 import { Logger }               from "./Logger.js";
 import { DateHandler }          from './DateHandler.js';
 import { ChangelogSerializer }  from "./../serializer/ChangelogSerializer.js";
-import { Identificator }        from './Indentifiator.js';
+import { Identificator }        from './Indentificator.js';
 
 export class Changelog {
 

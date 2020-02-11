@@ -5,6 +5,7 @@ import { DataEntity } from './../../conf/Config.js';
 import { MessageBuilder } from './../../util/MessageBuilder.js';
 import { Logger } from './../../util/Logger.js';
 import { InvalidDataKeyException } from './../../exception/InvalidDataKeyException.js';
+import { Identificator } from '../../util/Indentificator.js';
 export class SpeakerRegisterModalController extends Controller {
     constructor() {
         super();
@@ -72,7 +73,8 @@ export class SpeakerRegisterModalController extends Controller {
     _initListeners() {
         this._elements['speaker_register_button_add'].addEventListener('click', event => {
             try {
-                this._speakerModel.update({
+                this._speakerModel.insert({
+                    "id": Identificator.generateID(),
                     "name": this._elements['speaker_register_data_name'].value,
                     "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
                     "description": this._elements['speaker_register_data_description'].value,

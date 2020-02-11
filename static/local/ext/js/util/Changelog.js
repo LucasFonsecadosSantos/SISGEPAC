@@ -2,7 +2,7 @@ import { DataEntity, Config } from './../conf/Config.js';
 import { Logger } from "./Logger.js";
 import { DateHandler } from './DateHandler.js';
 import { ChangelogSerializer } from "./../serializer/ChangelogSerializer.js";
-import { Identificator } from './Indentifiator.js';
+import { Identificator } from './Indentificator.js';
 export class Changelog {
     static register(changeData) {
         fetch(Config.LOCAL_CONF_FILES_PATH.get(DataEntity._CHANGELOG_))

@@ -5,6 +5,7 @@ import { DataEntity }               from './../../conf/Config.js';
 import { MessageBuilder }           from './../../util/MessageBuilder.js';
 import { Logger }                   from './../../util/Logger.js';
 import { InvalidDataKeyException }  from './../../exception/InvalidDataKeyException.js';
+import { Identificator }            from '../../util/Indentificator.js';
 
 
 export class SpeakerRegisterModalController extends Controller {
@@ -86,7 +87,7 @@ export class SpeakerRegisterModalController extends Controller {
             data['pt-BR'].forEach(message => {
 
                 Object.keys(message).forEach(key => {
-
+                    
                     MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
                     
                 });
@@ -102,11 +103,12 @@ export class SpeakerRegisterModalController extends Controller {
     private _initListeners(): void {
 
         this._elements['speaker_register_button_add'].addEventListener('click', event => {
-
+            
             try {
+        
+                this._speakerModel.insert({
 
-                this._speakerModel.update({
-
+                    "id":           Identificator.generateID(),
                     "name":         this._elements['speaker_register_data_name'].value,
                     "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
                     "description":  this._elements['speaker_register_data_description'].value,
@@ -129,7 +131,7 @@ export class SpeakerRegisterModalController extends Controller {
 
 
             } catch (exception) {
-            
+                
                 if (exception instanceof InvalidDataKeyException) {
 
                     Logger.log("Update Exception: " + exception.message);

@@ -8,7 +8,7 @@
             "id": "navbar-logo",
             "alt": "Logotipo do sistema SISGEPAC",
             "title": "SISGEPAC | Sistema de Geração de Páginas para Congressos.",
-            "img": "/local/img/logo.svg"
+            "src": "/local/img/logo.svg"
         },
         {
             "id": "navbar-about-title",

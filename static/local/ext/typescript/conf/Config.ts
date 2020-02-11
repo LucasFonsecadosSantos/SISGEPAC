@@ -46,7 +46,7 @@ export class Config {
 
     public static readonly REMOTE_CONTENT_FILES_PATH: Map<DataEntity,string> = new Map([
 
-        [DataEntity._SPEAKER_,          "/remote/data/content/speaker.json"],
+        [DataEntity._SPEAKER_,          "/remote/data/content/speakers.json"],
         [DataEntity._SPONSORSHIP_,      "/remote/data/content/sponsorship.json"],
         [DataEntity._EVENT_,            "/remote/data/content/event.json"],
         [DataEntity._TEMPLATE_,         "/remote/data/content/template.json"],
