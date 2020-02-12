@@ -6,10 +6,11 @@ import { MessageModel }         from './../model/MessageModel.js';
 import { EventModel }           from './../model/EventModel.js';
 import { SpeakerModel }         from './../model/SpeakerModel.js';
 import { LanguageModel }        from './../model/LanguageModel.js';
+import { DashboardElements }    from './../elements/DashboardElements.js';
 
 export class DashboardController extends Controller {
 
-    private _elements:          Array<HTMLElement>;
+    private _elements:          Map<string, HTMLElement>;
     private _sponsorshipData;
     private _speakerModel:      SpeakerModel;
     private _speakerData;
@@ -34,7 +35,7 @@ export class DashboardController extends Controller {
         
         if (interfacePage) {
          
-            this._initializeElements();
+            this._elements = DashboardElements.ELEMENTS;
             this._getPageMessages();
             
             //TODO HERE
@@ -59,95 +60,6 @@ export class DashboardController extends Controller {
 
     }
 
-    private _initializeElements(): void {
-
-        this._elements = new Array<HTMLElement>();
-
-        this._elements['title']                     =   document.querySelector('title');
-        this._elements['event-occurrence-title']    =   document.querySelector('#event-occurrence-title');
-        this._elements['event-information-title']   =   document.querySelector('#event-information-title');
-
-        //Card 02
-        this._elements['card02_label_event-name']           =   document.querySelector('#card02_label_event-name');
-        this._elements['card02_data_event-name']            =   document.querySelector('#card02_data_event-name');
-        this._elements['card02_label_event-edition']        =   document.querySelector('#card02_label_event-edition');
-        this._elements['card02_data_event-edition']         =   document.querySelector('#card02_data_event-edition');
-        this._elements['card02_label_event-description']    =   document.querySelector('#card02_label_event-description');
-        this._elements['card02_data_event-description']     =   document.querySelector('#card02_data_event-description');
-        this._elements['card02_label_event-institute']      =   document.querySelector('#card02_label_event-institute');
-        this._elements['card02_data_event-institute']       =   document.querySelector('#card02_data_event-institute');
-        this._elements['card02_label_event-type']           =   document.querySelector('#card02_label_event-type');
-        this._elements['card02_data_event-type']            =   document.querySelector('#card02_data_event-type');
-        this._elements['card02_label_event-area']           =   document.querySelector('#card02_label_event-area');
-        this._elements['card02_data_event-area']            =   document.querySelector('#card02_data_event-area');
-
-
-        //Card 03
-        this._elements['card03_label_event-twitter']        =   document.querySelector('#card03_label_event-twitter');
-        this._elements['card03_data_event-twitter']         =   document.querySelector('#card03_data_event-twitter');
-        this._elements['card03_label_event-facebook']       =   document.querySelector('#card03_label_event-facebook');
-        this._elements['card03_data_event-facebook']        =   document.querySelector('#card03_data_event-facebook');
-        this._elements['card03_label_event-linkedin']       =   document.querySelector('#card03_label_event-linkedin');
-        this._elements['card03_data_event-linkedin']        =   document.querySelector('#card03_data_event-linkedin');
-        this._elements['card03_label_event-youtube']        =   document.querySelector('#card03_label_event-youtube');
-        this._elements['card03_data_event-youtube']         =   document.querySelector('#card03_data_event-youtube');
-        this._elements['card03_label_event-telephone']      =   document.querySelector('#card03_label_event-telephone');
-        this._elements['card03_data_event-telephone']       =   document.querySelector('#card03_data_event-telephone');
-        this._elements['card03_label_event-email']          =   document.querySelector('#card03_label_event-email');
-        this._elements['card03_data_event-email']           =   document.querySelector('#card03_data_event-email');
-        this._elements['card03_label_event-website']        =   document.querySelector('#card03_label_event-website');
-        this._elements['card03_data_event-website']         =   document.querySelector('#card03_data_event-website');
-        this._elements['card03_label_event-instagram']      =   document.querySelector('#card03_label_event-instagram');
-        this._elements['card03_data_event-instagram']       =   document.querySelector('#card03_data_event-instagram');
-        this._elements['card03_label_event-contact-info']   =   document.querySelector('#card03_label_event-contact-info');
-
-        //card04
-        this._elements['card04_label_title']                =   document.querySelector('#card04_label_title');
-
-        //Card 05
-        this._elements['card05_button_create-speaker']      =   document.querySelector('#card05_button_create-speaker');
-        this._elements['card05_button_create-speaker-icon'] =   document.querySelector('#card05_button_create-speaker-icon');
-        this._elements['card05_button_create-speaker-text'] =   document.querySelector('#card05_button_create-speaker-text');
-        this._elements['card05_label_title']                =   document.querySelector('#card05_label_title');
-        this._elements['card05_table_label_column01']       =   document.querySelector('#card05_table_label_column01');
-        this._elements['card05_table_label_column02']       =   document.querySelector('#card05_table_label_column02');
-        this._elements['card05_table_label_column03']       =   document.querySelector('#card05_table_label_column03');
-        this._elements['card05_table_label_column04']       =   document.querySelector('#card05_table_label_column04');
-
-        //Card 06
-        this._elements['card06_label_title']                =   document.querySelector('#card06_label_title');
-        this._elements['card06_table_label_column01']       =   document.querySelector('#card06_table_label_column01');
-        this._elements['card06_table_label_column02']       =   document.querySelector('#card06_table_label_column02');
-        this._elements['card06_table_label_column03']       =   document.querySelector('#card06_table_label_column03');
-        this._elements['card06_table_label_column04']       =   document.querySelector('#card06_table_label_column04');
-
-        //Card 07
-        this._elements['card07_label_title']                =   document.querySelector('#card07_label_title');
-        this._elements['card07_table_label_column01']       =   document.querySelector('#card07_table_label_column01');
-        this._elements['card07_table_label_column02']       =   document.querySelector('#card07_table_label_column02');
-        this._elements['card07_table_label_column03']       =   document.querySelector('#card07_table_label_column03');
-        this._elements['card07_table_label_column04']       =   document.querySelector('#card07_table_label_column04');
-
-        //Card08
-        this._elements['card08_label_title']                =   document.querySelector('#card08_label_title');
-        this._elements['card08_table_label_column01']       =   document.querySelector('#card08_table_label_column01');
-        this._elements['card08_table_label_column02']       =   document.querySelector('#card08_table_label_column02');
-        this._elements['card08_table_label_column03']       =   document.querySelector('#card08_table_label_column03');
-        this._elements['card08_table_label_column04']       =   document.querySelector('#card08_table_label_column04');
-        this._elements['card08_table_label_column05']       =   document.querySelector('#card08_table_label_column05');
-
-        //Card 09
-        this._elements['card09_label_title']                =   document.querySelector('#card09_label_title');
-
-        //Card 010
-        this._elements['card010_label_title']               =   document.querySelector('#card010_label_title');
-        this._elements['card010_table_label_column01']      =   document.querySelector('#card010_table_label_column01');
-        this._elements['card010_table_label_column02']      =   document.querySelector('#card010_table_label_column02');
-        this._elements['card010_table_label_column03']      =   document.querySelector('#card010_table_label_column03');
-        
-        
-    }
-
     private _getPageMessages(): void {
 
         this._messagesData  = this._messagesModel.all();
@@ -160,7 +72,7 @@ export class DashboardController extends Controller {
 
                 Object.keys(message).forEach(key => {
 
-                    MessageBuilder.buildMessage(this._elements[(message['id']) ? message['id'] : (message['tag'])], key, message[key]);
+                    MessageBuilder.buildMessage(this._elements.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
                     
                 });
                 
@@ -188,12 +100,12 @@ export class DashboardController extends Controller {
 
             .then(data => {
 
-                this._elements['card02_data_event-name'].textContent        = data['title'];
-                this._elements['card02_data_event-description'].textContent = data['description'];
-                this._elements['card02_data_event-institute'].textContent   = data['institute'];
-                this._elements['card02_data_event-type'].textContent        = data['event-type'];
-                this._elements['card02_data_event-area'].textContent        = data['area'];
-                this._elements['card02_data_event-edition'].textContent     = data['edition'];
+                this._elements.get('card02_data_event-name').textContent        = data['title'];
+                this._elements.get('card02_data_event-description').textContent = data['description'];
+                this._elements.get('card02_data_event-institute').textContent   = data['institute'];
+                this._elements.get('card02_data_event-type').textContent        = data['event-type'];
+                this._elements.get('card02_data_event-area').textContent        = data['area'];
+                this._elements.get('card02_data_event-edition').textContent     = data['edition'];
 
             })
             
@@ -211,16 +123,16 @@ export class DashboardController extends Controller {
 
                 Object.keys(data['social-networks']).forEach(key => {
 
-                    this._elements['card03_data_event-' + key].textContent = data['social-networks'][key];
+                    this._elements.get('card03_data_event-' + key).textContent = data['social-networks'][key];
 
                 });
 
-                this._elements['card03_data_event-website'].textContent = data['website'];
-                this._elements['card03_data_event-email'].textContent   = data['email'];
+                this._elements.get('card03_data_event-website').textContent = data['website'];
+                this._elements.get('card03_data_event-email').textContent   = data['email'];
                 
                 data['telephone'].forEach(telephone => {
 
-                    this._elements['card03_data_event-telephone'].textContent += telephone;
+                    this._elements.get('card03_data_event-telephone').textContent += telephone;
 
                 })
 
@@ -239,13 +151,107 @@ export class DashboardController extends Controller {
 
             .then(data => {
 
+                var fragment = document.createDocumentFragment();
+                var trFragment = document.createDocumentFragment();
 
+                data.forEach(speaker => {
+
+                    let trElement = document.createElement('TR');
+                    let tdElement = document.createElement('TD');
+                    let spanElement = document.createElement('SPAN');
+                    let imgElement = document.createElement('IMG');
+
+
+                    tdElement.className = 'text-center';
+                    spanElement.classList.add('avatar','avatar-busy');
+                    imgElement.setAttribute('src', "/remote/data/uploads/" + speaker['avatar']);
+                    imgElement.setAttribute('alt', speaker['name']);
+                    imgElement.setAttribute('title', speaker['name']);
+                    imgElement.setAttribute('data-toogle', 'tooltip');
+                    imgElement.setAttribute('data-placement', 'right');
+                    
+                    spanElement.appendChild(imgElement);
+                    tdElement.appendChild(spanElement);
+                    fragment.appendChild(tdElement);
+
+                    //cell 02
+                    tdElement = document.createElement('TD');
+                    let aElement = document.createElement('A');
+                    aElement.className = "text-bold-600";
+                    aElement.textContent = speaker['name'];
+                    let pElement = document.createElement('P');
+                    pElement.className = 'text-muted';
+                    pElement.textContent = speaker['jobInstitute'];
+                    tdElement.appendChild(aElement);
+                    tdElement.appendChild(pElement);
+                    pElement = document.createElement('P');
+                    pElement.className = 'text-muted';
+                    pElement.textContent = speaker['description'];
+                    tdElement.appendChild(pElement);
+                    fragment.appendChild(tdElement);
+
+                    //cell03
+                    tdElement = document.createElement('TD');
+                    tdElement.classList.add('text-truncate','p-1');
+                    let ulElement = document.createElement('UL');
+                    //TODO IMPLEMENTAR ATIVIDADES
+                    tdElement.appendChild(ulElement);
+                    fragment.appendChild(tdElement);
+
+                    //cell04
+                    tdElement = document.createElement('TD');
+                    tdElement.className = 'text-center';
+                    let buttonElement = document.createElement('BUTTON');
+                    buttonElement.classList.add('btn','btn-icon','btn-teal','mr-1');
+                    buttonElement.setAttribute('type','button');
+                    buttonElement.setAttribute('data-toogle','tooltip');
+                    buttonElement.setAttribute('data-popup','tooltip-custom');
+                    buttonElement.setAttribute('data-original-title','Editar cadastro de ' + speaker['name']);
+                    let iElement = document.createElement('I');
+                    iElement.className = 'material-icons';
+                    iElement.textContent = 'edit';
+                    buttonElement.appendChild(iElement);
+                    tdElement.appendChild(buttonElement);
+                    
+                    buttonElement = document.createElement('BUTTON');
+                    buttonElement.classList.add('btn','btn-icon','btn-teal','mr-1');
+                    buttonElement.setAttribute('type','button');
+                    buttonElement.setAttribute('data-toogle','tooltip');
+                    buttonElement.setAttribute('data-popup','tooltip-custom');
+                    buttonElement.setAttribute('data-original-title','Visualizar cadastro de ' + speaker['name']);
+                    iElement = document.createElement('I');
+                    iElement.className = 'material-icons';
+                    iElement.textContent = 'remove_red_eye';
+                    buttonElement.appendChild(iElement);
+                    tdElement.appendChild(buttonElement);
+
+                    buttonElement = document.createElement('BUTTON');
+                    buttonElement.classList.add('btn','btn-icon','btn-red','mr-1');
+                    buttonElement.setAttribute('type','button');
+                    buttonElement.setAttribute('data-toogle','tooltip');
+                    buttonElement.setAttribute('data-popup','tooltip-custom');
+                    buttonElement.setAttribute('data-original-title','Remover cadastro de ' + speaker['name']);
+                    iElement = document.createElement('I');
+                    iElement.className = 'material-icons';
+                    iElement.textContent = 'delete_forever';
+                    buttonElement.appendChild(iElement);
+                    tdElement.appendChild(buttonElement);
+
+
+                    fragment.appendChild(tdElement);
+                    trElement.appendChild(fragment)
+                    this._elements.get('speakerTable').appendChild(trElement);
+
+                });
+
+                
+                //this._elements.get('speakerTable').appendChild(document.createElement('TR'));
             })
 
             .catch(error => {Logger.log(error)});
 
 
-        this._elements['card05_button_create-speaker'].addEventListener('click', event => {
+        this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
 
             //@ts-ignore
             $('#speakerRegisterModal').modal('show');

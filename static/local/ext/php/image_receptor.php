@@ -81,7 +81,7 @@
             "status" => "success",
             "error" => false,
             "message" => "File uploaded successfully",
-            "data_name" => $fileName . $ext
+            "data_name" => $fileName . '.' . $ext
         );
 
         echo json_encode($response);
