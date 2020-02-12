@@ -26,6 +26,7 @@ export var DataEntity;
     DataEntity["_CHANGELOG_"] = "changelog";
     DataEntity["_DASHBOARD_MESSAGES_"] = "dashboard";
     DataEntity["_DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_"] = "dashboard-event-settings-modal";
+    DataEntity["_SPEAKER_REGISTER_MODAL_MESSAGES_"] = "speaker-register-modal";
     DataEntity["_NAVBAR_MESSAGES_"] = "navbar";
     DataEntity["_SPEAKER_MESSAGES_"] = "spekaers";
     DataEntity["_SPONSORSHIP_MESSAGES_"] = "sponsorship";
@@ -54,10 +55,11 @@ Config.REMOTE_CONTENT_PATH = "/remote/data/content/";
 Config.LOCAL_MESSAGES_PATH = "/local/data/messages/";
 Config.LOCAL_CONFIG_PATH = "/local/data/conf/";
 Config.LOCAL_RECEPTOR_SERVER = "/local/ext/php/receptor.php";
+Config.LOCAL_IMAGE_RECEPTOR_SERVER = "/local/ext/php/image_receptor.php";
 Config.APPLICATION_HOST = "http://localhost";
 Config.APPLICATION_PORT = "8080";
 Config.REMOTE_CONTENT_FILES_PATH = new Map([
-    [DataEntity._SPEAKER_, "/remote/data/content/speaker.json"],
+    [DataEntity._SPEAKER_, "/remote/data/content/speakers.json"],
     [DataEntity._SPONSORSHIP_, "/remote/data/content/sponsorship.json"],
     [DataEntity._EVENT_, "/remote/data/content/event.json"],
     [DataEntity._TEMPLATE_, "/remote/data/content/template.json"],
@@ -76,6 +78,7 @@ Config.REMOTE_CONF_FILES_PATH = new Map([
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
     [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+    [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
     [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
     [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"],
     [DataEntity._SPEAKER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speakers.json"],

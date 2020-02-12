@@ -26,7 +26,7 @@ export class Model {
 
     }
 
-    public update(data: any): void {
+    public update(data: any) {
         
         fetch(this._dataPath)
 
@@ -78,20 +78,20 @@ export class Model {
 
     }
 
-    public store(data: any): void {
+    public async store(data: any) {
 
         let error: boolean = false;
-
+        
         if (Array.isArray(data)) {
-
+            
             //TODO
-
+            
         } else {
-
+            
             Object.keys(data).forEach(key => {
 
                 if (!this._dataKeys.includes(key)) {
-
+                    
                     error = true;
 
                 }
@@ -101,7 +101,7 @@ export class Model {
         }
 
         if (!error) {
-
+            
             fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(data)) + "&file=" + this._relativeDataPath, {
 
                 method: 'POST',
@@ -117,6 +117,55 @@ export class Model {
         } else {
 
             throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: "+ this._dataKeys +"]");
+
+        }
+
+    }
+
+    public insert(data: any): void {
+
+        let error: boolean = false;
+
+        if (Array.isArray(data)) {
+
+        } else {
+
+            fetch(this._dataPath)
+
+                .then(response => response.json())
+
+                .then(fetchedData => {
+
+                    Object.keys(data).forEach(key => {
+
+                        if (!this._dataKeys.includes(key)) {
+                            
+                            error = true;
+
+                        }
+
+                    });
+
+                    if (!error) {
+                        alert(fetchedData);
+                        fetchedData.push(data);
+
+                        fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(fetchedData)) + "&file=" + this._relativeDataPath, {
+
+                            method: 'POST',
+                            headers: {
+                
+                                'Accept': 'application/json',
+                                'Content-type': 'Application/json'
+                
+                            }
+                        });
+
+                    }
+
+                })
+
+                .catch(error => Logger.log(error));
 
         }
 
@@ -236,6 +285,25 @@ export class Model {
             .catch(error => Logger.log(error));
 
         return counter;
+    }
+
+    public async imageUpload(data: FormData) {
+
+        const fileName = await fetch(Config.LOCAL_IMAGE_RECEPTOR_SERVER, {
+
+            method: 'POST',
+            body: data
+
+        })
+        
+        .then(response => response.json())
+
+        .then(data => data)
+
+        .catch(error => Logger.log(error));
+
+        return fileName;
+
     }
 
 }

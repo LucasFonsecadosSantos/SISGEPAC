@@ -51,28 +51,58 @@ export class Model {
             .catch(error => Logger.log(error));
     }
     store(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let error = false;
+            if (Array.isArray(data)) {
+                //TODO
+            }
+            else {
+                Object.keys(data).forEach(key => {
+                    if (!this._dataKeys.includes(key)) {
+                        error = true;
+                    }
+                });
+            }
+            if (!error) {
+                fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(data)) + "&file=" + this._relativeDataPath, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-type': 'Application/json'
+                    }
+                });
+            }
+            else {
+                throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: " + this._dataKeys + "]");
+            }
+        });
+    }
+    insert(data) {
         let error = false;
         if (Array.isArray(data)) {
-            //TODO
         }
         else {
-            Object.keys(data).forEach(key => {
-                if (!this._dataKeys.includes(key)) {
-                    error = true;
+            fetch(this._dataPath)
+                .then(response => response.json())
+                .then(fetchedData => {
+                Object.keys(data).forEach(key => {
+                    if (!this._dataKeys.includes(key)) {
+                        error = true;
+                    }
+                });
+                if (!error) {
+                    alert(fetchedData);
+                    fetchedData.push(data);
+                    fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(fetchedData)) + "&file=" + this._relativeDataPath, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-type': 'Application/json'
+                        }
+                    });
                 }
-            });
-        }
-        if (!error) {
-            fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(data)) + "&file=" + this._relativeDataPath, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-type': 'Application/json'
-                }
-            });
-        }
-        else {
-            throw new InvalidDataKeyException("A data key was wrong. The store operation cannot be completed. [MODEL: " + this._dataPath + " / KEYS: " + this._dataKeys + "]");
+            })
+                .catch(error => Logger.log(error));
         }
     }
     filter(key, value) {
@@ -140,6 +170,18 @@ export class Model {
             .then(data => { })
             .catch(error => Logger.log(error));
         return counter;
+    }
+    imageUpload(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const fileName = yield fetch(Config.LOCAL_IMAGE_RECEPTOR_SERVER, {
+                method: 'POST',
+                body: data
+            })
+                .then(response => response.json())
+                .then(data => data)
+                .catch(error => Logger.log(error));
+            return fileName;
+        });
     }
 }
 //# sourceMappingURL=Model.js.map

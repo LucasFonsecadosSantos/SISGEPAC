@@ -87,6 +87,16 @@
             "text": "Palestrantes e mentores registrados"
         },
         {
+            "id": "card05_button_create-speaker-text",
+            "text": "Adicionar",
+            "title": "Clique para registrar um novo palestrante ao evento.",
+            "alt":  "Botão para registrar um novo palestrante ao evento"
+        },
+        {
+            "id": "card05_button_create-speaker-icon",
+            "text": "add"
+        },
+        {
             "id": "card06_label_title",
             "text": "Atividades programadas"
         },

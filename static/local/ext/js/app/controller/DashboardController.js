@@ -24,6 +24,7 @@ export class DashboardController extends Controller {
             //this._populateLanguageData();
             this._populateCard02();
             this._populateCard03();
+            this._populateCard05();
             //this._populateSpeakerData();
             // this._populateSponsorshipData();
             // this._populateOrganizationData();
@@ -69,6 +70,9 @@ export class DashboardController extends Controller {
         //card04
         this._elements['card04_label_title'] = document.querySelector('#card04_label_title');
         //Card 05
+        this._elements['card05_button_create-speaker'] = document.querySelector('#card05_button_create-speaker');
+        this._elements['card05_button_create-speaker-icon'] = document.querySelector('#card05_button_create-speaker-icon');
+        this._elements['card05_button_create-speaker-text'] = document.querySelector('#card05_button_create-speaker-text');
         this._elements['card05_label_title'] = document.querySelector('#card05_label_title');
         this._elements['card05_table_label_column01'] = document.querySelector('#card05_table_label_column01');
         this._elements['card05_table_label_column02'] = document.querySelector('#card05_table_label_column02');
@@ -145,12 +149,16 @@ export class DashboardController extends Controller {
         })
             .catch(error => Logger.log(error));
     }
-    _populateSpeakerData() {
+    _populateCard05() {
         this._speakerData = this._speakerModel.all();
         this._speakerData
             .then(data => {
         })
             .catch(error => { Logger.log(error); });
+        this._elements['card05_button_create-speaker'].addEventListener('click', event => {
+            //@ts-ignore
+            $('#speakerRegisterModal').modal('show');
+        });
     }
 }
 //# sourceMappingURL=DashboardController.js.map
