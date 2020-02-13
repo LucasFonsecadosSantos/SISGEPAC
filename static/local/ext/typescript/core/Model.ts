@@ -136,6 +136,22 @@ export class Model {
 
                 .then(fetchedData => {
 
+                    fetchedData.forEach(element => {
+
+                        alert(data['id'] + '===' +  element['id']);
+                        
+                        if (data['id'] === element['id']) {
+                            
+                            this.update(data);
+
+                        }
+
+                    });
+
+                    if (data['id']) {
+
+                    }
+
                     Object.keys(data).forEach(key => {
 
                         if (!this._dataKeys.includes(key)) {
@@ -147,7 +163,7 @@ export class Model {
                     });
 
                     if (!error) {
-                        alert(fetchedData);
+                        
                         fetchedData.push(data);
 
                         fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(fetchedData)) + "&file=" + this._relativeDataPath, {
@@ -254,11 +270,19 @@ export class Model {
 
                 if (Array.isArray(data)) {
 
-                    data.forEach(element => {
 
-                        if (element[key] == value) return element; 
+                    let size = data.length;
 
-                    });
+                    for (let i = 0 ; i < size; i++) {
+
+                        if (data[i][key] === value) return data[i]; 
+
+                    }
+                    // data.forEach(element => {
+
+                    //     if (element[key] == value) return element; 
+
+                    // });
 
                     return undefined;
 
@@ -267,7 +291,7 @@ export class Model {
             })
 
             .catch(error => Logger.log(error));
-        
+
         return target;
 
     }

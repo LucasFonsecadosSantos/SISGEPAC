@@ -18,6 +18,7 @@ export class SpeakerRegisterModalController extends Controller {
     _initElements() {
         this._elements = new Array();
         this._elements['speaker_register_label_title'] = document.querySelector('#speaker_register_label_title');
+        this._elements['speaker_register_data_id'] = document.querySelector('#speaker_register_data_id');
         this._elements['speaker_register_label_name'] = document.querySelector('#speaker_register_label_name');
         this._elements['speaker_register_data_name'] = document.querySelector('#speaker_register_data_name');
         this._elements['speaker_register_label_jobInstitute'] = document.querySelector('#speaker_register_label_jobInstitute');
@@ -76,8 +77,9 @@ export class SpeakerRegisterModalController extends Controller {
             try {
                 this._speakerModel.imageUpload(new FormData(this._elements['dataForm']))
                     .then(response => {
+                    alert("TESTE: "(this._elements['speaker_register_data_id'].value === "" || !this._elements['speaker_register_data_id']) ? Identificator.generateID() : this._elements['speaker_register_data_id'].value);
                     this._speakerModel.insert({
-                        "id": Identificator.generateID(),
+                        "id": (this._elements['speaker_register_data_id'].value === "" || !this._elements['speaker_register_data_id']) ? Identificator.generateID() : this._elements['speaker_register_data_id'].value,
                         "name": this._elements['speaker_register_data_name'].value,
                         "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
                         "description": this._elements['speaker_register_data_description'].value,
@@ -173,6 +175,32 @@ export class SpeakerRegisterModalController extends Controller {
                 this._elements['speaker_register_label_helper-name'].textContent = "";
             }
         });
+    }
+    update(id) {
+        //@ts-ignore
+        $('#speakerRegisterModal').modal('show');
+        let speaker = this._speakerModel.find('id', id);
+        speaker.then(data => {
+            this._populateInformations(data);
+        });
+    }
+    _populateInformations(speaker) {
+        this._elements['speaker_register_data_name'].value = speaker['name'];
+        this._elements['speaker_register_data_jobInstitute'].value = speaker['jobInstitute'];
+        //this._elements['speaker_register_data_avatar'].value                    = speaker['avatar'];
+        this._elements['speaker_register_data_id'].value = speaker['id'];
+        this._elements['speaker_register_data_description'].value = speaker['description'];
+        this._elements['speaker_register_data_email'].value = speaker['email'];
+        this._elements['speaker_register_data_socialNetworks-facebook'].value = speaker['social-networks']['facebook'];
+        this._elements['speaker_register_data_socialNetworks-youtube'].value = speaker['social-networks']['youtube'];
+        this._elements['speaker_register_data_socialNetworks-pinterest'].value = speaker['social-networks']['pinterest'];
+        this._elements['speaker_register_data_socialNetworks-twitter'].value = speaker['social-networks']['twitter'];
+        this._elements['speaker_register_data_socialNetworks-lattes'].value = speaker['social-networks']['lattes'];
+        this._elements['speaker_register_data_socialNetworks-github'].value = speaker['social-networks']['github'];
+        this._elements['speaker_register_data_socialNetworks-spotify'].value = speaker['social-networks']['spotify'];
+        this._elements['speaker_register_data_socialNetworks-linkedin'].value = speaker['social-networks']['linkedin'];
+        this._elements['speaker_register_data_socialNetworks-behance'].value = speaker['social-networks']['behance'];
+        this._elements['speaker_register_data_socialNetworks-blog'].value = speaker['social-networks']['blog'];
     }
 }
 //# sourceMappingURL=SpeakerRegisterModalController.js.map

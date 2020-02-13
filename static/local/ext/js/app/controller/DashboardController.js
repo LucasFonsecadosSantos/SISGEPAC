@@ -133,6 +133,9 @@ export class DashboardController extends Controller {
                 iElement.textContent = 'edit';
                 buttonElement.appendChild(iElement);
                 tdElement.appendChild(buttonElement);
+                buttonElement.addEventListener('click', event => {
+                    location.hash = 'palestrante/' + speaker['id'] + '/editar';
+                });
                 buttonElement = document.createElement('BUTTON');
                 buttonElement.classList.add('btn', 'btn-icon', 'btn-teal', 'mr-1');
                 buttonElement.setAttribute('type', 'button');

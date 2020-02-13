@@ -27,6 +27,7 @@ export class Sisgepac {
             ['PhotoGalleryController', PhotoGalleryController],
             ['TemplateController', TemplateController],
             ['ChangelogController', ChangelogController],
+            ['SpeakerRegisterModalController', SpeakerRegisterModalController],
             ['FaqController', FaqController]
         ]);
         new Monitor();
@@ -34,31 +35,56 @@ export class Sisgepac {
         new NavbarController();
         new FooterController();
         this._pageProcessor();
-        //this._routeProcessor();
+        this._routeProcessor();
     }
     _routeProcessor() {
-        let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/', '');
-        let routeList = Routes.ROUTES;
-        let tokens = routeList.get(route).split('@');
-        let controller = this._controllers.get(tokens[0]);
-        let action = tokens[(tokens.length - 1)];
-        let params;
-        if (routeList.get(route).split('@').length == 1) {
-            //@ts-ignore
-            new controller();
-        }
-        else if (routeList.get(route).split('@').length == 2) {
-            //@ts-ignore
-            let controllerInstance = new controller();
-            controllerInstance[action]();
-        }
-        else if (routeList.get(route).split('@').length > 2) {
-            //@ts-ignore
-            let controllerInstance = new controller();
-            params = route.split('/')[1];
-            controllerInstance[action](params);
-        }
+        window.addEventListener('hashchange', event => {
+            let url = window.location.hash.replace('#', '');
+            let urlTokens = url.split('/');
+            let params = "";
+            if (urlTokens.length > 2) {
+                params = urlTokens[1];
+                urlTokens[1] = "{id}";
+            }
+            let route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
+            let routeTokens = route.split('@');
+            let controller = this._controllers.get(routeTokens[0]);
+            let action = routeTokens[1];
+            if (params !== "") {
+                //@ts-ignore
+                let controllerInstance = new controller();
+                controllerInstance[action](params);
+            }
+            else {
+                //@ts-ignore
+                let controllerInstance = new controller();
+                controllerInstance[action]();
+            }
+        });
     }
+    // private _routeProcessor(): void {
+    //     let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/','');
+    //     let routeList = Routes.ROUTES;
+    //     let tokens = routeList.get(route).split('@');
+    //     let controller: Object  = this._controllers.get(tokens[0]);
+    //     let action              = tokens[(tokens.length - 1)];
+    //     let params;
+    //     // if (routeList.get(route).split('@').length == 1) {
+    //     //     //@ts-ignore
+    //     //     new controller();
+    //     // } else if (routeList.get(route).split('@').length == 2) {
+    //     //     //@ts-ignore
+    //     //     let controllerInstance = new controller();
+    //     //     controllerInstance[action]();
+    //     // } else 
+    //     if (routeList.get(route).split('@').length > 2) {
+    //         //@ts-ignore
+    //         let controllerInstance = new controller();
+    //         params = route.split('/')[1];
+    //         alert(controllerInstance);
+    //         controllerInstance[action](params);
+    //     }
+    // }
     _pageProcessor() {
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
             //TODO
