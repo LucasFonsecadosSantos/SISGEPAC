@@ -48,7 +48,7 @@ export class EventSettingsModalController extends Controller {
     _initListeners() {
         this._elements['event-settings-modal-add-button'].addEventListener('click', event => {
             try {
-                this._eventModel.update({
+                this._eventModel.store({
                     "title": this._elements['event-settings-input-name'].value,
                     "description": this._elements['event-settings-input-description'].value,
                     "institute": this._elements['event-settings-input-institute'].value,

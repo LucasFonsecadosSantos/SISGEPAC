@@ -93,12 +93,20 @@
             "alt":  "Botão para registrar um novo palestrante ao evento"
         },
         {
-            "id": "card05_button_create-speaker-icon",
-            "text": "add"
-        },
-        {
             "id": "card06_label_title",
             "text": "Atividades programadas"
+        },
+        {
+            "id": "card05_button_create-speaker-text",
+            "text": "Novo Palestrante"
+        },
+        {
+            "id": "card05_button_search-speaker-text",
+            "text": "Buscar"
+        },
+        {
+            "id": "card05_button_remove-speaker-text",
+            "text": "Remover"
         },
         {
             "id": "card05_table_label_column01",

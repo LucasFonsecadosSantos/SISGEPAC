@@ -80,7 +80,7 @@ export class EventSettingsModalController extends Controller {
 
             try {
             
-                this._eventModel.update({
+                this._eventModel.store({
 
                     "title":        this._elements['event-settings-input-name'].value,
                     "description":  this._elements['event-settings-input-description'].value,

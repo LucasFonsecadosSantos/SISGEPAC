@@ -60,13 +60,24 @@ export class Sisgepac {
             let url = window.location.hash.replace('#','');
             let urlTokens = url.split('/');
             let params = "";
+            let route;
 
             if (urlTokens.length > 2) {
+
                 params = urlTokens[1];
                 urlTokens[1] = "{id}";
-            }
+                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
 
-            let route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
+            } else if (urlTokens.length === 1) {
+
+                route = Routes.ROUTES.get(urlTokens[0]);
+
+            } else if (urlTokens.length === 2) {
+                
+                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
+
+            }
+            
             
             let routeTokens = route.split('@');
 
