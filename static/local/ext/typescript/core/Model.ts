@@ -26,55 +26,102 @@ export class Model {
 
     }
 
-    public update(data: any) {
+    // public update(params: Object, data: any) {
         
+    //     fetch(this._dataPath)
+
+    //         .then(response => response.json())
+
+    //         .then(fetchedData => {
+                
+    //             if (Array.isArray(fetchedData)) {
+
+    //                 data.forEach((element, index) => {
+
+    //                     if (fetchedData[index]) {
+
+    //                         fetchedData[index] = element;
+
+    //                     } else {
+
+    //                         Logger.log("Data store error. (" + element + ")");
+
+    //                     }
+
+    //                 });
+
+    //                 this.store(fetchedData);
+
+    //             } else {
+
+    //                 Object.keys(data).forEach(key => {
+                        
+    //                     if (key in fetchedData) {
+                            
+    //                         fetchedData[key] = data[key];
+
+    //                     } else {
+
+    //                         Logger.log("Data store error. (" + key + ")");
+
+    //                     }
+
+    //                 });
+
+    //                 this.store(fetchedData);
+
+    //             }
+
+    //         })
+
+    //         .catch(error => Logger.log(error));
+
+    // }
+
+
+    public update(data: any, params?: Object) {
+        
+        let targetObjects = new Array<Object>();
+
         fetch(this._dataPath)
 
             .then(response => response.json())
 
-            .then(fetchedData => {
-                
-                if (Array.isArray(fetchedData)) {
+            .then(fetchedObject => {
 
-                    data.forEach((element, index) => {
+                if (Array.isArray(fetchedObject)) {
+                    
+                    fetchedObject.forEach(storedObject => {
 
-                        if (fetchedData[index]) {
+                        Object.keys(storedObject).forEach(key => {
 
-                            fetchedData[index] = element;
+                            if (params[key]) {
+                                
+                                if (params[key] === storedObject[key]) {
+                                    
+                                    Object.keys(data).forEach(dataKey => {
 
-                        } else {
+                                        storedObject[dataKey] = data[dataKey];
 
-                            Logger.log("Data store error. (" + element + ")");
+                                    });
 
-                        }
+                                }
+
+                            }
+
+                        });
 
                     });
-
-                    this.store(fetchedData);
 
                 } else {
-
-                    Object.keys(data).forEach(key => {
-                        
-                        if (key in fetchedData) {
-                            
-                            fetchedData[key] = data[key];
-
-                        } else {
-
-                            Logger.log("Data store error. (" + key + ")");
-
-                        }
-
-                    });
-
-                    this.store(fetchedData);
-
+                    
                 }
+
+                this.store(fetchedObject);
 
             })
 
-            .catch(error => Logger.log(error));
+            .catch(error => Logger.log('Error on update:' + error));
 
     }
 
@@ -125,7 +172,7 @@ export class Model {
     public insert(data: any): void {
 
         let error: boolean = false;
-
+        
         if (Array.isArray(data)) {
 
         } else {
@@ -135,6 +182,22 @@ export class Model {
                 .then(response => response.json())
 
                 .then(fetchedData => {
+
+                    fetchedData.forEach(element => {
+
+                        //alert(data['id'] + '===' +  element['id']);
+                        
+                        if (data['id'] === element['id']) {
+                            
+                            this.update(data);
+
+                        }
+
+                    });
+
+                    if (data['id']) {
+
+                    }
 
                     Object.keys(data).forEach(key => {
 
@@ -147,7 +210,7 @@ export class Model {
                     });
 
                     if (!error) {
-                        alert(fetchedData);
+                        
                         fetchedData.push(data);
 
                         fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(fetchedData)) + "&file=" + this._relativeDataPath, {
@@ -254,11 +317,19 @@ export class Model {
 
                 if (Array.isArray(data)) {
 
-                    data.forEach(element => {
 
-                        if (element[key] == value) return element; 
+                    let size = data.length;
 
-                    });
+                    for (let i = 0 ; i < size; i++) {
+
+                        if (data[i][key] === value) return data[i]; 
+
+                    }
+                    // data.forEach(element => {
+
+                    //     if (element[key] == value) return element; 
+
+                    // });
 
                     return undefined;
 
@@ -267,7 +338,7 @@ export class Model {
             })
 
             .catch(error => Logger.log(error));
-        
+
         return target;
 
     }

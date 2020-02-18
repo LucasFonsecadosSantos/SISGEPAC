@@ -1,11 +1,12 @@
 .modal.fadeInDown.text-left#speakerRegisterModal.lg(sisgepac-modal="speaker-register-modal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel34", style="display: none;", aria-hidden="true")
     .modal-dialog.modal-lg(role="document")
         .modal-content
-            .modal-header.bg-info
-                h3.modal-title#speaker_register_label_title
+            .modal-header.bg-danger
+                h3.modal-title.text-white#speaker_register_label_title
                 button(type="button", class="close", data-dismiss="modal", aria-label="Close")
                 span(aria-hidden="true") ×
             form#dataForm
+                input#speaker_register_data_id(type="hidden")
                 .modal-body
                     .bs-callout-primary.callout-border-left.callout-square.p-1.mb-2
                         strong Novos palestrantes
@@ -76,7 +77,8 @@
                 hr
                 .modal-footer
                     //input.btn.btn-outline-secondary.btn-lg(type="reset", data-dismiss="modal", value="cancelar")
-                    button.btn.btn-outline-primary.btn-lg#speaker_register_button_add(type="button")
+                    button.btn.btn-outline-success#speaker_register_button_create.d-none(type="button")
+                    button.btn.btn-outline-success#speaker_register_button_update.d-none(type="button")
 //- script(src="/local/ext/app-assets/js/scripts/ui/breadcrumbs-with-stats.min.js")
 //- script(src="/local/ext/app-assets/js/scripts/forms/custom-file-input.min.js")
 //- script(src="/local/ext/app-assets/vendors/js/forms/tags/form-field.js")

@@ -32,14 +32,15 @@ export class Sisgepac {
         
         this._controllers       = new Map<string, Object>([
 
-            ['ProceedingsController',   ProceedingsController],
-            ['SpeakerController',       SpeakerController],
-            ['DashboardController',     DashboardController],
-            ['VideoGalleryController',  VideoGalleryController],
-            ['PhotoGalleryController',  PhotoGalleryController],
-            ['TemplateController',      TemplateController],
-            ['ChangelogController',     ChangelogController],
-            ['FaqController',           FaqController]
+            ['ProceedingsController',           ProceedingsController],
+            ['SpeakerController',               SpeakerController],
+            ['DashboardController',             DashboardController],
+            ['VideoGalleryController',          VideoGalleryController],
+            ['PhotoGalleryController',          PhotoGalleryController],
+            ['TemplateController',              TemplateController],
+            ['ChangelogController',             ChangelogController],
+            ['SpeakerRegisterModalController',  SpeakerRegisterModalController],
+            ['FaqController',                   FaqController]
 
         ]);
         
@@ -48,43 +49,93 @@ export class Sisgepac {
         new NavbarController();
         new FooterController();
         this._pageProcessor();
-        //this._routeProcessor();
+        this._routeProcessor();
         
     }
 
     private _routeProcessor(): void {
 
-        let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/','');
-        
-        let routeList = Routes.ROUTES;
+        window.addEventListener('hashchange', event => {
 
-        let tokens = routeList.get(route).split('@');
+            let url = window.location.hash.replace('#','');
+            let urlTokens = url.split('/');
+            let params = "";
+            let route;
 
-        let controller: Object  = this._controllers.get(tokens[0]);
-        let action              = tokens[(tokens.length - 1)];
-        let params;
+            if (urlTokens.length > 2) {
 
-        if (routeList.get(route).split('@').length == 1) {
+                params = urlTokens[1];
+                urlTokens[1] = "{id}";
+                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
+
+            } else if (urlTokens.length === 1) {
+
+                route = Routes.ROUTES.get(urlTokens[0]);
+
+            } else if (urlTokens.length === 2) {
+                
+                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
+
+            }
             
-            //@ts-ignore
-            new controller();
+            
+            let routeTokens = route.split('@');
 
-        } else if (routeList.get(route).split('@').length == 2) {
+            let controller: Object = this._controllers.get(routeTokens[0]);
 
-            //@ts-ignore
-            let controllerInstance = new controller();
-            controllerInstance[action]();
+            let action = routeTokens[1];
 
-        } else if (routeList.get(route).split('@').length > 2) {
+            if (params !== "") {
 
-            //@ts-ignore
-            let controllerInstance = new controller();
-            params = route.split('/')[1];
-            controllerInstance[action](params);
+                //@ts-ignore
+                let controllerInstance = new controller();
+                controllerInstance[action](params);
 
-        }
+            } else {
+                //@ts-ignore
+                let controllerInstance = new controller();
+                controllerInstance[action]();
+            }
+
+        });
 
     }
+
+    // private _routeProcessor(): void {
+
+    //     let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/','');
+        
+    //     let routeList = Routes.ROUTES;
+
+    //     let tokens = routeList.get(route).split('@');
+
+    //     let controller: Object  = this._controllers.get(tokens[0]);
+    //     let action              = tokens[(tokens.length - 1)];
+    //     let params;
+
+    //     // if (routeList.get(route).split('@').length == 1) {
+            
+    //     //     //@ts-ignore
+    //     //     new controller();
+
+    //     // } else if (routeList.get(route).split('@').length == 2) {
+
+    //     //     //@ts-ignore
+    //     //     let controllerInstance = new controller();
+    //     //     controllerInstance[action]();
+
+    //     // } else 
+    //     if (routeList.get(route).split('@').length > 2) {
+
+    //         //@ts-ignore
+    //         let controllerInstance = new controller();
+    //         params = route.split('/')[1];
+    //         alert(controllerInstance);
+    //         controllerInstance[action](params);
+
+    //     }
+
+    // }
 
     private _pageProcessor(): void {
         

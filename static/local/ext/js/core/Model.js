@@ -21,34 +21,55 @@ export class Model {
             return fetched;
         });
     }
-    update(data) {
+    // public update(params: Object, data: any) {
+    //     fetch(this._dataPath)
+    //         .then(response => response.json())
+    //         .then(fetchedData => {
+    //             if (Array.isArray(fetchedData)) {
+    //                 data.forEach((element, index) => {
+    //                     if (fetchedData[index]) {
+    //                         fetchedData[index] = element;
+    //                     } else {
+    //                         Logger.log("Data store error. (" + element + ")");
+    //                     }
+    //                 });
+    //                 this.store(fetchedData);
+    //             } else {
+    //                 Object.keys(data).forEach(key => {
+    //                     if (key in fetchedData) {
+    //                         fetchedData[key] = data[key];
+    //                     } else {
+    //                         Logger.log("Data store error. (" + key + ")");
+    //                     }
+    //                 });
+    //                 this.store(fetchedData);
+    //             }
+    //         })
+    //         .catch(error => Logger.log(error));
+    // }
+    update(data, params) {
+        let targetObjects = new Array();
         fetch(this._dataPath)
             .then(response => response.json())
-            .then(fetchedData => {
-            if (Array.isArray(fetchedData)) {
-                data.forEach((element, index) => {
-                    if (fetchedData[index]) {
-                        fetchedData[index] = element;
-                    }
-                    else {
-                        Logger.log("Data store error. (" + element + ")");
-                    }
+            .then(fetchedObject => {
+            if (Array.isArray(fetchedObject)) {
+                fetchedObject.forEach(storedObject => {
+                    Object.keys(storedObject).forEach(key => {
+                        if (params[key]) {
+                            if (params[key] === storedObject[key]) {
+                                Object.keys(data).forEach(dataKey => {
+                                    storedObject[dataKey] = data[dataKey];
+                                });
+                            }
+                        }
+                    });
                 });
-                this.store(fetchedData);
             }
             else {
-                Object.keys(data).forEach(key => {
-                    if (key in fetchedData) {
-                        fetchedData[key] = data[key];
-                    }
-                    else {
-                        Logger.log("Data store error. (" + key + ")");
-                    }
-                });
-                this.store(fetchedData);
             }
+            this.store(fetchedObject);
         })
-            .catch(error => Logger.log(error));
+            .catch(error => Logger.log('Error on update:' + error));
     }
     store(data) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -85,13 +106,20 @@ export class Model {
             fetch(this._dataPath)
                 .then(response => response.json())
                 .then(fetchedData => {
+                fetchedData.forEach(element => {
+                    //alert(data['id'] + '===' +  element['id']);
+                    if (data['id'] === element['id']) {
+                        this.update(data);
+                    }
+                });
+                if (data['id']) {
+                }
                 Object.keys(data).forEach(key => {
                     if (!this._dataKeys.includes(key)) {
                         error = true;
                     }
                 });
                 if (!error) {
-                    alert(fetchedData);
                     fetchedData.push(data);
                     fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify(fetchedData)) + "&file=" + this._relativeDataPath, {
                         method: 'POST',
@@ -152,10 +180,14 @@ export class Model {
                 .then(response => response.json())
                 .then(data => {
                 if (Array.isArray(data)) {
-                    data.forEach(element => {
-                        if (element[key] == value)
-                            return element;
-                    });
+                    let size = data.length;
+                    for (let i = 0; i < size; i++) {
+                        if (data[i][key] === value)
+                            return data[i];
+                    }
+                    // data.forEach(element => {
+                    //     if (element[key] == value) return element; 
+                    // });
                     return undefined;
                 }
             })

@@ -176,10 +176,16 @@
             "alt": "Campo para selecionar uma fotografia do palestrante."
         },
         {
-            "id": "speaker_register_button_add",
+            "id": "speaker_register_button_create",
             "title": "Clique para adicionar este palestrante ao evento.",
             "alt": "Botão para adicionar o palestrante.",
             "text": "Adicionar"
+        },
+        {
+            "id": "speaker_register_button_update",
+            "title": "Clique para adicionar este palestrante ao evento.",
+            "alt": "Botão para adicionar o palestrante.",
+            "text": "Atualizar"
         }
 
 

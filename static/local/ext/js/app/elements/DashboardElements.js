@@ -46,6 +46,9 @@ DashboardElements.ELEMENTS = new Map([
     ['card05_table_label_column02', document.querySelector('#card05_table_label_column02')],
     ['card05_table_label_column03', document.querySelector('#card05_table_label_column03')],
     ['card05_table_label_column04', document.querySelector('#card05_table_label_column04')],
+    ['card05_button_remove-speaker-text', document.querySelector('#card05_button_remove-speaker-text')],
+    ['card05_button_create-speaker-text', document.querySelector('#card05_button_create-speaker-text')],
+    ['card05_button_search-speaker-text', document.querySelector('#card05_button_search-speaker-text')],
     // //Card 06
     ['card06_label_title', document.querySelector('#card06_label_title')],
     ['card06_table_label_column01', document.querySelector('#card06_table_label_column01')],

@@ -18,6 +18,7 @@ export class SpeakerRegisterModalController extends Controller {
     _initElements() {
         this._elements = new Array();
         this._elements['speaker_register_label_title'] = document.querySelector('#speaker_register_label_title');
+        this._elements['speaker_register_data_id'] = document.querySelector('#speaker_register_data_id');
         this._elements['speaker_register_label_name'] = document.querySelector('#speaker_register_label_name');
         this._elements['speaker_register_data_name'] = document.querySelector('#speaker_register_data_name');
         this._elements['speaker_register_label_jobInstitute'] = document.querySelector('#speaker_register_label_jobInstitute');
@@ -53,7 +54,8 @@ export class SpeakerRegisterModalController extends Controller {
         this._elements['speaker_register_label_avatar'] = document.querySelector('#speaker_register_label_avatar');
         this._elements['speaker_register_data_avatar'] = document.querySelector('#speaker_register_data_avatar');
         this._elements['speaker_register_label_avatar2'] = document.querySelector('#speaker_register_label_avatar2');
-        this._elements['speaker_register_button_add'] = document.querySelector('#speaker_register_button_add');
+        this._elements['speaker_register_button_create'] = document.querySelector('#speaker_register_button_create');
+        this._elements['speaker_register_button_update'] = document.querySelector('#speaker_register_button_update');
         this._elements['speaker_register_label_helper-name'] = document.querySelector('#speaker_register_label_helper-name');
         this._elements['speaker_register_label_helper-jobInstitute'] = document.querySelector('#speaker_register_label_helper-jobInstitute');
         this._elements['speaker_register_label_helper-description'] = document.querySelector('#speaker_register_label_helper-description');
@@ -72,12 +74,12 @@ export class SpeakerRegisterModalController extends Controller {
             .catch(error => Logger.log(error));
     }
     _initListeners() {
-        this._elements['speaker_register_button_add'].addEventListener('click', event => {
+        this._elements['speaker_register_button_create'].addEventListener('click', event => {
             try {
                 this._speakerModel.imageUpload(new FormData(this._elements['dataForm']))
                     .then(response => {
                     this._speakerModel.insert({
-                        "id": Identificator.generateID(),
+                        "id": (this._elements['speaker_register_data_id'].value === "" || !this._elements['speaker_register_data_id'].value) ? Identificator.generateID() : this._elements['speaker_register_data_id'].value,
                         "name": this._elements['speaker_register_data_name'].value,
                         "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
                         "description": this._elements['speaker_register_data_description'].value,
@@ -106,10 +108,24 @@ export class SpeakerRegisterModalController extends Controller {
             }
             //@ts-ignore
             $('#speakerRegisterModal').modal('hide');
-        });
+        }, false);
         this._initInputNameListeners();
         this._initInputJobInstituteListeners();
         this._initInputDescriptionListeners();
+    }
+    create() {
+        //@ts-ignore
+        $('#speakerRegisterModal').modal('show');
+        this._clearInputs();
+        this._elements['speaker_register_button_update'].classList.add('d-none');
+        this._elements['speaker_register_button_create'].classList.remove('d-none');
+    }
+    _clearInputs() {
+        this._elements.forEach(element => {
+            if (element.nodeName === 'INPUT') {
+                element.nodeValue = "";
+            }
+        });
     }
     _initInputDescriptionListeners() {
         this._elements['speaker_register_data_description'].addEventListener('focus', event => {
@@ -173,6 +189,68 @@ export class SpeakerRegisterModalController extends Controller {
                 this._elements['speaker_register_label_helper-name'].textContent = "";
             }
         });
+    }
+    update(id) {
+        //@ts-ignore
+        $('#speakerRegisterModal').modal('show');
+        this._elements['speaker_register_button_update'].classList.remove('d-none');
+        this._elements['speaker_register_button_create'].classList.add('d-none');
+        let speaker = this._speakerModel.find('id', id);
+        speaker.then(data => {
+            this._populateInformations(data);
+            this._elements['speaker_register_button_update'].addEventListener('click', event => {
+                try {
+                    this._speakerModel.update({
+                        "id": this._elements['speaker_register_data_id'].value,
+                        "name": this._elements['speaker_register_data_name'].value,
+                        "jobInstitute": this._elements['speaker_register_data_jobInstitute'].value,
+                        "description": this._elements['speaker_register_data_description'].value,
+                        "email": this._elements['speaker_register_data_email'].value,
+                        "social-networks": {
+                            "facebook": this._elements['speaker_register_data_socialNetworks-facebook'].value,
+                            "twitter": this._elements['speaker_register_data_socialNetworks-twitter'].value,
+                            "linkedin": this._elements['speaker_register_data_socialNetworks-linkedin'].value,
+                            "spotify": this._elements['speaker_register_data_socialNetworks-spotify'].value,
+                            "youtube": this._elements['speaker_register_data_socialNetworks-youtube'].value,
+                            "behance": this._elements['speaker_register_data_socialNetworks-behance'].value,
+                            "lattes": this._elements['speaker_register_data_socialNetworks-lattes'].value,
+                            "pinterest": this._elements['speaker_register_data_socialNetworks-pinterest'].value,
+                            "blog": this._elements['speaker_register_data_socialNetworks-blog'].value,
+                        },
+                        //"avatar":   ((!response['data_name']) || (response['data_name'] === "")) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                        "show": true
+                    }, {
+                        "id": this._elements['speaker_register_data_id'].value
+                    });
+                }
+                catch (exception) {
+                    if (exception instanceof InvalidDataKeyException) {
+                        Logger.log("Update Exception: " + exception.message);
+                    }
+                }
+                //@ts-ignore
+                $('#speakerRegisterModal').modal('hide');
+                location.hash = 'palestrante/listar';
+            });
+        });
+    }
+    _populateInformations(speaker) {
+        this._elements['speaker_register_data_name'].value = speaker['name'];
+        this._elements['speaker_register_data_jobInstitute'].value = speaker['jobInstitute'];
+        //this._elements['speaker_register_data_avatar'].value                    = speaker['avatar'];
+        this._elements['speaker_register_data_id'].value = speaker['id'];
+        this._elements['speaker_register_data_description'].value = speaker['description'];
+        this._elements['speaker_register_data_email'].value = speaker['email'];
+        this._elements['speaker_register_data_socialNetworks-facebook'].value = speaker['social-networks']['facebook'];
+        this._elements['speaker_register_data_socialNetworks-youtube'].value = speaker['social-networks']['youtube'];
+        this._elements['speaker_register_data_socialNetworks-pinterest'].value = speaker['social-networks']['pinterest'];
+        this._elements['speaker_register_data_socialNetworks-twitter'].value = speaker['social-networks']['twitter'];
+        this._elements['speaker_register_data_socialNetworks-lattes'].value = speaker['social-networks']['lattes'];
+        this._elements['speaker_register_data_socialNetworks-github'].value = speaker['social-networks']['github'];
+        this._elements['speaker_register_data_socialNetworks-spotify'].value = speaker['social-networks']['spotify'];
+        this._elements['speaker_register_data_socialNetworks-linkedin'].value = speaker['social-networks']['linkedin'];
+        this._elements['speaker_register_data_socialNetworks-behance'].value = speaker['social-networks']['behance'];
+        this._elements['speaker_register_data_socialNetworks-blog'].value = speaker['social-networks']['blog'];
     }
 }
 //# sourceMappingURL=SpeakerRegisterModalController.js.map
