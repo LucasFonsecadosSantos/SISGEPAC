@@ -161,18 +161,16 @@ export class Model {
             return fetched;
         });
     }
-    delete(key) {
-        if (key) {
-        }
-        else {
-            fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify("")) + "&file=" + this._relativeDataPath, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-type': 'Application/json'
-                }
-            });
-        }
+    delete(key, value) {
+        fetch(this._dataPath)
+            .then(response => response.json())
+            .then(data => {
+            if (Array.isArray(data)) {
+                data = data.filter(fetchedObject => fetchedObject[key] != value);
+            }
+            this.store(data);
+        })
+            .catch(error => Logger.log('Model: ' + error));
     }
     find(key, value) {
         return __awaiter(this, void 0, void 0, function* () {

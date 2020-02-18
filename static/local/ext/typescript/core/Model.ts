@@ -286,24 +286,25 @@ export class Model {
 
     }
 
-    public delete(key?: string): void {
+    public delete(key: string, value: any): void {
 
-        if (key) {
+        fetch(this._dataPath)
 
-        } else {
+            .then(response => response.json())
 
-            fetch(Config.LOCAL_RECEPTOR_SERVER + "?data=" + encodeURI(JSON.stringify("")) + "&file=" + this._relativeDataPath, {
+            .then(data => {
 
-                method: 'POST',
-                headers: {
-    
-                    'Accept': 'application/json',
-                    'Content-type': 'Application/json'
-    
+                if (Array.isArray(data)) {
+
+                    data = data.filter(fetchedObject => fetchedObject[key] != value);
+
                 }
-            });
 
-        }
+                this.store(data);
+
+            })
+
+            .catch(error => Logger.log('Model: ' + error));
 
     }
 

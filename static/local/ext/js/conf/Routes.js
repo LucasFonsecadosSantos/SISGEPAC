@@ -5,6 +5,6 @@ Routes.ROUTES = new Map([
     ['palestrante/listar', 'DashboardController@init'],
     ['palestrante/{id}/cadastrar', 'SpeakerRegisterModalController@create'],
     ['palestrante/{id}/editar', 'SpeakerRegisterModalController@update'],
-    ['palestrante/{id}/remover', 'SpeakerController@delete']
+    ['palestrante/{id}/remover', 'SpeakerRegisterModalController@delete']
 ]);
 //# sourceMappingURL=Routes.js.map
