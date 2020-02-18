@@ -38,6 +38,7 @@ export var DataEntity;
     DataEntity["_FOOTER_MESSAGES_"] = "footer";
     DataEntity["_VIDEO_GALLERY_MESSAGES_"] = "video_gallery";
     DataEntity["_PHOTO_GALLERY_MESSAGES_"] = "photo_gallery";
+    DataEntity["_ACTIVITY_REGISTER_MODAL_MESSAGES_"] = "activity-register-modal";
 })(DataEntity || (DataEntity = {}));
 export class Config {
     static projectStartedStatus() {
@@ -78,6 +79,7 @@ Config.REMOTE_CONF_FILES_PATH = new Map([
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
     [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+    [DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "activity-register-modal.json"],
     [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
     [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
     [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"],

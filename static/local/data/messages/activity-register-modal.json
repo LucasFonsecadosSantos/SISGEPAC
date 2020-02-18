@@ -1,0 +1,57 @@
+{
+    "pt-BR": [
+
+        {
+            "id": "activity_register_label_title",
+            "text": "Titulo*:"
+        },
+        {
+            "id": "activity_register_button_update",
+            "text": "Atualizar informações",
+            "alt": "Botão para atualizar o cadastro da atividade",
+            "title": "Clique aqui para atualizar o cadastro da atividade."
+        },
+        {
+            "id": "activity_register_button_create",
+            "text": "Cadastrar atividade",
+            "title": "Clique para realizar o cadastro da atividade.",
+            "alt": "Botão para cadastrar atividade."
+        },
+        {
+            "id": "activity_register_modal_title",
+            "text": "Registrar nova atividade"
+        },
+        {
+            "id": "activity_register_data_title",
+            "placeholder": "Ex.: Mesa redonda de debate",
+            "title": "Infome o título/nome da atividade. Escolha nomes atrativos ou informado pelo palestrante.",
+            "alt": "Campo de texto para informar o título da ativiade.",
+            "maxlength": "40"
+        },
+        {
+            "id": "activity_register_label_description",
+            "text": "Descrição*:"
+        },
+        {
+            "id": "activity_register_data_description",
+            "placeholder": "Ex.: Discutiremos sobre novas tendencias na área ...",
+            "title": "Descreva sucintamente o que ocorrerá na atividade, tópicos discutidos ou apresentados.",
+            "alt": "Campo de texto para descrever sucintamente a ativiadade.",
+            "maxlength": "400"
+        },
+        {
+            "id": "activity_register_data_responsible",
+            "placeholder": "- SELECIONE -",
+            "title": "Clique para selecionar um ministrante",
+            "alt": "Campo de seleção para selecionar um ministrante"
+        },
+        {
+            "id": "activity_register_label_avatar2",
+            "placeholder": "Selecione uma imagem"
+        },
+        {
+            "id": "activity_register_label_responsible",
+            "text": "Responsável/palestrante/mentor da atividade*:"
+        }
+    ]
+}

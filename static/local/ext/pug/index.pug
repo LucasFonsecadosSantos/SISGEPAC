@@ -17,6 +17,7 @@ include components/_header.pug
 include components/_navbar.pug
 include components/modals/_event-settings.pug
 include components/modals/_speaker-register.pug
+include components/modals/_activity-register.pug
 
 .app-content.content(sisgepac-page="index")
   .content-header.row
@@ -382,15 +383,15 @@ include components/modals/_speaker-register.pug
                       tr
                         th.text-right(colspan="4")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
-                            button.btn.btn-success(type="button")
-                              i.material-icons add
-                              |Cadastrar
-                            button.btn.btn-primary(type="button")
-                              i.material-icons search
-                              |Pesquisar
-                            button.btn.btn-danger(type="button")
-                              i.material-icons delete_forever
-                              |remover
+                            button.btn.btn-outline-success#card06_button_create-activity(type="button")
+                              i.la.la-plus.font-medium-1.mr-1
+                              span#card06_button_create-activity-text
+                            button.btn.btn-outline-primary#card06_button_search-activity(type="button")
+                              i.la.la-search.font-medium-1.mr-1
+                              span#card06_button_search-activity-text
+                            button.btn.btn-outline-danger#card06_button_delete-activity(type="button")
+                              i.la.la-trash-alt.font-medium-1.mr-1
+                              span#card06_button_delete-activity-text
                       tr
                         th#card06_table_label_column01
                         th#card06_table_label_column02

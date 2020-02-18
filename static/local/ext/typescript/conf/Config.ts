@@ -29,7 +29,8 @@ export enum DataEntity {
     _FAQ_MESSAGES_                              = "faq",
     _FOOTER_MESSAGES_                           = "footer",
     _VIDEO_GALLERY_MESSAGES_                    = "video_gallery",
-    _PHOTO_GALLERY_MESSAGES_                    = "photo_gallery"
+    _PHOTO_GALLERY_MESSAGES_                    = "photo_gallery",
+    _ACTIVITY_REGISTER_MODAL_MESSAGES_          = "activity-register-modal"
 
 }
 
@@ -72,6 +73,7 @@ export class Config {
 
         [DataEntity._CHANGELOG_,                                    "/local/data/conf/changelog.json"],
         [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_,      Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+        [DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_,             Config.LOCAL_MESSAGES_PATH + "activity-register-modal.json"],
         [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_,              Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
         [DataEntity._DASHBOARD_MESSAGES_,                           Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
         [DataEntity._NAVBAR_MESSAGES_,                              Config.LOCAL_MESSAGES_PATH + "navbar.json"],

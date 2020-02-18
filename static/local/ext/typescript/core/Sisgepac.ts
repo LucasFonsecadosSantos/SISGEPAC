@@ -15,6 +15,7 @@ import { ProceedingsController }            from '../app/controller/ProceedingsC
 import { PhotoGalleryController }           from './../app/controller/PhotoGalleryController.js';
 import { VideoGalleryController }           from './../app/controller/VideoGalleryController.js';
 import { SpeakerRegisterModalController}    from './../app/controller/SpeakerRegisterModalController.js';
+import { ActivityRegisterModalController }  from './../app/controller/ActivityRegisterModalController.js';
 
 import { Routes } from './../conf/Routes.js';
 
@@ -40,7 +41,8 @@ export class Sisgepac {
             ['TemplateController',              TemplateController],
             ['ChangelogController',             ChangelogController],
             ['SpeakerRegisterModalController',  SpeakerRegisterModalController],
-            ['FaqController',                   FaqController]
+            ['FaqController',                   FaqController],
+            ['ActivityRegisterModalController', ActivityRegisterModalController]
 
         ]);
         
@@ -101,46 +103,8 @@ export class Sisgepac {
 
     }
 
-    // private _routeProcessor(): void {
-
-    //     let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/','');
-        
-    //     let routeList = Routes.ROUTES;
-
-    //     let tokens = routeList.get(route).split('@');
-
-    //     let controller: Object  = this._controllers.get(tokens[0]);
-    //     let action              = tokens[(tokens.length - 1)];
-    //     let params;
-
-    //     // if (routeList.get(route).split('@').length == 1) {
-            
-    //     //     //@ts-ignore
-    //     //     new controller();
-
-    //     // } else if (routeList.get(route).split('@').length == 2) {
-
-    //     //     //@ts-ignore
-    //     //     let controllerInstance = new controller();
-    //     //     controllerInstance[action]();
-
-    //     // } else 
-    //     if (routeList.get(route).split('@').length > 2) {
-
-    //         //@ts-ignore
-    //         let controllerInstance = new controller();
-    //         params = route.split('/')[1];
-    //         alert(controllerInstance);
-    //         controllerInstance[action](params);
-
-    //     }
-
-    // }
-
     private _pageProcessor(): void {
         
-
-
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
 
             //TODO
@@ -196,6 +160,10 @@ export class Sisgepac {
                 
                 case 'speaker-register-modal':
                     new SpeakerRegisterModalController();
+                    break;
+                
+                case 'activity-register-modal':
+                    new ActivityRegisterModalController();
                     break;
     
             }

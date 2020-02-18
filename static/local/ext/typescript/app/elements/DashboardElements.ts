@@ -58,6 +58,12 @@ export class DashboardElements {
         
         // //Card 06
         ['card06_label_title',                  document.querySelector('#card06_label_title')],
+        ['card06_button_create-activity',       document.querySelector('#card06_button_create-activity')],
+        ['card06_button_create-activity-text',  document.querySelector('#card06_button_create-activity-text')],
+        ['card06_button_search-activity',       document.querySelector('#card06_button_search-activity')],
+        ['card06_button_search-activity-text',  document.querySelector('#card06_button_search-activity-text')],
+        ['card06_button_delete-activity',       document.querySelector('#card06_button_delete-activity')],
+        ['card06_button_delete-activity-text',  document.querySelector('#card06_button_delete-activity-text')],
         ['card06_table_label_column01',         document.querySelector('#card06_table_label_column01')],
         ['card06_table_label_column02',         document.querySelector('#card06_table_label_column02')],
         ['card06_table_label_column03',         document.querySelector('#card06_table_label_column03')],
