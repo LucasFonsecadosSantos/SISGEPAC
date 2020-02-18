@@ -166,6 +166,12 @@ export class SpeakerRegisterModalController extends Controller {
 
     }
 
+    public delete(id: string): void {
+
+        this._speakerModel.delete('id', id);
+
+    }
+
     public create(): void {
 
         //@ts-ignore

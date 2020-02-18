@@ -243,6 +243,11 @@ export class DashboardController extends Controller {
                         iElement = document.createElement('I');
                         iElement.classList.add('la','la-trash');
                         buttonElement.appendChild(iElement);
+                        buttonElement.addEventListener('click', event => {
+
+                            location.hash = 'palestrante/' + speaker['id'] + '/remover';
+
+                        });
                         btnGroup.appendChild(buttonElement);
                         tdElement.appendChild(btnGroup);
 

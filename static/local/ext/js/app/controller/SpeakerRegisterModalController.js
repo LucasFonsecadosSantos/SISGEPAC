@@ -113,6 +113,9 @@ export class SpeakerRegisterModalController extends Controller {
         this._initInputJobInstituteListeners();
         this._initInputDescriptionListeners();
     }
+    delete(id) {
+        this._speakerModel.delete('id', id);
+    }
     create() {
         //@ts-ignore
         $('#speakerRegisterModal').modal('show');
