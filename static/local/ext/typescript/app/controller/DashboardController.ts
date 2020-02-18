@@ -203,8 +203,11 @@ export class DashboardController extends Controller {
                         //cell04
                         tdElement = document.createElement('TD');
                         tdElement.className = 'text-center';
+                        let btnGroup = document.createElement('DIV');
+                        btnGroup.className = 'btn-group';
+                        btnGroup.setAttribute('role', 'group');
                         let buttonElement = document.createElement('BUTTON');
-                        buttonElement.classList.add('btn','btn-icon','btn-secondary','mr-1','btn-sm');
+                        buttonElement.classList.add('btn','btn-icon','btn-secondary','btn-sm');
                         buttonElement.setAttribute('type','button');
                         buttonElement.setAttribute('data-toogle','tooltip');
                         buttonElement.setAttribute('data-popup','tooltip-custom');
@@ -212,16 +215,16 @@ export class DashboardController extends Controller {
                         let iElement = document.createElement('I');
                         iElement.classList.add('la','la-edit');
                         buttonElement.appendChild(iElement);
-                        tdElement.appendChild(buttonElement);
 
                         buttonElement.addEventListener('click', event => {
 
                             location.hash = 'palestrante/' + speaker['id'] + '/editar';
 
                         });
+                        btnGroup.appendChild(buttonElement);
                         
                         buttonElement = document.createElement('BUTTON');
-                        buttonElement.classList.add('btn','btn-icon','btn-secondary','mr-1','btn-sm');
+                        buttonElement.classList.add('btn','btn-icon','btn-secondary','btn-sm');
                         buttonElement.setAttribute('type','button');
                         buttonElement.setAttribute('data-toogle','tooltip');
                         buttonElement.setAttribute('data-popup','tooltip-custom');
@@ -229,10 +232,10 @@ export class DashboardController extends Controller {
                         iElement = document.createElement('I');
                         iElement.classList.add('la','la-eye');
                         buttonElement.appendChild(iElement);
-                        tdElement.appendChild(buttonElement);
+                        btnGroup.appendChild(buttonElement);
 
                         buttonElement = document.createElement('BUTTON');
-                        buttonElement.classList.add('btn','btn-icon','btn-red','mr-1','btn-sm');
+                        buttonElement.classList.add('btn','btn-icon','btn-red','btn-sm');
                         buttonElement.setAttribute('type','button');
                         buttonElement.setAttribute('data-toogle','tooltip');
                         buttonElement.setAttribute('data-popup','tooltip-custom');
@@ -240,7 +243,8 @@ export class DashboardController extends Controller {
                         iElement = document.createElement('I');
                         iElement.classList.add('la','la-trash');
                         buttonElement.appendChild(iElement);
-                        tdElement.appendChild(buttonElement);
+                        btnGroup.appendChild(buttonElement);
+                        tdElement.appendChild(btnGroup);
 
 
                         fragment.appendChild(tdElement);
