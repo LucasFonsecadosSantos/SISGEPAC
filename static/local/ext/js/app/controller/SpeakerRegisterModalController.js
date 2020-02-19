@@ -115,7 +115,13 @@ export class SpeakerRegisterModalController extends Controller {
     }
     delete(id) {
         this._speakerModel.delete('id', id);
-        setTimeout(() => window.location.hash = '', 2000);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.querySelector('#loader').classList.remove('d-none');
+        setTimeout(() => {
+            document.querySelector('#loader').classList.add('d-none');
+            window.location.hash = '';
+        }, 2000);
     }
     create() {
         //@ts-ignore
@@ -124,7 +130,13 @@ export class SpeakerRegisterModalController extends Controller {
         document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
             //@ts-ignore
             if (document.querySelector('#speakerRegisterModal').style.display === 'none') {
-                setTimeout(() => window.location.hash = '', 2000);
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                document.querySelector('#loader').classList.remove('d-none');
+                setTimeout(() => {
+                    document.querySelector('#loader').classList.add('d-none');
+                    window.location.hash = '';
+                }, 2000);
             }
         });
         this._elements['speaker_register_button_update'].classList.add('d-none');

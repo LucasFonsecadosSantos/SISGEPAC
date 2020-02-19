@@ -169,7 +169,18 @@ export class SpeakerRegisterModalController extends Controller {
     public delete(id: string): void {
 
         this._speakerModel.delete('id', id);
-        setTimeout(() => window.location.hash = '', 2000);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.querySelector('#loader').classList.remove('d-none');
+
+        setTimeout(() => {
+            
+            document.querySelector('#loader').classList.add('d-none');
+            window.location.hash = '';
+
+        
+        }, 2000);
+        
 
     }
 
@@ -183,7 +194,19 @@ export class SpeakerRegisterModalController extends Controller {
 
             //@ts-ignore
             if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
-                setTimeout(() => window.location.hash = '', 2000);
+                
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                document.querySelector('#loader').classList.remove('d-none');
+
+                setTimeout(() => {
+                    
+                    document.querySelector('#loader').classList.add('d-none');
+                    window.location.hash = '';
+                    
+                
+                }, 2000);
+
             }
 
         });
