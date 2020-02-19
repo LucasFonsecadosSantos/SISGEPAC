@@ -169,6 +169,7 @@ export class SpeakerRegisterModalController extends Controller {
     public delete(id: string): void {
 
         this._speakerModel.delete('id', id);
+        setTimeout(() => window.location.hash = '', 2000);
 
     }
 
@@ -177,6 +178,16 @@ export class SpeakerRegisterModalController extends Controller {
         //@ts-ignore
         $('#speakerRegisterModal').modal('show');
         this._clearInputs();
+
+        document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
+
+            //@ts-ignore
+            if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
+                setTimeout(() => window.location.hash = '', 2000);
+            }
+
+        });
+        
         this._elements['speaker_register_button_update'].classList.add('d-none');
         this._elements['speaker_register_button_create'].classList.remove('d-none');
 
@@ -322,6 +333,15 @@ export class SpeakerRegisterModalController extends Controller {
 
         this._elements['speaker_register_button_update'].classList.remove('d-none');
         this._elements['speaker_register_button_create'].classList.add('d-none');
+
+        document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
+
+            //@ts-ignore
+            if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
+                setTimeout(() => window.location.hash = '', 2000);
+            }
+
+        });
 
         let speaker = this._speakerModel.find('id', id);
 

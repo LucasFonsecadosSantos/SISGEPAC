@@ -55,6 +55,15 @@ export class ActivityRegisterModalController extends Controller {
 
         //@ts-ignore
         $('#activityRegisterModal').modal('show');
+
+        document.querySelector('#activityRegisterModal').addEventListener('DOMAttrModified', event => {
+
+            //@ts-ignore
+            if ((document.querySelector('#activityRegisterModal') as HTMLElement).style.display === 'none') {
+                window.location.href = "";
+            }
+
+        });
         //this._clearInputs();
         this._populateSpeakerList();
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_update').classList.add('d-none');
@@ -100,8 +109,25 @@ export class ActivityRegisterModalController extends Controller {
 
     }
 
-    public update(id: string): void {}
+    public update(id: string): void {
 
-    public delete(id: string): void {}
+
+        document.querySelector('#activityRegisterModal').addEventListener('DOMAttrModified', event => {
+
+            //@ts-ignore
+            if ((document.querySelector('#activityRegisterModal') as HTMLElement).style.display === 'none') {
+                window.location.href = "";
+            }
+
+        });
+
+    }
+
+    public delete(id: string): void {
+
+        this._activityModel.delete('id', id);
+        setTimeout(() => window.location.hash = '', 2000);
+
+    }
 
 }

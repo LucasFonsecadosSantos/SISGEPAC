@@ -9,25 +9,68 @@
                 input#activity_register_data_id(type="hidden")
                 .modal-body
                     .bs-callout-primary.callout-border-left.callout-square.p-1.mb-2
-                        strong Novos palestrantes
-                        p O palestrante juntamente aos dados informados aqui serão exibidos no conteúdo da página do evento. Você também poderá desabilitar a visualização deste palestrante na página inicial caso desejar.
-                    fieldset.form-group.form-group-style
+                        strong#activity_register_label_callout-title
+                        p#activity_register_label_callout-text
+                    fieldset.form-group.form-group-style.border-light
                         label#activity_register_label_title.m-0
                         input.form-control.input-sm.m-0.p-0#activity_register_data_title(type="text")
                         p.text-left
                             small.text-muted#activity_register_label_helper-title
 
-                    fieldset.form-group.form-group-style
-                        label#activity_register_label_description.m-0
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#activity_register_label_description
                         textarea.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_description(type="text", rows="3")
                         p.text-left
                             small.text-muted#activity_register_label_helper-description
 
-                    fieldset.form-group.form-group-style
-                        label#activity_register_label_responsible.m-0
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#activity_register_label_responsible
                         select.form-control.input-sm.m-0.p-0#activity_register_data_responsible
                             option(value="default" selected) - SELECIONE -
-                            
+
+                    .row 
+                        .col-md-6
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_startDate
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_startDate(type="date")
+                        
+                        .col-md-6
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_endDate
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_endDate(type="date")
+                    
+                    .row 
+                        .col-md-6
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_startTime
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_startTime(type="time")
+                        
+                        .col-md-6
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_endTime
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_endTime(type="time")
+                    
+                    .row 
+                        .col-md-4
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_vacancies
+                                .input-group.input-group-sm.bootstrap-touchspin
+                                    span.input-group-btn-sm.input-group-prepend.bootstrap-touchspin-injected
+                                        button.btn.btn-danger.bootstrap-touchspin-down(type="button")
+                                            i.font-small-3.la.la-plus
+                                    input.touchspin.form-control.mt-1.input-sm#activity_register_data_price(type="text", value="50")
+                                    span.input-group-btn-sm.input-group-append.bootstrap-touchspin-injected
+                                        button.btn.btn-danger.bootstrap-touchspin-up(type="button")
+                                            i.font-small-3.la.la-minus
+                                p.text-left
+                                    small.text-muted#activity_register_label_vacancies-helper
+                        
+                        .col-md-8
+                            fieldset.form-group.form-group-style.border-light
+                                label.m-0#activity_register_label_price
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_price(type="time")
+                                p.text-left
+                                    small.text-muted#activity_register_label_price-helper
                     
                     //- fieldset.form-group.form-group-style
                     //-     label#speaker_register_label_email.m-0.p-0
@@ -69,7 +112,7 @@
                     //-         i#speaker_register_label_socialNetworks-blog
                     //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-blog(type="text")
 
-                    fieldset.form-group.form-group-style
+                    fieldset.form-group.form-group-style.border-light
                         label#activity_register_label_avatar.m-0
                         .custom-file
                             input.custom-file-input.input-sm.m-0.p-0#activity_register_data_avatar(name="upavatar",type="file")

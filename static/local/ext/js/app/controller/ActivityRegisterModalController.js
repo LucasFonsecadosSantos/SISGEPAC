@@ -29,6 +29,12 @@ export class ActivityRegisterModalController extends Controller {
     create() {
         //@ts-ignore
         $('#activityRegisterModal').modal('show');
+        document.querySelector('#activityRegisterModal').addEventListener('DOMAttrModified', event => {
+            //@ts-ignore
+            if (document.querySelector('#activityRegisterModal').style.display === 'none') {
+                window.location.href = "";
+            }
+        });
         //this._clearInputs();
         this._populateSpeakerList();
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_update').classList.add('d-none');
@@ -57,7 +63,17 @@ export class ActivityRegisterModalController extends Controller {
             }
         });
     }
-    update(id) { }
-    delete(id) { }
+    update(id) {
+        document.querySelector('#activityRegisterModal').addEventListener('DOMAttrModified', event => {
+            //@ts-ignore
+            if (document.querySelector('#activityRegisterModal').style.display === 'none') {
+                window.location.href = "";
+            }
+        });
+    }
+    delete(id) {
+        this._activityModel.delete('id', id);
+        setTimeout(() => window.location.hash = '', 2000);
+    }
 }
 //# sourceMappingURL=ActivityRegisterModalController.js.map

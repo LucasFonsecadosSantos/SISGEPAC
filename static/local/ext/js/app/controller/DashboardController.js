@@ -186,11 +186,13 @@ export class DashboardController extends Controller {
         })
             .catch(error => { Logger.log(error); });
         this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
+            location.hash = "";
             location.hash = 'palestrante/*/cadastrar';
         });
     }
     _populateCard06() {
         this._elements.get('card06_button_create-activity').addEventListener('click', event => {
+            location.hash = "";
             location.hash = 'atividade/*/cadastrar';
         });
     }

@@ -3,7 +3,7 @@
 
         {
             "id": "activity_register_label_title",
-            "text": "Titulo*:"
+            "text": "Titulo: *"
         },
         {
             "id": "activity_register_button_update",
@@ -30,7 +30,7 @@
         },
         {
             "id": "activity_register_label_description",
-            "text": "Descrição*:"
+            "text": "Descrição: *"
         },
         {
             "id": "activity_register_data_description",
@@ -52,6 +52,78 @@
         {
             "id": "activity_register_label_responsible",
             "text": "Responsável/palestrante/mentor da atividade*:"
+        },
+        {
+            "id": "activity_register_label_callout-title",
+            "text": "Nova atividade"
+        },
+        {
+            "id": "activity_register_label_callout-text",
+            "text": "Atividades podem ser palestras, minicursos, rodas de debate ou qualquer outra que ocorrerá no evento. Toda atividade por padrão deve estar assossiada a um mentor/palestrante/condutor. As configurações permitem adicionar quantidade de vagas, preços, empresa que oferece tal atividade, imagem representativa, localização por ponto de referencia e geo localização, além de uma descrição para as pessoas interessadas."
+        },
+        {
+            "id": "activity_register_label_endDate",
+            "text": "Data de término: *"
+        },
+        {
+            "id": "activity_register_label_startDate",
+            "text": "Data de ínicio: *"
+        },
+        {
+            "id": "activity_register_data_endDate",
+            "title": "Clique e selecione uma data para o término da presente atividade.",
+            "alt": "Campo de seleção para data do término da atividade."
+        },
+        {
+            "id": "activity_register_data_startDate",
+            "title": "Clique e selecione uma data para o ínicio da presente atividade.",
+            "alt": "Campo de seleção para data do ínicio da atividade."
+        },
+        {
+            "id": "activity_register_label_endTime",
+            "text": "Hora de término: *"
+        },
+        {
+            "id": "activity_register_label_startTime",
+            "text": "Hora de ínicio: *"
+        },
+        {
+            "id": "activity_register_data_endTime",
+            "title": "Clique e selecione uma horário para o término da presente atividade.",
+            "alt": "Campo de seleção para hora do término da atividade."
+        },
+        {
+            "id": "activity_register_data_startTime",
+            "title": "Clique e selecione uma horário para o ínicio da presente atividade.",
+            "alt": "Campo de seleção para hora do ínicio da atividade."
+        },
+        {
+            "id": "activity_register_data_price",
+            "title": "Essa atividade terá algum valor para participação? Se sim, preencha.",
+            "alt": "Campo de texto para informar o valor da entrada para participar dessa atividade.",
+            "placeholder": "R$ 0.00"
+        },
+        {
+            "id": "activity_register_label_price",
+            "text": "Preço:"
+        },
+        {
+            "id": "activity_register_data_vacancies",
+            "placeholder": "X",
+            "title": "Quantas vagas essa atividade tem disponível? Se for ilimitado, não preencha.",
+            "alt": "Campo de texto para informar quantidade de vagas disponíveis para essa atividade."
+        },
+        {
+            "id": "activity_register_label_vacancies",
+            "text": "Quantidade de Vagas:"
+        },
+        {
+            "id": "activity_register_label_vacancies-helper",
+            "text": "Se for ilimitado, não preencha."
+        },
+        {
+            "id": "activity_register_label_price-helper",
+            "text": "Se for gratuíto, não preencha."
         }
     ]
 }

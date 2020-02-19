@@ -285,6 +285,7 @@ export class DashboardController extends Controller {
 
         this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
 
+            location.hash = "";
             location.hash = 'palestrante/*/cadastrar';
 
         });
@@ -295,6 +296,7 @@ export class DashboardController extends Controller {
 
         this._elements.get('card06_button_create-activity').addEventListener('click', event => {
 
+            location.hash = "";
             location.hash = 'atividade/*/cadastrar';
 
         });
