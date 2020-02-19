@@ -68,49 +68,22 @@
                         .col-md-8
                             fieldset.form-group.form-group-style.border-light
                                 label.m-0#activity_register_label_price
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_price(type="time")
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_price(type="number")
                                 p.text-left
                                     small.text-muted#activity_register_label_price-helper
-                    
-                    //- fieldset.form-group.form-group-style
-                    //-     label#speaker_register_label_email.m-0.p-0
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_email(type="email")
-                        
-                    //- fieldset.form-group.form-group-style
-                    //-     label#speaker_register_label_socialNetworks.m-0
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-facebook
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-facebook(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-twitter
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-twitter(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-lattes
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-lattes(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-github
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-github(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-youtube
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-youtube(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-spotify
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-spotify(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-behance
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-behance(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-linkedin
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-linkedin(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-skype
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-skype(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-pinterest
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-pinterest(type="text")
-                    //-     small.text-muted
-                    //-         i#speaker_register_label_socialNetworks-blog
-                    //-     input.form-control.input-sm.m-0.p-0#speaker_register_data_socialNetworks-blog(type="text")
+
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#activity_register_label_track
+                        select.form-control.input-sm.m-0.p-0#activity_register_data_track
+                            option(value="default" selected) - SELECIONE -
+                            p.text-left
+                                small.text-muted#activity_register_label_track-helper
+                            
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#activity_register_label_offering
+                        input.form-control.input-sm.m-0.p-0#activity_register_data_offering(type="text")
+                        p.text-left
+                            small.text-muted#activity_register_label_offering-helper
 
                     fieldset.form-group.form-group-style.border-light
                         label#activity_register_label_avatar.m-0

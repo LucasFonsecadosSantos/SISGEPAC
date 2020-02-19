@@ -81,6 +81,7 @@ export class ActivityRegisterModalController extends Controller {
 
             data.forEach(speaker => {
 
+                alert(speaker);
                 optionElement = <HTMLOptionElement> document.createElement('OPTION');
                 optionElement.setAttribute('value', speaker['id']);
                 optionElement.textContent = speaker['name'];

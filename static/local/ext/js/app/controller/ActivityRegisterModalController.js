@@ -46,6 +46,7 @@ export class ActivityRegisterModalController extends Controller {
             let fragment = document.createDocumentFragment();
             let optionElement;
             data.forEach(speaker => {
+                alert(speaker);
                 optionElement = document.createElement('OPTION');
                 optionElement.setAttribute('value', speaker['id']);
                 optionElement.textContent = speaker['name'];

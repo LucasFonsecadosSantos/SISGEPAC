@@ -30,6 +30,12 @@ ActivityRegisterModalElements.ELEMENTS = new Map([
     ['activity_register_data_vacancies', document.querySelector('#activity_register_data_vacancies')],
     ['activity_register_label_price', document.querySelector('#activity_register_label_price')],
     ['activity_register_label_price-helper', document.querySelector('#activity_register_label_price-helper')],
-    ['activity_register_data_price', document.querySelector('#activity_register_data_price')]
+    ['activity_register_data_price', document.querySelector('#activity_register_data_price')],
+    ['activity_register_data_track', document.querySelector('#activity_register_data_track')],
+    ['activity_register_label_track', document.querySelector('#activity_register_label_track')],
+    ['activity_register_label_track-helper', document.querySelector('#activity_register_label_track-helper')],
+    ['activity_register_data_offering', document.querySelector('#activity_register_data_offering')],
+    ['activity_register_label_offering', document.querySelector('#activity_register_label_offering')],
+    ['activity_register_label_offering-helper', document.querySelector('#activity_register_label_offering-helper')],
 ]);
 //# sourceMappingURL=ActivityRegisterModelElements.js.map

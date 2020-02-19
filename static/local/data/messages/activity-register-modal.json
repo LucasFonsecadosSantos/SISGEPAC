@@ -124,6 +124,19 @@
         {
             "id": "activity_register_label_price-helper",
             "text": "Se for gratuíto, não preencha."
+        },
+        {
+            "id": "activity_register_data_track",
+            "title": "Selecione alguma trilha cadastrada do evento. Caso esta atividade não pertença a nenhuma trilha, selecionar nenhuma.",
+            "alt": "Caixa de seleção para selecionar uma trilha do evento ao qual esta atvidade pertence."
+        },
+        {
+            "id": "activity_register_label_track",
+            "text": "Selecione uma trilha ao qual esta atividade pertença:"
+        },
+        {
+            "id": "activity_register_label_track-helper",
+            "text": "Caso a atividade não pertença a nenhuma trilha, selecionar a opção \"Nenhuma\"."
         }
     ]
 }
