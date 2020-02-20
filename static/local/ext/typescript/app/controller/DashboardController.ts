@@ -277,7 +277,6 @@ export class DashboardController extends Controller {
                 }
 
                 
-                //this._elements.get('speakerTable').appendChild(document.createElement('TR'));
             })
 
             .catch(error => {Logger.log(error)});
@@ -289,6 +288,8 @@ export class DashboardController extends Controller {
             location.hash = 'palestrante/*/cadastrar';
 
         });
+
+        
 
     }
 
@@ -302,39 +303,6 @@ export class DashboardController extends Controller {
         });
 
     }
-    
-    public reload(): void {
 
-        window.location.href = '';
-
-    }
-
-    // private _populateOrganizationData(): void {
-
-    //     this._organizerData = this._organizerModel.all();
-
-    //     this._organizerData
-
-    //         .then(data => {
-
-    //         })
-
-    //         .catch(error => {Logger.log(error)});
-
-    // }
-
-    // private _populateSponsorshipData(): void {
-
-    //     this._sponsorshipData = this._sponsorshipModel.all();
-
-    //     this._sponsorshipData
-
-    //         .then(data => {
-
-    //         })
-
-    //         .catch(error => {Logger.log(error)});
-
-    // }
 
 }

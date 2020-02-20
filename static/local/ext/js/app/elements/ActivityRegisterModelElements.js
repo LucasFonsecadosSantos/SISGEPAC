@@ -37,5 +37,8 @@ ActivityRegisterModalElements.ELEMENTS = new Map([
     ['activity_register_data_offering', document.querySelector('#activity_register_data_offering')],
     ['activity_register_label_offering', document.querySelector('#activity_register_label_offering')],
     ['activity_register_label_offering-helper', document.querySelector('#activity_register_label_offering-helper')],
+    ['activity_register_data_location', document.querySelector('#activity_register_data_location')],
+    ['activity_register_label_location', document.querySelector('#activity_register_label_location')],
+    ['activity_register_label_location-helper', document.querySelector('#activity_register_label_location-helper')],
 ]);
 //# sourceMappingURL=ActivityRegisterModelElements.js.map

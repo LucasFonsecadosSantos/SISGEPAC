@@ -137,6 +137,20 @@
         {
             "id": "activity_register_label_track-helper",
             "text": "Caso a atividade não pertença a nenhuma trilha, selecionar a opção \"Nenhuma\"."
+        },
+        {
+            "id": "activity_register_label_offering-helper",
+            "text": "Caso não houver, deixe em branco."
+        },
+        {
+            "id": "activity_register_label_offering",
+            "text": "Empresa que oferece a atividade:"
+        },
+        {
+            "id": "activity_register_data_offering",
+            "placeholder": "Ex.: Empresa XYZ ou Núcleo de Estudos XYZ",
+            "title": "Insira a empresa ou entidade que oferece a presente atividade. Se não houver, deixar em branco.",
+            "alt": "Campo de texto para informar a empresa/entidade que oferece a presente ativiade."
         }
     ]
 }

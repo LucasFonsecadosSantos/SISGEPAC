@@ -182,7 +182,6 @@ export class DashboardController extends Controller {
                 trElement.appendChild(fragment);
                 this._elements.get('speakerTable').appendChild(trElement);
             }
-            //this._elements.get('speakerTable').appendChild(document.createElement('TR'));
         })
             .catch(error => { Logger.log(error); });
         this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
@@ -195,9 +194,6 @@ export class DashboardController extends Controller {
             location.hash = "";
             location.hash = 'atividade/*/cadastrar';
         });
-    }
-    reload() {
-        window.location.href = '';
     }
 }
 //# sourceMappingURL=DashboardController.js.map

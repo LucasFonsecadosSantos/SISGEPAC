@@ -58,7 +58,7 @@
                                     span.input-group-btn-sm.input-group-prepend.bootstrap-touchspin-injected
                                         button.btn.btn-danger.bootstrap-touchspin-down(type="button")
                                             i.font-small-3.la.la-plus
-                                    input.touchspin.form-control.mt-1.input-sm#activity_register_data_price(type="text", value="50")
+                                    input.touchspin.form-control.mt-1.input-sm#activity_register_data_vacancies(type="text", value="50")
                                     span.input-group-btn-sm.input-group-append.bootstrap-touchspin-injected
                                         button.btn.btn-danger.bootstrap-touchspin-up(type="button")
                                             i.font-small-3.la.la-minus
@@ -76,8 +76,8 @@
                         label.m-0#activity_register_label_track
                         select.form-control.input-sm.m-0.p-0#activity_register_data_track
                             option(value="default" selected) - SELECIONE -
-                            p.text-left
-                                small.text-muted#activity_register_label_track-helper
+                        p.text-left
+                            small.text-muted#activity_register_label_track-helper
                             
                     fieldset.form-group.form-group-style.border-light
                         label.m-0#activity_register_label_offering
@@ -86,10 +86,17 @@
                             small.text-muted#activity_register_label_offering-helper
 
                     fieldset.form-group.form-group-style.border-light
+                        label.m-0#activity_register_label_location
+                        input.form-control.input-sm.m-0.p-0#activity_register_data_location(type="text")
+                        p.text-left
+                            small.text-muted#activity_register_label_location-helper
+
+                    fieldset.form-group.form-group-style.border-light
                         label#activity_register_label_avatar.m-0
                         .custom-file
                             input.custom-file-input.input-sm.m-0.p-0#activity_register_data_avatar(name="upavatar",type="file")
                             label.custom-file-label.input-sm.m-0.p-0#activity_register_label_avatar2(for="activity_register_data_avatar" , aria-describedby="activity_register_data_avatar")
+
                 .modal-footer
                     //input.btn.btn-outline-secondary.btn-lg(type="reset", data-dismiss="modal", value="cancelar")
                     button.btn.btn-outline-success#activity_register_button_create.d-none(type="button")

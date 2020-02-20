@@ -12,16 +12,16 @@ head
   //- link(rel='stylesheet', type='text/css', href='/local/ext/app-assets/css/pages/dashboard-support.min.css')
   link(rel="stylesheet", type="text/css", href="/local/ext/app-assets/css/plugins/calendars/clndr.min.css")
   //- link(rel="stylesheet", type="text/css", href='/local/ext/app-assets/css/core/colors/palette-gradient.min.css')
-  
+
 include components/_header.pug
 include components/_navbar.pug
 include components/modals/_event-settings.pug
 include components/modals/_speaker-register.pug
 include components/modals/_activity-register.pug
-.loader_box.d-none#loader
-  .loader
 
 .app-content.content(sisgepac-page="index")
+  .loader_box.d-none#loader
+    .loader
   .content-header.row
   .content-overlay
   .content-wrapper.bg-secondary

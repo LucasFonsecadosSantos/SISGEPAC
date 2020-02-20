@@ -30,9 +30,9 @@ export class Sisgepac {
         
         this._bodyElement       = <HTMLDivElement> document.querySelector('.app-content');
         this._modalElements     = document.querySelectorAll('[sisgepac-modal]');
-        if (window.location.hash !== "") {
-            window.location.hash = "";
-        }
+        
+        window.location.hash = "";
+        
         this._controllers       = new Map<string, Object>([
 
             ['ProceedingsController',           ProceedingsController],

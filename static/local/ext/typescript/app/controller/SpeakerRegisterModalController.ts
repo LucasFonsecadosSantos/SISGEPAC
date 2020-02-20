@@ -5,7 +5,8 @@ import { DataEntity }               from './../../conf/Config.js';
 import { MessageBuilder }           from './../../util/MessageBuilder.js';
 import { Logger }                   from './../../util/Logger.js';
 import { InvalidDataKeyException }  from './../../exception/InvalidDataKeyException.js';
-import { Identificator }            from '../../util/Indentificator.js';
+import { Identificator }            from './../../util/Indentificator.js';
+import { Updater }                  from './../../util/Updater.js';
 
 
 export class SpeakerRegisterModalController extends Controller {
@@ -108,6 +109,17 @@ export class SpeakerRegisterModalController extends Controller {
 
         this._elements['speaker_register_button_create'].addEventListener('click', event => {
 
+            document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
+
+                //@ts-ignore
+                if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
+                    
+                    Updater.updateData();
+    
+                }
+    
+            });
+
             try {
 
                 this._speakerModel.imageUpload(new FormData(this._elements['dataForm']))
@@ -169,17 +181,7 @@ export class SpeakerRegisterModalController extends Controller {
     public delete(id: string): void {
 
         this._speakerModel.delete('id', id);
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        document.querySelector('#loader').classList.remove('d-none');
-
-        setTimeout(() => {
-            
-            document.querySelector('#loader').classList.add('d-none');
-            window.location.hash = '';
-
-        
-        }, 2000);
+        Updater.updateData();
         
 
     }
@@ -189,28 +191,6 @@ export class SpeakerRegisterModalController extends Controller {
         //@ts-ignore
         $('#speakerRegisterModal').modal('show');
         this._clearInputs();
-
-        document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
-
-            //@ts-ignore
-            if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
-                
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-                document.querySelector('#loader').classList.remove('d-none');
-
-                setTimeout(() => {
-                    
-                    document.querySelector('#loader').classList.add('d-none');
-                    window.location.hash = '';
-                    
-                
-                }, 2000);
-
-            }
-
-        });
-        
         this._elements['speaker_register_button_update'].classList.add('d-none');
         this._elements['speaker_register_button_create'].classList.remove('d-none');
 
@@ -357,15 +337,6 @@ export class SpeakerRegisterModalController extends Controller {
         this._elements['speaker_register_button_update'].classList.remove('d-none');
         this._elements['speaker_register_button_create'].classList.add('d-none');
 
-        document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
-
-            //@ts-ignore
-            if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
-                setTimeout(() => window.location.hash = '', 2000);
-            }
-
-        });
-
         let speaker = this._speakerModel.find('id', id);
 
         speaker.then(data => {
@@ -373,6 +344,17 @@ export class SpeakerRegisterModalController extends Controller {
             this._populateInformations(data);
 
             this._elements['speaker_register_button_update'].addEventListener('click', event => {
+
+                document.querySelector('#speakerRegisterModal').addEventListener('DOMAttrModified', event => {
+
+                    //@ts-ignore
+                    if ((document.querySelector('#speakerRegisterModal') as HTMLElement).style.display === 'none') {
+                        
+                        Updater.updateData();
+        
+                    }
+        
+                });
                 
                 try {
                     
@@ -416,7 +398,6 @@ export class SpeakerRegisterModalController extends Controller {
     
                 //@ts-ignore
                 $('#speakerRegisterModal').modal('hide');
-                location.hash = 'palestrante/listar';
     
             });
 
