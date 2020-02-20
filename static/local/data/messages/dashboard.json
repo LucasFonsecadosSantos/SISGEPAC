@@ -203,6 +203,33 @@
         {
             "id": "card010_table_label_column03",
             "text": "Ações"
+        },
+        {
+            "id": "card06_button_create-activity",
+            "title": "Clique para registrar uma nova atividade.",
+            "alt": "Botão para registrar nova atividade."
+        },
+        {
+            "id": "card06_button_create-activity-text",
+            "text": "Nova atividade"
+        },
+        {
+            "id": "card06_button_delete-activity",
+            "title": "Clique para remover uma nova atividade.",
+            "alt": "Botão para remover nova atividade."
+        },
+        {
+            "id": "card06_button_delete-activity-text",
+            "text": "Remover"
+        },
+        {
+            "id": "card06_button_search-activity",
+            "title": "Clique para buscar uma nova atividade.",
+            "alt": "Botão para buscar nova atividade."
+        },
+        {
+            "id": "card06_button_search-activity-text",
+            "text": "Buscar"
         }
         
     ]

@@ -26,6 +26,7 @@ export class DashboardController extends Controller {
             this._populateCard02();
             this._populateCard03();
             this._populateCard05();
+            this._populateCard06();
             //this._populateSpeakerData();
             // this._populateSponsorshipData();
             // this._populateOrganizationData();
@@ -181,15 +182,18 @@ export class DashboardController extends Controller {
                 trElement.appendChild(fragment);
                 this._elements.get('speakerTable').appendChild(trElement);
             }
-            //this._elements.get('speakerTable').appendChild(document.createElement('TR'));
         })
             .catch(error => { Logger.log(error); });
         this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
+            location.hash = "";
             location.hash = 'palestrante/*/cadastrar';
         });
     }
-    reload() {
-        window.location.href = '';
+    _populateCard06() {
+        this._elements.get('card06_button_create-activity').addEventListener('click', event => {
+            location.hash = "";
+            location.hash = 'atividade/*/cadastrar';
+        });
     }
 }
 //# sourceMappingURL=DashboardController.js.map

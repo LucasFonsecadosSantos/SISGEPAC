@@ -38,6 +38,9 @@ export var DataEntity;
     DataEntity["_FOOTER_MESSAGES_"] = "footer";
     DataEntity["_VIDEO_GALLERY_MESSAGES_"] = "video_gallery";
     DataEntity["_PHOTO_GALLERY_MESSAGES_"] = "photo_gallery";
+    DataEntity["_ACTIVITY_REGISTER_MODAL_MESSAGES_"] = "activity-register-modal";
+    DataEntity["_TRACK_"] = "track";
+    DataEntity["_TRACK_MODAL_SETTINGS_"] = "track";
 })(DataEntity || (DataEntity = {}));
 export class Config {
     static projectStartedStatus() {
@@ -69,7 +72,8 @@ Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._PHOTO_GALLERY_, "/remote/data/content/photo_gallery.json"],
     [DataEntity._SCHEDULE_, "/remote/data/content/schedule.json"],
     [DataEntity._FAQ_, "/remote/data/content/faq.json"],
-    [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"]
+    [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"],
+    [DataEntity._TRACK_, "/remote/data/content/track.json"]
 ]);
 Config.REMOTE_CONF_FILES_PATH = new Map([
     [DataEntity._LANGUAGE_, "/remote/data/config/languages.json"],
@@ -78,6 +82,7 @@ Config.REMOTE_CONF_FILES_PATH = new Map([
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
     [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
+    [DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "activity-register-modal.json"],
     [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
     [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
     [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"],
@@ -90,6 +95,7 @@ Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._FOOTER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "footer.json"],
     [DataEntity._PHOTO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "photo_gallery.json"],
     [DataEntity._VIDEO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "video_gallery.json"],
-    [DataEntity._CHANGELOG_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "changelog.json"]
+    [DataEntity._CHANGELOG_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "changelog.json"],
+    [DataEntity._TRACK_MODAL_SETTINGS_, Config.LOCAL_MESSAGES_PATH + "track.json"]
 ]);
 //# sourceMappingURL=Config.js.map

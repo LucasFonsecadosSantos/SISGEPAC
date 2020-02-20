@@ -51,6 +51,7 @@ export class DashboardController extends Controller {
                 this._populateCard02();
                 this._populateCard03();
                 this._populateCard05();
+                this._populateCard06();
                 //this._populateSpeakerData();
                 // this._populateSponsorshipData();
                 // this._populateOrganizationData();
@@ -276,7 +277,6 @@ export class DashboardController extends Controller {
                 }
 
                 
-                //this._elements.get('speakerTable').appendChild(document.createElement('TR'));
             })
 
             .catch(error => {Logger.log(error)});
@@ -284,44 +284,25 @@ export class DashboardController extends Controller {
 
         this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
 
+            location.hash = "";
             location.hash = 'palestrante/*/cadastrar';
 
         });
 
-    }
-    
-    public reload(): void {
-
-        window.location.href = '';
+        
 
     }
 
-    // private _populateOrganizationData(): void {
+    private _populateCard06(): void {
 
-    //     this._organizerData = this._organizerModel.all();
+        this._elements.get('card06_button_create-activity').addEventListener('click', event => {
 
-    //     this._organizerData
+            location.hash = "";
+            location.hash = 'atividade/*/cadastrar';
 
-    //         .then(data => {
+        });
 
-    //         })
+    }
 
-    //         .catch(error => {Logger.log(error)});
-
-    // }
-
-    // private _populateSponsorshipData(): void {
-
-    //     this._sponsorshipData = this._sponsorshipModel.all();
-
-    //     this._sponsorshipData
-
-    //         .then(data => {
-
-    //         })
-
-    //         .catch(error => {Logger.log(error)});
-
-    // }
 
 }

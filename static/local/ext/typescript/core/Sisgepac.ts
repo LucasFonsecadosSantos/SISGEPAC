@@ -15,6 +15,7 @@ import { ProceedingsController }            from '../app/controller/ProceedingsC
 import { PhotoGalleryController }           from './../app/controller/PhotoGalleryController.js';
 import { VideoGalleryController }           from './../app/controller/VideoGalleryController.js';
 import { SpeakerRegisterModalController}    from './../app/controller/SpeakerRegisterModalController.js';
+import { ActivityRegisterModalController }  from './../app/controller/ActivityRegisterModalController.js';
 
 import { Routes } from './../conf/Routes.js';
 
@@ -30,6 +31,8 @@ export class Sisgepac {
         this._bodyElement       = <HTMLDivElement> document.querySelector('.app-content');
         this._modalElements     = document.querySelectorAll('[sisgepac-modal]');
         
+        window.location.hash = "";
+        
         this._controllers       = new Map<string, Object>([
 
             ['ProceedingsController',           ProceedingsController],
@@ -40,7 +43,8 @@ export class Sisgepac {
             ['TemplateController',              TemplateController],
             ['ChangelogController',             ChangelogController],
             ['SpeakerRegisterModalController',  SpeakerRegisterModalController],
-            ['FaqController',                   FaqController]
+            ['FaqController',                   FaqController],
+            ['ActivityRegisterModalController', ActivityRegisterModalController]
 
         ]);
         
@@ -58,89 +62,53 @@ export class Sisgepac {
         window.addEventListener('hashchange', event => {
 
             let url = window.location.hash.replace('#','');
-            let urlTokens = url.split('/');
-            let params = "";
-            let route;
 
-            if (urlTokens.length > 2) {
+            if (url !== '') {
+                let urlTokens = url.split('/');
+                let params = "";
+                let route;
 
-                params = urlTokens[1];
-                urlTokens[1] = "{id}";
-                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
+                if (urlTokens.length > 2) {
 
-            } else if (urlTokens.length === 1) {
+                    params = urlTokens[1];
+                    urlTokens[1] = "{id}";
+                    route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
 
-                route = Routes.ROUTES.get(urlTokens[0]);
+                } else if (urlTokens.length === 1) {
 
-            } else if (urlTokens.length === 2) {
+                    route = Routes.ROUTES.get(urlTokens[0]);
+
+                } else if (urlTokens.length === 2) {
+                    
+                    route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
+
+                }
                 
-                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
+                
+                let routeTokens = route.split('@');
 
+                let controller: Object = this._controllers.get(routeTokens[0]);
+
+                let action = routeTokens[1];
+
+                if (params !== "") {
+
+                    //@ts-ignore
+                    let controllerInstance = new controller();
+                    controllerInstance[action](params);
+
+                } else {
+                    //@ts-ignore
+                    let controllerInstance = new controller();
+                    controllerInstance[action]();
+                }
             }
-            
-            
-            let routeTokens = route.split('@');
-
-            let controller: Object = this._controllers.get(routeTokens[0]);
-
-            let action = routeTokens[1];
-
-            if (params !== "") {
-
-                //@ts-ignore
-                let controllerInstance = new controller();
-                controllerInstance[action](params);
-
-            } else {
-                //@ts-ignore
-                let controllerInstance = new controller();
-                controllerInstance[action]();
-            }
-
         });
 
     }
 
-    // private _routeProcessor(): void {
-
-    //     let route = window.location.href.replace(/^(?:\/\/|[^/]+)*\//, '').replace('local/','');
-        
-    //     let routeList = Routes.ROUTES;
-
-    //     let tokens = routeList.get(route).split('@');
-
-    //     let controller: Object  = this._controllers.get(tokens[0]);
-    //     let action              = tokens[(tokens.length - 1)];
-    //     let params;
-
-    //     // if (routeList.get(route).split('@').length == 1) {
-            
-    //     //     //@ts-ignore
-    //     //     new controller();
-
-    //     // } else if (routeList.get(route).split('@').length == 2) {
-
-    //     //     //@ts-ignore
-    //     //     let controllerInstance = new controller();
-    //     //     controllerInstance[action]();
-
-    //     // } else 
-    //     if (routeList.get(route).split('@').length > 2) {
-
-    //         //@ts-ignore
-    //         let controllerInstance = new controller();
-    //         params = route.split('/')[1];
-    //         alert(controllerInstance);
-    //         controllerInstance[action](params);
-
-    //     }
-
-    // }
-
     private _pageProcessor(): void {
         
-
-
         switch (this._bodyElement.getAttribute('sisgepac-page')) {
 
             //TODO
@@ -196,6 +164,10 @@ export class Sisgepac {
                 
                 case 'speaker-register-modal':
                     new SpeakerRegisterModalController();
+                    break;
+                
+                case 'activity-register-modal':
+                    new ActivityRegisterModalController();
                     break;
     
             }
