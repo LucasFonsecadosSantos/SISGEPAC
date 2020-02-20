@@ -6,12 +6,14 @@ import { DataEntity } from './../../conf/Config.js';
 import { Logger } from './../../util/Logger.js';
 import { ActivityRegisterModalElements } from './../elements/ActivityRegisterModelElements.js';
 import { SpeakerModel } from './../model/SpeakerModel.js';
+import { TrackModel } from './../model/TrackModel.js';
 import { Updater } from './../../util/Updater.js';
 export class ActivityRegisterModalController extends Controller {
     constructor() {
         super();
         this._messageModel = new MessageModel(DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_);
         this._activityModel = new ActivityModel();
+        this._trackModel = new TrackModel();
         this._elements = ActivityRegisterModalElements.ELEMENTS;
         this._getPageMessages();
         this._initListeners();
@@ -37,26 +39,26 @@ export class ActivityRegisterModalController extends Controller {
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_update').classList.add('d-none');
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_create').classList.remove('d-none');
     }
-    // private _populateTrackList(): void {
-    //     let trackModel: TrackModel = new trackModel();
-    //     trackModel.all().then(data => {
-    //         let fragment:       DocumentFragment = document.createDocumentFragment();
-    //         let optionElement:  HTMLOptionElement;
-    //         data.forEach(speaker => {
-    //             alert(speaker);
-    //             optionElement = <HTMLOptionElement> document.createElement('OPTION');
-    //             optionElement.setAttribute('value', speaker['id']);
-    //             optionElement.textContent = speaker['name'];
-    //             fragment.appendChild(optionElement);
-    //         });
-    //          optionElement = <HTMLOptionElement> document.createElement('OPTION');
-    //          optionElement.setAttribute('value','');
-    //          optionElement.textContent = 'Nenhuma';
-    //          fragment.appendChild(optionElement);
-    //         ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_responsible').appendChild(fragment);
-    //     })
-    //     .catch(error => Logger.log('Activity Register Modal Controller: ' + error));
-    // }
+    _populateTrackList() {
+        let trackModel = new TrackModel();
+        trackModel.all().then(data => {
+            let fragment = document.createDocumentFragment();
+            let optionElement;
+            data.forEach(speaker => {
+                alert(speaker);
+                optionElement = document.createElement('OPTION');
+                optionElement.setAttribute('value', speaker['id']);
+                optionElement.textContent = speaker['name'];
+                fragment.appendChild(optionElement);
+            });
+            optionElement = document.createElement('OPTION');
+            optionElement.setAttribute('value', '');
+            optionElement.textContent = 'Nenhuma';
+            fragment.appendChild(optionElement);
+            ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_responsible').appendChild(fragment);
+        })
+            .catch(error => Logger.log('Activity Register Modal Controller: ' + error));
+    }
     _populateSpeakerList() {
         let speakerModel = new SpeakerModel();
         speakerModel.all().then(data => {

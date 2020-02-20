@@ -151,6 +151,30 @@
             "placeholder": "Ex.: Empresa XYZ ou Núcleo de Estudos XYZ",
             "title": "Insira a empresa ou entidade que oferece a presente atividade. Se não houver, deixar em branco.",
             "alt": "Campo de texto para informar a empresa/entidade que oferece a presente ativiade."
+        },
+        {
+            "id": "activity_register_label_location",
+            "text": "Localização/Endereço: *"
+        },
+        {
+            "id": "activity_register_data_location",
+            "title": "Informe uma localização, referencia ou endereço onde a presente atividade será realizado.",
+            "alt": "Caixa de texto para informar a localização, referência ou endereço da presente atividade.",
+            "placeholder": "Av. Avenida de Exemplo, 1530, Parque Exemplo, Lavras."
+        },
+        {
+            "id": "activity_register_label_restriction",
+            "text": "Restrição de público ou faixa etária:"
+        },
+        {
+            "id": "activity_register_label_restriction-helper",
+            "text": "Se não houver restrição de público ou faixa etária, não preencher."
+        },
+        {
+            "id": "activity_register_data_restriction",
+            "placeholder": "Ex.: Proíbido menores de 18 anos",
+            "title": "Informe se a atividade possui algum tipo de restrição ao público alvo. Caso não haja restrições, não preencher nada.",
+            "alt": "Campo de texto para informar possíveis restrições de público para essa atividade."
         }
     ]
 }

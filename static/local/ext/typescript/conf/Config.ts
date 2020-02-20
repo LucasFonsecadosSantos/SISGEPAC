@@ -30,7 +30,9 @@ export enum DataEntity {
     _FOOTER_MESSAGES_                           = "footer",
     _VIDEO_GALLERY_MESSAGES_                    = "video_gallery",
     _PHOTO_GALLERY_MESSAGES_                    = "photo_gallery",
-    _ACTIVITY_REGISTER_MODAL_MESSAGES_          = "activity-register-modal"
+    _ACTIVITY_REGISTER_MODAL_MESSAGES_          = "activity-register-modal",
+    _TRACK_                                     = "track",
+    _TRACK_MODAL_SETTINGS_                      = "track"
 
 }
 
@@ -58,7 +60,8 @@ export class Config {
         [DataEntity._PHOTO_GALLERY_,    "/remote/data/content/photo_gallery.json"],
         [DataEntity._SCHEDULE_,         "/remote/data/content/schedule.json"],
         [DataEntity._FAQ_,              "/remote/data/content/faq.json"],
-        [DataEntity._ACTIVITY_,         "/remote/data/content/activity.json"]
+        [DataEntity._ACTIVITY_,         "/remote/data/content/activity.json"],
+        [DataEntity._TRACK_,            "/remote/data/content/track.json"]
 
     ]);
 
@@ -86,7 +89,8 @@ export class Config {
         [DataEntity._FOOTER_MESSAGES_,                              Config.LOCAL_MESSAGES_PATH + "footer.json"],
         [DataEntity._PHOTO_GALLERY_MESSAGES_,                       Config.LOCAL_MESSAGES_PATH + "photo_gallery.json"],
         [DataEntity._VIDEO_GALLERY_MESSAGES_,                       Config.LOCAL_MESSAGES_PATH + "video_gallery.json"],
-        [DataEntity._CHANGELOG_MESSAGES_,                           Config.LOCAL_MESSAGES_PATH + "changelog.json"]
+        [DataEntity._CHANGELOG_MESSAGES_,                           Config.LOCAL_MESSAGES_PATH + "changelog.json"],
+        [DataEntity._TRACK_MODAL_SETTINGS_,                         Config.LOCAL_MESSAGES_PATH + "track.json"]
 
     ]);
 

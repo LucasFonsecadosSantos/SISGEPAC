@@ -39,6 +39,8 @@ export var DataEntity;
     DataEntity["_VIDEO_GALLERY_MESSAGES_"] = "video_gallery";
     DataEntity["_PHOTO_GALLERY_MESSAGES_"] = "photo_gallery";
     DataEntity["_ACTIVITY_REGISTER_MODAL_MESSAGES_"] = "activity-register-modal";
+    DataEntity["_TRACK_"] = "track";
+    DataEntity["_TRACK_MODAL_SETTINGS_"] = "track";
 })(DataEntity || (DataEntity = {}));
 export class Config {
     static projectStartedStatus() {
@@ -70,7 +72,8 @@ Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._PHOTO_GALLERY_, "/remote/data/content/photo_gallery.json"],
     [DataEntity._SCHEDULE_, "/remote/data/content/schedule.json"],
     [DataEntity._FAQ_, "/remote/data/content/faq.json"],
-    [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"]
+    [DataEntity._ACTIVITY_, "/remote/data/content/activity.json"],
+    [DataEntity._TRACK_, "/remote/data/content/track.json"]
 ]);
 Config.REMOTE_CONF_FILES_PATH = new Map([
     [DataEntity._LANGUAGE_, "/remote/data/config/languages.json"],
@@ -92,6 +95,7 @@ Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._FOOTER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "footer.json"],
     [DataEntity._PHOTO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "photo_gallery.json"],
     [DataEntity._VIDEO_GALLERY_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "video_gallery.json"],
-    [DataEntity._CHANGELOG_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "changelog.json"]
+    [DataEntity._CHANGELOG_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "changelog.json"],
+    [DataEntity._TRACK_MODAL_SETTINGS_, Config.LOCAL_MESSAGES_PATH + "track.json"]
 ]);
 //# sourceMappingURL=Config.js.map

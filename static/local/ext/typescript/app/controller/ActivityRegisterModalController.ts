@@ -6,6 +6,7 @@ import { Config, DataEntity }               from './../../conf/Config.js';
 import { Logger }                           from './../../util/Logger.js';
 import { ActivityRegisterModalElements }    from './../elements/ActivityRegisterModelElements.js';
 import { SpeakerModel }                     from './../model/SpeakerModel.js';
+import { TrackModel }                       from './../model/TrackModel.js';
 import { Updater }                          from './../../util/Updater.js';
 
 
@@ -14,6 +15,7 @@ export class ActivityRegisterModalController extends Controller {
     private _elements:      Map<string, HTMLElement>;
     private _messageModel:  MessageModel;
     private _speakerModel:  SpeakerModel;
+    private _trackModel:    TrackModel;
     private _activityModel: ActivityModel;
     private _messageData;
     private _activityData;
@@ -23,6 +25,7 @@ export class ActivityRegisterModalController extends Controller {
         super();
         this._messageModel  = new MessageModel(DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_);
         this._activityModel = new ActivityModel();
+        this._trackModel    = new TrackModel();
         this._elements      = ActivityRegisterModalElements.ELEMENTS;
         this._getPageMessages();
         this._initListeners();
@@ -65,37 +68,37 @@ export class ActivityRegisterModalController extends Controller {
 
     }
 
-    // private _populateTrackList(): void {
+    private _populateTrackList(): void {
 
-    //     let trackModel: TrackModel = new trackModel();
+        let trackModel: TrackModel = new TrackModel();
 
-    //     trackModel.all().then(data => {
+        trackModel.all().then(data => {
 
-    //         let fragment:       DocumentFragment = document.createDocumentFragment();
-    //         let optionElement:  HTMLOptionElement;
+            let fragment:       DocumentFragment = document.createDocumentFragment();
+            let optionElement:  HTMLOptionElement;
 
-    //         data.forEach(speaker => {
+            data.forEach(speaker => {
 
-    //             alert(speaker);
-    //             optionElement = <HTMLOptionElement> document.createElement('OPTION');
-    //             optionElement.setAttribute('value', speaker['id']);
-    //             optionElement.textContent = speaker['name'];
-    //             fragment.appendChild(optionElement);
+                alert(speaker);
+                optionElement = <HTMLOptionElement> document.createElement('OPTION');
+                optionElement.setAttribute('value', speaker['id']);
+                optionElement.textContent = speaker['name'];
+                fragment.appendChild(optionElement);
 
-    //         });
+            });
 
-    //          optionElement = <HTMLOptionElement> document.createElement('OPTION');
-    //          optionElement.setAttribute('value','');
-    //          optionElement.textContent = 'Nenhuma';
-    //          fragment.appendChild(optionElement);
+             optionElement = <HTMLOptionElement> document.createElement('OPTION');
+             optionElement.setAttribute('value','');
+             optionElement.textContent = 'Nenhuma';
+             fragment.appendChild(optionElement);
 
-    //         ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_responsible').appendChild(fragment);
+            ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_responsible').appendChild(fragment);
 
-    //     })
+        })
         
-    //     .catch(error => Logger.log('Activity Register Modal Controller: ' + error));
+        .catch(error => Logger.log('Activity Register Modal Controller: ' + error));
 
-    // }
+    }
 
     private _populateSpeakerList(): void {
         

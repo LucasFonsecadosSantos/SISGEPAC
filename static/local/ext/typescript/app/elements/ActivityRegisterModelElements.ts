@@ -53,6 +53,14 @@ export class ActivityRegisterModalElements {
         ['activity_register_label_location',            document.querySelector('#activity_register_label_location')],
         ['activity_register_label_location-helper',     document.querySelector('#activity_register_label_location-helper')],
 
+        ['activity_register_data_geo-location',             document.querySelector('#activity_register_data_geo-location')],
+        ['activity_register_label_geo-location',            document.querySelector('#activity_register_label_geo-location')],
+        ['activity_register_label_geo-location-helper',     document.querySelector('#activity_register_label_geo-location-helper')],
+
+        ['activity_register_data_restriction',             document.querySelector('#activity_register_data_restriction')],
+        ['activity_register_label_restriction',            document.querySelector('#activity_register_label_restriction')],
+        ['activity_register_label_restriction-helper',     document.querySelector('#activity_register_label_restriction-helper')],
+
     ]);
 
 }
