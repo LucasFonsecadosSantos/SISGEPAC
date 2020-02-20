@@ -8,6 +8,8 @@ import { ActivityRegisterModalElements } from './../elements/ActivityRegisterMod
 import { SpeakerModel } from './../model/SpeakerModel.js';
 import { TrackModel } from './../model/TrackModel.js';
 import { Updater } from './../../util/Updater.js';
+import { InvalidDataKeyException } from './../../exception/InvalidDataKeyException.js';
+import { Identificator } from './../../util/Indentificator.js';
 export class ActivityRegisterModalController extends Controller {
     constructor() {
         super();
@@ -113,8 +115,39 @@ export class ActivityRegisterModalController extends Controller {
                     Updater.updateData();
                 }
             });
-            this._activityModel.store({});
-        });
+            try {
+                this._activityModel.imageUpload(new FormData(document.querySelector('#dataFormActivity')))
+                    .then(response => {
+                    this._activityModel.insert({
+                        "id": ((this._elements.get('activity_register_data_id').value === '') || (!this._elements.get('activity_register_data_id').value)) ? Identificator.generateID() : this._elements.get('activity_register_data_id').value,
+                        "title": this._elements.get('activity_register_data_title').value,
+                        "responsible_id": this._elements.get('activity_register_data_responsible').value,
+                        "avatar": ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                        "description": ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_description').value,
+                        "start_date": this._elements.get('activity_register_data_startDate').value,
+                        "start_time": this._elements.get('activity_register_data_startTime').value,
+                        "end_date": this._elements.get('activity_register_data_endDate').value,
+                        "end_time": this._elements.get('activity_register_data_endTime').value,
+                        "vacancies": this._elements.get('activity_register_data_vacancies').value,
+                        "restriction": this._elements.get('activity_register_data_restriction').value,
+                        "track_id": this._elements.get('activity_register_data_track').value,
+                        "offering": this._elements.get('activity_register_data_offering').value,
+                        "location": this._elements.get('activity_register_data_location').value,
+                        //"geo-location":     (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_title') as HTMLInputElement).value,
+                        "price": this._elements.get('activity_register_data_price').value,
+                        "show": true
+                    });
+                })
+                    .catch(error => Logger.log(error));
+            }
+            catch (exception) {
+                if (exception instanceof InvalidDataKeyException) {
+                    Logger.log("Update Exception: " + exception.message);
+                }
+            }
+            //@ts-ignore
+            $('#activityRegisterModal').modal('hide');
+        }, false);
     }
     _initUpdateButtonListener() {
         this._elements.get('activity_register_button_update').addEventListener('click', event => {

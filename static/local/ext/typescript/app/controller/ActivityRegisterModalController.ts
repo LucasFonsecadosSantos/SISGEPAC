@@ -8,6 +8,8 @@ import { ActivityRegisterModalElements }    from './../elements/ActivityRegister
 import { SpeakerModel }                     from './../model/SpeakerModel.js';
 import { TrackModel }                       from './../model/TrackModel.js';
 import { Updater }                          from './../../util/Updater.js';
+import { InvalidDataKeyException }          from './../../exception/InvalidDataKeyException.js';
+import { Identificator }                    from './../../util/Indentificator.js';
 
 
 export class ActivityRegisterModalController extends Controller {
@@ -178,14 +180,62 @@ export class ActivityRegisterModalController extends Controller {
 
                 //@ts-ignore
                 if ((document.querySelector('#activityRegisterModal') as HTMLElement).style.display === 'none') {
+
                     Updater.updateData();
+                    
                 }
     
             });
 
-            this._activityModel.store({});
+            try {
+            
+                this._activityModel.imageUpload(new FormData(document.querySelector('#dataFormActivity')))
 
-        });
+                    .then(response => {
+                        
+                        this._activityModel.insert(
+
+                            {
+
+                                "id":               (((this._elements.get('activity_register_data_id') as HTMLInputElement).value === '') || (!(this._elements.get('activity_register_data_id') as HTMLInputElement).value)) ? Identificator.generateID(): (this._elements.get('activity_register_data_id') as HTMLInputElement).value,
+                                "title":            (this._elements.get('activity_register_data_title') as HTMLInputElement).value,
+                                "responsible_id":   (this._elements.get('activity_register_data_responsible') as HTMLSelectElement).value,
+                                "avatar":           ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                                "description":      (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_description') as HTMLTextAreaElement).value,
+                                "start_date":       (this._elements.get('activity_register_data_startDate') as HTMLInputElement).value,
+                                "start_time":       (this._elements.get('activity_register_data_startTime') as HTMLInputElement).value,
+                                "end_date":         (this._elements.get('activity_register_data_endDate') as HTMLInputElement).value,
+                                "end_time":         (this._elements.get('activity_register_data_endTime') as HTMLInputElement).value,
+                                "vacancies":        (this._elements.get('activity_register_data_vacancies') as HTMLInputElement).value,
+                                "restriction":      (this._elements.get('activity_register_data_restriction') as HTMLInputElement).value,
+                                "track_id":         (this._elements.get('activity_register_data_track') as HTMLSelectElement).value,
+                                "offering":         (this._elements.get('activity_register_data_offering') as HTMLInputElement).value,
+                                "location":         (this._elements.get('activity_register_data_location') as HTMLInputElement).value,
+                                //"geo-location":     (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_title') as HTMLInputElement).value,
+                                "price":            (this._elements.get('activity_register_data_price') as HTMLInputElement).value,
+                                "show":             true
+    
+                            }
+
+                        );
+                    })
+
+                    .catch(error => Logger.log(error));
+
+                } catch (exception) {
+                
+                    if (exception instanceof InvalidDataKeyException) {
+    
+                        Logger.log("Update Exception: " + exception.message);
+    
+                    }
+    
+                }
+            
+            //@ts-ignore
+            $('#activityRegisterModal').modal('hide');
+
+        }, false);
 
     }
 

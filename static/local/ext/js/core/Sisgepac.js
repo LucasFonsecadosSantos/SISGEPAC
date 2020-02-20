@@ -43,32 +43,34 @@ export class Sisgepac {
     _routeProcessor() {
         window.addEventListener('hashchange', event => {
             let url = window.location.hash.replace('#', '');
-            let urlTokens = url.split('/');
-            let params = "";
-            let route;
-            if (urlTokens.length > 2) {
-                params = urlTokens[1];
-                urlTokens[1] = "{id}";
-                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
-            }
-            else if (urlTokens.length === 1) {
-                route = Routes.ROUTES.get(urlTokens[0]);
-            }
-            else if (urlTokens.length === 2) {
-                route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
-            }
-            let routeTokens = route.split('@');
-            let controller = this._controllers.get(routeTokens[0]);
-            let action = routeTokens[1];
-            if (params !== "") {
-                //@ts-ignore
-                let controllerInstance = new controller();
-                controllerInstance[action](params);
-            }
-            else {
-                //@ts-ignore
-                let controllerInstance = new controller();
-                controllerInstance[action]();
+            if (url !== '') {
+                let urlTokens = url.split('/');
+                let params = "";
+                let route;
+                if (urlTokens.length > 2) {
+                    params = urlTokens[1];
+                    urlTokens[1] = "{id}";
+                    route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1] + '/' + urlTokens[2]);
+                }
+                else if (urlTokens.length === 1) {
+                    route = Routes.ROUTES.get(urlTokens[0]);
+                }
+                else if (urlTokens.length === 2) {
+                    route = Routes.ROUTES.get(urlTokens[0] + '/' + urlTokens[1]);
+                }
+                let routeTokens = route.split('@');
+                let controller = this._controllers.get(routeTokens[0]);
+                let action = routeTokens[1];
+                if (params !== "") {
+                    //@ts-ignore
+                    let controllerInstance = new controller();
+                    controllerInstance[action](params);
+                }
+                else {
+                    //@ts-ignore
+                    let controllerInstance = new controller();
+                    controllerInstance[action]();
+                }
             }
         });
     }

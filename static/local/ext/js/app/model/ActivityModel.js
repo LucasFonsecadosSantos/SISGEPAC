@@ -11,15 +11,18 @@ export class ActivityModel extends Model {
             'responsible_id',
             'avatar',
             'description',
-            'start_dateTime',
-            'end_dateTime',
+            'start_date',
+            'start_time',
+            'end_date',
+            'end_time',
             'vacancies',
             'restriction',
             'track_id',
             'offering',
             'location',
             'geo-location',
-            'price'
+            'price',
+            'show'
         ];
     }
 }

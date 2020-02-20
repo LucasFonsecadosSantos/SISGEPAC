@@ -61,6 +61,8 @@ export class ActivityRegisterModalElements {
         ['activity_register_label_restriction',            document.querySelector('#activity_register_label_restriction')],
         ['activity_register_label_restriction-helper',     document.querySelector('#activity_register_label_restriction-helper')],
 
+        ['dataForm',                                        document.querySelector('#dataForm')],
+
     ]);
 
 }

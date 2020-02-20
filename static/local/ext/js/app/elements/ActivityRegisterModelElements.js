@@ -46,5 +46,6 @@ ActivityRegisterModalElements.ELEMENTS = new Map([
     ['activity_register_data_restriction', document.querySelector('#activity_register_data_restriction')],
     ['activity_register_label_restriction', document.querySelector('#activity_register_label_restriction')],
     ['activity_register_label_restriction-helper', document.querySelector('#activity_register_label_restriction-helper')],
+    ['dataForm', document.querySelector('#dataForm')],
 ]);
 //# sourceMappingURL=ActivityRegisterModelElements.js.map

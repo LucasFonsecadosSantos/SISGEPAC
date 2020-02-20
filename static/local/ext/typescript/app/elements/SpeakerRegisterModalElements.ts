@@ -22,7 +22,7 @@ export class SpeakerRegisterModalElements {
         ['speaker_register_label_socialNetworks-linkedin',  document.querySelector('#speaker_register_label_socialNetworks-linkedin')],
         ['speaker_register_label_socialNetworks-pinterest', document.querySelector('#speaker_register_label_socialNetworks-pinterest')],
         ['speaker_register_label_socialNetworks-blog',      document.querySelector('#speaker_register_label_socialNetworks-blog')],
-        ['speaker_register_data_socialNetworks',            document.querySelector('#speaker_register_data_socialNetworks')],
+        //['speaker_register_data_socialNetworks',            document.querySelector('#speaker_register_data_socialNetworks')],
         ['speaker_register_data_socialNetworks-facebook',   document.querySelector('#speaker_register_data_socialNetworks-facebook')],
         ['speaker_register_data_socialNetworks-twitter',    document.querySelector('#speaker_register_data_socialNetworks-twitter')],
         ['speaker_register_data_socialNetworks-lattes',     document.querySelector('#speaker_register_data_socialNetworks-lattes')],
@@ -44,7 +44,7 @@ export class SpeakerRegisterModalElements {
         ['speaker_register_label_helper-name',              document.querySelector('#speaker_register_label_helper-name')],
         ['speaker_register_label_helper-jobInstitute',      document.querySelector('#speaker_register_label_helper-jobInstitute')],
         ['speaker_register_label_helper-description',       document.querySelector('#speaker_register_label_helper-description')],
-        ['dataForm',                                        document.querySelector('#dataForm')],
+        ['dataForm',                                        document.querySelector('#dataFormSpeaker')],
 
     ]);
 

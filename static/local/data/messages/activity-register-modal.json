@@ -175,6 +175,14 @@
             "placeholder": "Ex.: Proíbido menores de 18 anos",
             "title": "Informe se a atividade possui algum tipo de restrição ao público alvo. Caso não haja restrições, não preencher nada.",
             "alt": "Campo de texto para informar possíveis restrições de público para essa atividade."
+        },
+        {
+            "id": "activity_register_label_geo-location",
+            "text": "Geo localização:"
+        },
+        {
+            "id": "activity_register_label_geo-location-helper",
+            "text": "Componente em manutenção."
         }
     ]
 }
