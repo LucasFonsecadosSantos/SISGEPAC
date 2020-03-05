@@ -153,7 +153,9 @@ export class ActivityRegisterModalController extends Controller {
         //@ts-ignore
         $('#activityRegisterModal').modal('show');
         //this._clearInputs();
-        this._populateActivity();
+        let activityModel = new ActivityModel();
+        let targetActivity = activityModel.find('id', id);
+        targetActivity.then(data => this._populateActivity(data));
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_update').classList.remove('d-none');
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_create').classList.add('d-none');
 
@@ -182,7 +184,7 @@ export class ActivityRegisterModalController extends Controller {
                 if ((document.querySelector('#activityRegisterModal') as HTMLElement).style.display === 'none') {
 
                     Updater.updateData();
-                    
+
                 }
     
             });
@@ -252,15 +254,54 @@ export class ActivityRegisterModalController extends Controller {
     
             });
 
-            this._activityModel.store({});
+            this._activityModel.update(
+                {
+                    "title":            (this._elements.get('activity_register_data_title') as HTMLInputElement).value,
+                    "responsible_id":   (this._elements.get('activity_register_data_responsible') as HTMLSelectElement).value,
+                    //"avatar":           ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                    "description":      (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_description') as HTMLTextAreaElement).value,
+                    "start_date":       (this._elements.get('activity_register_data_startDate') as HTMLInputElement).value,
+                    "start_time":       (this._elements.get('activity_register_data_startTime') as HTMLInputElement).value,
+                    "end_date":         (this._elements.get('activity_register_data_endDate') as HTMLInputElement).value,
+                    "end_time":         (this._elements.get('activity_register_data_endTime') as HTMLInputElement).value,
+                    "vacancies":        (this._elements.get('activity_register_data_vacancies') as HTMLInputElement).value,
+                    "restriction":      (this._elements.get('activity_register_data_restriction') as HTMLInputElement).value,
+                    "track_id":         (this._elements.get('activity_register_data_track') as HTMLSelectElement).value,
+                    "offering":         (this._elements.get('activity_register_data_offering') as HTMLInputElement).value,
+                    "location":         (this._elements.get('activity_register_data_location') as HTMLInputElement).value,
+                    //"geo-location":     (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_title') as HTMLInputElement).value,
+                    "price":            (this._elements.get('activity_register_data_price') as HTMLInputElement).value,
+                    "show":             true
+                },
+                {
+                    "id": this._elements.get('activity_register_data_id')
+                }
+            );
+        
+            //@ts-ignore
+            $('#activityRegisterModal').modal('hide');
 
-        });
+        }, false);
 
     }
 
-    private _populateActivity(): void {
+    private _populateActivity(activity: Object): void {
 
-        
+        (this._elements.get('activity_register_data_title')         as HTMLInputElement).value      = activity['title'];
+        (this._elements.get('activity_register_data_id')            as HTMLInputElement).value      = activity['id'];
+        (this._elements.get('activity_register_data_responsible')   as HTMLSelectElement).value     = activity['responsible_id'];
+        (this._elements.get('activity_register_data_description')   as HTMLTextAreaElement).value   = activity['description'];
+        (this._elements.get('activity_register_data_startDate')     as HTMLInputElement).value      = activity['start_date'];
+        (this._elements.get('activity_register_data_startTime')     as HTMLInputElement).value      = activity['start_time'];
+        (this._elements.get('activity_register_data_endDate')       as HTMLInputElement).value      = activity['end_date'];
+        (this._elements.get('activity_register_data_endTime')       as HTMLInputElement).value      = activity['end_time'];
+        (this._elements.get('activity_register_data_vacancies')     as HTMLInputElement).value      = activity['vacancies'];
+        (this._elements.get('activity_register_data_restriction')   as HTMLInputElement).value      = activity['restriction'];
+        (this._elements.get('activity_register_data_track')         as HTMLSelectElement).value     = activity['track_id'];
+        (this._elements.get('activity_register_data_offering')      as HTMLSelectElement).value     = activity['offering'];
+        (this._elements.get('activity_register_data_location')      as HTMLSelectElement).value     = activity['location'];
+        //(this._elements.get('activity_register_data_track')       as HTMLSelectElement).value     = activity['geo-location'];
+        (this._elements.get('activity_register_data_price')         as HTMLSelectElement).value     = activity['price'];
 
     }
 
