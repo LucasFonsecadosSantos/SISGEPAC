@@ -177,7 +177,7 @@ export class ActivityRegisterModalController extends Controller {
                 "price": this._elements.get('activity_register_data_price').value,
                 "show": true
             }, {
-                "id": this._elements.get('activity_register_data_id')
+                "id": this._elements.get('activity_register_data_id').value
             });
             //@ts-ignore
             $('#activityRegisterModal').modal('hide');

@@ -182,7 +182,7 @@ export class ActivityRegisterModalController extends Controller {
 
                 //@ts-ignore
                 if ((document.querySelector('#activityRegisterModal') as HTMLElement).style.display === 'none') {
-
+                    
                     Updater.updateData();
 
                 }
@@ -274,7 +274,7 @@ export class ActivityRegisterModalController extends Controller {
                     "show":             true
                 },
                 {
-                    "id": this._elements.get('activity_register_data_id')
+                    "id": (this._elements.get('activity_register_data_id') as HTMLInputElement).value
                 }
             );
         
