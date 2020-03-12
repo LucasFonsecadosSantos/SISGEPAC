@@ -95,7 +95,9 @@ export class ActivityRegisterModalController extends Controller {
         //@ts-ignore
         $('#activityRegisterModal').modal('show');
         //this._clearInputs();
-        this._populateActivity();
+        let activityModel = new ActivityModel();
+        let targetActivity = activityModel.find('id', id);
+        targetActivity.then(data => this._populateActivity(data));
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_update').classList.remove('d-none');
         ActivityRegisterModalElements.ELEMENTS.get('activity_register_button_create').classList.add('d-none');
     }
@@ -157,10 +159,46 @@ export class ActivityRegisterModalController extends Controller {
                     Updater.updateData();
                 }
             });
-            this._activityModel.store({});
-        });
+            this._activityModel.update({
+                "title": this._elements.get('activity_register_data_title').value,
+                "responsible_id": this._elements.get('activity_register_data_responsible').value,
+                //"avatar":           ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                "description": ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_description').value,
+                "start_date": this._elements.get('activity_register_data_startDate').value,
+                "start_time": this._elements.get('activity_register_data_startTime').value,
+                "end_date": this._elements.get('activity_register_data_endDate').value,
+                "end_time": this._elements.get('activity_register_data_endTime').value,
+                "vacancies": this._elements.get('activity_register_data_vacancies').value,
+                "restriction": this._elements.get('activity_register_data_restriction').value,
+                "track_id": this._elements.get('activity_register_data_track').value,
+                "offering": this._elements.get('activity_register_data_offering').value,
+                "location": this._elements.get('activity_register_data_location').value,
+                //"geo-location":     (ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_title') as HTMLInputElement).value,
+                "price": this._elements.get('activity_register_data_price').value,
+                "show": true
+            }, {
+                "id": this._elements.get('activity_register_data_id').value
+            });
+            //@ts-ignore
+            $('#activityRegisterModal').modal('hide');
+        }, false);
     }
-    _populateActivity() {
+    _populateActivity(activity) {
+        this._elements.get('activity_register_data_title').value = activity['title'];
+        this._elements.get('activity_register_data_id').value = activity['id'];
+        this._elements.get('activity_register_data_responsible').value = activity['responsible_id'];
+        this._elements.get('activity_register_data_description').value = activity['description'];
+        this._elements.get('activity_register_data_startDate').value = activity['start_date'];
+        this._elements.get('activity_register_data_startTime').value = activity['start_time'];
+        this._elements.get('activity_register_data_endDate').value = activity['end_date'];
+        this._elements.get('activity_register_data_endTime').value = activity['end_time'];
+        this._elements.get('activity_register_data_vacancies').value = activity['vacancies'];
+        this._elements.get('activity_register_data_restriction').value = activity['restriction'];
+        this._elements.get('activity_register_data_track').value = activity['track_id'];
+        this._elements.get('activity_register_data_offering').value = activity['offering'];
+        this._elements.get('activity_register_data_location').value = activity['location'];
+        //(this._elements.get('activity_register_data_track')       as HTMLSelectElement).value     = activity['geo-location'];
+        this._elements.get('activity_register_data_price').value = activity['price'];
     }
 }
 //# sourceMappingURL=ActivityRegisterModalController.js.map
