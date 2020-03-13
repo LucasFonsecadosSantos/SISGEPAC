@@ -5,6 +5,7 @@ import { DataEntity } from './../../conf/Config.js';
 import { MessageModel } from './../model/MessageModel.js';
 import { EventModel } from './../model/EventModel.js';
 import { SpeakerModel } from './../model/SpeakerModel.js';
+import { ActivityModel } from './../model/ActivityModel.js';
 import { LanguageModel } from './../model/LanguageModel.js';
 import { DashboardElements } from './../elements/DashboardElements.js';
 export class DashboardController extends Controller {
@@ -14,6 +15,7 @@ export class DashboardController extends Controller {
         this._eventModel = new EventModel();
         this._languageModel = new LanguageModel();
         this._speakerModel = new SpeakerModel();
+        this._activityModel = new ActivityModel();
         if (interfacePage) {
             this._elements = DashboardElements.ELEMENTS;
             this._getPageMessages();
@@ -34,8 +36,8 @@ export class DashboardController extends Controller {
         }
     }
     _getPageMessages() {
-        this._messagesData = this._messagesModel.all();
-        this._messagesData.then(data => {
+        let messagesData = this._messagesModel.all();
+        messagesData.then(data => {
             let elementKey;
             data['pt-BR'].forEach(message => {
                 Object.keys(message).forEach(key => {
@@ -46,12 +48,12 @@ export class DashboardController extends Controller {
             .catch(error => Logger.log(error));
     }
     _populateLanguageData() {
-        this._languageData = this._languageModel.filter('using', true);
-        this._languageData.then(data => console.log(data));
+        let languageData = this._languageModel.filter('using', true);
+        languageData.then(data => console.log(data));
     }
     _populateCard02() {
-        this._eventData = this._eventModel.all();
-        this._eventData
+        let eventData = this._eventModel.all();
+        eventData
             .then(data => {
             this._elements.get('card02_data_event-name').textContent = data['title'];
             this._elements.get('card02_data_event-description').textContent = data['description'];
@@ -63,8 +65,8 @@ export class DashboardController extends Controller {
             .catch(error => { Logger.log(error); });
     }
     _populateCard03() {
-        this._eventData = this._eventModel.all();
-        this._eventData
+        let eventData = this._eventModel.all();
+        eventData
             .then(data => {
             Object.keys(data['social-networks']).forEach(key => {
                 this._elements.get('card03_data_event-' + key).textContent = data['social-networks'][key];
@@ -78,8 +80,8 @@ export class DashboardController extends Controller {
             .catch(error => Logger.log(error));
     }
     _populateCard05() {
-        this._speakerData = this._speakerModel.all();
-        this._speakerData
+        let speakerData = this._speakerModel.all();
+        speakerData
             .then(data => {
             var fragment = document.createDocumentFragment();
             var trFragment = document.createDocumentFragment();
@@ -190,6 +192,27 @@ export class DashboardController extends Controller {
         });
     }
     _populateCard06() {
+        let activityData = this._activityModel.all();
+        activityData.then(data => {
+            var fragment = document.createDocumentFragment();
+            var trFragment = document.createDocumentFragment();
+            if (data.length > 0) {
+            }
+            else {
+                let trElement = document.createElement('TR');
+                let tdElement = document.createElement('TD');
+                let pElement = document.createElement('P');
+                tdElement.setAttribute('colspan', '4');
+                tdElement.className = "text-center";
+                pElement.className = "text-muted";
+                pElement.textContent = "Nenhum palestrante foi registrado até o momento.";
+                tdElement.appendChild(pElement);
+                fragment.appendChild(tdElement);
+                trElement.appendChild(fragment);
+                this._elements.get('speakerTable').appendChild(trElement);
+            }
+        })
+            .catch(exception => Logger.log("Dashboard controller: " + exception));
         this._elements.get('card06_button_create-activity').addEventListener('click', event => {
             location.hash = "";
             location.hash = 'atividade/*/cadastrar';

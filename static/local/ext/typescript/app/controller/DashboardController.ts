@@ -5,25 +5,22 @@ import { Config, DataEntity }   from './../../conf/Config.js';
 import { MessageModel }         from './../model/MessageModel.js';
 import { EventModel }           from './../model/EventModel.js';
 import { SpeakerModel }         from './../model/SpeakerModel.js';
+import { ActivityModel }        from './../model/ActivityModel.js';
 import { LanguageModel }        from './../model/LanguageModel.js';
 import { DashboardElements }    from './../elements/DashboardElements.js';
 
 export class DashboardController extends Controller {
 
     private _elements:          Map<string, HTMLElement>;
-    private _sponsorshipData;
     private _speakerModel:      SpeakerModel;
-    private _speakerData;
     private _eventModel:        EventModel;
-    private _eventData;
+    private _activityModel:     ActivityModel;
     private _messagesModel:     MessageModel;
-    private _messagesData;
     // private _proceedingsModel:  ProceedingsModel;
     // private _proceedingsData;
     // private _organizerModel:    OrganizerModel;
     // private _organizerData;
     private _languageModel:     LanguageModel;
-    private _languageData;
 
     constructor(interfacePage?: boolean) {
 
@@ -32,7 +29,8 @@ export class DashboardController extends Controller {
         this._eventModel    = new EventModel();
         this._languageModel = new LanguageModel();
         this._speakerModel  = new SpeakerModel();
-        
+        this._activityModel = new ActivityModel();
+
         if (interfacePage) {
          
             this._elements = DashboardElements.ELEMENTS;
@@ -63,9 +61,9 @@ export class DashboardController extends Controller {
 
     private _getPageMessages(): void {
 
-        this._messagesData  = this._messagesModel.all();
+        let messagesData  = this._messagesModel.all();
 
-        this._messagesData.then(data => {
+        messagesData.then(data => {
 
             let elementKey: string;
 
@@ -87,17 +85,17 @@ export class DashboardController extends Controller {
 
     private _populateLanguageData(): void {
 
-        this._languageData = this._languageModel.filter('using', true);
+        let languageData = this._languageModel.filter('using', true);
 
-        this._languageData.then(data => console.log(data));
+        languageData.then(data => console.log(data));
 
     }
 
     private _populateCard02(): void {
 
-        this._eventData = this._eventModel.all();
+        let eventData = this._eventModel.all();
 
-        this._eventData
+        eventData
 
             .then(data => {
 
@@ -116,9 +114,9 @@ export class DashboardController extends Controller {
 
     private _populateCard03(): void {
 
-        this._eventData = this._eventModel.all();
+        let eventData = this._eventModel.all();
 
-        this._eventData
+        eventData
 
             .then(data => {
 
@@ -146,9 +144,9 @@ export class DashboardController extends Controller {
 
     public _populateCard05(): void {
 
-        this._speakerData = this._speakerModel.all();
+        let speakerData = this._speakerModel.all();
 
-        this._speakerData
+        speakerData
 
             .then(data => {
 
@@ -295,12 +293,45 @@ export class DashboardController extends Controller {
 
     private _populateCard06(): void {
 
+        let activityData = this._activityModel.all();
+
+        activityData.then(data => {
+
+            var fragment = document.createDocumentFragment();
+            var trFragment = document.createDocumentFragment();
+
+            if (data.length > 0) {
+
+                
+
+            }  else {
+
+                let trElement = document.createElement('TR');
+                let tdElement = document.createElement('TD');
+                let pElement  = document.createElement('P');
+                tdElement.setAttribute('colspan', '4');
+                tdElement.className = "text-center";
+                pElement.className = "text-muted";
+                pElement.textContent = "Nenhum palestrante foi registrado até o momento.";
+
+                tdElement.appendChild(pElement);
+                fragment.appendChild(tdElement);
+                trElement.appendChild(fragment)
+                this._elements.get('speakerTable').appendChild(trElement);
+
+            }
+
+        })
+
+        .catch(exception => Logger.log("Dashboard controller: " + exception));
+
         this._elements.get('card06_button_create-activity').addEventListener('click', event => {
 
             location.hash = "";
             location.hash = 'atividade/*/cadastrar';
 
         });
+
 
     }
 
