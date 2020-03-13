@@ -67,7 +67,7 @@
         if (!move_uploaded_file(
             
                 $_FILES['upavatar']['tmp_name'],
-                sprintf('./../../../remote/data/uploads/%s.%s', $fileName, $ext)
+                sprintf('./../../../remote/data/uploads/images/profile/%s.%s', $fileName, $ext)
                 
             )
 
