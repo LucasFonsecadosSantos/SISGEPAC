@@ -124,7 +124,7 @@ export class ActivityRegisterModalController extends Controller {
                         "id": ((this._elements.get('activity_register_data_id').value === '') || (!this._elements.get('activity_register_data_id').value)) ? Identificator.generateID() : this._elements.get('activity_register_data_id').value,
                         "title": this._elements.get('activity_register_data_title').value,
                         "responsible_id": this._elements.get('activity_register_data_responsible').value,
-                        "avatar": ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                        "avatar": ((response['data_name'] === '') || (!response['data_name'])) ? "default-avatar.png" : response['data_name'],
                         "description": ActivityRegisterModalElements.ELEMENTS.get('activity_register_data_description').value,
                         "start_date": this._elements.get('activity_register_data_startDate').value,
                         "start_time": this._elements.get('activity_register_data_startTime').value,
