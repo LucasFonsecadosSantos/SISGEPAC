@@ -12,7 +12,6 @@ import { Identificator }                    from './../../util/Indentificator.js
 
 export class SponsorshipPlanModalController extends Controller {
 
-    private _elements:              Map<string, HTMLElement>;
     private _messageModel:          MessageModel;
     private _sponsorshipPlanModel:  SponsorshipPlanModel;
 
@@ -21,7 +20,6 @@ export class SponsorshipPlanModalController extends Controller {
         super();
         this._messageModel          = new MessageModel(DataEntity._SPONSORSHIP_PLAN_MODAL_MESSAGES_);
         this._sponsorshipPlanModel  = new SponsorshipPlanModel();
-        this._elements              = SponsorshipPlanModalElements.ELEMENTS;
         this._getPageMessages();
         this._initListeners();
 
@@ -33,13 +31,11 @@ export class SponsorshipPlanModalController extends Controller {
 
         messageData.then(data => {
 
-            let elementKey: string;
-
             data['pt-BR'].forEach(message => {
 
                 Object.keys(message).forEach(key => {
 
-                    MessageBuilder.buildMessage(this._elements.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
+                    MessageBuilder.buildMessage(SponsorshipPlanModalElements.ELEMENTS.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
                     
                 });
                 
@@ -64,7 +60,7 @@ export class SponsorshipPlanModalController extends Controller {
 
     private _clearInputs(): void {
 
-        this._elements.forEach(element => {
+        SponsorshipPlanModalElements.ELEMENTS.forEach(element => {
 
             if (element.nodeName === 'INPUT') {
                 element.nodeValue = "";
@@ -134,11 +130,11 @@ export class SponsorshipPlanModalController extends Controller {
 
                             {
 
-                                "id":               (((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value === '') || (!(this._elements.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value)) ? Identificator.generateID(): (this._elements.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value,
+                                "id":               (((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value === '') || (!(SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value)) ? Identificator.generateID(): (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id') as HTMLInputElement).value,
                                 "name":             (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name') as HTMLInputElement).value,
                                 "avatar":           ((response['data_name'] === '') || (!response['data_name'])) ? "default-avatar.png" : response['data_name'],
                                 "description":      (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description') as HTMLTextAreaElement).value,
-                                "price":            (this._elements.get('sponsorshipplan_modal_data_price') as HTMLInputElement).value
+                                "price":            (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price') as HTMLInputElement).value
     
                             }
 
@@ -148,7 +144,7 @@ export class SponsorshipPlanModalController extends Controller {
                     .catch(error => Logger.log(error));
 
                 } catch (exception) {
-                    alert(exception);
+                    
                     if (exception instanceof InvalidDataKeyException) {
                         
                         Logger.log("Update Exception: " + exception.message);
@@ -166,7 +162,7 @@ export class SponsorshipPlanModalController extends Controller {
 
     private _initUpdateButtonListener(): void {
 
-        this._elements.get('sponsorshipplan_modal_button_update').addEventListener('click', event => {
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_update').addEventListener('click', event => {
 
             document.querySelector('#sponsorshipPlanModal').addEventListener('DOMAttrModified', event => {
 

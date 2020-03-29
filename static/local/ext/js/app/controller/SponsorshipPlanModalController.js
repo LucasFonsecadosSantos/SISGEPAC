@@ -13,17 +13,15 @@ export class SponsorshipPlanModalController extends Controller {
         super();
         this._messageModel = new MessageModel(DataEntity._SPONSORSHIP_PLAN_MODAL_MESSAGES_);
         this._sponsorshipPlanModel = new SponsorshipPlanModel();
-        this._elements = SponsorshipPlanModalElements.ELEMENTS;
         this._getPageMessages();
         this._initListeners();
     }
     _getPageMessages() {
         let messageData = this._messageModel.all();
         messageData.then(data => {
-            let elementKey;
             data['pt-BR'].forEach(message => {
                 Object.keys(message).forEach(key => {
-                    MessageBuilder.buildMessage(this._elements.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
+                    MessageBuilder.buildMessage(SponsorshipPlanModalElements.ELEMENTS.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
                 });
             });
         })
@@ -37,7 +35,7 @@ export class SponsorshipPlanModalController extends Controller {
         SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_create').classList.remove('d-none');
     }
     _clearInputs() {
-        this._elements.forEach(element => {
+        SponsorshipPlanModalElements.ELEMENTS.forEach(element => {
             if (element.nodeName === 'INPUT') {
                 element.nodeValue = "";
             }
@@ -81,17 +79,16 @@ export class SponsorshipPlanModalController extends Controller {
                 this._sponsorshipPlanModel.imageUpload(new FormData(SponsorshipPlanModalElements.ELEMENTS.get('dataForm')))
                     .then(response => {
                     this._sponsorshipPlanModel.insert({
-                        "id": ((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value === '') || (!this._elements.get('sponsorshipplan_modal_data_id').value)) ? Identificator.generateID() : this._elements.get('sponsorshipplan_modal_data_id').value,
+                        "id": ((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value === '') || (!SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value)) ? Identificator.generateID() : SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value,
                         "name": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name').value,
                         "avatar": ((response['data_name'] === '') || (!response['data_name'])) ? "default-avatar.png" : response['data_name'],
                         "description": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description').value,
-                        "price": this._elements.get('sponsorshipplan_modal_data_price').value
+                        "price": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price').value
                     });
                 })
                     .catch(error => Logger.log(error));
             }
             catch (exception) {
-                alert(exception);
                 if (exception instanceof InvalidDataKeyException) {
                     Logger.log("Update Exception: " + exception.message);
                 }
@@ -101,7 +98,7 @@ export class SponsorshipPlanModalController extends Controller {
         }, false);
     }
     _initUpdateButtonListener() {
-        this._elements.get('sponsorshipplan_modal_button_update').addEventListener('click', event => {
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_update').addEventListener('click', event => {
             document.querySelector('#sponsorshipPlanModal').addEventListener('DOMAttrModified', event => {
                 //@ts-ignore
                 if (document.querySelector('#sponsorshipPlanModal').style.display === 'none') {

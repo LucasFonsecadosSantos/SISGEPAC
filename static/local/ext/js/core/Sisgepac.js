@@ -1,12 +1,11 @@
-import { Monitor } from './../util/Monitor.js';
 import { DashboardController } from './../app/controller/DashboardController.js';
 import { ChangelogController } from './../app/controller/ChangelogController.js';
 import { HeaderController } from './../app/controller/HeaderController.js';
 import { FooterController } from './../app/controller/FooterController.js';
 import { NavbarController } from './../app/controller/NavbarController.js';
 import { EventSettingsModalController } from './../app/controller/EventSettingsModalController.js';
-import { SpeakerRegisterModalController } from './../app/controller/SpeakerRegisterModalController.js';
-import { ActivityRegisterModalController } from './../app/controller/ActivityRegisterModalController.js';
+import { SpeakerModalController } from './../app/controller/SpeakerModalController.js';
+import { ActivityModalController } from './../app/controller/ActivityModalController.js';
 import { SponsorshipPlanModalController } from './../app/controller/SponsorshipPlanModalController.js';
 import { Routes } from './../conf/Routes.js';
 export class Sisgepac {
@@ -17,11 +16,11 @@ export class Sisgepac {
         this._controllers = new Map([
             ['DashboardController', DashboardController],
             ['ChangelogController', ChangelogController],
-            ['SpeakerRegisterModalController', SpeakerRegisterModalController],
-            ['ActivityRegisterModalController', ActivityRegisterModalController],
+            ['SpeakerModalController', SpeakerModalController],
+            ['ActivityModalController', ActivityModalController],
             ['SponsorshipPlanModalController', SponsorshipPlanModalController]
         ]);
-        new Monitor();
+        //new Monitor();
         new HeaderController();
         new NavbarController();
         new FooterController();
@@ -74,10 +73,10 @@ export class Sisgepac {
                     new EventSettingsModalController();
                     break;
                 case 'speaker-register-modal':
-                    new SpeakerRegisterModalController();
+                    new SpeakerModalController();
                     break;
                 case 'activity-register-modal':
-                    new ActivityRegisterModalController();
+                    new ActivityModalController();
                     break;
                 case 'sponsorship-plan-modal':
                     new SponsorshipPlanModalController();
