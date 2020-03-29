@@ -118,7 +118,7 @@ export class SponsorshipPlanModalController extends Controller {
         }, false);
     }
     _populate(sponsorshipPlan) {
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_title').value = sponsorshipPlan['title'];
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name').value = sponsorshipPlan['name'];
         SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value = sponsorshipPlan['id'];
         SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price').value = sponsorshipPlan['price'];
         SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description').value = sponsorshipPlan['description'];
