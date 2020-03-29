@@ -7,7 +7,7 @@ Routes.ROUTES = new Map([
     ['palestrante/{id}/editar', 'SpeakerRegisterModalController@update'],
     ['palestrante/{id}/remover', 'SpeakerRegisterModalController@delete'],
     ['atividade/{id}/cadastrar', 'ActivityRegisterModalController@create'],
-    ['atividade/{id}/atualizar', 'ActivityRegisterModalController@update'],
+    ['atividade/{id}/editar', 'ActivityRegisterModalController@update'],
     ['atividade/{id}/remover', 'ActivityRegisterModalController@delete']
 ]);
 //# sourceMappingURL=Routes.js.map

@@ -57,7 +57,7 @@ export class SpeakerRegisterModalController extends Controller {
                             "pinterest": this._elements.get('speaker_register_data_socialNetworks-pinterest').value,
                             "blog": this._elements.get('speaker_register_data_socialNetworks-blog').value,
                         },
-                        "avatar": ((!response['data_name']) || (response['data_name'] === "")) ? "/local/img/structure/default-avatar.png" : response['data_name'],
+                        "avatar": ((!response['data_name']) || (response['data_name'] === "")) ? "default-avatar.svg" : response['data_name'],
                         "show": true
                     });
                 })

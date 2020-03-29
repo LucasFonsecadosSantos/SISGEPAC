@@ -81,11 +81,11 @@ do
             fi
         else
             echo '[OK] PHP checked.'
-            echo '[OK] NOW, WE CAN LAUNCH THE ACTE'
+            echo '[OK] NOW, WE CAN LAUNCH THE SISGEPAC'
             if which xdg-open > /dev/null; then
-                sudo php -S 0.0.0.0:8050 -t ../src & sudo xdg-open "http://localhost:8050/local-src/pre-index.html"
+                sudo php -S 0.0.0.0:8050 -t ../static & sudo xdg-open "http://localhost:8050/local"
             elif which gnome-open > /dev/null; then
-                sudo php -S 0.0.0.0:8050 -t ../src & sudo gnome-open "http://localhost:8050/local-src/pre-index.html"
+                sudo php -S 0.0.0.0:8050 -t ../static & sudo gnome-open "http://localhost:8050/local"
             fi
         fi
     fi

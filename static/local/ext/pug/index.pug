@@ -379,11 +379,11 @@ include components/modals/_activity-register.pug
               .card-header
                 h4.card-title.dark#card06_label_title
               .card-body
-                .table-responsive
+                .table.w-100.overflow-hidden
                   table#project-task-list.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
                     thead
                       tr
-                        th.text-right(colspan="4")
+                        th.text-right(colspan="5")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
                             button.btn.btn-outline-success#card06_button_create-activity(type="button")
                               i.la.la-plus.font-medium-1.mr-1
@@ -395,12 +395,13 @@ include components/modals/_activity-register.pug
                               i.la.la-trash-alt.font-medium-1.mr-1
                               span#card06_button_delete-activity-text
                       tr
-                        th#card06_table_label_column01
-                        th#card06_table_label_column02
-                        th#card06_table_label_column03
-                        th#card06_table_label_column04
-                    tbody
-                      tr
+                        th#card06_table_label_column01(style="width: 10%")
+                        th#card06_table_label_column02(style="width: 60%")
+                        th#card06_table_label_column03(style="width: 10%")
+                        th#card06_table_label_column04(style="width: 10%")
+                        th#card06_table_label_column05(style="width: 10%")
+                    tbody#activityTable
+                      //tr
                         td.text-center
                           span.avatar.avatar-busy
                             img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
