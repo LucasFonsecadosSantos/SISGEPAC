@@ -31,9 +31,7 @@ export class DashboardController extends Controller {
             this._populateCard03();
             this._populateCard05();
             this._populateCard06();
-            //this._populateSpeakerData();
-            // this._populateSponsorshipData();
-            // this._populateOrganizationData();
+            this._populateCard07();
             //}
         }
     }
@@ -57,12 +55,12 @@ export class DashboardController extends Controller {
         let eventData = this._eventModel.all();
         eventData
             .then(data => {
-            this._elements.get('card02_data_event-name').textContent = data['title'];
-            this._elements.get('card02_data_event-description').textContent = data['description'];
-            this._elements.get('card02_data_event-institute').textContent = data['institute'];
-            this._elements.get('card02_data_event-type').textContent = data['event-type'];
-            this._elements.get('card02_data_event-area').textContent = data['area'];
-            this._elements.get('card02_data_event-edition').textContent = data['edition'];
+            DashboardElements.ELEMENTS.get('card02_data_event-name').textContent = data['title'];
+            DashboardElements.ELEMENTS.get('card02_data_event-description').textContent = data['description'];
+            DashboardElements.ELEMENTS.get('card02_data_event-institute').textContent = data['institute'];
+            DashboardElements.ELEMENTS.get('card02_data_event-type').textContent = data['event-type'];
+            DashboardElements.ELEMENTS.get('card02_data_event-area').textContent = data['area'];
+            DashboardElements.ELEMENTS.get('card02_data_event-edition').textContent = data['edition'];
         })
             .catch(error => { Logger.log(error); });
     }
@@ -71,12 +69,12 @@ export class DashboardController extends Controller {
         eventData
             .then(data => {
             Object.keys(data['social-networks']).forEach(key => {
-                this._elements.get('card03_data_event-' + key).textContent = data['social-networks'][key];
+                DashboardElements.ELEMENTS.get('card03_data_event-' + key).textContent = data['social-networks'][key];
             });
-            this._elements.get('card03_data_event-website').textContent = data['website'];
-            this._elements.get('card03_data_event-email').textContent = data['email'];
+            DashboardElements.ELEMENTS.get('card03_data_event-website').textContent = data['website'];
+            DashboardElements.ELEMENTS.get('card03_data_event-email').textContent = data['email'];
             data['telephone'].forEach(telephone => {
-                this._elements.get('card03_data_event-telephone').textContent += telephone;
+                DashboardElements.ELEMENTS.get('card03_data_event-telephone').textContent += telephone;
             });
         })
             .catch(error => Logger.log(error));
@@ -188,7 +186,7 @@ export class DashboardController extends Controller {
             }
         })
             .catch(error => { Logger.log(error); });
-        this._elements.get('card05_button_create-speaker').addEventListener('click', event => {
+        DashboardElements.ELEMENTS.get('card05_button_create-speaker').addEventListener('click', event => {
             location.hash = "";
             location.hash = 'palestrante/*/cadastrar';
         });
@@ -338,9 +336,15 @@ export class DashboardController extends Controller {
             }
         })
             .catch(exception => Logger.log("Dashboard controller: " + exception));
-        this._elements.get('card06_button_create-activity').addEventListener('click', event => {
+        DashboardElements.ELEMENTS.get('card06_button_create-activity').addEventListener('click', event => {
             location.hash = "";
             location.hash = 'atividade/*/cadastrar';
+        });
+    }
+    _populateCard07() {
+        DashboardElements.ELEMENTS.get('card07_button_create-sponsorshipplan').addEventListener('click', event => {
+            location.hash = "";
+            location.hash = 'planopatrocinio/*/cadastrar';
         });
     }
 }

@@ -33,8 +33,8 @@ export class SponsorshipPlanModalController extends Controller {
         //@ts-ignore
         $('#sponsorshipPlanModal').modal('show');
         //this._clearInputs();
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_button_update').classList.add('d-none');
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_button_create').classList.remove('d-none');
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_update').classList.add('d-none');
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_create').classList.remove('d-none');
     }
     _clearInputs() {
         this._elements.forEach(element => {
@@ -58,8 +58,8 @@ export class SponsorshipPlanModalController extends Controller {
         let sponsorshipPlanModel = new SponsorshipPlanModel();
         let sponsorshipPlan = sponsorshipPlanModel.find('id', id);
         sponsorshipPlan.then(data => this._populate(data));
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_button_update').classList.remove('d-none');
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_button_create').classList.add('d-none');
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_update').classList.remove('d-none');
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_create').classList.add('d-none');
     }
     delete(id) {
         this._sponsorshipPlanModel.delete('id', id);
@@ -70,7 +70,7 @@ export class SponsorshipPlanModalController extends Controller {
         this._initUpdateButtonListener();
     }
     _initCreateButtonListener() {
-        this._elements.get('sponsorshipplan_register_button_create').addEventListener('click', event => {
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_button_create').addEventListener('click', event => {
             document.querySelector('#sponsorshipPlanModal').addEventListener('DOMAttrModified', event => {
                 //@ts-ignore
                 if (document.querySelector('#sponsorshipPlanModal').style.display === 'none') {
@@ -78,19 +78,20 @@ export class SponsorshipPlanModalController extends Controller {
                 }
             });
             try {
-                this._sponsorshipPlanModel.imageUpload(new FormData(document.querySelector('#sponsorshipPlanDataFormActivity')))
+                this._sponsorshipPlanModel.imageUpload(new FormData(SponsorshipPlanModalElements.ELEMENTS.get('dataForm')))
                     .then(response => {
                     this._sponsorshipPlanModel.insert({
-                        "id": ((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_id').value === '') || (!this._elements.get('sponsorshipplan_register_data_id').value)) ? Identificator.generateID() : this._elements.get('activity_register_data_id').value,
-                        "name": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_name').value,
+                        "id": ((SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value === '') || (!this._elements.get('sponsorshipplan_modal_data_id').value)) ? Identificator.generateID() : this._elements.get('sponsorshipplan_modal_data_id').value,
+                        "name": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name').value,
                         "avatar": ((response['data_name'] === '') || (!response['data_name'])) ? "default-avatar.png" : response['data_name'],
-                        "description": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_description').value,
-                        "price": this._elements.get('sponsorshipplan_register_data_price').value
+                        "description": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description').value,
+                        "price": this._elements.get('sponsorshipplan_modal_data_price').value
                     });
                 })
                     .catch(error => Logger.log(error));
             }
             catch (exception) {
+                alert(exception);
                 if (exception instanceof InvalidDataKeyException) {
                     Logger.log("Update Exception: " + exception.message);
                 }
@@ -100,7 +101,7 @@ export class SponsorshipPlanModalController extends Controller {
         }, false);
     }
     _initUpdateButtonListener() {
-        this._elements.get('sponsorshipplan_register_button_update').addEventListener('click', event => {
+        this._elements.get('sponsorshipplan_modal_button_update').addEventListener('click', event => {
             document.querySelector('#sponsorshipPlanModal').addEventListener('DOMAttrModified', event => {
                 //@ts-ignore
                 if (document.querySelector('#sponsorshipPlanModal').style.display === 'none') {
@@ -108,22 +109,22 @@ export class SponsorshipPlanModalController extends Controller {
                 }
             });
             this._sponsorshipPlanModel.update({
-                "name": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_name').value,
+                "name": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name').value,
                 //"avatar":           ((response['data_name'] === '') || (!response['data_name'])) ? "/local/img/structure/default-avatar.png" : response['data_name'],
-                "description": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_description').value,
-                "price": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_price').value,
+                "description": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description').value,
+                "price": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price').value,
             }, {
-                "id": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_id').value
+                "id": SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value
             });
             //@ts-ignore
             $('#sponsorshipPlanModal').modal('hide');
         }, false);
     }
     _populate(sponsorshipPlan) {
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_title').value = sponsorshipPlan['title'];
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_id').value = sponsorshipPlan['id'];
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_price').value = sponsorshipPlan['price'];
-        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_register_data_description').value = sponsorshipPlan['description'];
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_title').value = sponsorshipPlan['title'];
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id').value = sponsorshipPlan['id'];
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price').value = sponsorshipPlan['price'];
+        SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description').value = sponsorshipPlan['description'];
     }
 }
 //# sourceMappingURL=SponsorshipPlanModalController.js.map

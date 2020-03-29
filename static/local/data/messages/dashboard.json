@@ -150,11 +150,11 @@
         },
         {
             "id": "card07_table_label_column01",
-            "text": "Nome"
+            "text": "Avatar"
         },
         {
             "id": "card07_table_label_column02",
-            "text": "Descrição"
+            "text": "Plano"
         },
         {
             "id": "card07_table_label_column03",
@@ -163,6 +163,24 @@
         {
             "id": "card07_table_label_column04",
             "text": "Ações"
+        },
+        {
+            "id": "card07_button_create-sponsorshipplan-text",
+            "text": "Novo Plano",
+            "title": "Clique para adicionar um novo plano de patrocinio.",
+            "alt": "Botão para adicionar novo plano de patrocinio."
+        },
+        {
+            "id": "card07_button_search-sponsorshipplan-text",
+            "text": "Buscar",
+            "title": "Clique para buscar um plano de patrocinio.",
+            "alt": "Botão para buscar um plano de patrocinio."
+        },
+        {
+            "id": "card07_button_delete-sponsorshipplan-text",
+            "text": "Remover",
+            "title": "Clique para remover um plano de patrocinio.",
+            "alt": "Botão para remover um plano de patrocinio."
         },
         {
             "id": "card08_label_title",

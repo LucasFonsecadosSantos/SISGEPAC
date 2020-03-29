@@ -2,7 +2,68 @@
     "pt-BR": [
 
         {
-            ""
+            "id": "sponsorshipplan_modal_title",
+            "text": "Plano de Patrocínio"
+        },
+        {
+            "id": "sponsorshipplan_modal_title",
+            "text": "Plano de Patrocínio"
+        },
+        {
+            "id": "sponsorshipplan_modal_label_callout-title",
+            "text": "O que são?"
+        },
+        {
+            "id": "sponsorshipplan_modal_label_callout-text",
+            "text": "Cadastrando planos de patrocínio, voce poderá, ao cadastrar um patrocinador de seu evento, enquadra-lo em um desses planos preestabelecido com valores e condições programadas."
+        },
+        {
+            "id": "sponsorshipplan_modal_label_name",
+            "text": "Nome do plano: *"
+        },
+        {
+            "id": "sponsorshipplan_modal_data_name",
+            "alt": "Campo de texto para inserir o nome do plano.",
+            "title": "Informe o nome do plano. Ex.: Ouro, diamante ou Prata.",
+            "placeholder": "Ex.: Ouro, diamante ou prata."
+        },
+        {
+            "id": "sponsorshipplan_modal_label_description",
+            "text": "Descrição:"
+        },
+        {
+            "id": "sponsorshipplan_modal_data_description",
+            "alt": "Campo de texto para inserir a descrição do plano.",
+            "title": "Informe uma descrição para plano.",
+            "placeholder": "Ex.: Divulgação em empena, panfletos e caixa de som."
+        },
+        {
+            "id": "sponsorshipplan_modal_label_price",
+            "text": "Preço: *"
+        },
+        {
+            "id": "sponsorshipplan_modal_data_price",
+            "alt": "Campo de texto para inserir preço do plano para o patrocinador.",
+            "title": "Informe um preço para o patrocinador pagar caso deseje este plano.",
+            "placeholder:": "R$ 0.00"
+        },
+        {
+            "id": "sponsorshipplan_modal_label_avatar2",
+            "text": "Avatar/Icone do plano",
+            "title": "Clique para selecionar uma imagem que represente o plano.",
+            "alt": "Campo de seleção para um arquivo de imagem representativo do plano."
+        },
+        {
+            "id": "sponsorshipplan_modal_button_create",
+            "text": "Cadastrar",
+            "title": "Clique para efetuar o cadastro do novo plano.",
+            "alt": "Botão para efetuar o cadastro do novo plano."
+        },
+        {
+            "id": "sponsorshipplan_modal_button_update",
+            "text": "Atualizar",
+            "title": "Clique para atualizar o plano.",
+            "alt": "Botão para atualizar o cadastro do plano."
         }
 
     ]
