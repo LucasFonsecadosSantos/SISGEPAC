@@ -29,7 +29,9 @@ export var DataEntity;
     DataEntity["_SPEAKER_REGISTER_MODAL_MESSAGES_"] = "speaker-register-modal";
     DataEntity["_NAVBAR_MESSAGES_"] = "navbar";
     DataEntity["_SPEAKER_MESSAGES_"] = "spekaers";
-    DataEntity["_SPONSORSHIP_MESSAGES_"] = "sponsorship";
+    DataEntity["_SPONSORSHIP_MODAL_MESSAGES_"] = "sponsorship";
+    DataEntity["_SPONSORSHIP_PLAN_MODAL_MESSAGES_"] = "sponsorship-plan";
+    DataEntity["_SPONSORSHIP_PLAN_"] = "sponsorship-plan";
     DataEntity["_EVENT_SETTINGS_MESSAGE_"] = "event";
     DataEntity["_TEMPLATE_MESSAGES_"] = "template";
     DataEntity["_CHANGELOG_MESSAGES_"] = "changelog";
@@ -64,6 +66,7 @@ Config.APPLICATION_PORT = "8080";
 Config.REMOTE_CONTENT_FILES_PATH = new Map([
     [DataEntity._SPEAKER_, "/remote/data/content/speakers.json"],
     [DataEntity._SPONSORSHIP_, "/remote/data/content/sponsorship.json"],
+    [DataEntity._SPONSORSHIP_PLAN_, "/remote/data/content/sponsorship-plan.json"],
     [DataEntity._EVENT_, "/remote/data/content/event.json"],
     [DataEntity._TEMPLATE_, "/remote/data/content/template.json"],
     [DataEntity._PROCEEDINGS_, "/remote/data/content/proceedings.json"],
@@ -87,7 +90,8 @@ Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
     [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"],
     [DataEntity._SPEAKER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speakers.json"],
-    [DataEntity._SPONSORSHIP_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "sponsorship.json"],
+    [DataEntity._SPONSORSHIP_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "sponsorship.json"],
+    [DataEntity._SPONSORSHIP_PLAN_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "sponsorship-plan.json"],
     [DataEntity._EVENT_SETTINGS_MESSAGE_, Config.LOCAL_MESSAGES_PATH + "event.json"],
     [DataEntity._TEMPLATE_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "template.json"],
     [DataEntity._PROCEEDINGS_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "proceedings.json"],
