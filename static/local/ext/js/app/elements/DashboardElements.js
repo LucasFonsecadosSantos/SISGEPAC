@@ -69,6 +69,12 @@ DashboardElements.ELEMENTS = new Map([
     ['card07_table_label_column02', document.querySelector('#card07_table_label_column02')],
     ['card07_table_label_column03', document.querySelector('#card07_table_label_column03')],
     ['card07_table_label_column04', document.querySelector('#card07_table_label_column04')],
+    ['card07_button_create-sponsorshipplan-text', document.querySelector('#card07_button_create-sponsorshipplan-text')],
+    ['card07_button_delete-sponsorshipplan-text', document.querySelector('#card07_button_delete-sponsorshipplan-text')],
+    ['card07_button_search-sponsorshipplan-text', document.querySelector('#card07_button_search-sponsorshipplan-text')],
+    ['card07_button_create-sponsorshipplan', document.querySelector('#card07_button_create-sponsorshipplan')],
+    ['card07_button_delete-sponsorshipplan', document.querySelector('#card07_button_delete-sponsorshipplan')],
+    ['card07_button_search-sponsorshipplan', document.querySelector('#card07_button_search-sponsorshipplan')],
     // //Card08
     ['card08_label_title', document.querySelector('#card08_label_title')],
     ['card08_table_label_column01', document.querySelector('#card08_table_label_column01')],

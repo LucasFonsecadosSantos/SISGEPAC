@@ -18,6 +18,7 @@ include components/_navbar.pug
 include components/modals/_event-settings.pug
 include components/modals/_speaker-register.pug
 include components/modals/_activity-register.pug
+include components/modals/_sponsorship-plan.pug
 
 .app-content.content(sisgepac-page="index")
   .loader_box.d-none#loader
@@ -430,15 +431,15 @@ include components/modals/_activity-register.pug
                       tr
                         th.text-right(colspan="4")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
-                            button.btn.btn-success(type="button")
-                              i.material-icons add
-                              |Cadastrar
-                            button.btn.btn-primary(type="button")
-                              i.material-icons search
-                              |Pesquisar
-                            button.btn.btn-danger(type="button")
-                              i.material-icons delete_forever
-                              |remover
+                            button.btn.btn-outline-success#card07_button_create-sponsorshipplan(type="button")
+                              i.la.la-plus.font-medium-1.mr-1
+                              span#card07_button_create-sponsorshipplan-text
+                            button.btn.btn-outline-primary#card07_button_search-sponsorshipplan(type="button")
+                              i.la.la-search.font-medium-1.mr-1
+                              span#card07_button_search-sponsorshipplan-text
+                            button.btn.btn-outline-danger#card07_button_delete-sponsorshipplan(type="button")
+                              i.la.la-trash-alt.font-medium-1.mr-1
+                              span#card07_button_delete-sponsorshipplan-text
                       tr
                         th#card07_table_label_column01
                         th#card07_table_label_column02
