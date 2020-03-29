@@ -2,186 +2,186 @@
     "pt-BR": [
 
         {
-            "id": "activity_register_label_title",
+            "id": "activity_modal_label_title",
             "text": "Titulo: *"
         },
         {
-            "id": "activity_register_button_update",
+            "id": "activity_modal_button_update",
             "text": "Atualizar informações",
             "alt": "Botão para atualizar o cadastro da atividade",
             "title": "Clique aqui para atualizar o cadastro da atividade."
         },
         {
-            "id": "activity_register_button_create",
+            "id": "activity_modal_button_create",
             "text": "Cadastrar atividade",
             "title": "Clique para realizar o cadastro da atividade.",
             "alt": "Botão para cadastrar atividade."
         },
         {
-            "id": "activity_register_modal_title",
+            "id": "activity_modal_title",
             "text": "Registrar nova atividade"
         },
         {
-            "id": "activity_register_data_title",
+            "id": "activity_modal_data_title",
             "placeholder": "Ex.: Mesa redonda de debate",
             "title": "Infome o título/nome da atividade. Escolha nomes atrativos ou informado pelo palestrante.",
             "alt": "Campo de texto para informar o título da ativiade.",
             "maxlength": "40"
         },
         {
-            "id": "activity_register_label_description",
+            "id": "activity_modal_label_description",
             "text": "Descrição: *"
         },
         {
-            "id": "activity_register_data_description",
+            "id": "activity_modal_data_description",
             "placeholder": "Ex.: Discutiremos sobre novas tendencias na área ...",
             "title": "Descreva sucintamente o que ocorrerá na atividade, tópicos discutidos ou apresentados.",
             "alt": "Campo de texto para descrever sucintamente a ativiadade.",
             "maxlength": "400"
         },
         {
-            "id": "activity_register_data_responsible",
+            "id": "activity_modal_data_responsible",
             "placeholder": "- SELECIONE -",
             "title": "Clique para selecionar um ministrante",
             "alt": "Campo de seleção para selecionar um ministrante"
         },
         {
-            "id": "activity_register_label_avatar2",
+            "id": "activity_modal_label_avatar2",
             "placeholder": "Selecione uma imagem"
         },
         {
-            "id": "activity_register_label_responsible",
+            "id": "activity_modal_label_responsible",
             "text": "Responsável/palestrante/mentor da atividade*:"
         },
         {
-            "id": "activity_register_label_callout-title",
+            "id": "activity_modal_label_callout-title",
             "text": "Nova atividade"
         },
         {
-            "id": "activity_register_label_callout-text",
+            "id": "activity_modal_label_callout-text",
             "text": "Atividades podem ser palestras, minicursos, rodas de debate ou qualquer outra que ocorrerá no evento. Toda atividade por padrão deve estar assossiada a um mentor/palestrante/condutor. As configurações permitem adicionar quantidade de vagas, preços, empresa que oferece tal atividade, imagem representativa, localização por ponto de referencia e geo localização, além de uma descrição para as pessoas interessadas."
         },
         {
-            "id": "activity_register_label_endDate",
+            "id": "activity_modal_label_endDate",
             "text": "Data de término: *"
         },
         {
-            "id": "activity_register_label_startDate",
+            "id": "activity_modal_label_startDate",
             "text": "Data de ínicio: *"
         },
         {
-            "id": "activity_register_data_endDate",
+            "id": "activity_modal_data_endDate",
             "title": "Clique e selecione uma data para o término da presente atividade.",
             "alt": "Campo de seleção para data do término da atividade."
         },
         {
-            "id": "activity_register_data_startDate",
+            "id": "activity_modal_data_startDate",
             "title": "Clique e selecione uma data para o ínicio da presente atividade.",
             "alt": "Campo de seleção para data do ínicio da atividade."
         },
         {
-            "id": "activity_register_label_endTime",
+            "id": "activity_modal_label_endTime",
             "text": "Hora de término: *"
         },
         {
-            "id": "activity_register_label_startTime",
+            "id": "activity_modal_label_startTime",
             "text": "Hora de ínicio: *"
         },
         {
-            "id": "activity_register_data_endTime",
+            "id": "activity_modal_data_endTime",
             "title": "Clique e selecione uma horário para o término da presente atividade.",
             "alt": "Campo de seleção para hora do término da atividade."
         },
         {
-            "id": "activity_register_data_startTime",
+            "id": "activity_modal_data_startTime",
             "title": "Clique e selecione uma horário para o ínicio da presente atividade.",
             "alt": "Campo de seleção para hora do ínicio da atividade."
         },
         {
-            "id": "activity_register_data_price",
+            "id": "activity_modal_data_price",
             "title": "Essa atividade terá algum valor para participação? Se sim, preencha.",
             "alt": "Campo de texto para informar o valor da entrada para participar dessa atividade.",
             "placeholder": "R$ 0.00"
         },
         {
-            "id": "activity_register_label_price",
+            "id": "activity_modal_label_price",
             "text": "Preço:"
         },
         {
-            "id": "activity_register_data_vacancies",
+            "id": "activity_modal_data_vacancies",
             "placeholder": "X",
             "title": "Quantas vagas essa atividade tem disponível? Se for ilimitado, não preencha.",
             "alt": "Campo de texto para informar quantidade de vagas disponíveis para essa atividade."
         },
         {
-            "id": "activity_register_label_vacancies",
+            "id": "activity_modal_label_vacancies",
             "text": "Quantidade de Vagas:"
         },
         {
-            "id": "activity_register_label_vacancies-helper",
+            "id": "activity_modal_label_vacancies-helper",
             "text": "Se for ilimitado, não preencha."
         },
         {
-            "id": "activity_register_label_price-helper",
+            "id": "activity_modal_label_price-helper",
             "text": "Se for gratuíto, não preencha."
         },
         {
-            "id": "activity_register_data_track",
+            "id": "activity_modal_data_track",
             "title": "Selecione alguma trilha cadastrada do evento. Caso esta atividade não pertença a nenhuma trilha, selecionar nenhuma.",
             "alt": "Caixa de seleção para selecionar uma trilha do evento ao qual esta atvidade pertence."
         },
         {
-            "id": "activity_register_label_track",
+            "id": "activity_modal_label_track",
             "text": "Selecione uma trilha ao qual esta atividade pertença:"
         },
         {
-            "id": "activity_register_label_track-helper",
+            "id": "activity_modal_label_track-helper",
             "text": "Caso a atividade não pertença a nenhuma trilha, selecionar a opção \"Nenhuma\"."
         },
         {
-            "id": "activity_register_label_offering-helper",
+            "id": "activity_modal_label_offering-helper",
             "text": "Caso não houver, deixe em branco."
         },
         {
-            "id": "activity_register_label_offering",
+            "id": "activity_modal_label_offering",
             "text": "Empresa que oferece a atividade:"
         },
         {
-            "id": "activity_register_data_offering",
+            "id": "activity_modal_data_offering",
             "placeholder": "Ex.: Empresa XYZ ou Núcleo de Estudos XYZ",
             "title": "Insira a empresa ou entidade que oferece a presente atividade. Se não houver, deixar em branco.",
             "alt": "Campo de texto para informar a empresa/entidade que oferece a presente ativiade."
         },
         {
-            "id": "activity_register_label_location",
+            "id": "activity_modal_label_location",
             "text": "Localização/Endereço: *"
         },
         {
-            "id": "activity_register_data_location",
+            "id": "activity_modal_data_location",
             "title": "Informe uma localização, referencia ou endereço onde a presente atividade será realizado.",
             "alt": "Caixa de texto para informar a localização, referência ou endereço da presente atividade.",
             "placeholder": "Av. Avenida de Exemplo, 1530, Parque Exemplo, Lavras."
         },
         {
-            "id": "activity_register_label_restriction",
+            "id": "activity_modal_label_restriction",
             "text": "Restrição de público ou faixa etária:"
         },
         {
-            "id": "activity_register_label_restriction-helper",
+            "id": "activity_modal_label_restriction-helper",
             "text": "Se não houver restrição de público ou faixa etária, não preencher."
         },
         {
-            "id": "activity_register_data_restriction",
+            "id": "activity_modal_data_restriction",
             "placeholder": "Ex.: Proíbido menores de 18 anos",
             "title": "Informe se a atividade possui algum tipo de restrição ao público alvo. Caso não haja restrições, não preencher nada.",
             "alt": "Campo de texto para informar possíveis restrições de público para essa atividade."
         },
         {
-            "id": "activity_register_label_geo-location",
+            "id": "activity_modal_label_geo-location",
             "text": "Geo localização:"
         },
         {
-            "id": "activity_register_label_geo-location-helper",
+            "id": "activity_modal_label_geo-location-helper",
             "text": "Componente em manutenção."
         }
     ]

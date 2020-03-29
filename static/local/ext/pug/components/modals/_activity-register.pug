@@ -1,118 +1,118 @@
-.modal.fadeInDown.text-left#activityRegisterModal.lg(sisgepac-modal="activity-register-modal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel34", style="display: none;", aria-hidden="true")
+.modal.fadeInDown.text-left#activityModal.lg(sisgepac-modal="activity-register-modal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel34", style="display: none;", aria-hidden="true")
     .modal-dialog.modal-lg(role="document")
         .modal-content
             .modal-header.bg-danger
-                h3.modal-title.text-white#activity_register_modal_title
+                h3.modal-title.text-white#activity_modal_title
                 button(type="button", class="close", data-dismiss="modal", aria-label="Close")
                 i.la.la-times.text-white(aria-hidden="true")
-            form#dataFormActivity
-                input#activity_register_data_id(type="hidden")
+            form#activity_modal_dataForm
+                input#activity_modal_data_id(type="hidden")
                 .modal-body
                     .bs-callout-primary.callout-border-left.callout-square.p-1.mb-2
-                        strong#activity_register_label_callout-title
-                        p#activity_register_label_callout-text
+                        strong#activity_modal_label_callout-title
+                        p#activity_modal_label_callout-text
                     fieldset.form-group.form-group-style.border-light
-                        label#activity_register_label_title.m-0
-                        input.form-control.input-sm.m-0.p-0#activity_register_data_title(type="text")
+                        label#activity_modal_label_title.m-0
+                        input.form-control.input-sm.m-0.p-0#activity_modal_data_title(type="text")
                         p.text-left
-                            small.text-muted#activity_register_label_helper-title
+                            small.text-muted#activity_modal_label_helper-title
 
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_description
-                        textarea.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_description(type="text", rows="3")
+                        label.m-0#activity_modal_label_description
+                        textarea.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_description(type="text", rows="3")
                         p.text-left
-                            small.text-muted#activity_register_label_helper-description
+                            small.text-muted#activity_modal_label_helper-description
 
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_responsible
-                        select.form-control.input-sm.m-0.p-0#activity_register_data_responsible
+                        label.m-0#activity_modal_label_responsible
+                        select.form-control.input-sm.m-0.p-0#activity_modal_data_responsible
                             option(value="default" selected) - SELECIONE -
 
                     .row 
                         .col-md-6
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_startDate
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_startDate(type="date")
+                                label.m-0#activity_modal_label_startDate
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_startDate(type="date")
                         
                         .col-md-6
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_endDate
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_endDate(type="date")
+                                label.m-0#activity_modal_label_endDate
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_endDate(type="date")
                     
                     .row 
                         .col-md-6
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_startTime
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_startTime(type="time")
+                                label.m-0#activity_modal_label_startTime
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_startTime(type="time")
                         
                         .col-md-6
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_endTime
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_endTime(type="time")
+                                label.m-0#activity_modal_label_endTime
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_endTime(type="time")
                     
                     .row 
                         .col-md-4
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_vacancies
+                                label.m-0#activity_modal_label_vacancies
                                 .input-group.input-group-sm.bootstrap-touchspin
                                     span.input-group-btn-sm.input-group-prepend.bootstrap-touchspin-injected
                                         button.btn.btn-danger.bootstrap-touchspin-down(type="button")
                                             i.font-small-3.la.la-plus
-                                    input.touchspin.form-control.mt-1.input-sm#activity_register_data_vacancies(type="text", value="50")
+                                    input.touchspin.form-control.mt-1.input-sm#activity_modal_data_vacancies(type="text", value="50")
                                     span.input-group-btn-sm.input-group-append.bootstrap-touchspin-injected
                                         button.btn.btn-danger.bootstrap-touchspin-up(type="button")
                                             i.font-small-3.la.la-minus
                                 p.text-left
-                                    small.text-muted#activity_register_label_vacancies-helper
+                                    small.text-muted#activity_modal_label_vacancies-helper
                         
                         .col-md-8
                             fieldset.form-group.form-group-style.border-light
-                                label.m-0#activity_register_label_price
-                                input.form-control.input-sm.m-0.p-0.mt-1#activity_register_data_price(type="number")
+                                label.m-0#activity_modal_label_price
+                                input.form-control.input-sm.m-0.p-0.mt-1#activity_modal_data_price(type="number")
                                 p.text-left
-                                    small.text-muted#activity_register_label_price-helper
+                                    small.text-muted#activity_modal_label_price-helper
 
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_track
-                        select.form-control.input-sm.m-0.p-0#activity_register_data_track
+                        label.m-0#activity_modal_label_track
+                        select.form-control.input-sm.m-0.p-0#activity_modal_data_track
                             option(value="default" selected) - SELECIONE -
                         p.text-left
-                            small.text-muted#activity_register_label_track-helper
+                            small.text-muted#activity_modal_label_track-helper
                             
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_offering
-                        input.form-control.input-sm.m-0.p-0#activity_register_data_offering(type="text")
+                        label.m-0#activity_modal_label_offering
+                        input.form-control.input-sm.m-0.p-0#activity_modal_data_offering(type="text")
                         p.text-left
-                            small.text-muted#activity_register_label_offering-helper
+                            small.text-muted#activity_modal_label_offering-helper
 
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_location
-                        input.form-control.input-sm.m-0.p-0#activity_register_data_location(type="text")
+                        label.m-0#activity_modal_label_location
+                        input.form-control.input-sm.m-0.p-0#activity_modal_data_location(type="text")
                         p.text-left
-                            small.text-muted#activity_register_label_location-helper
+                            small.text-muted#activity_modal_label_location-helper
                     
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_geo-location
-                        //input.form-control.input-sm.m-0.p-0#activity_register_data_geo-location(type="text")
+                        label.m-0#activity_modal_label_geo-location
+                        //input.form-control.input-sm.m-0.p-0#activity_modal_data_geo-location(type="text")
                         p.text-left
-                            small.text-muted#activity_register_label_geo-location-helper
+                            small.text-muted#activity_modal_label_geo-location-helper
 
                     fieldset.form-group.form-group-style.border-light
-                        label.m-0#activity_register_label_restriction
-                        input.form-control.input-sm.m-0.p-0#activity_register_data_restriction(type="text")
+                        label.m-0#activity_modal_label_restriction
+                        input.form-control.input-sm.m-0.p-0#activity_modal_data_restriction(type="text")
                         p.text-left
-                            small.text-muted#activity_register_label_restriction-helper
+                            small.text-muted#activity_modal_label_restriction-helper
 
                     fieldset.form-group.form-group-style.border-light
-                        label#activity_register_label_avatar.m-0
+                        label#activity_modal_label_avatar.m-0
                         .custom-file
-                            input.custom-file-input.input-sm.m-0.p-0#activity_register_data_avatar(name="upavatar",type="file")
-                            label.custom-file-label.input-sm.m-0.p-0#activity_register_label_avatar2(for="activity_register_data_avatar" , aria-describedby="activity_register_data_avatar")
+                            input.custom-file-input.input-sm.m-0.p-0#activity_modal_data_avatar(name="upavatar",type="file")
+                            label.custom-file-label.input-sm.m-0.p-0#activity_modal_label_avatar2(for="activity_modal_data_avatar" , aria-describedby="activity_modal_data_avatar")
 
                 .modal-footer
                     //input.btn.btn-outline-secondary.btn-lg(type="reset", data-dismiss="modal", value="cancelar")
-                    button.btn.btn-outline-success#activity_register_button_create.d-none(type="button")
-                    button.btn.btn-outline-success#activity_register_button_update.d-none(type="button")
+                    button.btn.btn-outline-success#activity_modal_button_create.d-none(type="button")
+                    button.btn.btn-outline-success#activity_modal_button_update.d-none(type="button")
 //- script(src="/local/ext/app-assets/js/scripts/ui/breadcrumbs-with-stats.min.js")
 //- script(src="/local/ext/app-assets/js/scripts/forms/custom-file-input.min.js")
 //- script(src="/local/ext/app-assets/vendors/js/forms/tags/form-field.js")

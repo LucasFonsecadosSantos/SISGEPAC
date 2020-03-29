@@ -2,187 +2,187 @@
     "pt-BR": [
 
         {
-            "id": "speaker_register_label_title",
+            "id": "speaker_modal_label_title",
             "text": "Registrar novo palestrante ao evento"
         },
         {
-            "id": "speaker_register_label_name",
+            "id": "speaker_modal_label_name",
             "text": "Nome Completo:"
         },
         {
-            "id": "speaker_register_data_name",
+            "id": "speaker_modal_data_name",
             "placeholder": "Ex.: João da Silva",
             "maxlength": 35,
             "alt": "Campo de texto para inserir nome completo do palestrante.",
             "title": "Insira aqui o nome completo do palestrante. Ex.: João da Silva. Este nome será exibido no site."
         },
         {
-            "id": "speaker_register_label_jobInstitute",
+            "id": "speaker_modal_label_jobInstitute",
             "text": "Profissão ou Instituição do Palestrante:"
         },
         {
-            "id": "speaker_register_data_jobInstitute",
+            "id": "speaker_modal_data_jobInstitute",
             "placeholder": "Ex.: Pesquisador na Universidade XYZ",
             "maxlength": 50,
             "title": "Insira uma profissão ou instituição que o palestrante representa. Essa informação será exibida no site.",
             "alt": "Campo de texto para inserir a profissão ou instituição do palestrante."
         },
         {
-            "id": "speaker_register_label_description",
+            "id": "speaker_modal_label_description",
             "text": "Breve descrição sobre o palestrante:"
         },
         {
-            "id": "speaker_register_data_description",
+            "id": "speaker_modal_data_description",
             "placeholder": "Ex.: Realiza pesquisas na área de desenvolvimento científico XYZ, ...",
             "alt": "Campo de texto para inserir uma breve descrição sobre o palestrante. Essa informação será exibida na página.",
             "maxlength": 90,
             "title": "Insira uma breve descrição sobre o palestrante. Essa informação será exibida na página."
         },
         {
-            "id": "speaker_register_label_socialNetworks",
+            "id": "speaker_modal_label_socialNetworks",
             "text": "Links de Redes Sociais: (Caso não queira apresentar na página ou não possui, deixar em branco)"
         },
         {
-            "id": "speaker_register_data_socialNetworks-facebook",
+            "id": "speaker_modal_data_socialNetworks-facebook",
             "placeholder": "Ex.: https://www.facebook.com/nome-palestrante",
             "title": "Insira aqui o link do facebook do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do facebook."
         },
         {
-            "id": "speaker_register_label_socialNetworks-facebook",
+            "id": "speaker_modal_label_socialNetworks-facebook",
             "text": "facebook:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-twitter",
+            "id": "speaker_modal_data_socialNetworks-twitter",
             "placeholder": "Ex.: https://www.twitter.com/nome-palestrante",
             "title": "Insira aqui o link do twitter do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do twitter."
         },
         {
-            "id": "speaker_register_label_socialNetworks-twitter",
+            "id": "speaker_modal_label_socialNetworks-twitter",
             "text": "twitter:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-lattes",
+            "id": "speaker_modal_data_socialNetworks-lattes",
             "placeholder": "Ex.: https://www.lattes.br/nome-palestrante",
             "title": "Insira aqui o link do lattes do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do lattes."
         },
         {
-            "id": "speaker_register_label_socialNetworks-lattes",
+            "id": "speaker_modal_label_socialNetworks-lattes",
             "text": "lattes:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-github",
+            "id": "speaker_modal_data_socialNetworks-github",
             "placeholder": "Ex.: https://www.github.com/nome-palestrante",
             "title": "Insira aqui o link do github do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do github."
         },
         {
-            "id": "speaker_register_label_socialNetworks-github",
+            "id": "speaker_modal_label_socialNetworks-github",
             "text": "github:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-youtube",
+            "id": "speaker_modal_data_socialNetworks-youtube",
             "placeholder": "Ex.: https://www.youtube.com/nome-palestrante",
             "title": "Insira aqui o link do youtube do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do youtube."
         },
         {
-            "id": "speaker_register_label_socialNetworks-youtube",
+            "id": "speaker_modal_label_socialNetworks-youtube",
             "text": "youtube:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-spotify",
+            "id": "speaker_modal_data_socialNetworks-spotify",
             "placeholder": "Ex.: https://www.spotify.com/nome-palestrante",
             "title": "Insira aqui o link do spotify do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do spotify."
         },
         {
-            "id": "speaker_register_label_socialNetworks-spotify",
+            "id": "speaker_modal_label_socialNetworks-spotify",
             "text": "spotify:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-behance",
+            "id": "speaker_modal_data_socialNetworks-behance",
             "placeholder": "Ex.: https://www.behance.com/nome-palestrante",
             "title": "Insira aqui o link do behance do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do behance."
         },
         {
-            "id": "speaker_register_label_socialNetworks-behance",
+            "id": "speaker_modal_label_socialNetworks-behance",
             "text": "behance:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-skype",
+            "id": "speaker_modal_data_socialNetworks-skype",
             "placeholder": "Ex.: nome.palestrante",
             "title": "Insira aqui o link do skype do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do skype."
         },
         {
-            "id": "speaker_register_label_socialNetworks-skype",
+            "id": "speaker_modal_label_socialNetworks-skype",
             "text": "skype:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-linkedin",
+            "id": "speaker_modal_data_socialNetworks-linkedin",
             "placeholder": "https://www.linkedin.com/nome-palestrante",
             "title": "Insira aqui o link do linkedin do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do linkedin."
         },
         {
-            "id": "speaker_register_label_socialNetworks-linkedin",
+            "id": "speaker_modal_label_socialNetworks-linkedin",
             "text": "linkedin:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-pinterest",
+            "id": "speaker_modal_data_socialNetworks-pinterest",
             "placeholder": "Ex.: https://www.pinterest.com/nome-palestrante",
             "title": "Insira aqui o link do pinterest do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do pinterest."
         },
         {
-            "id": "speaker_register_label_socialNetworks-pinterest",
+            "id": "speaker_modal_label_socialNetworks-pinterest",
             "text": "pinterest:"
         },
         {
-            "id": "speaker_register_data_socialNetworks-blog",
+            "id": "speaker_modal_data_socialNetworks-blog",
             "placeholder": "Ex.: https://www.nome-palestrante.wordpress.com/",
             "title": "Insira aqui o link do blog do palestrante. CASO NÃO QUEIRA EXIBIR ESSA INFORMAÇÃO OU O PALESTRANTE NÃO POSSUA, DEIXAR EM BRANCO.",
             "alt": "Caixa de texto para inserir o link do perfil do blog."
         },
         {
-            "id": "speaker_register_label_socialNetworks-blog",
+            "id": "speaker_modal_label_socialNetworks-blog",
             "text": "blog:"
         },
         {
-            "id": "speaker_register_label_email",
+            "id": "speaker_modal_label_email",
             "text": "E-Mail: (Deixar em branco caso não queira exibir na página ou não exista.)"
         },
         {
-            "id": "speaker_register_data_email",
+            "id": "speaker_modal_data_email",
             "placeholder": "Ex.: palestrante@email.com.br",
             "alt": "Campo para inserir o endereço de email do palestrante.",
             "title": "Insira aqui o endereço de e-mail do palestrante. Essa informação será exibida na página. Caso não queira exibi-la ou não exista e-mail, deixar em branco."
         },
         {
-            "id": "speaker_register_label_avatar",
+            "id": "speaker_modal_label_avatar",
             "text": "Selecione uma fotografia:"
         },
         {
-            "id": "speaker_register_label_avatar2",
+            "id": "speaker_modal_label_avatar2",
             "text": "- clique para selecionar -"
         },
         {
-            "id": "speaker_register_data_avatar",
+            "id": "speaker_modal_data_avatar",
             "title": "Clique aqui e selecione uma foto do palestrante.",
             "alt": "Campo para selecionar uma fotografia do palestrante."
         },
         {
-            "id": "speaker_register_button_create",
+            "id": "speaker_modal_button_create",
             "title": "Clique para adicionar este palestrante ao evento.",
             "alt": "Botão para adicionar o palestrante.",
             "text": "Adicionar"
         },
         {
-            "id": "speaker_register_button_update",
+            "id": "speaker_modal_button_update",
             "title": "Clique para adicionar este palestrante ao evento.",
             "alt": "Botão para adicionar o palestrante.",
             "text": "Atualizar"

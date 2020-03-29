@@ -26,7 +26,7 @@ export var DataEntity;
     DataEntity["_CHANGELOG_"] = "changelog";
     DataEntity["_DASHBOARD_MESSAGES_"] = "dashboard";
     DataEntity["_DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_"] = "dashboard-event-settings-modal";
-    DataEntity["_SPEAKER_REGISTER_MODAL_MESSAGES_"] = "speaker-register-modal";
+    DataEntity["_SPEAKER_MODAL_MESSAGES_"] = "speaker-modal";
     DataEntity["_NAVBAR_MESSAGES_"] = "navbar";
     DataEntity["_SPEAKER_MESSAGES_"] = "spekaers";
     DataEntity["_SPONSORSHIP_MODAL_MESSAGES_"] = "sponsorship";
@@ -40,7 +40,7 @@ export var DataEntity;
     DataEntity["_FOOTER_MESSAGES_"] = "footer";
     DataEntity["_VIDEO_GALLERY_MESSAGES_"] = "video_gallery";
     DataEntity["_PHOTO_GALLERY_MESSAGES_"] = "photo_gallery";
-    DataEntity["_ACTIVITY_REGISTER_MODAL_MESSAGES_"] = "activity-register-modal";
+    DataEntity["_ACTIVITY_MODAL_MESSAGES_"] = "activity-modal";
     DataEntity["_TRACK_"] = "track";
     DataEntity["_TRACK_MODAL_SETTINGS_"] = "track";
 })(DataEntity || (DataEntity = {}));
@@ -85,8 +85,8 @@ Config.REMOTE_CONF_FILES_PATH = new Map([
 Config.LOCAL_CONF_FILES_PATH = new Map([
     [DataEntity._CHANGELOG_, "/local/data/conf/changelog.json"],
     [DataEntity._DASHBOARD_EVENT_SETTINGS_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard-event-settings-modal.json"],
-    [DataEntity._ACTIVITY_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "activity-register-modal.json"],
-    [DataEntity._SPEAKER_REGISTER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speaker-register-modal.json"],
+    [DataEntity._ACTIVITY_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "activity-modal.json"],
+    [DataEntity._SPEAKER_MODAL_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speaker-modal.json"],
     [DataEntity._DASHBOARD_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "dashboard.json"],
     [DataEntity._NAVBAR_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "navbar.json"],
     [DataEntity._SPEAKER_MESSAGES_, Config.LOCAL_MESSAGES_PATH + "speakers.json"],

@@ -1,4 +1,4 @@
-import { Monitor }                          from './../util/Monitor.js';
+//import { Monitor }                          from './../util/Monitor.js';
 import { EventSettingsController }          from './../app/controller/EventSettingsController.js';
 import { DashboardController }              from './../app/controller/DashboardController.js';
 import { ChangelogController }              from './../app/controller/ChangelogController.js';
@@ -7,8 +7,8 @@ import { FooterController }                 from './../app/controller/FooterCont
 import { NavbarController }                 from './../app/controller/NavbarController.js';
 import { SystemController }                 from './../app/controller/SystemController.js';
 import { EventSettingsModalController }     from './../app/controller/EventSettingsModalController.js';
-import { SpeakerRegisterModalController}    from './../app/controller/SpeakerRegisterModalController.js';
-import { ActivityRegisterModalController }  from './../app/controller/ActivityRegisterModalController.js';
+import { SpeakerModalController}    from './../app/controller/SpeakerModalController.js';
+import { ActivityModalController }  from './../app/controller/ActivityModalController.js';
 import { SponsorshipPlanModalController }  from './../app/controller/SponsorshipPlanModalController.js';
 
 import { Routes } from './../conf/Routes.js';
@@ -31,13 +31,13 @@ export class Sisgepac {
 
             ['DashboardController',             DashboardController],
             ['ChangelogController',             ChangelogController],
-            ['SpeakerRegisterModalController',  SpeakerRegisterModalController],
-            ['ActivityRegisterModalController', ActivityRegisterModalController],
+            ['SpeakerModalController',          SpeakerModalController],
+            ['ActivityModalController',         ActivityModalController],
             ['SponsorshipPlanModalController',  SponsorshipPlanModalController]
 
         ]);
         
-        new Monitor();
+        //new Monitor();
         new HeaderController();
         new NavbarController();
         new FooterController();
@@ -115,11 +115,11 @@ export class Sisgepac {
                     break;
                 
                 case 'speaker-register-modal':
-                    new SpeakerRegisterModalController();
+                    new SpeakerModalController();
                     break;
                 
                 case 'activity-register-modal':
-                    new ActivityRegisterModalController();
+                    new ActivityModalController();
                     break;
                 
                 case 'sponsorship-plan-modal':
