@@ -9,30 +9,31 @@ import { ActivityModel }        from './../model/ActivityModel.js';
 import { LanguageModel }        from './../model/LanguageModel.js';
 import { DashboardElements }    from './../elements/DashboardElements.js';
 import { TrackModel }           from './../model/TrackModel.js';
+import { SponsorshipPlanModel } from './../model/SponsorshipPlanModel.js';
 
 export class DashboardController extends Controller {
 
-    private _elements:          Map<string, HTMLElement>;
-    private _speakerModel:      SpeakerModel;
-    private _eventModel:        EventModel;
-    private _activityModel:     ActivityModel;
-    private _messagesModel:     MessageModel;
-    private _trackModel:        TrackModel;
-    private _languageModel:     LanguageModel;
+    private _speakerModel:          SpeakerModel;
+    private _eventModel:            EventModel;
+    private _activityModel:         ActivityModel;
+    private _messagesModel:         MessageModel;
+    private _trackModel:            TrackModel;
+    private _languageModel:         LanguageModel;
+    private _sponsorshipPlanModel:  SponsorshipPlanModel;
 
     constructor(interfacePage?: boolean) {
 
         super();
-        this._messagesModel = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
-        this._eventModel    = new EventModel();
-        this._languageModel = new LanguageModel();
-        this._speakerModel  = new SpeakerModel();
-        this._activityModel = new ActivityModel();
-        this._trackModel    = new TrackModel();
+        this._messagesModel         = new MessageModel(DataEntity._DASHBOARD_MESSAGES_);
+        this._eventModel            = new EventModel();
+        this._languageModel         = new LanguageModel();
+        this._speakerModel          = new SpeakerModel();
+        this._activityModel         = new ActivityModel();
+        this._trackModel            = new TrackModel();
+        this._sponsorshipPlanModel  = new SponsorshipPlanModel();
 
         if (interfacePage) {
          
-            this._elements = DashboardElements.ELEMENTS;
             this._getPageMessages();
             
             //TODO HERE
@@ -62,13 +63,11 @@ export class DashboardController extends Controller {
 
         messagesData.then(data => {
 
-            let elementKey: string;
-
             data['pt-BR'].forEach(message => {
 
                 Object.keys(message).forEach(key => {
 
-                    MessageBuilder.buildMessage(this._elements.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
+                    MessageBuilder.buildMessage(DashboardElements.ELEMENTS.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
                     
                 });
                 
@@ -250,7 +249,7 @@ export class DashboardController extends Controller {
 
                         fragment.appendChild(tdElement);
                         trElement.appendChild(fragment)
-                        this._elements.get('speakerTable').appendChild(trElement);
+                        DashboardElements.ELEMENTS.get('speakerTable').appendChild(trElement);
 
                     });
 
@@ -267,7 +266,7 @@ export class DashboardController extends Controller {
                     tdElement.appendChild(pElement);
                     fragment.appendChild(tdElement);
                     trElement.appendChild(fragment)
-                    this._elements.get('speakerTable').appendChild(trElement);
+                    DashboardElements.ELEMENTS.get('speakerTable').appendChild(trElement);
 
                 }
 
@@ -448,7 +447,7 @@ export class DashboardController extends Controller {
 
                     fragment.appendChild(tdElement);
                     trElement.appendChild(fragment)
-                    this._elements.get('activityTable').appendChild(trElement);
+                    DashboardElements.ELEMENTS.get('activityTable').appendChild(trElement);
 
                 });
 
@@ -465,7 +464,7 @@ export class DashboardController extends Controller {
                 tdElement.appendChild(pElement);
                 fragment.appendChild(tdElement);
                 trElement.appendChild(fragment)
-                this._elements.get('activityTable').appendChild(trElement);
+                DashboardElements.ELEMENTS.get('activityTable').appendChild(trElement);
 
             }
 
@@ -484,6 +483,144 @@ export class DashboardController extends Controller {
     }
 
     private _populateCard07(): void {
+
+        let sponsorshipPlanData = this._sponsorshipPlanModel.all();
+        
+        sponsorshipPlanData
+            
+            .then(data => {
+
+                var fragment = document.createDocumentFragment();
+                var trFragment = document.createDocumentFragment();
+
+                if (data.length > 0) {
+            
+                    data.forEach(sponsorshipPlan => {
+
+                        let trElement = document.createElement('TR');
+                        let tdElement = document.createElement('TD');
+                        let spanElement = document.createElement('SPAN');
+                        let imgElement = document.createElement('IMG');
+
+                        tdElement.style.width = "20%";
+                        tdElement.className = 'text-center';
+                        spanElement.classList.add('avatar','avatar-busy');
+                        imgElement.setAttribute('src', "/remote/data/uploads/images/profile/" + sponsorshipPlan['avatar']);
+                        imgElement.setAttribute('alt', sponsorshipPlan['name']);
+                        imgElement.setAttribute('title', sponsorshipPlan['name']);
+                        imgElement.setAttribute('data-toogle', 'tooltip');
+                        imgElement.setAttribute('data-placement', 'right');
+                            
+                        
+                        spanElement.appendChild(imgElement);
+                        tdElement.appendChild(spanElement);
+                        fragment.appendChild(tdElement);
+
+                        //cell 02
+                        tdElement = document.createElement('TD');
+                        tdElement.style.width = "60%";
+                        let aElement = document.createElement('A');
+                        aElement.className = "text-bold-600";
+                        aElement.textContent = sponsorshipPlan['name'];
+                        let pElement = document.createElement('P');
+                        pElement.classList.add('text-muted','font-small-3');
+                        pElement.textContent = sponsorshipPlan['description'];
+                        tdElement.appendChild(aElement);
+                        tdElement.appendChild(pElement);
+                        pElement.style.wordBreak = "break-all";
+                        pElement.style.wordWrap = "break-word";
+                        pElement.style.whiteSpace = "normal";
+                        fragment.appendChild(tdElement);
+
+                        //cell03
+                        tdElement = document.createElement('TD');
+                        tdElement.style.width = "20%";
+                        pElement = document.createElement('P');
+                        pElement.classList.add('text-muted');
+                        pElement.textContent = "R$ " + sponsorshipPlan['price'];
+                        tdElement.appendChild(pElement);
+                        fragment.appendChild(tdElement);
+
+
+                        //cell04
+                        tdElement = document.createElement('TD');
+                        tdElement.style.width = "10%";
+                        tdElement.className = 'text-center';
+                        let btnGroup = document.createElement('DIV');
+                        btnGroup.className = 'btn-group';
+                        btnGroup.setAttribute('role', 'group');
+                        let buttonElement = document.createElement('BUTTON');
+                        buttonElement.classList.add('btn','btn-icon','btn-secondary','btn-sm');
+                        buttonElement.setAttribute('type','button');
+                        buttonElement.setAttribute('data-toogle','tooltip');
+                        buttonElement.setAttribute('data-popup','tooltip-custom');
+                        buttonElement.setAttribute('data-original-title','Editar cadastro do plano ' + sponsorshipPlan['name']);
+                        let iElement = document.createElement('I');
+                        iElement.classList.add('la','la-edit');
+                        buttonElement.appendChild(iElement);
+
+                        buttonElement.addEventListener('click', event => {
+
+                            location.hash = 'planopatrocinio/' + sponsorshipPlan['id'] + '/editar';
+
+                        });
+                        btnGroup.appendChild(buttonElement);
+                        
+                        buttonElement = document.createElement('BUTTON');
+                        buttonElement.classList.add('btn','btn-icon','btn-secondary','btn-sm');
+                        buttonElement.setAttribute('type','button');
+                        buttonElement.setAttribute('data-toogle','tooltip');
+                        buttonElement.setAttribute('data-popup','tooltip-custom');
+                        buttonElement.setAttribute('data-original-title','Visualizar cadastro do plano ' + sponsorshipPlan['name']);
+                        iElement = document.createElement('I');
+                        iElement.classList.add('la','la-eye');
+                        buttonElement.appendChild(iElement);
+                        btnGroup.appendChild(buttonElement);
+
+                        buttonElement = document.createElement('BUTTON');
+                        buttonElement.classList.add('btn','btn-icon','btn-red','btn-sm');
+                        buttonElement.setAttribute('type','button');
+                        buttonElement.setAttribute('data-toogle','tooltip');
+                        buttonElement.setAttribute('data-popup','tooltip-custom');
+                        buttonElement.setAttribute('data-original-title','Remover plano ' + sponsorshipPlan['name']);
+                        iElement = document.createElement('I');
+                        iElement.classList.add('la','la-trash');
+                        buttonElement.appendChild(iElement);
+                        buttonElement.addEventListener('click', event => {
+
+                            location.hash = 'planopatrocinio/' + sponsorshipPlan['id'] + '/remover';
+
+                        });
+                        btnGroup.appendChild(buttonElement);
+                        tdElement.appendChild(btnGroup);
+
+
+                        fragment.appendChild(tdElement);
+                        trElement.appendChild(fragment)
+                        DashboardElements.ELEMENTS.get('sponsorshipPlanTable').appendChild(trElement);
+
+                    });
+
+                } else {
+
+                    let trElement = document.createElement('TR');
+                    let tdElement = document.createElement('TD');
+                    let pElement  = document.createElement('P');
+                    tdElement.setAttribute('colspan', '5');
+                    tdElement.className = "text-center";
+                    pElement.className = "text-muted";
+                    pElement.textContent = "Nenhum plano foi registrado até o momento.";
+
+                    tdElement.appendChild(pElement);
+                    fragment.appendChild(tdElement);
+                    trElement.appendChild(fragment)
+                    DashboardElements.ELEMENTS.get('sponsorshipPlanTable').appendChild(trElement);
+
+                }
+
+            })
+
+            .catch(error => Logger.log("Dashboard controller sponsorship plan data error: " + error));
 
         DashboardElements.ELEMENTS.get('card07_button_create-sponsorshipplan').addEventListener('click', event => {
 

@@ -75,6 +75,7 @@ DashboardElements.ELEMENTS = new Map([
     ['card07_button_create-sponsorshipplan', document.querySelector('#card07_button_create-sponsorshipplan')],
     ['card07_button_delete-sponsorshipplan', document.querySelector('#card07_button_delete-sponsorshipplan')],
     ['card07_button_search-sponsorshipplan', document.querySelector('#card07_button_search-sponsorshipplan')],
+    ['sponsorshipPlanTable', document.querySelector('#sponsorshipPlanTable')],
     // //Card08
     ['card08_label_title', document.querySelector('#card08_label_title')],
     ['card08_table_label_column01', document.querySelector('#card08_table_label_column01')],

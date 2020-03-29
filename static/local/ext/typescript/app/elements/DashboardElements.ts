@@ -83,6 +83,7 @@ export class DashboardElements {
         ['card07_button_create-sponsorshipplan',        document.querySelector('#card07_button_create-sponsorshipplan')],
         ['card07_button_delete-sponsorshipplan',        document.querySelector('#card07_button_delete-sponsorshipplan')],
         ['card07_button_search-sponsorshipplan',        document.querySelector('#card07_button_search-sponsorshipplan')],
+        ['sponsorshipPlanTable',                        document.querySelector('#sponsorshipPlanTable')],
 
         // //Card08
         ['card08_label_title',                  document.querySelector('#card08_label_title')],

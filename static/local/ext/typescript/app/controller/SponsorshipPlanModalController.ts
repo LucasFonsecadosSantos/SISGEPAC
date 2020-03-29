@@ -194,10 +194,10 @@ export class SponsorshipPlanModalController extends Controller {
 
     private _populate(sponsorshipPlan: Object): void {
 
-        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_title')         as HTMLInputElement).value      = sponsorshipPlan['title'];
-        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id')            as HTMLInputElement).value      = sponsorshipPlan['id'];
-        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price')         as HTMLSelectElement).value     = sponsorshipPlan['price'];
-        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description')   as HTMLSelectElement).value     = sponsorshipPlan['description'];
+        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_name')           as HTMLInputElement).value      = sponsorshipPlan['name'];
+        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_id')             as HTMLInputElement).value      = sponsorshipPlan['id'];
+        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_price')          as HTMLSelectElement).value     = sponsorshipPlan['price'];
+        (SponsorshipPlanModalElements.ELEMENTS.get('sponsorshipplan_modal_data_description')    as HTMLSelectElement).value     = sponsorshipPlan['description'];
 
     }
 
