@@ -68,6 +68,7 @@ export class DashboardElements {
         ['card06_table_label_column02',         document.querySelector('#card06_table_label_column02')],
         ['card06_table_label_column03',         document.querySelector('#card06_table_label_column03')],
         ['card06_table_label_column04',         document.querySelector('#card06_table_label_column04')],
+        ['card06_table_label_column05',         document.querySelector('#card06_table_label_column05')],
         ['activityTable',                       document.querySelector('#activityTable')],
 
         // //Card 07

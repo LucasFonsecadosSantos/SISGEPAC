@@ -138,7 +138,11 @@
         },
         {
             "id": "card06_table_label_column04",
-            "text": "Tipo"
+            "text": "Tipo/Trilha"
+        },
+        {
+            "id": "card06_table_label_column05",
+            "text": "Ações"
         },
         {
             "id": "card07_label_title",

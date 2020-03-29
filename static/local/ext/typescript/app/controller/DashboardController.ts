@@ -8,6 +8,7 @@ import { SpeakerModel }         from './../model/SpeakerModel.js';
 import { ActivityModel }        from './../model/ActivityModel.js';
 import { LanguageModel }        from './../model/LanguageModel.js';
 import { DashboardElements }    from './../elements/DashboardElements.js';
+import { TrackModel }           from './../model/TrackModel.js';
 
 export class DashboardController extends Controller {
 
@@ -16,6 +17,7 @@ export class DashboardController extends Controller {
     private _eventModel:        EventModel;
     private _activityModel:     ActivityModel;
     private _messagesModel:     MessageModel;
+    private _trackModel:        TrackModel;
     // private _proceedingsModel:  ProceedingsModel;
     // private _proceedingsData;
     // private _organizerModel:    OrganizerModel;
@@ -30,6 +32,7 @@ export class DashboardController extends Controller {
         this._languageModel = new LanguageModel();
         this._speakerModel  = new SpeakerModel();
         this._activityModel = new ActivityModel();
+        this._trackModel    = new TrackModel();
 
         if (interfacePage) {
          
@@ -308,51 +311,97 @@ export class DashboardController extends Controller {
                     let tdElement = document.createElement('TD');
                     let spanElement = document.createElement('SPAN');
                     let imgElement = document.createElement('IMG');
+                    let linkElement = document.createElement('A');
 
                     let responsible = this._speakerModel.filter('id', activity['responsible_id']);
+                    tdElement.style.width = "10%";
                     tdElement.className = 'text-center';
                     spanElement.classList.add('avatar','avatar-busy');
                     responsible.then(speaker => {
 
                         imgElement.setAttribute('src', "/remote/data/uploads/images/profile/" + speaker[0]['avatar']);
+                        imgElement.setAttribute('alt', activity['title']);
+                        imgElement.setAttribute('title', activity['title']);
+                        imgElement.setAttribute('data-toogle', 'tooltip');
+                        imgElement.setAttribute('data-placement', 'right');
+                        linkElement.className = 'text-bold-600';
+                        linkElement.textContent = speaker[0]['name'];
+                        linkElement.addEventListener('click', event => {
+
+                            location.hash = 'palestrante/' + speaker[0]['id'] + '/editar';
+
+                        });
 
                     });
                     
-                    imgElement.setAttribute('alt', activity['title']);
-                    imgElement.setAttribute('title', activity['title']);
-                    imgElement.setAttribute('data-toogle', 'tooltip');
-                    imgElement.setAttribute('data-placement', 'right');
-                    
                     spanElement.appendChild(imgElement);
                     tdElement.appendChild(spanElement);
+                    tdElement.appendChild(document.createElement('BR'));
+                    tdElement.appendChild(linkElement);
                     fragment.appendChild(tdElement);
 
                     //cell 02
                     tdElement = document.createElement('TD');
+                    tdElement.style.width = "60%";
                     let aElement = document.createElement('A');
                     aElement.className = "text-bold-600";
                     aElement.textContent = activity['title'];
                     let pElement = document.createElement('P');
-                    pElement.className = 'text-muted';
-                    pElement.textContent = activity['title'];
+                    pElement.classList.add('text-muted','font-small-3');
+                    pElement.textContent = activity['description'];
                     tdElement.appendChild(aElement);
                     tdElement.appendChild(pElement);
-                    pElement = document.createElement('P');
-                    pElement.className = 'text-muted';
-                    pElement.textContent = activity['description'];
-                    tdElement.appendChild(pElement);
+                    pElement.style.wordBreak = "break-all";
+                    pElement.style.wordWrap = "break-word";
+                    pElement.style.whiteSpace = "normal";
                     fragment.appendChild(tdElement);
 
                     //cell03
                     tdElement = document.createElement('TD');
-                    tdElement.classList.add('text-truncate','p-1');
-                    let ulElement = document.createElement('UL');
-                    //TODO IMPLEMENTAR ATIVIDADES
-                    tdElement.appendChild(ulElement);
+                    tdElement.style.width = "10%";
+                    pElement = document.createElement('P');
+                    pElement.classList.add('text-muted','success', 'font-small-3');
+                    pElement.textContent = activity['start_date'] + " - " + activity['start_time'];
+                    tdElement.appendChild(pElement);
+                    pElement = document.createElement('P');
+                    pElement.classList.add('text-muted','danger','font-small-3');
+                    pElement.textContent = activity['end_date'] + " - " + activity['end_time'];
+                    tdElement.appendChild(pElement);
                     fragment.appendChild(tdElement);
 
-                    //cell04
+                    //cell 04
                     tdElement = document.createElement('TD');
+                    tdElement.style.width = "10%";
+                    let badgeElement;
+                    let track = this._trackModel.filter('id', activity['track_id']);
+                    pElement = document.createElement('P');
+                    
+                    track.then(fetched => {
+
+                        if ((fetched !== undefined) && ((fetched as Array<Object>).length > 0)) {
+                            
+                            (fetched as Array<Object>).forEach(track => {
+
+                                badgeElement = document.createElement('DIV');
+                                badgeElement.classList.add('badge','border-left-danger','badge-striped');
+                                badgeElement.textContent = track['name'];
+                                tdElement.appendChild(badgeElement);
+                            });
+
+                        } else {
+
+                            pElement.textContent = "Nenhum";
+                            
+                        }
+
+                    });
+                    tdElement.appendChild(pElement);
+                    fragment.appendChild(tdElement);
+
+
+                    //cell05
+                    tdElement = document.createElement('TD');
+                    tdElement.style.width = "10%";
                     tdElement.className = 'text-center';
                     let btnGroup = document.createElement('DIV');
                     btnGroup.className = 'btn-group';
@@ -414,7 +463,7 @@ export class DashboardController extends Controller {
                 let trElement = document.createElement('TR');
                 let tdElement = document.createElement('TD');
                 let pElement  = document.createElement('P');
-                tdElement.setAttribute('colspan', '4');
+                tdElement.setAttribute('colspan', '5');
                 tdElement.className = "text-center";
                 pElement.className = "text-muted";
                 pElement.textContent = "Nenhum palestrante foi registrado até o momento.";
