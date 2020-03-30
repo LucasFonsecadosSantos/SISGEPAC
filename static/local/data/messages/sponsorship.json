@@ -99,6 +99,90 @@
             "id": "sponsorship_modal_data_sponsorship-plan-id",
             "alt": "Caixa de selecao para selecionar um plano de patrocinio para o presente patrocinador.",
             "title": "Clique e selecione um plano de patrocinio para o patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-networks",
+            "text": "Redes sociais: (Se nao houver, deixar em branco)"
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-facebook",
+            "text": "facebook"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-facebook",
+            "placeholder": "Ex.: facebook.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do facebook para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-twitter",
+            "text": "twitter"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-twitter",
+            "placeholder": "Ex.: twitter.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do twitter para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-github",
+            "text": "github"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-github",
+            "placeholder": "Ex.: github.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do github para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-instagram",
+            "text": "instagram"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-instagram",
+            "placeholder": "Ex.: instagram.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do instagram para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-pinterest",
+            "text": "pinterest"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-pinterest",
+            "placeholder": "Ex.: pinterest.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do pinterest para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-youtube",
+            "text": "youtube"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-youtube",
+            "placeholder": "Ex.: youtube.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do youtube para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-lattes",
+            "text": "lattes"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-lattes",
+            "placeholder": "Ex.: nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do lattes para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_social-network-linkedin",
+            "text": "linkedin"
+        },
+        {
+            "id": "sponsorship_modal_data_social-network-linkedin",
+            "placeholder": "Ex.: linkedin.com/nomeusuario",
+            "title": "Informe um usuario ou nome da pagina do linkedin para o presente patrocinador.",
+            "alt": "Campo de texto para informar o nome da pagina do presente patrocinador."
         }
 
     ]

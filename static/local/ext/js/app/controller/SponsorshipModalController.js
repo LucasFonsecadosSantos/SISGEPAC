@@ -89,14 +89,14 @@ export class SponsorshipModalController extends Controller {
                         "telephone": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_telephone').value,
                         "sponsorship_plan_id": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_sponsorship-plan-id').value,
                         "social-networks": {
-                            "facebook": "",
-                            "twitter": "",
-                            "instagram": "",
-                            "pinterest": "",
-                            "linkedin": "",
-                            "lattes": "",
-                            "github": "",
-                            "youtube": "",
+                            "facebook": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-facebook').value,
+                            "twitter": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-twitter').value,
+                            "instagram": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-instagram').value,
+                            "pinterest": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-pinterest').value,
+                            "linkedin": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-linkedin').value,
+                            "lattes": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-lattes').value,
+                            "github": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-github').value,
+                            "youtube": SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-youtube').value
                         },
                         "visible": true
                     });

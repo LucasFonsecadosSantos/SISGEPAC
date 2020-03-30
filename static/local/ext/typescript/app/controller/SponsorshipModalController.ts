@@ -34,7 +34,7 @@ export class SponsorshipModalController extends Controller {
             data['pt-BR'].forEach(message => {
 
                 Object.keys(message).forEach(key => {
-
+                    
                     MessageBuilder.buildMessage(SponsorshipModalElements.ELEMENTS.get((message['id']) ? message['id'] : (message['tag'])), key, message[key]);
                     
                 });
@@ -140,14 +140,14 @@ export class SponsorshipModalController extends Controller {
                                 "telephone":            (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_telephone') as HTMLInputElement).value,
                                 "sponsorship_plan_id":  (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_sponsorship-plan-id') as HTMLInputElement).value,
                                 "social-networks":  {
-                                    "facebook":         "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-facebook') as HTMLInputElement).value,
-                                    "twitter":          "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-twitter') as HTMLInputElement).value,
-                                    "instagram":        "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-instagram') as HTMLInputElement).value,
-                                    "pinterest":        "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-pinterest') as HTMLInputElement).value,
-                                    "linkedin":         "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-linkedin') as HTMLInputElement).value,
-                                    "lattes":           "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-lattes') as HTMLInputElement).value,
-                                    "github":           "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-github') as HTMLInputElement).value,
-                                    "youtube":          "",//(SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-youtube') as HTMLInputElement).value
+                                    "facebook":         (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-facebook') as HTMLInputElement).value,
+                                    "twitter":          (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-twitter') as HTMLInputElement).value,
+                                    "instagram":        (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-instagram') as HTMLInputElement).value,
+                                    "pinterest":        (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-pinterest') as HTMLInputElement).value,
+                                    "linkedin":         (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-linkedin') as HTMLInputElement).value,
+                                    "lattes":           (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-lattes') as HTMLInputElement).value,
+                                    "github":           (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-github') as HTMLInputElement).value,
+                                    "youtube":          (SponsorshipModalElements.ELEMENTS.get('sponsorship_modal_data_social-network-youtube') as HTMLInputElement).value
                                 },
                                 "visible": true
     

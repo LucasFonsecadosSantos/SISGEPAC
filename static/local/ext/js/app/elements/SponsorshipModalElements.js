@@ -26,6 +26,7 @@ SponsorshipModalElements.ELEMENTS = new Map([
     ['sponsorship_modal_data_email', document.querySelector('#sponsorship_modal_data_email')],
     ['sponsorship_modal_label_telephone', document.querySelector('#sponsorship_modal_label_telephone')],
     ['sponsorship_modal_data_telephone', document.querySelector('#sponsorship_modal_data_telephone')],
+    ['sponsorship_modal_label_social-networks', document.querySelector('#sponsorship_modal_label_social-networks')],
     ['sponsorship_modal_label_social-network-facebook', document.querySelector('#sponsorship_modal_label_social-network-facebook')],
     ['sponsorship_modal_data_social-network-facebook', document.querySelector('#sponsorship_modal_data_social-network-facebook')],
     ['sponsorship_modal_label_social-network-twitter', document.querySelector('#sponsorship_modal_label_social-network-twitter')],

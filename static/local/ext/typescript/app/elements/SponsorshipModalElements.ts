@@ -36,6 +36,7 @@ export class SponsorshipModalElements {
         ['sponsorship_modal_label_telephone',               document.querySelector('#sponsorship_modal_label_telephone')],
         ['sponsorship_modal_data_telephone',                document.querySelector('#sponsorship_modal_data_telephone')],
 
+        ['sponsorship_modal_label_social-networks',             document.querySelector('#sponsorship_modal_label_social-networks')],
         ['sponsorship_modal_label_social-network-facebook',  document.querySelector('#sponsorship_modal_label_social-network-facebook')],
         ['sponsorship_modal_data_social-network-facebook',   document.querySelector('#sponsorship_modal_data_social-network-facebook')],
         ['sponsorship_modal_label_social-network-twitter',  document.querySelector('#sponsorship_modal_label_social-network-twitter')],
@@ -52,7 +53,7 @@ export class SponsorshipModalElements {
         ['sponsorship_modal_data_social-network-pinterest',   document.querySelector('#sponsorship_modal_data_social-network-pinterest')],
         ['sponsorship_modal_label_social-network-lattes',  document.querySelector('#sponsorship_modal_label_social-network-lattes')],
         ['sponsorship_modal_data_social-network-lattes',   document.querySelector('#sponsorship_modal_data_social-network-lattes')],
-
+        
         ['sponsorship_modal_button_create',             document.querySelector('#sponsorship_modal_button_create')],
         ['sponsorship_modal_button_update',             document.querySelector('#sponsorship_modal_button_update')],
 
