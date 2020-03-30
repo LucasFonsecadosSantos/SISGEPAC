@@ -1,0 +1,68 @@
+.modal.fadeInDown.text-left#sponsorshipModal.lg(sisgepac-modal="sponsorship-modal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel34", style="display: none;", aria-hidden="true")
+    .modal-dialog.modal-lg(role="document")
+        .modal-content
+            .modal-header.bg-danger
+                h3.modal-title.text-white#sponsorship_modal_title
+                button(type="button", class="close", data-dismiss="modal", aria-label="Close")
+                i.la.la-times.text-white(aria-hidden="true")
+            form#sponsorship_modal_dataForm
+                input#sponsorship_modal_data_id(type="hidden")
+                .modal-body
+                    .bs-callout-primary.callout-border-left.callout-square.p-1.mb-2
+                        strong#sponsorship_modal_label_callout-title
+                        p#sponsorship_modal_label_callout-text
+                    
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_name.m-0
+                        input.form-control.input-sm.m-0.p-0#sponsorship_modal_data_name(type="text")
+                        p.text-left
+                            small.text-muted#sponsorship_modal_label_helper-name
+
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#sponsorship_modal_label_description
+                        textarea.form-control.input-sm.m-0.p-0.mt-1#sponsorship_modal_data_description(type="text", rows="3")
+                        p.text-left
+                            small.text-muted#sponsorship_modal_label_helper-description
+                    
+
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_email.m-0
+                        input.form-control.input-sm.m-0.p-0#sponsorship_modal_data_email(type="email")
+                        p.text-left
+                            small.text-muted#sponsorship_modal_label_helper-email
+                    
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_telephone.m-0
+                        input.form-control.input-sm.m-0.p-0#sponsorship_modal_data_telephone(type="text")
+                        p.text-left
+                            small.text-muted#sponsorship_modal_label_helper-telephone
+                    
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_website.m-0
+                        input.form-control.input-sm.m-0.p-0#sponsorship_modal_data_website(type="text")
+                        p.text-left
+                            small.text-muted#sponsorship_modal_label_helper-website
+
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_sponsorship-plan-id.m-0
+                        option.form-control.input-sm.m-0.p-0#sponsorship_modal_data_sponsorship-plan-id(type="text")
+
+                    fieldset.form-group.form-group-style.border-light
+                        label.m-0#sponsorship_modal_label_price
+                        input.form-control.input-sm.m-0.p-0.mt-1#sponsorship_modal_data_price(type="number")
+                        p.text-left
+                            small.text-muted#activity_register_label_price-helper
+                   
+
+                    fieldset.form-group.form-group-style.border-light
+                        label#sponsorship_modal_label_avatar.m-0
+                        .custom-file
+                            input.custom-file-input.input-sm.m-0.p-0#sponsorship_modal_data_avatar(name="upavatar",type="file")
+                            label.custom-file-label.input-sm.m-0.p-0#sponsorship_modal_label_avatar2(for="sponsorship_modal_data_avatar" , aria-describedby="sponsorship_modal_data_avatar")
+
+                .modal-footer
+                    button.btn.btn-outline-success#sponsorship_modal_button_create.d-none(type="button")
+                    button.btn.btn-outline-success#sponsorship_modal_button_update.d-none(type="button")
+//- script(src="/local/ext/app-assets/js/scripts/ui/breadcrumbs-with-stats.min.js")
+//- script(src="/local/ext/app-assets/js/scripts/forms/custom-file-input.min.js")
+//- script(src="/local/ext/app-assets/vendors/js/forms/tags/form-field.js")

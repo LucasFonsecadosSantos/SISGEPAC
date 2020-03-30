@@ -1,0 +1,105 @@
+{
+    "pt-BR": [
+
+        {
+            "id": "sponsorship_modal_title",
+            "text": "Patrocinador"
+        },
+        {
+            "id": "sponsorship_modal_label_callout-title",
+            "text": "O que são?"
+        },
+        {
+            "id": "sponsorship_modal_label_callout-text",
+            "text": "em breve."
+        },
+        {
+            "id": "sponsorship_modal_label_name",
+            "text": "Nome do patrocinador: *"
+        },
+        {
+            "id": "sponsorship_modal_data_name",
+            "alt": "Campo de texto para inserir o nome do patrocinador.",
+            "title": "Informe o nome do patrocinador. Ex.: empresa xyz.",
+            "placeholder": "Ex.: Empresa xyz."
+        },
+        {
+            "id": "sponsorship_modal_label_description",
+            "text": "Descrição:"
+        },
+        {
+            "id": "sponsorship_modal_data_description",
+            "alt": "Campo de texto para inserir a descrição do patrocinador.",
+            "title": "Informe uma descrição para o novo patrocindador.",
+            "placeholder": "Ex.: Divulgação em empena, panfletos e caixa de som."
+        },
+        {
+            "id": "sponsorship_modal_label_price",
+            "text": "Preço: *"
+        },
+        {
+            "id": "sponsorship_modal_data_price",
+            "alt": "Campo de texto para inserir preço pago pelo patrocinador.",
+            "title": "Informe um preço para pago pelo patrocinador.",
+            "placeholder:": "R$ 0.00"
+        },
+        {
+            "id": "sponsorship_modal_label_avatar2",
+            "text": "Logotipo",
+            "title": "Clique para selecionar uma imagem que represente o patrocinador.",
+            "alt": "Campo de seleção para um arquivo de imagem representativo do patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_button_create",
+            "text": "Cadastrar",
+            "title": "Clique para efetuar o cadastro do novo patrocinador.",
+            "alt": "Botão para efetuar o cadastro do novo patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_button_update",
+            "text": "Atualizar",
+            "title": "Clique para atualizar o cadastro do patrocinador.",
+            "alt": "Botão para atualizar o cadastro do patrocinador."
+        },
+        {
+            "id": "sponsorship_modal_label_email",
+            "text": "E-Mail:"
+        },
+        {
+            "id": "sponsorship_modal_data_email",
+            "placeholder": "Ex.: email@email.com",
+            "alt": "Campo de texto para digitar endereço de email do patrocinador a ser cadastrado.",
+            "title": "Informe um endereço de email do patrocinador a ser cadastrado."
+        },
+        {
+            "id": "sponsorship_modal_label_telephone",
+            "text": "Telefone:"
+        },
+        {
+            "id": "sponsorship_modal_data_telephone",
+            "title": "Informe um contato de telefone do patrocinador a ser cadastrado.",
+            "alt": "Campo de texto para informar um contato de telefone do patrocinador.",
+            "placeholder": "Ex.: (xx) xxxx - xxxx"
+        },
+        {
+            "id": "sponsorship_modal_label_website",
+            "text": "Website:"
+        },
+        {
+            "id": "sponsorship_modal_data_website",
+            "placeholder": "Ex.: www.site.com.br",
+            "title": "Informe um website.",
+            "alt": "Campo de texto para informar um website do patrocinador em questao."
+        },
+        {
+            "id": "sponsorship_modal_label_sponsorship-plan-id",
+            "text": "Selecione um plano de patrocinio: *"
+        },
+        {
+            "id": "sponsorship_modal_data_sponsorship-plan-id",
+            "alt": "Caixa de selecao para selecionar um plano de patrocinio para o presente patrocinador.",
+            "title": "Clique e selecione um plano de patrocinio para o patrocinador."
+        }
+
+    ]
+}

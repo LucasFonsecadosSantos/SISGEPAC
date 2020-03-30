@@ -12,5 +12,8 @@ Routes.ROUTES = new Map([
     ['planopatrocinio/{id}/remover', 'SponsorshipPlanModalController@delete'],
     ['planopatrocinio/{id}/editar', 'SponsorshipPlanModalController@update'],
     ['planopatrocinio/{id}/cadastrar', 'SponsorshipPlanModalController@create'],
+    ['patrocinador/{id}/cadastrar', 'SponsorshipModalController@create'],
+    ['patrocinador/{id}/editar', 'SponsorshipModalController@edit'],
+    ['patrocinador/{id}/remover', 'SponsorshipModalController@delete'],
 ]);
 //# sourceMappingURL=Routes.js.map

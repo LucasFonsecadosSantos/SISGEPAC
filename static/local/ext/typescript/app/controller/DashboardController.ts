@@ -51,6 +51,7 @@ export class DashboardController extends Controller {
                 this._populateCard05();
                 this._populateCard06();
                 this._populateCard07();
+                this._populateCard08();
 
             //}
         }
@@ -626,6 +627,17 @@ export class DashboardController extends Controller {
 
             location.hash = "";
             location.hash = 'planopatrocinio/*/cadastrar';
+
+        });
+
+    }
+
+    private _populateCard08(): void {
+
+        DashboardElements.ELEMENTS.get('card08_button_create-sponsorship').addEventListener('click', event => {
+            
+            location.hash = "";
+            location.hash = 'patrocinador/*/cadastrar';
 
         });
 

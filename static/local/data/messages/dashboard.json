@@ -187,20 +187,47 @@
             "text": "Patrocinadores"
         },
         {
+            "id": "card08_button_search-sponsorship-text",
+            "text": "Buscar"
+        },
+        {
+            "id": "card08_button_create-sponsorship-text",
+            "text": "Novo Patrocinador"
+        },
+        {
+            "id": "card08_button_create-sponsorship",
+            "alt": "Botão para adicionar novo patrocinador.",
+            "title": "Clique para adicionar um novo patrocinador."
+        },
+        {
+            "id": "card08_button_search-sponsorship",
+            "alt": "Botão para buscar um patrocinador.",
+            "title": "Clique para buscar o registro de algum patrocinador."
+        },
+        {
+            "id": "card08_button_delete-sponsorship",
+            "alt": "Botão para remover um patrocinador.",
+            "title": "Clique para remover um determinado patrocinador."
+        },
+        {
+            "id": "card08_button_delete-sponsorship-text",
+            "text": "Remover"
+        },
+        {
             "id": "card08_table_label_column01",
-            "text": "Patrocinador"
+            "text": "Logotipo/Avatar"
         },
         {
             "id": "card08_table_label_column02",
-            "text": "Descrição"
+            "text": "Patrocinador"
         },
         {
             "id": "card08_table_label_column03",
-            "text": "Valor Investido"
+            "text": "Plano"
         },
         {
             "id": "card08_table_label_column04",
-            "text": "Plano"
+            "text": "Valor Investido"
         },
         {
             "id": "card08_table_label_column05",

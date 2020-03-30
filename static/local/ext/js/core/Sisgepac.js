@@ -7,6 +7,7 @@ import { EventSettingsModalController } from './../app/controller/EventSettingsM
 import { SpeakerModalController } from './../app/controller/SpeakerModalController.js';
 import { ActivityModalController } from './../app/controller/ActivityModalController.js';
 import { SponsorshipPlanModalController } from './../app/controller/SponsorshipPlanModalController.js';
+import { SponsorshipModalController } from './../app/controller/SponsorshipModalController.js';
 import { Routes } from './../conf/Routes.js';
 export class Sisgepac {
     constructor() {
@@ -18,7 +19,8 @@ export class Sisgepac {
             ['ChangelogController', ChangelogController],
             ['SpeakerModalController', SpeakerModalController],
             ['ActivityModalController', ActivityModalController],
-            ['SponsorshipPlanModalController', SponsorshipPlanModalController]
+            ['SponsorshipPlanModalController', SponsorshipPlanModalController],
+            ['SponsorshipModalController', SponsorshipModalController],
         ]);
         //new Monitor();
         new HeaderController();
@@ -80,6 +82,9 @@ export class Sisgepac {
                     break;
                 case 'sponsorship-plan-modal':
                     new SponsorshipPlanModalController();
+                    break;
+                case 'sponsorship-modal':
+                    new SponsorshipModalController();
                     break;
             }
         });
