@@ -6,14 +6,17 @@ export class SponsorshipModel extends Model {
         super._dataPath = Config.REMOTE_CONTENT_FILES_PATH.get(DataEntity._SPONSORSHIP_);
         super._relativeDataPath = "../../../remote/data/content/sponsorship.json";
         super._dataKeys = [
-            'title',
+            'id',
+            'name',
             'description',
+            'avatar',
+            'website',
             'email',
-            'event-type',
-            'institute',
-            'schedule-date',
+            'telephone',
             'social-networks',
-            'telephone'
+            'visible',
+            'price',
+            'sponsorship_plan_id',
         ];
     }
 }

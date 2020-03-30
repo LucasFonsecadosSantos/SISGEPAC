@@ -19,6 +19,7 @@ include components/modals/_event-settings.pug
 include components/modals/_speaker-register.pug
 include components/modals/_activity-register.pug
 include components/modals/_sponsorship-plan.pug
+include components/modals/_sponsorship.pug
 
 .app-content.content(sisgepac-page="index")
   .loader_box.d-none#loader
@@ -473,44 +474,23 @@ include components/modals/_sponsorship-plan.pug
                       tr
                         th.text-right(colspan="5")
                           .btn-group.btn-group-sm(role="group", aria-label="Basic example")
-                            button.btn.btn-success(type="button")
-                              i.material-icons add
-                              |Cadastrar
-                            button.btn.btn-primary(type="button")
-                              i.material-icons search
-                              |Pesquisar
-                            button.btn.btn-danger(type="button")
-                              i.material-icons delete_forever
-                              |remover
+                            button.btn.btn-outline-success#card08_button_create-sponsorship(type="button")
+                              i.la.la-plus.font-medium-1.mr-1
+                              span#card08_button_create-sponsorship-text
+                            button.btn.btn-outline-primary#card08_button_search-sponsorship(type="button")
+                              i.la.la-search.font-medium-1.mr-1
+                              span#card08_button_search-sponsorship-text
+                            button.btn.btn-outline-danger#card08_button_delete-sponsorship(type="button")
+                              i.la.la-trash-alt.font-medium-1.mr-1
+                              span#card08_button_delete-sponsorship-text
                       tr
                         th#card08_table_label_column01
                         th#card08_table_label_column02
                         th#card08_table_label_column03
                         th#card08_table_label_column04
                         th#card08_table_label_column05
-                    tbody
-                      tr
-                        td.text-center
-                          span.avatar.avatar-busy
-                            img(src='/local/ext/app-assets/images/portrait/small/avatar-s-8.png' alt='avatar' data-toggle='tooltip' data-placement='right' title='Mary Salazar')
-                          br
-                          a.text-bold-600(href='#') Lucas
-                        td
-                          p.text-muted navbar is missing when click to next page on navbar
-                          p.text-muted
-                            i.ft-paperclip
-                            |  abc.pdf
-                        td
-                          p.text-muted R$ 300,00
-                        td
-                          span.badge.badge-success Urgent
-                        td.text-center
-                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Editar cadastro do palestrante")
-                            i.material-icons edit
-                          button.btn.btn-icon.btn-teal.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Visualizar todos os dados do palestrante")
-                            i.material-icons remove_red_eye
-                          button.btn.btn-icon.btn-danger.mr-1(type="button", data-toggle="tooltip", data-popup="tooltip-custom", data-original-title="Remover cadastro do palestrante")
-                            i.material-icons delete_forever
+                    tbody#sponsorshipTable
+
       .row.match-height
         .col-xl-8.col-lg-12.col-sm-12
           .card

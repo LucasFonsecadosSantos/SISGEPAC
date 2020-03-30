@@ -16,7 +16,7 @@ DashboardElements.ELEMENTS = new Map([
     ['card02_data_event-type', document.querySelector('#card02_data_event-type')],
     ['card02_label_event-area', document.querySelector('#card02_label_event-area')],
     ['card02_data_event-area', document.querySelector('#card02_data_event-area')],
-    // //Card 03
+    // //Card 03    
     ['card03_label_event-twitter', document.querySelector('#card03_label_event-twitter')],
     ['card03_data_event-twitter', document.querySelector('#card03_data_event-twitter')],
     ['card03_label_event-facebook', document.querySelector('#card03_label_event-facebook')],
@@ -77,12 +77,19 @@ DashboardElements.ELEMENTS = new Map([
     ['card07_button_search-sponsorshipplan', document.querySelector('#card07_button_search-sponsorshipplan')],
     ['sponsorshipPlanTable', document.querySelector('#sponsorshipPlanTable')],
     // //Card08
+    ['card08_button_create-sponsorship', document.querySelector('#card08_button_create-sponsorship')],
+    ['card08_button_delete-sponsorship', document.querySelector('#card08_button_delete-sponsorship')],
+    ['card08_button_search-sponsorship', document.querySelector('#card08_button_search-sponsorship')],
+    ['card08_button_create-sponsorship-text', document.querySelector('#card08_button_create-sponsorship-text')],
+    ['card08_button_search-sponsorship-text', document.querySelector('#card08_button_search-sponsorship-text')],
+    ['card08_button_delete-sponsorship-text', document.querySelector('#card08_button_delete-sponsorship-text')],
     ['card08_label_title', document.querySelector('#card08_label_title')],
     ['card08_table_label_column01', document.querySelector('#card08_table_label_column01')],
     ['card08_table_label_column02', document.querySelector('#card08_table_label_column02')],
     ['card08_table_label_column03', document.querySelector('#card08_table_label_column03')],
     ['card08_table_label_column04', document.querySelector('#card08_table_label_column04')],
     ['card08_table_label_column05', document.querySelector('#card08_table_label_column05')],
+    ['sponsorshipTable', document.querySelector('#sponsorshipTable')],
     // //Card 09
     ['card09_label_title', document.querySelector('#card09_label_title')],
     // //Card 010
