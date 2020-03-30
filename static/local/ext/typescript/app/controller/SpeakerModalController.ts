@@ -202,7 +202,7 @@ export class SpeakerModalController extends Controller {
 
     private _clearInputs(): void {
 
-        this._elements.forEach(element => {
+        SpeakerModalElements.ELEMENTS.forEach(element => {
 
             if (element.nodeName === 'INPUT') {
                 element.nodeValue = "";

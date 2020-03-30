@@ -2,7 +2,7 @@ export class ActivityModalElements {
 
     public static readonly ELEMENTS: Map<string, HTMLElement> = new Map([
 
-        ['activity_modal_modal_title',               document.querySelector('#activity_modal_title')],
+        ['activity_modal_title',                        document.querySelector('#activity_modal_title')],
         ['activity_modal_data_id',                   document.querySelector('#activity_modal_data_id')],
         ['activity_modal_button_update',             document.querySelector('#activity_modal_button_update')],
         ['activity_modal_button_create',             document.querySelector('#activity_modal_button_create')],

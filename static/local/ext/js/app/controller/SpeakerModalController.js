@@ -124,7 +124,7 @@ export class SpeakerModalController extends Controller {
         SpeakerModalElements.ELEMENTS.get('speaker_modal_button_create').classList.remove('d-none');
     }
     _clearInputs() {
-        this._elements.forEach(element => {
+        SpeakerModalElements.ELEMENTS.forEach(element => {
             if (element.nodeName === 'INPUT') {
                 element.nodeValue = "";
             }
