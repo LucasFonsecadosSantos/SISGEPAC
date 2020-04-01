@@ -1,9 +1,11 @@
 import { SpeakerTableComponent }    from './../app/components/SpeakerTableComponent.js';
 import { Component }                from './../core/Component.js';
+import { ActivityTableComponent }   from './../app/components/ActivityTableComponent.js';
 
 export enum ComponentEnum {
 
-    SPEAKER_TABLE
+    SPEAKER_TABLE,
+    ACTIVITY_TABLE
 
 }
 
@@ -13,7 +15,8 @@ export class ComponentFactory {
 
     private static _componentInstancesMap: Map<ComponentEnum, Component> = new Map<ComponentEnum, any>([
 
-        [ComponentEnum.SPEAKER_TABLE, SpeakerTableComponent]
+        [ComponentEnum.SPEAKER_TABLE,   SpeakerTableComponent],
+        [ComponentEnum.ACTIVITY_TABLE,  ActivityTableComponent]
 
     ]);
 
