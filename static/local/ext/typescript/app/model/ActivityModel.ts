@@ -48,14 +48,14 @@ export class ActivityModel extends Model {
 
                 const k =  await speakerData.then(async speaker => {
                     
-                    Object.assign(data, {'speaker': speaker})
+                    Object.assign(data, {speaker: speaker})
 
                     let trackModel  = new TrackModel();
                     let trackData   = trackModel.filter('id', data['track_id']);
                     
                     const x = await trackData.then(track => {
 
-                        Object.assign(data, {'track': track});
+                        Object.assign(data, {track: track});
                         return data;
 
                     });
@@ -67,7 +67,7 @@ export class ActivityModel extends Model {
                 return k;
 
             });
-            console.log(await fetchedArray[0])
+            //console.log(await fetchedArray[0])
             return fetchedArray;
 
         });

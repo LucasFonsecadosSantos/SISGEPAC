@@ -14,7 +14,7 @@ export class ActivityTableComponent extends Component {
             if (data.length > 0) {
                 
                 data.forEach(activity => {
-                    //console.log(activity);
+                    console.log(activity[speaker])    
                     let trElement = document.createElement('TR');
                     let tdElement = document.createElement('TD');
                     let spanElement = document.createElement('SPAN');

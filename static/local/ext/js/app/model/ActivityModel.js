@@ -45,18 +45,18 @@ export class ActivityModel extends Model {
                     let speakerModel = new SpeakerModel();
                     let speakerData = speakerModel.filter('id', data['responsible_id']);
                     const k = yield speakerData.then((speaker) => __awaiter(this, void 0, void 0, function* () {
-                        Object.assign(data, { 'speaker': speaker });
+                        Object.assign(data, { speaker: speaker });
                         let trackModel = new TrackModel();
                         let trackData = trackModel.filter('id', data['track_id']);
                         const x = yield trackData.then(track => {
-                            Object.assign(data, { 'track': track });
+                            Object.assign(data, { track: track });
                             return data;
                         });
                         return x;
                     }));
                     return k;
                 }));
-                console.log(yield fetchedArray[0]);
+                //console.log(await fetchedArray[0])
                 return fetchedArray;
             }));
             return fetched;
