@@ -1,0 +1,29 @@
+{
+  "name": "sisgepac-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasFonsecaDosSantos/SISGEPAC.git"
+  },
+  "author": "Lucas Fonseca dos Santos",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/LucasFonsecaDosSantos/SISGEPAC/issues"
+  },
+  "homepage": "https://github.com/LucasFonsecaDosSantos/SISGEPAC#readme",
+  "devDependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "typescript": "^3.8.3"
+  }
+}

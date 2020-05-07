@@ -1,0 +1,84 @@
+.modal.fadeInDown.text-left#speakerModal.lg(sisgepac-modal="speaker-register-modal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel34", style="display: none;", aria-hidden="true")
+    .modal-dialog.modal-lg(role="document")
+        .modal-content
+            .modal-header.bg-danger
+                h3.modal-title.text-white#speaker_modal_label_title
+                button(type="button", class="close", data-dismiss="modal", aria-label="Close")
+                span(aria-hidden="true") ×
+            form#speaker_modal_dataForm
+                input#speaker_modal_data_id(type="hidden")
+                .modal-body
+                    .bs-callout-primary.callout-border-left.callout-square.p-1.mb-2
+                        strong Novos palestrantes
+                        p O palestrante juntamente aos dados informados aqui serão exibidos no conteúdo da página do evento. Você também poderá desabilitar a visualização deste palestrante na página inicial caso desejar.
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_name.m-0
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_name(type="text")
+                        p.text-left
+                            small.text-muted#speaker_modal_label_helper-name
+
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_jobInstitute.m-0
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_jobInstitute(type="text")
+                        p.text-left
+                            small.text-muted#speaker_modal_label_helper-jobInstitute
+                    
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_description.m-0
+                        textarea.form-control.input-sm.m-0.p-0#speaker_modal_data_description.m-0(type="text", rows="3")
+                        p.text-left
+                            small.text-muted#speaker_modal_label_helper-description
+                    
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_email.m-0.p-0
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_email(type="email")
+                        
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_socialNetworks.m-0
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-facebook
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-facebook(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-twitter
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-twitter(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-lattes
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-lattes(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-github
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-github(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-youtube
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-youtube(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-spotify
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-spotify(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-behance
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-behance(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-linkedin
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-linkedin(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-skype
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-skype(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-pinterest
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-pinterest(type="text")
+                        small.text-muted
+                            i#speaker_modal_label_socialNetworks-blog
+                        input.form-control.input-sm.m-0.p-0#speaker_modal_data_socialNetworks-blog(type="text")
+
+                    fieldset.form-group.form-group-style
+                        label#speaker_modal_label_avatar.m-0
+                        .custom-file
+                            input.custom-file-input.input-sm.m-0.p-0#speaker_modal_data_avatar(name="upavatar",type="file")
+                            label.custom-file-label.input-sm.m-0.p-0#speaker_modal_label_avatar2(for="speaker_modal_data_avatar" , aria-describedby="speaker_modal_data_avatar")
+                hr
+                .modal-footer
+                    //input.btn.btn-outline-secondary.btn-lg(type="reset", data-dismiss="modal", value="cancelar")
+                    button.btn.btn-outline-success#speaker_modal_button_create.d-none(type="button")
+                    button.btn.btn-outline-success#speaker_modal_button_update.d-none(type="button")
+//- script(src="/local/ext/app-assets/js/scripts/ui/breadcrumbs-with-stats.min.js")
+//- script(src="/local/ext/app-assets/js/scripts/forms/custom-file-input.min.js")
+//- script(src="/local/ext/app-assets/vendors/js/forms/tags/form-field.js")
